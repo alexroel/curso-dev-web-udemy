@@ -15,9 +15,6 @@
 
 ## Introducción
 
-![Descripción de la imagen](../img/20.jpg)
-![Descripción de la imagen](../img/21.jpg)
-
 HTML, siglas de HyperText Markup Language (Lenguaje de Marcado de Hipertexto), es el lenguaje estándar utilizado para crear y estructurar el contenido de las páginas web. Permite definir la estructura y presentación de los elementos de una página, como encabezados, párrafos, enlaces, imágenes y más.
 
 La sintaxis de HTML se basa en el uso de etiquetas, que son elementos marcados por "<>" (corchetes angulares). Las etiquetas se utilizan para envolver el contenido y darle significado, como indicar un título, un párrafo o un enlace.
@@ -38,15 +35,11 @@ Esta es solo una breve introducción a HTML. A medida que profundices en el leng
 
 ## ¿Qué es HTML?
 
-![Descripción de la imagen](../img/22.jpg)
-
 HTML significa "HyperText Markup Language" (Lenguaje de Marcado de Hipertexto), y es el lenguaje utilizado para crear y estructurar el contenido de las páginas web.
 
 En términos más simples, HTML es un conjunto de etiquetas (o "marcas") que se utilizan para describir el contenido de una página web. Las etiquetas se utilizan para definir los elementos como títulos, párrafos, enlaces, imágenes, listas, formularios, entre otros.
 
 HTML es el lenguaje básico de la web y es interpretado por los navegadores web. Cuando creas una página web en HTML, tu navegador interpreta el código HTML y muestra el contenido en pantalla.
-
-![Descripción de la imagen](../img/23.jpg)
 
 El HTML se ha ido actualizando a lo largo de los años, con la última versión siendo HTML5. HTML5 ha introducido nuevas características y etiquetas que hacen más fácil crear sitios web modernos y eficientes.
 
@@ -54,7 +47,6 @@ El HTML se ha ido actualizando a lo largo de los años, con la última versión 
 
 ## Sintaxis y etiquetas
 
-![Descripción de la imagen](../img/25.jpg)
 
 La sintaxis de HTML consiste en etiquetas que se utilizan para crear elementos. Una etiqueta HTML consta de un nombre de etiqueta rodeado de corchetes angulares `< >`.
 
@@ -110,8 +102,6 @@ Es importante tener en cuenta que no todos los elementos HTML tienen contenido o
 
 ## Estructura base de un documento HTML
 
-![Descripción de la imagen](../img/26.jpg)
-
 La estructura básica de un documento HTML consta de dos partes principales: el encabezado (head) y el cuerpo (body). Aquí hay un ejemplo de la estructura básica de un documento HTML:
 
 ~~~html
@@ -159,8 +149,6 @@ En resumen, este código define la estructura básica de una página web, establ
 
 ## Encabezados y comentarios
 
-![Descripción de la imagen](../img/27.jpg)
-
 En HTML, los encabezados se utilizan para definir la estructura jerárquica de una página web y para organizar el contenido. Los encabezados se definen con las etiquetas `<h1>` a `<h6>`, siendo `<h1>` el encabezado principal y `<h6>` el menos importante.
 
 * `<h1>` define el encabezado más importante.
@@ -198,8 +186,6 @@ Documento de ejemplo (intención adicional para ilustrar la jerarquía):
     <p>Párrafo</p>
 ~~~
 
-![Descripción de la imagen](../img/28.jpg)
-
 Los comentarios en HTML se utilizan para agregar notas o información útil que no se mostrará en la página web. Los comentarios comienzan con `<!--` y terminan con `-->`, y todo lo que se escribe entre estos dos símbolos será ignorado por el navegador al cargar la página web.
 
 Por ejemplo, para agregar un comentario en HTML, se puede utilizar la siguiente sintaxis:
@@ -213,8 +199,6 @@ Los comentarios son útiles para explicar el código a otros desarrolladores, pa
 ---
 
 ## Etiquetas de texto
-
-![Descripción de la imagen](../img/30.jpg)
 
 Algunas etiquetas de texto en HTML incluyen:
 

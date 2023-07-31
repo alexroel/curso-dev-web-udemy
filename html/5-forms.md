@@ -14,9 +14,6 @@
 
 ## Introducción
 
-![Descripción de la imagen](../img/50.jpg)
-![Descripción de la imagen](../img/51.jpg)
-
 ¡Bienvenidos a la sección de Formularios en nuestro curso de HTML!
 
 En esta sección, exploramos cómo crear formularios interactivos en HTML y aprendimos sobre los elementos clave que los componen. Los formularios son una parte fundamental de cualquier sitio web, ya que nos permiten recopilar información de los usuarios y facilitar la interacción.
@@ -36,9 +33,6 @@ En resumen, en esta sección del curso de HTML sobre formularios, aprendimos a c
 ---
 
 ## Formulario
-
-![Descripción de la imagen](../img/52.jpg)
-![Descripción de la imagen](../img/53.jpg)
 
 Los formularios en HTML son una parte fundamental de la web interactiva, ya que permiten a los usuarios ingresar y enviar datos al servidor. Un formulario está compuesto por varios elementos, como campos de entrada, botones de envío y elementos de selección, que permiten a los usuarios proporcionar información de manera estructurada.
 
@@ -120,8 +114,6 @@ El uso de `<fieldset>` y `<legend>` ayuda a mejorar la estructura y legibilidad 
 ---
 
 ## Elementos del Fomulario
-
-![Descripción de la imagen](../img/54.jpg)
 
 Los elementos del formulario en HTML son etiquetas utilizadas para crear diferentes tipos de campos de entrada y controles interactivos en un formulario web. Estos elementos permiten a los usuarios ingresar datos, hacer selecciones y realizar acciones dentro de un formulario. Algunos de los elementos más comunes son:
 
@@ -458,8 +450,6 @@ Recuerda que los datos ingresados por los usuarios en estos elementos de entrada
 
 ## Validación de formulario
 
-![Descripción de la imagen](../img/55.jpg)
-
 La validación de formularios en HTML es importante para asegurarse de que los datos ingresados por los usuarios cumplan con ciertos criterios o restricciones antes de ser enviados al servidor. A continuación, te presento algunas técnicas y atributos que puedes utilizar para realizar la validación de formularios en HTML:
 
 * Validación HTML5:
@@ -531,8 +521,6 @@ Estos son solo algunos ejemplos de cómo realizar la validación de formularios 
 ---
 
 ## Envio y procesamiento de formulario
-
-![Descripción de la imagen](../img/56.jpg)
 
 En HTML, el envío y procesamiento de formularios se realiza mediante el uso de la etiqueta `<form>` y los atributos asociados. Aquí tienes una guía básica sobre cómo enviar y procesar formularios en HTML:
 

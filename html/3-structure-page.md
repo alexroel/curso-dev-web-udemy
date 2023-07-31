@@ -13,10 +13,6 @@
 
 ## Introducción
 
-![Descripción de la imagen](../img/32.jpg)
-
-![Descripción de la imagen](../img/33.jpg)
-
 ¡Bienvenidos al Curso de HTML!
 
 En esta sección del curso, aprenderemos sobre la estructura básica de una página HTML y las etiquetas que nos permitieron organizar y presentar nuestro contenido de manera efectiva.
@@ -42,7 +38,6 @@ Con estos conceptos y etiquetas, pudiste crear una estructura sólida y organiza
 
 ## Contenedor de elementos
 
-![Descripción de la imagen](../img/34.jpg)
 
 En HTML, los contenedores se utilizan para agrupar y organizar elementos dentro de una estructura jerárquica. Los contenedores son elementos que envuelven otros elementos y les proporcionan una relación y contexto visual. A continuación, se describen algunos de los contenedores más comunes en HTML:
 
@@ -72,13 +67,9 @@ En este ejemplo, se utiliza el elemento `<footer>` para envolver el contenido de
 
 * `<aside>:` El elemento `<aside>` se utiliza para representar contenido secundario o complementario que está relacionado con el contenido principal de la página, pero que puede existir de forma independiente. Puede contener elementos como barras laterales, anuncios o información adicional.
 
-![Descripción de la imagen](../img/35.jpg)
-
 ---
 
 ## Etiquetas de enlace
-
-![Descripción de la imagen](../img/36.jpg)
 
 Las etiquetas de enlace en HTML se utilizan para crear hipervínculos o enlaces a otras páginas, recursos o ubicaciones dentro de un sitio web. A continuación, se describen las etiquetas de enlace más comunes en HTML:
 
@@ -140,8 +131,6 @@ Las etiquetas de enlace en HTML se utilizan para crear hipervínculos o enlaces 
 ---
 
 ## Etiquetas de listas
-
-![Descripción de la imagen](../img/37.jpg)
 
 Las etiquetas de listas en HTML se utilizan para crear listas y organizar el contenido de una manera estructurada. Hay tres tipos principales de listas en HTML: listas desordenadas (`<ul>`), listas ordenadas (`<ol>`) y listas de definición (`<dl>`). A continuación, se describe cada una de estas etiquetas en detalle:
 
@@ -254,8 +243,6 @@ Estas etiquetas de listas te permiten organizar el contenido de tu página web d
 
 ## Elemento de citas
 
-![Descripción de la imagen](../img/38.jpg)
-
 En HTML, existen varios elementos específicos para marcar y dar formato a las citas dentro de un documento. A continuación, se describen los elementos más comunes utilizados para las citas en HTML:
 
 * `<blockquote>:` El elemento `<blockquote>` se utiliza para representar una sección de texto que se ha extraído o citado de otra fuente. Por lo general, se muestra con sangría en los márgenes izquierdo y derecho. Aquí tienes un ejemplo:
@@ -300,8 +287,6 @@ Estos son algunos de los elementos más utilizados para marcar y dar formato a l
 ---
 
 ## Tablas
-
-![Descripción de la imagen](../img/39.jpg)
 
 Las tablas en HTML se utilizan para organizar y presentar datos en forma de filas y columnas. Son especialmente útiles para mostrar información tabular y estructurada. A continuación, te proporciono información sobre cómo crear y estructurar tablas en HTML:
 

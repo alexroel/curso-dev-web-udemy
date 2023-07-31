@@ -15,9 +15,6 @@
 
 ## Introducción
 
-![Descripción de la imagen](../img/57.jpg)
-![Descripción de la imagen](../img/58.jpg)
-
 ¡Bienvenidos a la sección de Gráficos HTML de nuestro curso de HTML! En esta sección, exploramos el fascinante mundo de los gráficos y las imágenes en HTML, centrándonos especialmente en SVG (Scalable Vector Graphics).
 
 Comenzamos con una introducción a SVG, aprendiendo qué es SVG y por qué es una herramienta poderosa para crear gráficos vectoriales escalables en la web. Con SVG, pudimos crear imágenes y animaciones de alta calidad que se adaptan a diferentes tamaños de pantalla sin perder calidad.
@@ -37,7 +34,6 @@ A lo largo de esta sección, exploramos los conceptos clave de los gráficos HTM
 ---
 
 ## Introducción a SVG
-![Descripción de la imagen](../img/59.jpg)
 
 * **¿Qué es SVG?**
 SVG (Scalable Vector Graphics) es un formato de imagen basado en XML que permite crear gráficos vectoriales escalables. A diferencia de las imágenes rasterizadas, que se basan en píxeles y se pixelan al ampliarlas, SVG utiliza ecuaciones matemáticas para representar los elementos gráficos, lo que permite que las imágenes se redimensionen sin perder calidad.
@@ -63,8 +59,6 @@ En resumen, SVG es un formato de imagen versátil que ofrece ventajas significat
 ---
 
 ## Sintaxis básica de SVG
-
-![Descripción de la imagen](../img/61.jpg)
 
 * **Elemento `<svg>` y atributos principales:**
 El elemento `<svg>` es el contenedor principal utilizado para definir un gráfico SVG en un documento HTML. Algunos de los atributos principales que se pueden utilizar con el elemento `<svg>` son:
@@ -110,8 +104,6 @@ En resumen, la sintaxis básica de SVG incluye el elemento `<svg>` como contened
 ---
 
 ## Formas y elementos en SVG
-
-![Descripción de la imagen](../img/62.jpg)
 
 * **Elementos básicos:** SVG proporciona una amplia variedad de formas y elementos que se pueden utilizar para crear gráficos y elementos visuales en una página web. Algunas de las formas y elementos más comunes en SVG incluyen:
 
