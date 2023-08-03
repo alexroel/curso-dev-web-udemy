@@ -1,15 +1,48 @@
 # Modelo de caja
 
-## Temário
-¿Qué es el modelo de caja?
-Ancho y altura
-Margen y relleno
-Tipos de elementos
-Bordes y sombras
-Posicionamiento 
+1. [Introducción](#introducción)
+2. [¿Qué es el modelo de caja?](#¿qué-es-el-modelo-de-caja)
+3. [Ancho y altura](#ancho-y-altura)
+4. [Margen y relleno](#margen-y-relleno)
+5. [Tipos de elementos](#tipos-de-elementos)
+6. [Bordes y sombras](#bordes-y-sombras)
+7. [Posicionamiento](#posicionamiento) 
+8. [Resumen](#resumen)
 
+---
+## Introducción 
+¡Bienvenidos a la sección sobre el Modelo de Caja en nuestro emocionante curso de Desarrollo Web! En esta fase del aprendizaje, te sumergirás en uno de los conceptos fundamentales para crear diseños web atractivos y funcionales. Prepárate para explorar los aspectos esenciales del Modelo de Caja, un concepto que sienta las bases para la presentación visual de los elementos en una página web.
+
+### ¿Qué es el Modelo de Caja?
+
+El Modelo de Caja es un pilar fundamental en el mundo del desarrollo web. Imagina cada elemento en tu página web como una caja rectangular. Esta "caja" no solo contiene el contenido visible, sino también otros elementos cruciales que influyen en la disposición y el diseño general. Desde el contenido real hasta el espacio que lo rodea, el Modelo de Caja abarca todo lo necesario para lograr el diseño visual que deseas.
+
+A lo largo de esta sección, desglosaremos varios aspectos esenciales del Modelo de Caja, incluyendo:
+
+### Ancho y Altura
+
+Aprenderás a controlar el tamaño de las cajas en tu página web. Desde definir dimensiones específicas hasta permitir que las cajas se ajusten automáticamente al contenido, dominarás las técnicas para crear diseños flexibles y responsivos.
+
+### Margen y Relleno
+
+Descubrirás cómo añadir espacio alrededor del contenido de tus cajas (relleno) y entre las cajas (margen). Estas propiedades son vitales para lograr el espaciado adecuado entre elementos y crear una estructura visualmente atractiva.
+
+### Tipos de Elementos
+
+Explorarás los diferentes tipos de elementos HTML y cómo afectan al Modelo de Caja. Desde elementos de bloque hasta elementos en línea, entenderás cómo cada uno se integra en la presentación general de tu página.
+
+### Bordes y Sombras
+
+Sumérgete en la creación de bordes elegantes y sombras sutiles que realzan la apariencia de tus elementos. Aprenderás a personalizar y combinar estas características para lograr efectos visuales impresionantes.
+
+### Posicionamiento
+
+Dominarás el arte de posicionar elementos en la página utilizando propiedades de posicionamiento. Ya sea que quieras que los elementos floten, se superpongan o se mantengan en un lugar específico, aprenderás a lograr el diseño exacto que tienes en mente.
+
+¡Prepárate para dominar el Modelo de Caja y llevar tus habilidades de desarrollo web al siguiente nivel! Con estos conocimientos en tu arsenal, estarás listo para crear diseños web cautivadores y funcionales que dejarán una impresión duradera en los usuarios. ¡Comencemos esta emocionante travesía de aprendizaje juntos!
+
+---
 ## ¿Qué es el modelo de caja?
-
 En CSS, el "modelo de caja" se refiere a la representación conceptual de cómo se estructura y se visualiza un elemento HTML en una página web. Cada elemento HTML se considera una caja rectangular con propiedades que determinan su tamaño, posición, bordes, relleno y margen.
 
 El modelo de caja consta de cuatro componentes principales:
@@ -26,6 +59,7 @@ Estos componentes se combinan para formar la apariencia visual completa de un el
 
 El modelo de caja se puede controlar y modificar utilizando propiedades CSS como width (ancho), height (altura), padding (relleno), border (borde) y margin (margen). Estas propiedades permiten ajustar el tamaño, el espaciado y los estilos visuales de los elementos en la página web, lo que brinda flexibilidad y control sobre la apariencia de los elementos.
 
+---
 ## Ancho y altura
 
 Las propiedades CSS `height` y `width` se utilizan para establecer la altura y el ancho de un elemento. Por otro lado, la propiedad CSS max-width se utiliza para establecer el ancho máximo de un elemento.
@@ -53,7 +87,7 @@ Establecer la altura en 200 píxeles y el ancho en 50%:
 div {
   height: 200px;
   width: 50%;
-  background-color: powderblue;
+  background-color: red;
 }
 ~~~
 
@@ -80,20 +114,26 @@ Ambas propiedades (`max-width y min-width`) son útiles para crear diseños resp
 Aquí tienes ejemplos de uso de max-width y min-width:
 
 ~~~css
-/* Establecer un ancho máximo de 500px para un elemento */
-div {
-  max-width: 500px;
+/* Establecer un ancho máximo de 800px para un elemento */
+.contenedor {
+  max-width: 800px; /* Establece el ancho máximo en 800 píxeles */
+  background-color: red;
 }
 
+
 /* Establecer un ancho mínimo de 300px para un elemento */
-div {
-  min-width: 300px;
+.contenedor {
+  min-width: 300px; /* Establece el ancho mínimo en 300 píxeles */
+  padding: 20px;
+  background-color: #f2f2f2;
 }
 ~~~
 
 En el primer ejemplo, el elemento no podrá expandirse más allá de 500 píxeles de ancho, incluso si el contenido es más amplio. En el segundo ejemplo, el elemento se expandirá automáticamente si el contenido es mayor a 300 píxeles de ancho, asegurando que tenga al menos ese ancho mínimo.
 
+---
 ## Margen y relleno
+En CSS, "margen" y "relleno" son dos conceptos clave que se utilizan para controlar el espacio alrededor y dentro de los elementos de una página web. Estos conceptos son esenciales para diseñar la disposición y el aspecto visual de los elementos en una página. Aquí te explico qué son el margen y el relleno:
 
 ### Margen 
 
@@ -321,6 +361,8 @@ div {
 
 En este ejemplo, el elemento div tendrá un ancho real de 300 píxeles, incluyendo el relleno de 25 píxeles en cada lado. El contenido del elemento se ajustará automáticamente para adaptarse al espacio disponible.
 
+
+---
 ## Tipos de elementos
 
 En CSS, los elementos HTML se pueden clasificar en diferentes tipos según su comportamiento y cómo se muestran en la página. A continuación se describen algunos de los tipos de elementos más comunes:
@@ -435,7 +477,9 @@ Es importante tener en cuenta que, al modificar la propiedad display, se cambia 
 
 La elección del valor correcto para la propiedad display es fundamental para lograr el diseño deseado y asegurarse de que los elementos se muestren correctamente en la página web.
 
+---
 ## Bordes y sombras
+En CSS, los bordes y las sombras son elementos visuales clave que puedes aplicar a los elementos de tu página web para darles estilo y mejorar su apariencia. Aquí te explico cómo puedes trabajar con bordes y sombras:
 
 ### Bordes
 
@@ -590,6 +634,7 @@ Es importante destacar que drop-shadow no admite las palabras clave inset ni val
 
 Estas son algunas de las opciones disponibles para agregar sombras en CSS. Puedes experimentar con los valores y combinaciones para lograr los efectos deseados en tus elementos y textos.
 
+---
 ## Posicionamiento 
 
 El posicionamiento en cajas en CSS se refiere a cómo se ubican y se desplazan los elementos dentro del diseño de una página. CSS proporciona varias propiedades de posicionamiento que permiten controlar la ubicación y el flujo de los elementos en relación con otros elementos y al contenedor que los contiene. A continuación, se explican algunos de los métodos de posicionamiento más comunes en CSS:
@@ -635,3 +680,21 @@ El posicionamiento en cajas en CSS se refiere a cómo se ubican y se desplazan l
 ~~~
 
 Estas son solo algunas de las propiedades de posicionamiento en CSS. El posicionamiento en cajas se vuelve más poderoso y complejo cuando se combina con otras propiedades, como display, float y z-index, lo que permite crear diseños flexibles y adaptativos. Es importante comprender cómo funciona cada método de posicionamiento y experimentar con ellos para lograr los efectos de diseño deseados.
+
+---
+## Resumen 
+En la sección de nuestro curso de Desarrollo Web sobre el Modelo de Caja, exploramos uno de los conceptos fundamentales para crear diseños web atractivos y funcionales. Durante esta fase del aprendizaje, nos sumergimos en los aspectos esenciales del Modelo de Caja, un concepto que sirve como base para la presentación visual de los elementos en una página web.
+
+Comenzamos por comprender qué es el Modelo de Caja, que consiste en representar cada elemento en una página web como una caja rectangular que contiene tanto el contenido visible como otros elementos cruciales para el diseño. A lo largo de la sección, desglosamos varios aspectos clave del Modelo de Caja.
+
+Aprendimos a controlar el tamaño de las cajas mediante la manipulación del ancho y la altura. Exploramos cómo definir dimensiones específicas y permitir que las cajas se ajusten automáticamente al contenido, lo que resulta en diseños flexibles y responsivos.
+
+También nos adentramos en las propiedades de margen y relleno, que nos permitieron agregar espacio alrededor del contenido de las cajas y entre ellas. Comprendimos la importancia de estas propiedades para lograr el espaciado adecuado entre elementos y crear diseños visualmente atractivos.
+
+Otro aspecto clave fue el entendimiento de los diferentes tipos de elementos HTML y cómo interactúan con el Modelo de Caja. Exploramos elementos de bloque y elementos en línea, y cómo cada uno contribuye a la disposición general de la página.
+
+Además, adquirimos habilidades para crear bordes y sombras, elementos visuales que realzan la apariencia de los elementos. Aprendimos a personalizar y combinar estas características para lograr efectos visuales impactantes.
+
+Finalmente, dominamos el arte del posicionamiento de elementos en la página utilizando propiedades específicas. Ya sea que los elementos necesiten flotar, superponerse o permanecer en lugares específicos, aprendimos a lograr el diseño deseado.
+
+En resumen, nuestra exploración del Modelo de Caja nos ha equipado con herramientas y conocimientos esenciales para crear diseños web cautivadores y funcionales. Estamos listos para aplicar estos conceptos y habilidades en la creación de páginas web impresionantes.

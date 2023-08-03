@@ -40,8 +40,6 @@ SVG (Scalable Vector Graphics) es un formato de imagen basado en XML que permite
 
 * Ventajas de usar SVG en comparación con imágenes rasterizadas:
 
-![Descripción de la imagen](../img/60.jpg)
-
   * **Escalabilidad perfecta:** Una de las principales ventajas de SVG es su capacidad para escalar sin pérdida de calidad. Puedes ampliar o reducir una imagen SVG a cualquier tamaño sin que se vea borrosa o pixelada, lo que lo hace ideal para diseños responsivos y dispositivos de pantalla diferentes.
 
   * **Tamaño de archivo reducido:** Los archivos SVG suelen ser mucho más pequeños en tamaño en comparación con imágenes rasterizadas como JPEG o PNG. Esto se debe a que SVG describe las imágenes mediante código XML, que es un formato de archivo de texto, mientras que las imágenes rasterizadas almacenan información de cada píxel.
