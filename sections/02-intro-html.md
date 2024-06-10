@@ -11,7 +11,7 @@
 
 ---
 ## Introducción
-
+¡Bienvenidos al curso de HTML básico! En este curso, exploraremos los elementos fundamentales de HTML, el lenguaje de marcado estándar para la creación de páginas web. Comenzaremos con la estructura base de un documento HTML y aprenderemos sobre los elementos clave como imágenes, vínculos y etiquetas de texto. También veremos qué son los atributos y cómo se utilizan para proporcionar información adicional sobre los elementos HTML. Además, aprenderemos a crear listas para organizar el contenido de nuestras páginas web de manera efectiva. ¡Comencemos a construir la web juntos!
 
 ---
 ## Estructura base de HTML
@@ -358,7 +358,31 @@ Estas etiquetas son esenciales para estructurar el contenido y presentar informa
 ---
 ## Resumen 
 
+En la sección de Introducción a HTML de nuestro curso de desarrollo web, los estudiantes han aprendido los siguientes temas:
 
+Se ha enseñado la estructura básica de un documento HTML, incluyendo las etiquetas `<html>`, `<head>` y `<body>`, así como la importancia de una estructura bien formada para la creación de páginas web.
 
+Los estudiantes han aprendido sobre los atributos en HTML, que son valores adicionales que se pueden agregar a las etiquetas para proporcionar información adicional. Se han visto ejemplos de atributos como `src` en la etiqueta `<img>` para especificar la fuente de una imagen.
 
+Se ha enseñado cómo insertar imágenes en una página web utilizando la etiqueta `<img>` y cómo utilizar atributos como `alt` para proporcionar texto alternativo para las imágenes, lo cual es importante para la accesibilidad web.
 
+Los estudiantes han aprendido sobre las etiquetas HTML utilizadas para dar formato al texto, como `<h1>` a `<h6>` para encabezados de diferentes tamaños, `<p>` para párrafos y `<strong>` para texto en negrita.
+
+Se ha explicado cómo crear vínculos en HTML utilizando la etiqueta `<a>`, permitiendo a los usuarios navegar entre diferentes páginas web y recursos en línea.
+
+Los estudiantes han aprendido a crear listas ordenadas (`<ol>`), listas desordenadas (`<ul>`) y listas de definición (`<dl>`) para organizar la información de manera estructurada en sus páginas web.
+
+**Con estos conocimientos, los estudiantes son capaces de realizar lo siguiente:**
+
+- Crear una estructura básica para sus páginas web utilizando HTML.
+- Insertar y personalizar imágenes en sus páginas web.
+- Dar formato al texto y utilizar diferentes niveles de encabezados.
+- Crear vínculos que permitan la navegación entre diferentes páginas y recursos.
+- Organizar información utilizando listas en sus páginas web.
+
+**Recursos Externos para Seguir Aprendiendo**:
+
+- [Mozilla Developer Network (MDN) - HTML](https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/HTML_basics): Documentación completa y actualizada sobre HTML.
+- [W3Schools - HTML Tutorial](https://www.w3schools.com/html/): Tutoriales y ejemplos prácticos para aprender HTML.
+- [HTML Dog - HTML Beginner Tutorial](https://www.htmldog.com/guides/html/beginner/): Tutorial paso a paso para principiantes en HTML.
+- [Codecademy - Learn HTML](https://www.codecademy.com/learn/learn-html): Curso interactivo en línea para aprender HTML.

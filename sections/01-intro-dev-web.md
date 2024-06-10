@@ -12,6 +12,8 @@
 ---
 ## Introducción 
 
+¡Bienvenidos al curso introductorio sobre la Web y Programación! En este curso, exploraremos los fundamentos de la Web, desde su definición hasta su funcionamiento. Aprenderemos sobre programación y cómo dar tus primeros pasos en el mundo de la creación web. Además, te guiaré en la instalación de Visual Studio Code, un editor de código popular. ¡Prepárate para crear tu primer sitio web y descubrir las tecnologías principales que hacen posible la Web moderna!
+
 ---
 ## ¿Qué es la Web?
 
@@ -333,14 +335,31 @@ La web es una vasta red de documentos y aplicaciones interconectadas que se acce
 ---
 ## Resumen
 
-En este fascinante recorrido por los fundamentos de la programación, nos sumergimos en el pasado digital para explorar conceptos esenciales. Comenzamos desentrañando el misterioso lenguaje de la programación y descubriendo cómo los lenguajes actúan como el alfabeto digital, permitiendo a los programadores dar vida a sus ideas.
+En la sección de Primeros Pasos en la Web de nuestro curso de desarrollo web, los estudiantes han aprendido los siguientes temas:
 
-Después, nos aventuramos en el emocionante mundo de tus primeras instrucciones. Desde el lienzo digital en blanco proporcionado por `about:blank` hasta la consola de JavaScript, experimentamos con comandos básicos y aprendimos a interactuar con la máquina.
+Se ha explicado que la Web es una red global de documentos interconectados que se acceden a través de Internet, permitiendo a los usuarios acceder y compartir información de manera eficiente.
 
-Luego, nos sumergimos en el desarrollo práctico con herramientas esenciales. Desde la instalación de Firefox hasta la configuración de Visual Studio Code, construimos nuestro entorno de desarrollo. Estas herramientas se convirtieron en aliadas indispensables para crear y depurar código de manera efectiva.
+Se ha explorado el funcionamiento de la Web, desde la solicitud de información por parte del cliente hasta la respuesta del servidor, utilizando protocolos como HTTP para la transferencia de datos.
 
-El viaje continuó con la creación de tu primer sitio web. Utilizando HTML y CSS, construimos la estructura y el estilo básicos de una página web sencilla. Este paso no solo fue un hito en nuestro aprendizaje, sino también una introducción a la magia de compartir contenido en el vasto mundo de la web.
+Se han introducido conceptos básicos de programación, como la estructura de un programa y la sintaxis de un lenguaje de programación, con el objetivo de preparar a los estudiantes para escribir sus primeras instrucciones en código.
 
-Finalmente, exploramos las tecnologías principales que sustentan la web. HTML definió la estructura, CSS dio estilo, y JavaScript aportó la interactividad dinámica. Además, entendimos la importancia de HTTP/HTTPS y las URL como componentes esenciales para la comunicación y la identificación de recursos en la red.
+Los estudiantes han dado sus primeros pasos en la programación, escribiendo instrucciones simples en un lenguaje como JavaScript, y comprendiendo cómo estas instrucciones pueden afectar el comportamiento de una página web.
 
-Así concluye nuestro recorrido por la introducción a la programación en el pasado digital. Estos fundamentos sentaron las bases para comprender y participar en el emocionante universo de la creación digital. ¡Enhorabuena por tus primeros pasos en este viaje de descubrimiento y aprendizaje!
+Se ha enseñado a los estudiantes cómo instalar y configurar Visual Studio Code, un editor de código popular, para que puedan comenzar a escribir y editar código de manera eficiente.
+
+Los estudiantes han creado su primer sitio web utilizando HTML, CSS y JavaScript básico, aprendiendo a estructurar contenido, aplicar estilos y agregar interactividad a sus páginas.
+
+Se han presentado las tecnologías principales que hacen posible la Web, como HTML, CSS, JavaScript, así como el papel de los navegadores web y los servidores en la transferencia de datos.
+
+Con estos conocimientos, los estudiantes son capaces de realizar lo siguiente:
+
+- Comprender el funcionamiento básico de la Web y su impacto en la sociedad.
+- Escribir y ejecutar instrucciones simples en un lenguaje de programación.
+- Crear y modificar páginas web utilizando HTML, CSS y JavaScript básico.
+- Utilizar Visual Studio Code como herramienta de desarrollo web.
+- Identificar las tecnologías principales que sustentan la Web y su papel en el desarrollo web moderno.
+
+**Recursos Externos para Seguir Aprendiendo**:
+
+- [Mozilla Developer Network (MDN)](https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web)
+- [Creación de la primera página web HTML](https://learn.microsoft.com/es-es/training/modules/build-first-html-webpage/)
