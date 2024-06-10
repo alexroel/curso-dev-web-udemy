@@ -38,7 +38,7 @@ Son dos formas de hacer que la computadora entienda y ejecute nuestras instrucci
 - **Interpretación:**
   Es como leer en voz alta una historia a la máquina. La computadora no recibe una traducción previa; entiende y sigue las instrucciones mientras las escucha.
 
-- **Algoritmos**:
+**Algoritmos**:
    - Un algoritmo es una secuencia de pasos o instrucciones que se siguen para resolver un problema o realizar una tarea.
    - Los algoritmos pueden ser simples, como sumar dos números, o complejos, como ordenar una lista de millones de elementos.
 
