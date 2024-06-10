@@ -12,7 +12,7 @@
 
 
 ---
-## Programación y la web
+## Programación 
 
 **¿Qué es Programación?**
 
@@ -37,6 +37,10 @@ Son dos formas de hacer que la computadora entienda y ejecute nuestras instrucci
 
 - **Interpretación:**
   Es como leer en voz alta una historia a la máquina. La computadora no recibe una traducción previa; entiende y sigue las instrucciones mientras las escucha.
+
+- **Algoritmos**:
+   - Un algoritmo es una secuencia de pasos o instrucciones que se siguen para resolver un problema o realizar una tarea.
+   - Los algoritmos pueden ser simples, como sumar dos números, o complejos, como ordenar una lista de millones de elementos.
 
 En resumen, programar es enseñar a las computadoras a hacer lo que queremos usando lenguajes que ellas entiendan. Algunos idiomas son más fáciles, y hay diferentes formas de hacer que la computadora siga nuestras instrucciones. Con el tiempo, aprenderemos a hablar el idioma de las máquinas y a contarles lo que queremos que hagan.
 
@@ -166,59 +170,54 @@ Con estas extensiones instaladas, podrás disfrutar de una experiencia de desarr
 
 ---
 ## Las tecnologías principal de la Web
-**Las Tecnologías Principales de la Web: Pilares Digitales**
+La web es una vasta red de documentos y aplicaciones interconectadas que se acceden a través de internet. Aquí hay una explicación detallada de los componentes principales de la web:
 
-La World Wide Web (WWW) se sustenta en un conjunto diverso de tecnologías que trabajan en armonía para ofrecer la experiencia de navegación que disfrutamos todos los días. Estas tecnologías son los pilares fundamentales que impulsan la comunicación, la presentación de contenido y la interactividad en línea. Aquí, exploraremos algunas de las tecnologías clave que forman la columna vertebral de la web moderna.
+1. **HTML (HyperText Markup Language)**:
+   - HTML es el lenguaje de marcado utilizado para estructurar y presentar contenido en la web. Utiliza etiquetas para definir elementos como títulos, párrafos, imágenes, enlaces, etc.
+   - Ejemplo de código HTML:
+     ```html
+     <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Ejemplo de HTML</title>
+    </head>
+    <body>
+        <h1>¡Hola, Mundo!</h1>
+        <p>Esta es una página web de ejemplo.</p>
+    </body>
+    </html>
+     ```
 
-**HTML (HyperText Markup Language): La Estructura de la Web**
+2. **CSS (Cascading Style Sheets)**:
+   - CSS es el lenguaje utilizado para describir la apariencia y el formato de un documento escrito en HTML. Permite separar el contenido de la presentación, lo que facilita el mantenimiento y mejora la apariencia visual de las páginas web.
+   - Ejemplo de código CSS:
+     ```css
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+     ```
 
-HTML es el lenguaje de marcado que define la estructura básica de una página web. Permite la creación de secciones, encabezados, párrafos, enlaces, imágenes y otros elementos esenciales para presentar información de manera organizada y comprensible.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Ejemplo de HTML</title>
-</head>
-<body>
-    <h1>¡Hola, Mundo!</h1>
-    <p>Esta es una página web de ejemplo.</p>
-</body>
-</html>
-```
-
-**CSS (Cascading Style Sheets): Estilo y Presentación**
-
-CSS se encarga de dar estilo y formato al contenido HTML. Permite controlar el diseño, los colores, las fuentes y otros aspectos visuales de la página. La separación de HTML y CSS facilita la creación de sitios web atractivos y consistentes.
-
-```css
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-```
-
-**JavaScript: Interactividad Dinámica**
-
-JavaScript es un lenguaje de programación que proporciona interactividad y dinamismo a las páginas web. Permite la manipulación del DOM (Document Object Model) para responder a eventos, realizar animaciones y actualizar el contenido en tiempo real.
-
-```javascript
-document.getElementById('miBoton').addEventListener('click', function() {
+3. **JavaScript**:
+   - JavaScript es un lenguaje de programación que permite añadir interactividad y dinamismo a las páginas web. Puede modificar el contenido y el estilo de una página web en respuesta a eventos del usuario, como clics de botones o movimientos del ratón.
+   - Ejemplo de código JavaScript:
+     ```javascript
+    document.getElementById('miBoton').addEventListener('click', function() {
     alert('¡Hiciste clic en el botón!');
-});
-```
+    });
+     ```
 
-**HTTP/HTTPS (Hypertext Transfer Protocol/Secure): Comunicación en la Red**
+4. **Navegadores Web**:
+   - Los navegadores web son aplicaciones que permiten a los usuarios acceder y navegar por la web. Algunos ejemplos populares incluyen Google Chrome, Mozilla Firefox, Safari y Microsoft Edge.
+   - Los navegadores interpretan el código HTML, CSS y JavaScript para mostrar páginas web de forma visual e interactiva.
 
-HTTP y su versión segura, HTTPS, son protocolos de comunicación que permiten la transferencia de datos entre el navegador y el servidor web. HTTPS agrega una capa de seguridad mediante la encriptación de la comunicación, protegiendo la privacidad y la integridad de los datos.
+5. **Servidor y Cliente**:
+   - La web sigue un modelo cliente-servidor. El cliente es el navegador web que envía solicitudes para acceder a páginas web, y el servidor es el sistema que almacena y envía los recursos solicitados.
+   - Cuando ingresas una URL en el navegador, este envía una solicitud HTTP al servidor, que responde con el código HTML de la página.
 
-**URL (Uniform Resource Locator): Direcciones Web**
-
-Las URL son direcciones que identifican recursos en la web. Permiten a los usuarios y a los navegadores localizar y acceder a páginas específicas. Una URL típica tiene el formato `http://www.ejemplo.com/pagina`.
-
-Estas tecnologías trabajan en conjunto para proporcionar una experiencia de navegación fluida y rica en contenido. A medida que exploras y avanzas en el desarrollo web, comprender estas herramientas te permitirá construir sitios web más sofisticados y poderosos. ¡Bienvenido al fascinante mundo de la web!
-
+6. **Protocolo HTTP/HTTPS**:
+   - HTTP (HyperText Transfer Protocol) es el protocolo utilizado para la transferencia de datos en la web. HTTPS es la versión segura de HTTP, que encripta los datos para proteger la privacidad y la integridad de la información.
 
 ---
 ## Resumen
