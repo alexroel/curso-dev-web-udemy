@@ -177,35 +177,35 @@ La web es una vasta red de documentos y aplicaciones interconectadas que se acce
    - Ejemplo de código HTML:
      ```html
      <!DOCTYPE html>
-    <html>
-    <head>
+     <html>
+     <head>
         <title>Ejemplo de HTML</title>
-    </head>
-    <body>
+     </head>
+     <body>
         <h1>¡Hola, Mundo!</h1>
         <p>Esta es una página web de ejemplo.</p>
-    </body>
-    </html>
+     </body>
+     </html>
      ```
 
 2. **CSS (Cascading Style Sheets)**:
    - CSS es el lenguaje utilizado para describir la apariencia y el formato de un documento escrito en HTML. Permite separar el contenido de la presentación, lo que facilita el mantenimiento y mejora la apariencia visual de las páginas web.
    - Ejemplo de código CSS:
      ```css
-    body {
+     body {
         font-family: 'Arial', sans-serif;
         background-color: #f4f4f4;
         color: #333;
-    }
+     }
      ```
 
 3. **JavaScript**:
    - JavaScript es un lenguaje de programación que permite añadir interactividad y dinamismo a las páginas web. Puede modificar el contenido y el estilo de una página web en respuesta a eventos del usuario, como clics de botones o movimientos del ratón.
    - Ejemplo de código JavaScript:
      ```js
-    document.getElementById('miBoton').addEventListener('click', function() {
-    alert('¡Hiciste clic en el botón!');
-    });
+     document.getElementById('miBoton').addEventListener('click', function() {
+     alert('¡Hiciste clic en el botón!');
+     });
      ```
 
 4. **Navegadores Web**:
