@@ -517,3 +517,4 @@ Los comentarios son una herramienta poderosa para mejorar la legibilidad y mante
 
 ---
 ## Resumen
+re
