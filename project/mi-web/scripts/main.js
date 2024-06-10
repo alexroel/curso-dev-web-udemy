@@ -1,6 +1,7 @@
 
 // Imámagen dinamico 
 let miImagen = document.querySelector('img');
+
 function cambiarImg() {
     let miSrc = miImagen.getAttribute('src');
     if (miSrc === 'images/logo-google.png') {
@@ -28,8 +29,8 @@ function enviarNombreUsuario() {
 
 // Recuperar nombre de usuario desde navegador
 if (localStorage.getItem('name')) {
-    let storedName = localStorage.getItem('name');
-    miTitulo.innerHTML = 'Google es genial, ' + storedName;
+    let nombreAlmacenado = localStorage.getItem('name');
+    miTitulo.innerHTML = 'Google es genial, ' + nombreAlmacenado;
 } else {
     enviarNombreUsuario();
 }
