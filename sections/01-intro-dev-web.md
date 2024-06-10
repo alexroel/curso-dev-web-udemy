@@ -202,7 +202,7 @@ La web es una vasta red de documentos y aplicaciones interconectadas que se acce
 3. **JavaScript**:
    - JavaScript es un lenguaje de programación que permite añadir interactividad y dinamismo a las páginas web. Puede modificar el contenido y el estilo de una página web en respuesta a eventos del usuario, como clics de botones o movimientos del ratón.
    - Ejemplo de código JavaScript:
-     ```javascript
+     ```js
     document.getElementById('miBoton').addEventListener('click', function() {
     alert('¡Hiciste clic en el botón!');
     });
