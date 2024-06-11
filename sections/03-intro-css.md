@@ -346,6 +346,7 @@ Para seguir profundizando en este emocionante mundo de la estilización web, aqu
 2. [W3Schools](https://www.w3schools.com/css/default.asp): Una referencia útil con ejemplos prácticos y explicaciones claras sobre CSS y otros lenguajes web.
 3. [Codecademy](https://www.codecademy.com/learn/learn-css): Ofrece cursos interactivos sobre CSS y otros aspectos del desarrollo web.
 4. [CSS-Tricks](https://css-tricks.com/): Una excelente fuente de tutoriales, artículos y ejemplos prácticos sobre CSS.
+5. [Uso de estilos CSS en una página web](https://learn.microsoft.com/es-es/training/modules/use-css-styles/)
 
 
 ¡Sigue explorando y practicando, y continúa construyendo sobre tus conocimientos para alcanzar nuevos niveles de maestría en CSS y desarrollo web en general!
