@@ -8,11 +8,10 @@
 6.  [Condiciones](#condicionales)
 7.  [Funciones](#funciones)
 8.  [Comentarios](#comentarios)
-9.  [Eventos](#eventos)
-10. [Añadir un cambiador de imagen](#añadir-un-cambiador-de-imagen)
-11. [Añadir un mensaje de bienvenida personalizado](#añadir-un-mensaje-de-bienvenida-personalizado)
-12. [¿Un nombre de usuario nulo?](#¿un-nombre-de-usuario-nulo?)
-13. [Resumen]
+9. [Añadir un cambiador de imagen](#añadir-un-cambiador-de-imagen)
+10. [Añadir un mensaje de bienvenida personalizado](#añadir-un-mensaje-de-bienvenida-personalizado)
+11. [¿Un nombre de usuario nulo?](#¿un-nombre-de-usuario-nulo?)
+12. [Resumen]
 
 ---
 ## Introducción
@@ -53,46 +52,77 @@ Los operadores aritméticos permiten realizar operaciones matemáticas en JavaSc
 
 1. **Suma (+)**:
    ```javascript
-   let a = 5;
-   let b = 3;
-   let resultado = a + b; // resultado es 8
+   console.log("Operadores aritméticos")
+   5 + 3
+   //-> 8
    ```
 
 2. **Resta (-)**:
    ```javascript
-   let a = 5;
-   let b = 3;
-   let resultado = a - b; // resultado es 2
+   5 - 3
+   // resultado es 2
    ```
 
 3. **Multiplicación (*)**:
    ```javascript
-   let a = 5;
-   let b = 3;
-   let resultado = a * b; // resultado es 15
+   5 * 3
+   // resultado es 15
    ```
 
 4. **División (/)**:
    ```javascript
-   let a = 6;
-   let b = 3;
-   let resultado = a / b; // resultado es 2
+   6 / 3
+   // resultado es 2
    ```
 
 5. **Módulo (%)**: Devuelve el resto de una división.
    ```javascript
-   let a = 7;
-   let b = 3;
-   let resultado = a % b; // resultado es 1
+   7 % 3
+   //resultado es 1
    ```
 
 6. **Exponenciación (**)**:
    ```javascript
-   let a = 2;
-   let b = 3;
-   let resultado = a ** b; // resultado es 8
+   2 ** 3
+   // resultado es 8
    ```
 
+**Operaciones con textos**
+En JavaScript, realizar operaciones entre diferentes tipos de datos puede producir resultados variados debido a la coerción de tipos (la conversión automática entre tipos de datos). Aquí tienes una guía sobre cómo se comportan las operaciones comunes entre diferentes tipos de datos en JavaScript:
+
+**Concatenación**
+La operación de suma en JavaScript puede concatenar cadenas o sumar números, dependiendo de los tipos de los operandos.
+
+```javascript
+"Hola " + "Mundo"
+// Resultado: "Hola Mundo"
+"4" + 5
+// Resultado: "45"
+4 + "5"
+// Resultado: "45" 
+```
+
+**Resta (-), Multiplicación (*), y División (/)**
+Estas operaciones intentan convertir los operandos a números.
+
+**Cadenas de texto**
+```javascript
+console.log("10" - "5"); // 5 (Las cadenas se convierten en números)
+console.log("10" * "5"); // 50
+console.log("10" / "5"); // 2
+```
+**Mezcla de números y cadenas**
+```javascript
+console.log(10 - "5"); // 5 (La cadena "5" se convierte en el número 5)
+console.log("10" * 2); // 20 (La cadena "10" se convierte en el número 10)
+console.log("20" / 2); // 10 (La cadena "20" se convierte en el número 20)
+```
+
+**Casos con valores no numéricos**
+```javascript
+console.log(10 - "a"); // NaN (No es posible convertir "a" a número)
+console.log("b" * 2); // NaN (No es posible convertir "b" a número)
+```
 
 ---
 ## Variables
@@ -181,6 +211,101 @@ Las palabras clave `let`, `const` y `var` se utilizan en JavaScript para declara
    </script>
     ```
     - **`var`**: Evitar su uso a menos que sea necesario para mantener compatibilidad con código antiguo. Tiene un alcance de función o global y permite la re-declaración en el mismo ámbito.
+
+En JavaScript, las reglas para declarar una variable se rigen por una serie de convenciones y restricciones. Aquí están las reglas más importantes:
+
+**Reglas Sintácticas**
+
+1. **Caracteres Permitidos:**
+   - Una variable debe comenzar con una letra (a-z, A-Z), un guion bajo (_), o un signo de dólar ($).
+   - Los caracteres siguientes pueden ser letras, dígitos (0-9), guiones bajos (_) o signos de dólar ($).
+   - No se permite que una variable comience con un dígito.
+
+   ```javascript
+   let validVariable1 = "valor";
+   let _validVariable2 = "valor";
+   let $validVariable3 = "valor";
+   let invalidVariable! = "valor"; // ¡Esto es inválido!
+   let 1invalidVariable = "valor"; // ¡Esto es inválido!
+   ```
+
+2. **No usar palabras reservadas:**
+   - No se pueden utilizar palabras reservadas de JavaScript como nombres de variables (e.g., `if`, `else`, `while`, `class`, `return`, etc.).
+
+   ```javascript
+   let for = 5; // ¡Esto es inválido!
+   let function = "función"; // ¡Esto es inválido!
+   ```
+
+**Convenciones de Nomenclatura**
+
+1. **Camel Case:**
+   - Es una convención común en JavaScript utilizar el estilo camelCase para nombres de variables. La primera palabra comienza con una letra minúscula y cada palabra subsiguiente comienza con una letra mayúscula.
+
+   ```javascript
+   let firstName = "John";
+   let lastName = "Doe";
+   ```
+
+2. **Nombres descriptivos:**
+   - Utiliza nombres de variables descriptivos que indiquen claramente el propósito de la variable.
+
+   ```javascript
+   let counter = 0;
+   let userAge = 25;
+   ```
+
+3. **Evitar nombres cortos o crípticos:**
+   - Evita el uso de nombres de variables demasiado cortos o crípticos, a menos que el contexto sea claro.
+
+   ```javascript
+   let x = 5; // No es descriptivo
+   let userCount = 5; // Es descriptivo
+   ```
+
+4. **Constantes:**
+   - Para variables que representan constantes y cuyo valor no debe cambiar, se suele utilizar el estilo UPPER_SNAKE_CASE.
+
+   ```javascript
+   const MAX_USERS = 100;
+   const API_KEY = "12345-ABCDE";
+   ```
+
+**Ejemplos de Variables Correctamente Declaradas**
+
+```javascript
+// Variables válidas
+let name = "Alice";
+let age = 30;
+let _privateVar = "private";
+let $dollarSignVar = "value";
+let camelCaseVariable = "value";
+
+// Variables válidas pero no recomendadas (falta de descriptividad)
+let x = 10;
+let y = 20;
+
+// Constantes
+const PI = 3.14159;
+const MAX_LOGIN_ATTEMPTS = 5;
+
+// Variables descriptivas y en camelCase
+let userFirstName = "John";
+let userLastName = "Doe";
+let userAge = 25;
+```
+
+**Consejos Adicionales**
+
+- **Evita nombres de variables globales:** Si es posible, evita declarar variables globales, ya que pueden causar conflictos de nombres y problemas de mantenimiento en proyectos grandes.
+- **Usa `let` y `const`:** Prefiere `let` y `const` en lugar de `var` para declarar variables. `const` para valores que no cambian y `let` para variables que pueden cambiar su valor.
+  
+  ```javascript
+  let mutableVariable = 10; // Puede cambiar
+  const immutableVariable = 20; // No puede cambiar
+  ```
+
+Siguiendo estas reglas y convenciones, podrás declarar variables en JavaScript de manera efectiva y mantener un código más legible y mantenible.
 
 
 ---
@@ -348,9 +473,9 @@ Si la condición dentro de los paréntesis es verdadera, el bloque de código de
 El condicional `if` se utiliza para ejecutar un bloque de código si se cumple una condición específica.
 
 ```javascript
-let edad = 18;
-if (edad >= 18) {
-    console.log("Eres mayor de edad");
+let n = 18;
+if (n % 2 == 0) {
+    console.log("El número es Par");
 }
 ```
 
@@ -359,26 +484,17 @@ if (edad >= 18) {
 El condicional `else` se utiliza junto con `if` para ejecutar un bloque de código si la condición del `if` es falsa.
 
 ```javascript
-let edad = 15;
-if (edad >= 18) {
-    console.log("Eres mayor de edad");
+let n = 18;
+if (n % 2 == 0) {
+    console.log("El número es Par");
 } else {
-    console.log("Eres menor de edad");
+    console.log("El número es Impar");
 }
 ```
 
 **`if-else`**
 
 La combinación de `if` y `else` permite crear una estructura de dos caminos, donde se ejecuta un bloque de código si la condición es verdadera y otro bloque si la condición es falsa.
-
-```javascript
-let hora = 14;
-if (hora < 12) {
-    console.log("Buenos días");
-} else {
-    console.log("Buenas tardes");
-}
-```
 
 **Condicionales Anidados**
 
@@ -420,9 +536,16 @@ function nombreFuncion(parametro1, parametro2) {
 **Ejemplo** 
 
 ```javascript
-function sumar(a, b) {
-    return a + b;
+function saludar(){
+   alert("Hola desde la función saludar")
 }
+
+// Función que resive valores
+function saludar(nombre){
+   return "Hola " + nombre
+   //alert("Hola "+ nombre)
+}
+
 ```
 
 **Llamando a una Función**
@@ -430,7 +553,26 @@ function sumar(a, b) {
 Para usar una función, simplemente la llamas por su nombre y pasas los valores de los parámetros requeridos, si los hay.
 
 ```javascript
-let resultado = sumar(5, 3); // resultado será 8
+//Utilizando la Funciones 
+nombre = prompt("Ingrese su nombre")
+//saludar(nombre)
+alert(saludar(nombre))
+```
+
+**Mas ejemplos con funciones**
+```javascript
+function sumar(a, b){
+   return a + b
+}
+
+a = prompt("Ingrese n1: ")
+b = prompt("Ingrese n2: ")
+
+//Combersion de datos 
+a = parseInt(a)
+b = parseInt(b)
+
+alert(sumar(a, b))
 ```
 
 ---
@@ -464,6 +606,33 @@ que explica una sección de código
 let y = 10; // Asignar el valor 10 a la variable y
 ```
 
+**Documentar una función con JSDoc**
+Documentar funciones en JavaScript es esencial para mantener un código claro, comprensible y fácil de mantener. Una de las formas más comunes de documentación es mediante comentarios JSDoc, un estándar de documentación que permite generar automáticamente documentación legible para los desarrolladores. Aquí te muestro cómo documentar una función en JavaScript utilizando JSDoc.
+
+*Comentarios JSDoc Básicos*
+
+Un comentario JSDoc comienza con `/**` y termina con `*/`. Dentro de este bloque, se utilizan etiquetas específicas para describir diferentes partes de la función.
+
+**Ejemplo Básico**
+
+```javascript
+/**
+ * Suma dos números.
+ *
+ * @param {number} a - El primer número.
+ * @param {number} b - El segundo número.
+ * @returns {number} La suma de los dos números.
+ */
+function sum(a, b) {
+  return a + b;
+}
+```
+
+- `@param {tipo} nombre - Descripción`: Describe un parámetro de la función.
+- `@returns {tipo} Descripción`: Describe el valor de retorno de la función.
+- `@throws {tipo} Descripción`: Describe los errores que la función puede lanzar.
+- `@example`: Proporciona un ejemplo de cómo usar la función.
+
 **Propósitos de los Comentarios**
 
 - **Documentación**: Explicar el propósito de una función, clase o sección de código.
@@ -477,44 +646,183 @@ let y = 10; // Asignar el valor 10 a la variable y
 - **Relevance**: Comenta solo cuando sea necesario para explicar algo que no sea obvio.
 - **Actualización**: Mantén los comentarios actualizados con el código que describen.
 
-**Ejemplo de Uso de Comentarios**
-
-```javascript
-// Función para sumar dos números
-function sumar(a, b) {
-    return a + b;
-}
-
-/*
-Función para multiplicar dos números
-Este comentario tiene varias líneas
-*/
-let multiplicar = function(a, b) {
-    return a * b;
-};
-```
-
-Los comentarios son una herramienta poderosa para mejorar la legibilidad y mantenibilidad del código JavaScript. Utilízalos de manera efectiva para explicar y documentar tu código.
-
-
----
-## Eventos
-
-
-
 ---
 ## Añadir un cambiador de imagen
+Este código esencialmente alterna la fuente de la imagen entre dos opciones (`logo-google.png` y `logo-google2.webp`) cada vez que se llama a la función `cambiarImg`.
 
+Agregar desde HTML `<script src="scripts/main.js"></script>`
 
+```javascript
+// Imagen dinámica
+let miImagen = document.querySelector('img');
+
+/**
+ * Cambia la fuente de la imagen entre dos opciones.
+ */
+function cambiarImg() {
+    let miSrc = miImagen.getAttribute('src');
+    if (miSrc === 'images/logo-google.png') {
+        miImagen.setAttribute('src', 'images/logo-google2.webp');
+    } else {
+        miImagen.setAttribute('src', 'images/logo-google.png');
+    }
+}
+```
+
+1. **Declaración y selección de la imagen**:
+    ```javascript
+    // Imagen dinámica
+    let miImagen = document.querySelector('img');
+    ```
+    - Este comentario indica que la variable `miImagen` está destinada a almacenar una imagen de manera dinámica.
+    - `let miImagen = document.querySelector('img');` utiliza el método `querySelector` del DOM para seleccionar el primer elemento `<img>` del documento HTML y asignarlo a la variable `miImagen`.
+
+2. **Declaración de la función `cambiarImg`**:
+    ```javascript
+    /**
+     * Cambia la fuente de la imagen entre dos opciones.
+     */
+    function cambiarImg() {
+    ```
+    - El bloque de comentarios JSDoc describe el propósito de la función `cambiarImg`, indicando que cambia la fuente de la imagen entre dos opciones.
+    - Se declara la función `cambiarImg` utilizando la palabra clave `function`.
+
+3. **Obteniendo la fuente actual de la imagen**:
+    ```javascript
+    let miSrc = miImagen.getAttribute('src');
+    ```
+    - Dentro de la función, se declara una variable `miSrc` y se le asigna el valor del atributo `src` de la imagen `miImagen`. Esto se hace usando el método `getAttribute`.
+
+4. **Condicional para cambiar la fuente de la imagen**:
+    ```javascript
+    if (miSrc === 'images/logo-google.png') {
+        miImagen.setAttribute('src', 'images/logo-google2.webp');
+    } else {
+        miImagen.setAttribute('src', 'images/logo-google.png');
+    }
+    ```
+    - Se utiliza una declaración `if` para comprobar si el valor de `miSrc` es `'images/logo-google.png'`.
+    - Si esta condición es verdadera (`true`), se cambia el atributo `src` de la imagen a `'images/logo-google2.webp'` usando el método `setAttribute`.
+    - Si la condición es falsa (`false`), se ejecuta el bloque `else` que cambia el atributo `src` de la imagen a `'images/logo-google.png'`.
 
 ---
 ## Añadir un mensaje de bienvenida personalizado
+Este código crea un encabezado dinámico que interactúa con el usuario. Primero, selecciona el elemento `<h1>` del documento. Luego, a través de la función `enviarNombreUsuario`, solicita al usuario que ingrese su nombre. Si el usuario no proporciona un nombre, la función vuelve a solicitarlo. Una vez que se obtiene un nombre válido, se guarda en el almacenamiento local y se actualiza el contenido del encabezado `<h1>` con un mensaje personalizado que incluye el nombre del usuario.
 
+```javascript
+// Perosonalización de mensaje de título principal
+let miTitulo = document.querySelector('h1');
+
+/**
+ * Solicita al usuario que ingrese su nombre, lo almacena en el almacenamiento local
+ * y actualiza el contenido del elemento <h1> con un mensaje personalizado.
+ */
+function enviarNombreUsuario() {
+    let miNombre = prompt('Ingrese su nombre por favor:');
+    
+    // Si no hay nombre
+    if (!miNombre) {
+        enviarNombreUsuario();
+    } else {
+        localStorage.setItem('name', miNombre);
+        miTitulo.innerHTML = 'Google es genial, ' + miNombre;
+    }
+}
+```
+En HTML agregar el código:
+```html
+<!--Al final-->
+<button onclick="enviarNombreUsuario()">Nuevo nombre de usuario</button>
+```
+
+**Explicación del código:**
+
+1. **Selección del elemento `<h1>` del documento**:
+    ```javascript
+    // Selecciona el elemento <h1> del documento.
+    let miTitulo = document.querySelector('h1');
+    ```
+    - Este comentario explica que la variable `miTitulo` se usará para almacenar el primer elemento `<h1>` que se encuentra en el documento HTML.
+    - `let miTitulo = document.querySelector('h1');` utiliza el método `querySelector` del DOM para seleccionar este elemento y asignarlo a la variable `miTitulo`.
+
+2. **Declaración de la función `enviarNombreUsuario`**:
+    ```javascript
+    /**
+     * Solicita al usuario que ingrese su nombre, lo almacena en el almacenamiento local
+     * y actualiza el contenido del elemento <h1> con un mensaje personalizado.
+     */
+    function enviarNombreUsuario() {
+    ```
+    - El bloque de comentarios JSDoc describe el propósito y funcionamiento de la función `enviarNombreUsuario`.
+    - La función solicita al usuario que ingrese su nombre, lo guarda en el almacenamiento local del navegador y actualiza el contenido del elemento `<h1>` con un mensaje personalizado.
+
+3. **Solicitar el nombre del usuario**:
+    ```javascript
+    let miNombre = prompt('Ingrese su nombre por favor:');
+    ```
+    - Se declara una variable `miNombre` y se le asigna el valor ingresado por el usuario a través de la función `prompt`. Esta función muestra un cuadro de diálogo que solicita al usuario que ingrese su nombre.
+
+4. **Comprobación del nombre y almacenamiento en `localStorage`**:
+    ```javascript
+    // Si no hay nombre
+    if (!miNombre) {
+        enviarNombreUsuario();
+    } else {
+        localStorage.setItem('name', miNombre);
+        miTitulo.innerHTML = 'Google es genial, ' + miNombre;
+    }
+    ```
+    - La declaración `if` comprueba si `miNombre` está vacío (`null` o una cadena vacía).
+    - Si `miNombre` no tiene un valor válido, la función `enviarNombreUsuario` se llama recursivamente para volver a solicitar el nombre del usuario. Esta recursión asegura que el usuario proporcione un nombre válido antes de proceder.
+    - Si `miNombre` tiene un valor válido, se guarda en el almacenamiento local del navegador usando `localStorage.setItem('name', miNombre);`.
+    - Finalmente, se actualiza el contenido del elemento `<h1>` con un mensaje personalizado que incluye el nombre del usuario (`miTitulo.innerHTML = 'Google es genial, ' + miNombre;`). Esto se hace concatenando la cadena `'Google es genial, '` con el valor de `miNombre`.
 
 ---
 ## ¿Un nombre de usuario nulo?
+Este código verifica si hay un nombre de usuario almacenado en el almacenamiento local del navegador. Si existe un nombre almacenado, lo recupera y actualiza el contenido del encabezado `<h1>` con un mensaje personalizado que incluye el nombre del usuario. Si no hay un nombre almacenado, llama a la función `enviarNombreUsuario` para solicitar al usuario que ingrese su nombre, almacenarlo y actualizar el encabezado.
+
+```javascript
+// Recuperar nombre de usuario desde navegador
+if (localStorage.getItem('name')) {
+    let nombreAlmacenado = localStorage.getItem('name');
+    miTitulo.innerHTML = 'Google es genial, ' + nombreAlmacenado;
+} else {
+    enviarNombreUsuario();
+}
+```
+
+*Explicación del código:*
+
+1. **Comentario inicial**:
+    ```javascript
+    // Recuperar nombre de usuario desde navegador
+    ```
+    - Este comentario indica que el siguiente bloque de código se utiliza para recuperar el nombre de usuario almacenado previamente en el navegador.
+
+2. **Comprobación del almacenamiento local**:
+    ```javascript
+    if (localStorage.getItem('name')) {
+    ```
+    - Se utiliza una declaración `if` para verificar si existe un ítem con la clave `'name'` en el almacenamiento local del navegador (`localStorage`).
+    - `localStorage.getItem('name')` intenta recuperar el valor asociado a la clave `'name'`. Si existe un valor almacenado, la condición será verdadera (`true`).
+
+3. **Recuperación y uso del nombre almacenado**:
+    ```javascript
+    let nombreAlmacenado = localStorage.getItem('name');
+    miTitulo.innerHTML = 'Google es genial, ' + nombreAlmacenado;
+    ```
+    - Si el valor existe, se declara una variable `nombreAlmacenado` y se le asigna el valor recuperado del almacenamiento local.
+    - Luego, se actualiza el contenido del elemento `<h1>` (`miTitulo`) con un mensaje personalizado que incluye el nombre almacenado. Esto se logra concatenando la cadena `'Google es genial, '` con el valor de `nombreAlmacenado`.
+
+4. **Solicitud de nombre al usuario si no está almacenado**:
+    ```javascript
+    } else {
+        enviarNombreUsuario();
+    }
+    ```
+    - Si no existe un valor asociado a la clave `'name'` en el almacenamiento local, se ejecuta el bloque `else`.
+    - Dentro del bloque `else`, se llama a la función `enviarNombreUsuario()`, que solicita al usuario que ingrese su nombre, lo almacena en el almacenamiento local y actualiza el contenido del elemento `<h1>` con el nombre proporcionado.
 
 
 ---
 ## Resumen
-re
