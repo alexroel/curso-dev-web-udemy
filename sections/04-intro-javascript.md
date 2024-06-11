@@ -15,6 +15,17 @@
 
 ---
 ## Introducción
+¡Bienvenidos a la sección de Introducción a JavaScript de nuestro apasionante curso de Desarrollo Web! En esta etapa del viaje, nos sumergiremos en el poderoso mundo de la programación del lado del cliente, explorando los fundamentos esenciales que nos permitirán dotar a nuestras páginas web de interactividad y dinamismo. Prepárate para desafiar tu mente y expandir tus habilidades mientras exploramos temas clave que te llevarán de ser un principiante a un desarrollador más confiado.
+
+Comenzaremos nuestra travesía con la Consola de Desarrollador, una herramienta invaluable que nos permitirá comprender y depurar nuestro código JavaScript de manera efectiva. Desde allí, nos adentraremos en el fascinante mundo de las Variables, aprendiendo cómo almacenar y manipular datos en nuestros programas de JavaScript.
+
+Continuaremos nuestro viaje explorando los Tipos de Datos Básicos, comprendiendo cómo JavaScript maneja números, cadenas, booleanos y más. Después, nos sumergiremos en los Operadores Relacionales, herramientas fundamentales para comparar valores y tomar decisiones en nuestros programas.
+
+A medida que avancemos, nos sumergiremos en las Condiciones, una parte esencial de cualquier lenguaje de programación, que nos permitirá controlar el flujo de nuestro código. Luego, exploraremos el emocionante mundo de las Funciones, aprendiendo a encapsular y reutilizar bloques de código para una mayor eficiencia y organización.
+
+No nos detendremos ahí; también aprenderemos sobre los Comentarios, una herramienta invaluable para documentar nuestro código y hacerlo más legible para nosotros y para otros desarrolladores. Y para poner en práctica todo lo que hemos aprendido, nos embarcaremos en proyectos prácticos, como añadir un cambiador de imágenes dinámico y crear un mensaje de bienvenida personalizado, explorando incluso cómo manejar un nombre de usuario nulo.
+
+¡Prepárate para un viaje emocionante lleno de descubrimientos y desafíos! Con determinación y práctica, estarás en camino de convertirte en un hábil desarrollador de JavaScript.
 
 ---
 ## Consola de desarrollador
@@ -826,3 +837,21 @@ if (localStorage.getItem('name')) {
 
 ---
 ## Resumen
+En la sección de Introducción a JavaScript de nuestro curso de Desarrollo Web, los estudiantes adquirieron una sólida comprensión de los conceptos fundamentales de este lenguaje de programación. Aprendieron a utilizar la Consola de Desarrollador para depurar y ejecutar código JavaScript de manera efectiva. Dominaron el concepto de Variables, permitiéndoles almacenar y manipular datos dentro de sus programas.
+
+Exploraron los Tipos de Datos Básicos en JavaScript, incluyendo números, cadenas de texto y booleanos, comprendiendo cómo trabajar con ellos de manera eficiente. Los Operadores Relacionales se convirtieron en una herramienta poderosa para comparar valores y tomar decisiones basadas en esas comparaciones.
+
+Las Condiciones se convirtieron en una parte esencial de su caja de herramientas de programación, permitiéndoles controlar el flujo de ejecución de su código de manera más precisa. Aprendieron a definir y utilizar Funciones para encapsular bloques de código y promover la reutilización y la modularidad.
+
+Además, se familiarizaron con el uso de Comentarios para documentar su código de manera efectiva y hacerlo más comprensible para ellos mismos y para otros desarrolladores. Finalmente, pusieron en práctica sus conocimientos al trabajar en proyectos prácticos, como crear un cambiador de imágenes dinámico y manejar un nombre de usuario nulo.
+
+Con estos conocimientos, los estudiantes ahora son capaces de crear páginas web interactivas y dinámicas, dotando a sus proyectos de una mayor funcionalidad y experiencia de usuario mejorada. Pueden manipular elementos en la página, responder a la interacción del usuario y crear experiencias personalizadas y atractivas.
+
+Para seguir ampliando su dominio de JavaScript, aquí tienes una lista de recursos externos recomendados:
+
+1. [JavaScript.info](https://es.javascript.info/): Una guía completa que cubre desde los conceptos básicos hasta temas avanzados de JavaScript.
+2. [MDN Web Docs](https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/JavaScript_basics): La documentación oficial de Mozilla Developer Network ofrece una referencia completa y tutoriales detallados sobre JavaScript.
+3. [Eloquent JavaScript](https://eloquentjavascript.net/): Un libro en línea gratuito que explora JavaScript en profundidad con ejemplos prácticos y proyectos.
+4. [W3Schools](https://www.w3schools.com/js/default.asp): Una fuente de recursos completa que ofrece tutoriales, ejemplos prácticos y una referencia detallada de HTML, CSS, JavaScript y otras tecnologías web.
+5. [Desarrollo web para principiantes](https://learn.microsoft.com/es-es/training/paths/web-development-101/)
+
