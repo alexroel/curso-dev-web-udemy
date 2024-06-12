@@ -5,74 +5,76 @@
    box-sizing: border-box;
 }
 
-html, body {
+/*Variables*/
+:root{
+   --bg-color:#F2F4F4;
+   --second-bg-color: #17202A;
+   --text-color: #F8F9F9;
+   --hover-color: #58D68D;
+}
+html, body{
    height: 100%;
-   font-family: Arial, sans-serif;
-   color: #17202A;
-   background-color: #f4f4f4;
 }
 
-body {
+
+body{
    display: flex;
    flex-direction: column;
+   justify-content: center;
    align-items: center;
+   font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Layout */
-header, main, section, footer {
+header, main, footer {
    width: 100%;
    max-width: 1000px;
-   margin: 20px auto;
    padding: 20px;
-   background: #fff;
-   border-radius: 8px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
 header {
-   background: #17202A;
-   color: #fff;
+   background: var(--second-bg-color);
+   color: var(--text-color);
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 20px 20px;
+   padding:15px;
    border-radius: 8px 8px 0 0;
 }
 
 header h1 {
    font-size: 24px;
+   color: var(--text-color);
 }
 
 header nav a {
-   color: #58D68D;
+   color: var(--hover-color);
    text-decoration: none;
    margin: 0 10px;
-   font-size: 18px;
+   font-size: 16px;
 }
 
 header nav a:hover {
-   color: #fff;
+   color: var(--text-color);
 }
 
 /* Main */
-main h2 {
-   font-size: 22px;
-   margin-bottom: 10px;
-}
-
-main p {
-   margin-bottom: 20px;
+main{
+   background-color: var(--bg-color);
+   text-align: center;
+   flex: 1;
+   flex-direction: column;
+   justify-content: center;
 }
 
 .images {
    display: flex;
-   justify-content: space-around;
-   margin-bottom: 20px;
+   justify-content: center;
 }
 
 .images img {
-   width: 200px;
+   width: 150px;
    height: auto;
 }
 
@@ -81,23 +83,47 @@ main p {
    display: inline-block;
    padding: 10px 20px;
    margin: 10px 0;
-   background: #17202A;
-   color: #fff;
+   background: var(--second-bg-color);
+   color: var(--hover-color);
    text-decoration: none;
    border-radius: 4px;
-   transition: background 0.3s;
+   transition: background 0.3s, transform 0.3s;
 }
 
 .btn:hover {
-   background: #58D68D;
-   color: #17202A;
+   background-color: var(--hover-color);
+   color: var(--second-bg-color);
+   transform: scale(1.2);
+}
+
+.cards{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.cards section{
+   margin: 20px 10px;
+   border: 3px solid var(--second-bg-color);
+   min-width: 400px;
+   padding: 20px;
+   flex: 1;
+   border-radius: 8px;
+   box-shadow: rgba(0, 0, 0, 0.150);
+   text-align: start;
+}
+
+.cards blockquote{
+   border-left: 5px solid var(--hover-color);
+   margin-bottom: 10px;
+   padding-left: 10px;
 }
 
 /* Section */
 section h2 {
    font-size: 20px;
    margin-bottom: 10px;
-   color: #58D68D;
+   color: var(--second-bg-color);
 }
 
 section ul {
@@ -112,25 +138,17 @@ section ul li {
 /* Footer */
 footer {
    padding: 10px 20px;
-   background: #17202A;
-   color: #fff;
+   background: var(--second-bg-color);
+   color: var(--text-color);
    text-align: center;
    border-radius: 0 0 8px 8px;
 }
 
 /* Main */
-main h2 {
-   font-size: 22px;
-   margin-bottom: 10px;
-}
-
-main p {
-   margin-bottom: 20px;
-}
-
 form {
    display: flex;
    flex-direction: column;
+   text-align: start;
 }
 
 label {
@@ -141,9 +159,14 @@ label {
 input[type="text"] {
    padding: 10px;
    margin-bottom: 20px;
-   border: 1px solid #ccc;
-   border-radius: 4px;
+   border: 2px solid transparent;
+   border-radius: 5px 5px 0 0;
    font-size: 16px;
+}
+
+input[type="text"]:focus{
+   border-bottom: 2px solid var(--hover-color);
+   outline: none;
 }
 
 button {
@@ -162,11 +185,58 @@ button:hover {
    color: #17202A;
 }
 
-/* Footer */
-footer {
-   padding: 10px 20px;
-   background: #17202A;
-   color: #fff;
-   text-align: center;
-   border-radius: 0 0 8px 8px;
+/*Página de jugar*/
+.row {
+   display: flex;
+   justify-content: center;
 }
+
+.usuario, .pc{
+   min-width: 300px;
+   border: 2px solid var(--second-bg-color);
+   border-radius: 5px;
+   margin-right: 20px;
+}
+
+.usuario header, .pc header{
+   border-radius: 0;
+   margin-bottom: 10px;
+}
+
+.usuario header h2, .pc header h2{
+   color: var(--text-color);
+}
+
+.usuario{
+   display: flex;
+   flex-direction: column;
+}
+
+.usuario img {
+   width: 30px;
+   margin-left: 10px;
+}
+
+.usuario button{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: transparent;
+   border: 2px solid var(--second-bg-color);
+   margin: 10px;
+   color: var(--second-bg-color);
+}
+.usuario button:hover{
+   background-color: var(--hover-color);
+}
+
+.pc{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.pc img{
+   width: 180px;
+}
+
