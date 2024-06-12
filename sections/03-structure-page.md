@@ -3,11 +3,13 @@
 1. [Introducción](#introducción)
 2. [Semántica de HTML](#semántica-de-html)
 3. [Contenedor de elementos](#contenedor-de-elementos)
-3. [Etiquetas de citas](#etiquetas-de-citas)
-4. [Formularios](#formularios)
-5. [Metadatos](#metadatos)
-6. [Favicon](#favicon)
-7. [Resumen](#resumen)
+4. [Etiquetas de citas](#etiquetas-de-citas)
+5. [Formularios](#formularios)
+6. [Tipos de `input`](#tipos-de-input)
+7. [Validación de formulario](#validación-de-formulario)
+8. [`Select` y `Datalist` en HTML](#select-y-datalist-en-html)
+9. [Metadatos](#metadatos)
+10. [Resumen](#resumen)
 
 ---
 ## Introducción
@@ -384,8 +386,42 @@ También es posible anidar un `<input>` dentro de un `<label>` sin necesidad de 
 
 En este caso, el campo de texto `<input>` está dentro de la etiqueta `<label>`, por lo que hacer clic en el texto "Nombre:" activará automáticamente el campo de entrada. Esta técnica es útil para simplificar el código cuando la asociación explícita entre la etiqueta y el campo de entrada no es necesaria.
 
-**``type`**
+**`<input type="submit">`**
 
+El elemento `<input>` con el atributo `type="submit"` se utiliza para crear un botón que envía el formulario cuando se hace clic en él. Es el método más común para crear botones de envío en los formularios HTML.
+
+Ejemplo:
+```html
+<form action="/ruta-de-destino" method="POST">
+    <!-- Otros campos de formulario -->
+    <input type="submit" value="Enviar">
+</form>
+```
+
+**`<button>`**
+
+El elemento `<button>` se puede utilizar de dos maneras en un formulario. Si se coloca dentro de un formulario y no se especifica ningún atributo `type`, se comportará como un botón de envío por defecto, enviando el formulario cuando se hace clic en él.
+
+Ejemplo:
+```html
+<form action="/ruta-de-destino" method="POST">
+    <!-- Otros campos de formulario -->
+    <button>Enviar</button>
+</form>
+```
+
+También se puede utilizar el atributo `type="submit"` en un `<button>` para que se comporte explícitamente como un botón de envío.
+
+Ejemplo:
+```html
+<form action="/ruta-de-destino" method="POST">
+    <!-- Otros campos de formulario -->
+    <button type="submit">Enviar</button>
+</form>
+```
+
+---
+## Tipos de `input`
 La etiqueta `<input>` en HTML tiene varios atributos de tipo (`type`) que se utilizan comúnmente para crear diferentes tipos de campos de entrada en formularios. Algunos de los más usados son:
 
 1. **`text`**: Crea un campo de texto de una sola línea. Se utiliza para ingresar texto corto, como nombres, direcciones de correo electrónico, etc.
@@ -443,73 +479,176 @@ La etiqueta `<input>` en HTML tiene varios atributos de tipo (`type`) que se uti
 
 Estos son solo algunos de los atributos de tipo comúnmente utilizados en la etiqueta `<input>`. Cada uno tiene un propósito específico y se utiliza para recopilar diferentes tipos de datos de los usuarios en formularios HTML.
 
-**`required`**
+---
+## Validación de formulario 
+La validación de formularios es un componente esencial en el desarrollo web que garantiza que los datos ingresados por los usuarios cumplan con los requisitos específicos antes de ser procesados o almacenados. Este proceso es crucial para mantener la integridad de los datos, mejorar la experiencia del usuario y proteger la aplicación contra ataques maliciosos. En esta guía, exploraremos los conceptos fundamentales y las mejores prácticas para implementar la validación de formularios de manera efectiva.
 
-El atributo `required` se utiliza para especificar que un campo de entrada en un formulario es obligatorio y debe ser completado antes de enviar el formulario. Si un campo con `required` está vacío cuando se intenta enviar el formulario, el navegador mostrará un mensaje de error y no permitirá que se envíe el formulario hasta que se complete el campo.
+**Tipos de Validación**
 
-Ejemplo:
+1. **Validación del Lado del Cliente**
+La validación del lado del cliente se realiza en el navegador del usuario antes de enviar los datos al servidor. Esto proporciona una respuesta inmediata a los usuarios, mejorando la experiencia de uso.
+
+**Ventajas:**
+- Respuesta rápida.
+- Reducción de carga en el servidor.
+
+**Desventajas:**
+- Puede ser omitida si JavaScript está deshabilitado.
+- No es completamente segura, debe ser complementada con validación del lado del servidor.
+
+2. **Validación del Lado del Servidor**
+La validación del lado del servidor se realiza después de que los datos son enviados al servidor. Este tipo de validación es crucial para la seguridad, ya que no puede ser eludida por el usuario.
+
+**Ventajas:**
+- Mayor seguridad.
+- No depende del navegador o las configuraciones del cliente.
+
+**Desventajas:**
+- Puede aumentar la carga del servidor.
+- La respuesta no es inmediata, lo que puede afectar la experiencia del usuario.
+
+**Validación HTML5**
+HTML5 ofrece varios atributos de validación que se pueden aplicar directamente a los elementos de formulario.
+
+- `required`: asegura que el campo no esté vacío.
+- `type`: define el tipo de entrada (e.g., `email`, `number`).
+- `pattern`: define una expresión regular que debe coincidir con la entrada.
+- `min` y `max`: especifican los valores mínimo y máximo para números.
+- `maxlength`: establece el número máximo de caracteres.
+
+**Ejemplo:**
+
 ```html
-<label for="nombre">Nombre:</label>
-<input type="text" id="nombre" name="nombre" required>
-```
+<form>
+   <div>
+      <label for="email">Edad:</label>
+      <input type="number" id="email" name="email" required max="30" min="18">
+   </div>
+   <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+   </div>
+   <div>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" minlength="8">
+   </div>
 
-**`placeholder`**
+   <input type="submit" value="Enviar">
 
-El atributo `placeholder` se utiliza para mostrar un texto de ayuda dentro de un campo de entrada antes de que se ingrese algún valor. Este texto desaparece automáticamente cuando se hace clic dentro del campo para ingresar un valor.
-
-Ejemplo:
-```html
-<input type="text" placeholder="Ingrese su nombre" name="nombre">
-```
-
-
-**`<input type="submit">`**
-
-El elemento `<input>` con el atributo `type="submit"` se utiliza para crear un botón que envía el formulario cuando se hace clic en él. Es el método más común para crear botones de envío en los formularios HTML.
-
-Ejemplo:
-```html
-<form action="/ruta-de-destino" method="POST">
-    <!-- Otros campos de formulario -->
-    <input type="submit" value="Enviar">
 </form>
-```
-
-**`<button>`**
-
-El elemento `<button>` se puede utilizar de dos maneras en un formulario. Si se coloca dentro de un formulario y no se especifica ningún atributo `type`, se comportará como un botón de envío por defecto, enviando el formulario cuando se hace clic en él.
-
-Ejemplo:
-```html
-<form action="/ruta-de-destino" method="POST">
-    <!-- Otros campos de formulario -->
-    <button>Enviar</button>
-</form>
-```
-
-También se puede utilizar el atributo `type="submit"` en un `<button>` para que se comporte explícitamente como un botón de envío.
-
-Ejemplo:
-```html
-<form action="/ruta-de-destino" method="POST">
-    <!-- Otros campos de formulario -->
-    <button type="submit">Enviar</button>
-</form>
-```
-
-**Uso de `<button>` sin enviar el formulario**
-
-Si se coloca un `<button>` fuera de un formulario, o dentro de un formulario pero sin especificar `type="submit"`, el `<button>` no enviará el formulario. En su lugar, puede utilizarse para realizar otras acciones, como activar un script de JavaScript.
-
-Ejemplo:
-```html
-<button onclick="alert('¡Hola mundo!')">Saludar</button>
 ```
 
 ---
+## `Select` y `Datalist` en HTML
+
+En HTML, las etiquetas `<select>` y `<datalist>` se utilizan para crear listas desplegables y listas de sugerencias autocompletables, respectivamente. A continuación, se explica en detalle cómo usarlas y sus elementos asociados.
+
+**Etiqueta `<select>` y `<option>`**
+
+La etiqueta `<select>` crea un menú desplegable. Dentro de esta etiqueta, se utiliza `<option>` para definir cada una de las opciones que el usuario puede seleccionar.
+
+*Estructura básica de `<select>`*
+
+```html
+<select name="fruits" id="fruit-select">
+    <option value="apple">Manzana</option>
+    <option value="banana">Banana</option>
+    <option value="cherry">Cereza</option>
+</select>
+```
+
+**Atributos importantes**
+
+- `name`: Define el nombre del control, utilizado para identificar el dato cuando se envía el formulario.
+- `id`: Asigna un identificador único para el elemento, útil para estilos CSS y scripts JavaScript.
+- `value` (en `<option>`): El valor que se enviará si esa opción es seleccionada.
+- `selected` (en `<option>`): Atributo booleano que define la opción preseleccionada.
+
+**Ejemplo avanzado de `<select>`**
+
+```html
+<label for="car-select">Elige un coche:</label>
+<select name="cars" id="car-select">
+    <option value="">--Selecciona una opción--</option>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+</select>
+```
+
+En este ejemplo, la primera opción no tiene valor (`value`), actuando como un marcador de posición.
+
+**Etiqueta `<datalist>`, `<option>` e `<input>`**
+
+La etiqueta `<datalist>` se utiliza para proporcionar opciones sugeridas a un campo de entrada `<input>`. A diferencia de `<select>`, `<datalist>` no muestra un menú desplegable hasta que el usuario comience a escribir en el campo de entrada asociado.
+
+**Estructura básica de `<datalist>`**
+
+```html
+<input list="browsers" name="browser" id="browser-input">
+<datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Safari">
+    <option value="Edge">
+    <option value="Opera">
+</datalist>
+```
+
+**Atributos importantes**
+
+- `list` (en `<input>`): Asocia el campo de entrada con un `<datalist>` específico mediante el ID.
+- `id` (en `<datalist>`): Asigna un identificador único para el elemento, enlazándolo con el campo de entrada.
+
+**Ejemplo avanzado de `<datalist>`**
+
+```html
+<label for="city-input">Ciudad favorita:</label>
+<input list="cities" name="city" id="city-input">
+<datalist id="cities">
+    <option value="Nueva York">
+    <option value="Los Ángeles">
+    <option value="Chicago">
+    <option value="Houston">
+    <option value="Miami">
+</datalist>
+```
+
+En este ejemplo, el usuario verá sugerencias de ciudades a medida que escriba en el campo de entrada.
+
+**¿Qué es `<summary>`?**
+
+La etiqueta `<summary>` se utiliza dentro de un `<details>` para crear un encabezado que puede ser expandido o contraído por el usuario. Esto es útil para mostrar u ocultar información adicional según sea necesario.
+
+**Estructura básica de `<summary>`**
+
+```html
+<details>
+    <summary>Más información sobre navegadores</summary>
+    <p>Los navegadores web más populares incluyen Chrome, Firefox, Safari, Edge y Opera.</p>
+</details>
+```
+
+En este ejemplo, el texto dentro de `<summary>` actúa como un encabezado que el usuario puede hacer clic para mostrar u ocultar el contenido adicional dentro de `<details>`.
+
+**Atributos importantes**
+
+- **`open` (en `<details>`)**: Atributo booleano que indica si el `<details>` está expandido o no por defecto.
+
+
+```html
+<details>
+    <summary>Información detallada sobre ciudades</summary>
+    <p>Nueva York es conocida por su icónico horizonte y Central Park. Los Ángeles es famosa por Hollywood y sus playas. Chicago es famosa por su arquitectura y museos. Houston es conocida por su centro espacial y Miami por sus playas y vida nocturna.</p>
+</details>
+```
+
+En este ejemplo, el contenido detallado sobre las ciudades solo se muestra cuando el usuario hace clic en el texto del resumen.
 
 ---
 ## Metadatos
+Los metadatos en HTML son fragmentos de información que proporcionan detalles adicionales sobre el contenido de una página web. Estos datos no son visibles directamente para los usuarios, pero juegan un papel crucial en la forma en que los motores de búsqueda y las redes sociales interpretan y muestran tu sitio web. A continuación, exploraremos los metadatos más importantes y cómo implementarlos en tu sitio web.
 
 **Metadato de caracteres**
 
@@ -534,65 +673,95 @@ Ejemplo:
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
+<<<<<<< HEAD:sections/05-structure-page.md
 ---
 ## Favicon
+=======
+>>>>>>> ad510818f354a9c87cd11f8435fd6bd38325442b:sections/03-structure-page.md
 
-El favicon es el pequeño icono que aparece en la pestaña del navegador junto al título de la página web. También se muestra en la lista de favoritos del navegador y en otros lugares donde se hace referencia a la página web. Utilizar un favicon ayuda a mejorar la marca y la apariencia profesional de tu sitio web.
+**Metadato `robots`**
 
-**¿Cómo agregar un favicon a tu sitio web?**
-
-Para agregar un favicon, se utiliza la etiqueta `<link>` dentro del `<head>` del documento HTML. Aquí tienes una explicación detallada sobre cómo hacerlo:
-
-**Crear un Favicon**
-
-- **Tamaño y formato**: El tamaño estándar para un favicon es de 16x16 píxeles, aunque también se pueden usar tamaños más grandes como 32x32 píxeles o 64x64 píxeles. Los formatos más comunes son `.ico`, `.png`, y `.jpg`.
-- **Herramientas**: Puedes utilizar herramientas en línea como [Favicon Generator](https://www.favicon-generator.org/) para crear tu favicon.
-
-**Agregar el Favicon al HTML**
-
-Una vez que tengas tu archivo de favicon, colócalo en el directorio raíz de tu proyecto o en un subdirectorio adecuado. Luego, añade la etiqueta `<link>` en la sección `<head>` de tu documento HTML.
+El metadato `robots` se utiliza para controlar cómo los motores de búsqueda interactúan con tu página web. Puedes especificar qué partes de tu sitio deben ser indexadas o no, y si deben seguir los enlaces en la página.
 
 ```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09f">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <title>Título de la Página</title>
-</head>
-<body>
-    <!-- Contenido de la página -->
-</body>
-</html>
+<meta name="robots" content="index, follow">
 ```
 
-**Atributos de la Etiqueta `<link>` para Favicon**
+- `index`: Permite que la página sea indexada.
+- `follow`: Permite que los enlaces en la página sean seguidos.
+- `noindex`: Evita que la página sea indexada.
+- `nofollow`: Evita que los enlaces en la página sean seguidos.
 
-- **`rel="icon"`**: Indica que el archivo especificado es un icono de la página.
-- **`type="image/png"`**: Especifica el tipo MIME del archivo de icono. Otros tipos MIME comunes son `image/x-icon` para archivos `.ico` y `image/jpeg` para archivos `.jpg`.
-- **`href="ruta/al/favicon"`**: Especifica la ubicación del archivo de icono. Puede ser una ruta relativa o una URL completa.
+**Metadato `theme-color`**
 
-**Ejemplos Adicionales**
+El metadato `theme-color` permite definir el color de la barra de herramientas del navegador en dispositivos móviles, creando una experiencia más inmersiva y personalizada.
 
-Favicon en Formato `.ico`:
 ```html
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-```
-Favicon en Formato `.jpg`:
-```html
-<link rel="icon" type="image/jpg" href="favicon.jpg">
+<meta name="theme-color" content="#ff6600">
 ```
 
-**Múltiples Favicons para Diferentes Dispositivos:**
+**Metadato `description`**
 
-Puedes incluir múltiples favicons de diferentes tamaños para asegurar la mejor calidad en varios dispositivos y navegadores.
+El metadato `description` proporciona un resumen breve de la página web. Es fundamental para el SEO, ya que los motores de búsqueda lo utilizan a menudo como la descripción que aparece en los resultados de búsqueda.
 
 ```html
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+<meta name="description" content="Esta es una guía completa sobre cómo utilizar metadatos en HTML para mejorar el SEO y la apariencia de tu sitio web.">
+```
+
+**Metadato `author`**
+
+El metadato `author` especifica el autor del contenido de la página.
+
+```html
+<meta name="author" content="Juan Pérez">
+```
+
+**Metadato para Open Graph**
+
+Open Graph es un protocolo que permite a cualquier página web convertirse en un objeto rico en un gráfico social. Facebook y otras redes sociales utilizan estos datos para crear tarjetas enriquecidas cuando se comparte una página.
+
+```html
+<meta property="og:title" content="Guía Completa sobre Metadatos en HTML">
+<meta property="og:description" content="Aprende a utilizar metadatos para mejorar el SEO y la apariencia de tu sitio web.">
+<meta property="og:image" content="https://ejemplo.com/imagen.jpg">
+<meta property="og:url" content="https://ejemplo.com/articulo">
+```
+
+Para más detalles sobre Open Graph, puedes visitar [Open Graph Protocol](https://ogp.me/).
+
+**Link `alternate`**
+
+El enlace `alternate` se utiliza para definir versiones alternativas del contenido, como versiones en diferentes idiomas.
+
+```html
+<link rel="alternate" href="https://ejemplo.com/en/articulo" hreflang="en">
+```
+
+**Link `canonical`**
+
+El enlace `canonical` ayuda a evitar contenido duplicado especificando la URL preferida de una página web.
+
+```html
+<link rel="canonical" href="https://ejemplo.com/articulo">
+```
+
+**Importancia del Favicon**
+
+El favicon es el pequeño icono que aparece en la pestaña del navegador junto al título de la página. Es crucial para la identificación visual y la marca, mejorando la experiencia del usuario al facilitar la identificación de tu sitio entre varias pestañas abiertas.
+
+**Cómo cargar el Favicon**
+
+Para agregar un favicon a tu sitio web, primero debes tener un archivo de imagen (preferiblemente en formato `.ico`, `.png`, o `.svg`). Luego, incluye el siguiente código en la sección `<head>` de tu HTML:
+
+```html
+<link rel="icon" href="https://ejemplo.com/favicon.ico" type="image/x-icon">
+```
+
+O para otros formatos de imagen:
+
+```html
+<link rel="icon" href="https://ejemplo.com/favicon.png" type="image/png">
+<link rel="icon" href="https://ejemplo.com/favicon.svg" type="image/svg+xml">
 ```
 
 ---
