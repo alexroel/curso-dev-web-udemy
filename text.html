@@ -1,0 +1,43 @@
+<form>
+   <div>
+      <label for="email">Edad:</label>
+      <input type="number" id="email" name="email" required max="30" min="18">
+   </div>
+   <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+   </div>
+   <div>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" minlength="8">
+   </div>
+
+   <select name="fruits" id="fruit-select">
+      <option value="apple">Manzana</option>
+      <option value="banana">Banana</option>
+      <option value="cherry">Cereza</option>
+   </select>
+
+   <label for="car-select">Elige un coche:</label>
+<select name="cars" id="car-select">
+    <option value="">--Selecciona una opción--</option>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+</select>
+
+<label for="city-input">Ciudad favorita:</label>
+<input list="cities" name="city" id="city-input">
+<datalist id="cities">
+    <option value="Nueva York">
+    <option value="Los Ángeles">
+    <option value="Chicago">
+    <option value="Houston">
+    <option value="Miami">
+</datalist>
+
+   <input type="submit" value="Enviar">
+
+</form>
+
