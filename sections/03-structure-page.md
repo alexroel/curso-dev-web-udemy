@@ -32,23 +32,23 @@ La semántica en HTML se refiere a la utilización de etiquetas que transmiten e
 **Ejemplo No Semántico**
 
 ```html
-<div class="header">
-    <div class="title">Mi Sitio Web</div>
-    <div class="navigation">
-        <div class="nav-item">Inicio</div>
-        <div class="nav-item">Acerca de</div>
-        <div class="nav-item">Contacto</div>
+<div>
+    <div>Mi Sitio Web</div>
+    <div>
+        <div>Inicio</div>
+        <div>Acerca de</div>
+        <div>Contacto</div>
     </div>
 </div>
-<div class="main-content">
-    <div class="section">
-        <div class="section-title">Bienvenidos</div>
-        <div class="section-content">
+<div>
+    <div>
+        <div>Bienvenidos</div>
+        <div>
             <p>Contenido principal aquí.</p>
         </div>
     </div>
 </div>
-<div class="footer">© 2024 Mi Sitio Web</div>
+<div>© 2024 Mi Sitio Web</div>
 ```
 
 **Ejemplo Semántico**
@@ -78,22 +78,6 @@ En el primer ejemplo, el uso de `<div>` para todo el contenido hace que el códi
 **Uso del Atributo `role` en Etiquetas No Semánticas**
 
 El atributo `role` se utiliza para proporcionar información adicional sobre el propósito de un elemento en situaciones donde no se pueden utilizar etiquetas semánticas. Esto es especialmente útil para tecnologías asistivas.
-
-**Ejemplo:**
-
-```html
-<div role="navigation">
-    <ul>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#about">Acerca de</a></li>
-        <li><a href="#contact">Contacto</a></li>
-    </ul>
-</div>
-```
-
-En este ejemplo, aunque se usa una etiqueta `<div>`, el atributo `role="navigation"` indica que este `<div>` actúa como una barra de navegación, proporcionando una semántica similar a la etiqueta `<nav>`.
-
-**Situaciones para Usar el Atributo `role`**
 
 1. **Compatibilidad hacia atrás**: En proyectos que requieren compatibilidad con navegadores más antiguos que no soportan etiquetas HTML5 semánticas.
 2. **Componentes de UI personalizados**: Cuando se crean componentes de interfaz de usuario personalizados con `div` o `span`, el atributo `role` puede describir su función.
@@ -388,17 +372,6 @@ La etiqueta `<input>` se utiliza para crear campos de entrada en un formulario. 
 - `type`: Especifica el tipo de campo de entrada (como `text`, `checkbox`, `radio`, `submit`, etc.).
 - `id`: Proporciona un identificador único para el campo de entrada.
 - `name`: Especifica el nombre del campo de entrada, que se utilizará para identificar el valor del campo cuando se envíe el formulario.
-
-**Uso de `for` e `id`**
-
-El uso de `for` e `id` en `<label>` y `<input>` permite asociar correctamente el texto descriptivo con el campo de entrada correspondiente. Por ejemplo:
-
-```html
-<label for="apellido">Apellido:</label>
-<input type="text" id="apellido" name="apellido">
-```
-
-En este caso, el `id` del `<input>` es "apellido", que coincide con el valor del `for` en la etiqueta `<label>`, lo que permite que el usuario haga clic en el texto "Apellido:" para activar el campo de entrada.
 
 **Anidar `<input>` en `<label>`**
 
@@ -700,6 +673,11 @@ Ejemplo:
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
+<<<<<<< HEAD:sections/05-structure-page.md
+---
+## Favicon
+=======
+>>>>>>> ad510818f354a9c87cd11f8435fd6bd38325442b:sections/03-structure-page.md
 
 **Metadato `robots`**
 

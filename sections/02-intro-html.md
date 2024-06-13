@@ -14,28 +14,205 @@
 
 ---
 ## Introducción
-¡Bienvenidos al curso de HTML básico! En este curso, exploraremos los elementos fundamentales de HTML, el lenguaje de marcado estándar para la creación de páginas web. Comenzaremos con la estructura base de un documento HTML y aprenderemos sobre los elementos clave como imágenes, vínculos y etiquetas de texto. También veremos qué son los atributos y cómo se utilizan para proporcionar información adicional sobre los elementos HTML. Además, aprenderemos a crear listas para organizar el contenido de nuestras páginas web de manera efectiva. ¡Comencemos a construir la web juntos!
+
+HTML (HyperText Markup Language) es el lenguaje estándar utilizado para crear páginas web. Se encarga de estructurar el contenido de una página, permitiendo definir elementos como encabezados, párrafos, imágenes, enlaces y listas. En esta sección, aprenderás cómo utilizar las etiquetas HTML para dar formato y organizar tu contenido web de manera semántica. ¡Vamos a sumergirnos en el mundo de HTML y empezar a construir sitios web increíbles juntos!
 
 ---
 ## De que se encarga HTML
-   -> Describir el contenido
-   -> Crear elementos 
-   -> Mostrar elementos 
-   
-   - No se ocupa de presentación o estilos 
-   - No se ocupa de interacción
+
+HTML, o HyperText Markup Language, es el lenguaje fundamental utilizado para crear y estructurar páginas web. A diferencia de otros lenguajes de programación que pueden ejecutar operaciones complejas, HTML se centra en definir la estructura y el contenido de una página web. A continuación, se describen las tres principales responsabilidades de HTML: describir el contenido, crear elementos y mostrar elementos.
+
+**Describir el Contenido**
+
+HTML se encarga de describir el contenido de una página web mediante el uso de etiquetas. Cada etiqueta tiene un propósito específico que comunica al navegador cómo debe interpretarse y desplegarse el contenido. Por ejemplo, hay etiquetas para títulos, párrafos, enlaces, listas y muchos otros tipos de contenido. Esta descripción es esencial para que los navegadores presenten la información de manera coherente y accesible para los usuarios.
+
+**Crear Elementos**
+
+Crear elementos en HTML implica el uso de diversas etiquetas que definen diferentes partes de la página web. Estas etiquetas no solo ayudan a estructurar el contenido, sino que también aportan significado semántico, lo que mejora la accesibilidad y la optimización en motores de búsqueda. Los elementos básicos incluyen divisiones de contenido, secciones específicas, artículos, barras laterales y áreas de navegación. Cada uno de estos elementos contribuye a la organización y jerarquización del contenido en una página web.
+
+**Mostrar Elementos**
+
+Mostrar elementos se refiere a cómo los componentes del contenido se presentan visualmente en el navegador. HTML permite la inclusión de diversos tipos de contenido, como tablas, imágenes y formularios, que se visualizan de manera específica en función de las etiquetas utilizadas. Aunque HTML no define estilos (esa es la función de CSS), sí establece la estructura básica sobre la cual se aplican esos estilos. Esto asegura que todos los elementos se desplieguen de manera coherente y en el orden correcto.
+
+```html
+<h1>Bienvenidos a mi página web</h1>
+<h2>Subtítulo de sección</h2>
+```
+
+**¿Qué no hace HTML?**
+
+**No se Ocupa de la Presentación o Estilos**
+
+HTML no se encarga de la presentación visual de una página web. La presentación se refiere a cómo se ven los elementos HTML en términos de colores, fuentes, tamaños, márgenes, alineaciones y otros aspectos visuales. En lugar de HTML, el lenguaje utilizado para manejar estos aspectos es CSS (Cascading Style Sheets).
+
+
+Ejemplo:
+```css
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+}
+```
+
+**No se Ocupa de la Interacción**
+
+HTML no se encarga de la interacción del usuario con la página web. La interacción se refiere a la capacidad de responder a acciones del usuario, como clics, desplazamientos, entradas de teclado y otras formas de eventos. Para manejar la interacción, se utiliza JavaScript.
+
+Ejemplo:
+```javascript
+document.getElementById("miBoton").addEventListener("click", function() {
+  alert("Botón clicado!");
+});
+```
 
 ---
 ## ¿Qué son las etiquetas?
-   -> Con las etiquetas se crean elementos 
-	-> Partes de un elemento
+
+Las etiquetas en HTML son la base fundamental para la creación de páginas web. Son instrucciones que los navegadores utilizan para renderizar y estructurar el contenido de una página. Cada etiqueta define un tipo específico de contenido o un elemento estructural en la página.
+
+**Sintaxis de las Etiquetas**
+
+La sintaxis de las etiquetas HTML sigue una estructura específica que facilita la creación y comprensión del código. Una etiqueta HTML consta de:
+
+1. **Etiqueta de Apertura**: Indica el inicio de un elemento.
+2. **Contenido**: El texto o elementos anidados dentro de la etiqueta.
+3. **Etiqueta de Cierre**: Indica el final del elemento.
+
+```html
+<nombre_de_etiqueta>contenido</nombre_de_etiqueta>
+```
+
+Algunas etiquetas son auto-cerradas y no requieren una etiqueta de cierre separada, como la etiqueta `<img>` para insertar imágenes.
+
+```html
+<img src="imagen.jpg" alt="Descripción de la imagen">
+```
+
+**Partes de un Elemento**
+
+Cada elemento HTML se compone de varias partes clave:
+
+1. **Etiqueta de Apertura**: Consiste en el nombre de la etiqueta encerrado entre corchetes angulares (`<>`). Puede incluir atributos que proporcionan información adicional sobre el elemento.
+   ```html
+   <p>Este es un párrafo.</p>
+   <img src="imagen.jpg" alt="Descripción de la imagen">
+   ```
+
+2. **Contenido**: Es el texto o los elementos anidados dentro de la etiqueta. En el caso de etiquetas auto-cerradas, no hay contenido entre la apertura y el cierre.
+   ```html
+   <a href="https://www.ejemplo.com">Este es un enlace</a>
+   ```
+
+3. **Etiqueta de Cierre**: Similar a la etiqueta de apertura, pero incluye una barra inclinada (`/`) antes del nombre de la etiqueta.
+   ```html
+   </p>
+   </a>
+   ```
+
+4. **Atributos**: Son propiedades adicionales dentro de la etiqueta de apertura que proporcionan más información sobre el elemento. Los atributos se componen de un nombre y un valor, separados por un signo igual (`=`) y el valor se encierra entre comillas.
+   ```html
+   <a href="https://www.ejemplo.com" target="_blank">Enlace</a>
+   <img src="imagen.jpg" alt="Descripción de la imagen">
+   ```
+
+**Ejemplo**
+
+A continuación, se muestra un ejemplo completo de un elemento HTML con todas sus partes:
+
+```html
+<a href="https://www.ejemplo.com" target="_blank">Visitar Ejemplo</a>
+```
+
+- **Etiqueta de Apertura**: `<a href="https://www.ejemplo.com" target="_blank">`
+  - **Nombre de la Etiqueta**: `a`
+  - **Atributos**: `href="https://www.ejemplo.com"` y `target="_blank"`
+
+- **Contenido**: `Visitar Ejemplo`
+
+- **Etiqueta de Cierre**: `</a>`
+
+**Crear Elementos con Etiquetas**
+
+Las etiquetas de HTML se utilizan para crear diversos elementos que componen la estructura y el contenido de una página web. Aquí algunos ejemplos comunes de etiquetas utilizadas para crear elementos:
+
+- **Encabezados (`<h1>` a `<h6>`)**: Definen títulos y subtítulos.
+  ```html
+  <h1>Título Principal</h1>
+  <h2>Subtítulo</h2>
+  ```
+
+- **Párrafos (`<p>`)**: Definen bloques de texto.
+  ```html
+  <p>Este es un párrafo de ejemplo.</p>
+  ```
+
+- **Enlaces (`<a>`)**: Crean hipervínculos a otras páginas o recursos.
+  ```html
+  <a href="https://www.ejemplo.com">Visitar Ejemplo</a>
+  ```
+
+- **Listas (`<ul>`, `<ol>`, `<li>`)**: Organizan el contenido en listas desordenadas u ordenadas.
+  ```html
+  <ul>
+    <li>Elemento de lista desordenada</li>
+    <li>Otro elemento de lista</li>
+  </ul>
+  <ol>
+    <li>Elemento de lista ordenada</li>
+    <li>Otro elemento de lista ordenada</li>
+  </ol>
+  ```
+
+- **Imágenes (`<img>`)**: Insertan imágenes en la página.
+  ```html
+  <img src="imagen.jpg" alt="Descripción de la imagen">
+  ```
+
+- **Divisiones (`<div>`)**: Agrupan y organizan secciones de contenido.
+  ```html
+  <div>
+    <p>Contenido dentro de un div.</p>
+  </div>
+  ```
 
 ---
 ## Encabesados y párrafos
-   -> Como se usa h1 a h6
-	-> H1 y su importancia de uso
-	-> Párrafos 
-	-> Elementos anidados con <strong>
+
+En HTML, los encabezados (h1 a h6) y los párrafos son elementos fundamentales para estructurar y organizar el contenido de una página web. Además de mejorar la legibilidad y la experiencia del usuario, también desempeñan un papel crucial en la optimización para motores de búsqueda (SEO).
+
+**Uso de los encabezados (h1 a h6):**
+
+- **h1 a h6** se utilizan para definir los niveles de encabezado, siendo h1 el más importante y h6 el menos importante.
+- Cada página debe tener un único **h1**, que debe reflejar el tema principal de la página.
+- Los **h2** a **h6** se utilizan para organizar el contenido en subsecciones, siguiendo un orden jerárquico.
+
+```html
+<h1>Encabezado Principal</h1>
+<h2>Subencabezado</h2>
+<h3>Subencabezado de nivel 3</h3>
+```
+
+**Párrafos:**
+
+- Los **párrafos** en HTML se definen con la etiqueta `<p>` y se utilizan para estructurar el texto en bloques.
+- Ayudan a mantener el contenido organizado y fácil de leer.
+
+```html
+<p>Este es un párrafo de ejemplo.</p>
+```
+
+**Elementos anidados como <strong>:**
+
+- El elemento `<strong>` se utiliza para resaltar texto importante.
+- Puede mejorar la legibilidad y la comprensión del contenido por parte de los lectores y los motores de búsqueda.
+
+```html
+<p>Este es un párrafo con texto <strong>resaltado</strong>.</p>
+```
+
+- Utilizar correctamente los encabezados y los párrafos ayuda a los motores de búsqueda a entender la estructura y el contenido de la página.
+- Los encabezados y los párrafos también pueden contener palabras clave relevantes, lo que puede mejorar el posicionamiento en los resultados de búsqueda.
 
 ---
 ## Imáges y elemenos unicos
@@ -46,6 +223,7 @@ Las imágenes son un componente esencial en el desarrollo web, y en HTML, el ele
 ```
 
 **1. La etiqueta `<img>`:**
+
 La etiqueta `<img>` se utiliza para insertar imágenes en una página HTML. En el ejemplo, esta etiqueta es el punto de partida y le indica al navegador que se incluirá una imagen.
 
 **2. Atributo "src":**
@@ -58,8 +236,68 @@ El atributo `alt` (alternative text) proporciona un texto alternativo que se mos
 El atributo `width` establece el ancho de la imagen en píxeles. En este caso, la imagen se mostrará con un ancho de 300 píxeles. Es una práctica común definir el ancho y alto para controlar mejor la presentación de las imágenes en la página.
 
 En resumen, el ejemplo `<img src="img/logo-google.png" alt="Logo de Google" width="300">` ilustra cómo agregar una imagen llamada "logo-google.png" a una página HTML, con un texto alternativo y un ancho específico. Al entender estos conceptos básicos, los desarrolladores pueden enriquecer sus sitios web con contenido visual de manera efectiva y accesible.
-	
-   -> Otros elementos como br, hr y otros
+
+**Otros elementos `<br>` `<hr>`**
+
+En HTML, existen elementos que permiten añadir funcionalidades específicas o mejorar la presentación de una página web. A continuación, se detallan algunos de estos elementos:
+
+**`<br>` (salto de línea):**
+
+- La etiqueta `<br>` se utiliza para insertar un salto de línea dentro de un texto o un párrafo.
+- No tiene etiqueta de cierre y se considera un elemento vacío.
+- Se usa principalmente para separar líneas de texto o elementos en línea.
+
+```html
+<p>Línea 1<br>Línea 2</p>
+```
+
+*`<hr>` (línea horizontal):*
+- La etiqueta `<hr>` se utiliza para insertar una línea horizontal que separa contenido en la página.
+- También es un elemento vacío y no tiene etiqueta de cierre.
+- Se puede usar para dividir secciones de contenido o para añadir un separador visual.
+
+```html
+<div>Contenido</div>
+<hr>
+<div>Otro contenido</div>
+```
+
+**`<input>` (entrada de datos):**
+
+- La etiqueta `<input>` se utiliza para crear controles de entrada de datos en un formulario.
+- Tiene varios tipos, como texto, contraseña, checkbox, radio, entre otros, especificados por el atributo `type`.
+- Es un elemento vacío y no tiene etiqueta de cierre.
+
+```html
+<input type="text" name="nombre" placeholder="Nombre completo">
+<input type="password" name="contraseña" placeholder="Contraseña">
+<input type="checkbox" name="suscribirse" value="1"> Suscribirse al boletín
+```
+
+**`<meta>` (metadatos):**
+
+- La etiqueta `<meta>` se utiliza para especificar metadatos sobre un documento HTML, como el juego de caracteres, descripción, autor, entre otros.
+- Es un elemento vacío y se coloca dentro de la etiqueta `<head>` del documento.
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Descripción de la página">
+    <meta name="author" content="Nombre del autor">
+</head>
+```
+
+##### `<link>` (enlace):
+- La etiqueta `<link>` se utiliza para enlazar recursos externos a la página, como hojas de estilo CSS, fuentes, entre otros.
+- No tiene etiqueta de cierre y se coloca dentro de la etiqueta `<head>` del documento.
+
+```html
+<head>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+```
+
+Estos elementos son fundamentales en HTML para añadir funcionalidades específicas o mejorar la presentación de una página web. Es importante utilizarlos correctamente para lograr el resultado deseado en la estructura y el diseño de la página.
 
 ---
 ## ¿Qué es un atributo?
@@ -77,17 +315,128 @@ Un atributo generalmente consta de dos partes:
 
 2. **Valor del Atributo:** Es la información específica asociada con el atributo. En el ejemplo `<html lang="es">`, el valor del atributo "lang" es "es" (español).
 
-   -> Atributos de imágenes src, alt, title y width-height
-	-> Detalles importantes de los atributos como usar comillas y no 
-	-> Atributos booleanos
-	-> Atributo ID y clase
+**Atributos de Imágenes**
+
+Los atributos de las imágenes en HTML permiten controlar aspectos importantes como la ruta de la imagen (`src`), el texto alternativo (`alt`), el título (`title`), el ancho y alto (`width` y `height`), así como otros atributos útiles.
+
+**src` (source):**
+
+- El atributo `src` especifica la ruta de la imagen que se va a mostrar.
+- Es obligatorio y debe contener la URL de la imagen.
+- Se recomienda usar comillas dobles para especificar la URL de la imagen.
+
+```html
+<img src="imagen.jpg" alt="Descripción de la imagen">
+```
+
+**`alt` (alternative text):**
+
+- El atributo `alt` proporciona un texto alternativo para la imagen, que se muestra si la imagen no se puede cargar o para usuarios con discapacidad visual.
+- Es obligatorio y debe ser descriptivo de la imagen.
+- Se recomienda usar comillas dobles para el texto alternativo.
+
+```html
+<img src="imagen.jpg" alt="Descripción de la imagen">
+```
+
+**`title`:**
+
+- El atributo `title` proporciona un título para la imagen, que se muestra cuando el usuario pasa el cursor sobre la imagen.
+- No es obligatorio, pero se recomienda para mejorar la accesibilidad y la experiencia del usuario.
+- Se recomienda usar comillas dobles para el título.
+
+```html
+<img src="imagen.jpg" alt="Descripción de la imagen" title="Título de la imagen">
+```
+
+**`width` y `height`:**
+
+- Los atributos `width` y `height` especifican el ancho y alto de la imagen en píxeles, respectivamente.
+- No son obligatorios, pero se recomienda establecerlos para evitar cambios bruscos en la página al cargar la imagen.
+- Se recomienda usar comillas dobles para los valores de ancho y alto.
+
+```html
+<img src="imagen.jpg" alt="Descripción de la imagen" width="300" height="200">
+```
+
+**Atributos booleanos:**
+
+- Algunos atributos, como `download` y `hidden`, son booleanos, lo que significa que su presencia indica verdadero y su ausencia indica falso.
+- Para atributos booleanos, se recomienda no especificar un valor, solo el nombre del atributo.
+
+```html
+<a href="archivo.pdf" download>Descargar PDF</a>
+<div hidden>Este contenido está oculto</div>
+```
+
+**`id` y `class`:**
+
+- El atributo `id` se utiliza para identificar de forma única un elemento en el documento.
+- El atributo `class` se utiliza para asignar una o más clases a un elemento, que se pueden utilizar para aplicar estilos o funcionalidades específicas.
+- Se recomienda usar comillas dobles para los valores de `id` y `class`.
+
+```html
+<img src="imagen.jpg" alt="Descripción de la imagen" id="imagen1" class="imagen-grande">
+```
+
+Al utilizar correctamente estos atributos en las imágenes de tu página web, mejorarás la accesibilidad, la experiencia del usuario y la presentación visual de tu contenido.
+
 ---
 ## Etiquetas de texto
--> b, i, u -por que ya no se recomienda
-	-> strong - em y su importancia
-	-> center - obsoletos -> MDN
-	-> Estilos por defectos
-   
+
+**Etiquetas de formato en HTML**
+
+En HTML, las etiquetas `<b>`, `<i>`, y `<u>` solían utilizarse para aplicar formato de negrita, cursiva y subrayado respectivamente. Sin embargo, su uso ha sido desaconsejado en favor de un enfoque más semántico y accesible. En su lugar, se recomienda utilizar las siguientes etiquetas y atributos:
+
+- **Negrita (`<b>`):** Se recomienda usar la etiqueta `<strong>` en su lugar, ya que `<strong>` tiene un significado semántico más fuerte, indicando que el texto es importante o relevante en términos de significado.
+
+```html
+<p>Este es un texto en <strong>negrita</strong>.</p>
+```
+
+- **Cursiva (`<i>`):** Se recomienda usar la etiqueta `<em>` en su lugar, que indica énfasis en el texto. `<em>` tiene un significado semántico más adecuado para expresar énfasis que `<i>`.
+
+```html
+<p>Este es un texto en <em>cursiva</em>.</p>
+```
+
+- **Subrayado (`<u>`):** El subrayado se considera menos legible y puede ser confundido con un enlace. En su lugar, se recomienda utilizar estilos CSS para resaltar el texto de manera más efectiva.
+
+**Importancia de `<strong>` y `<em>`**
+
+- `<strong>`: Indica que el texto es especialmente relevante en términos de significado, como un término clave o un aviso importante. Además de aplicar formato visual de negrita, también ayuda a los motores de búsqueda a identificar la importancia del texto.
+
+```html
+<p>¡<strong>Importante:</strong> no olvides guardar tus cambios!</p>
+```
+
+- `<em>`: Indica énfasis en el texto, lo que puede interpretarse como un cambio en la entonación o significado en la lectura. Ayuda a transmitir emociones o tono en el texto.
+
+```html
+<p>Por favor, <em>no</em> toques ese botón.</p>
+```
+
+**Etiqueta obsoleta `<center>`**
+
+La etiqueta `<center>` se utilizaba para centrar contenido en una página web, pero ha sido declarada obsoleta en HTML5. En su lugar, se recomienda usar CSS para centrar elementos.
+
+```html
+<div style="text-align:center;">
+    <p>Este párrafo está centrado.</p>
+</div>
+```
+
+**Estilos por defecto en un documento HTML en el navegador**
+
+Los navegadores aplican estilos por defecto a elementos HTML para asegurar una presentación coherente y legible. Algunos de estos estilos por defecto incluyen:
+
+- Margen exterior e interior en elementos como `<body>`, `<p>`, `<h1>`-`<h6>`, etc.
+- Espaciado entre elementos como párrafos y encabezados.
+- Tipo de letra y tamaño de texto por defecto.
+- Color de texto y fondo.
+- Estilos de listas (`<ul>`, `<ol>`, `<li>`).
+
+Estos estilos pueden variar ligeramente entre navegadores, pero en general, los navegadores intentan proporcionar una apariencia coherente y legible para el contenido HTML sin estilos adicionales. Utilizar CSS permite personalizar estos estilos por defecto para adaptarlos al diseño deseado.
 
 Ejemplo final:
 ```html
@@ -317,31 +666,29 @@ Comprender la anatomía y la anidación de elementos en HTML es fundamental para
 ---
 ## Resumen 
 
-En la sección de Introducción a HTML de nuestro curso de desarrollo web, los estudiantes han aprendido los siguientes temas:
+En la sección de Introducción a HTML, los estudiantes aprendieron los fundamentos de HTML y cómo se utiliza para crear páginas web. Estos fueron los puntos clave que se cubrieron:
 
-Se ha enseñado la estructura básica de un documento HTML, incluyendo las etiquetas `<html>`, `<head>` y `<body>`, así como la importancia de una estructura bien formada para la creación de páginas web.
+**¿De qué se encarga HTML?**: HTML se encarga de estructurar el contenido de una página web, permitiendo definir elementos como encabezados, párrafos, imágenes, enlaces y listas.
 
-Los estudiantes han aprendido sobre los atributos en HTML, que son valores adicionales que se pueden agregar a las etiquetas para proporcionar información adicional. Se han visto ejemplos de atributos como `src` en la etiqueta `<img>` para especificar la fuente de una imagen.
+**¿Qué son las etiquetas?**: Las etiquetas HTML son elementos que se utilizan - para marcar diferentes partes del contenido y aplicarles formato.
 
-Se ha enseñado cómo insertar imágenes en una página web utilizando la etiqueta `<img>` y cómo utilizar atributos como `alt` para proporcionar texto alternativo para las imágenes, lo cual es importante para la accesibilidad web.
+**Encabezados y párrafos**: HTML ofrece etiquetas para crear encabezados de diferentes niveles (h1 a h6) y párrafos de texto.
 
-Los estudiantes han aprendido sobre las etiquetas HTML utilizadas para dar formato al texto, como `<h1>` a `<h6>` para encabezados de diferentes tamaños, `<p>` para párrafos y `<strong>` para texto en negrita.
+**Imágenes y elementos únicos**: Con HTML, se pueden insertar imágenes y otros elementos multimedia en una página web.
 
-Se ha explicado cómo crear vínculos en HTML utilizando la etiqueta `<a>`, permitiendo a los usuarios navegar entre diferentes páginas web y recursos en línea.
+**¿Qué es un atributo?**: Los atributos son valores adicionales que se pueden agregar a las etiquetas para proporcionar información adicional sobre cómo debe ser tratado un elemento.
 
-Los estudiantes han aprendido a crear listas ordenadas (`<ol>`), listas desordenadas (`<ul>`) y listas de definición (`<dl>`) para organizar la información de manera estructurada en sus páginas web.
+**Etiquetas de texto**: HTML ofrece etiquetas para dar formato al texto, como negrita (`<strong>`) y cursiva (`<em>`).
 
-**Con estos conocimientos, los estudiantes son capaces de realizar lo siguiente:**
+**Vínculos**: HTML permite crear vínculos a otras páginas web o recursos utilizando la etiqueta `<a>`.
 
-- Crear una estructura básica para sus páginas web utilizando HTML.
-- Insertar y personalizar imágenes en sus páginas web.
-- Dar formato al texto y utilizar diferentes niveles de encabezados.
-- Crear vínculos que permitan la navegación entre diferentes páginas y recursos.
-- Organizar información utilizando listas en sus páginas web.
+**Etiquetas de listas**: HTML ofrece etiquetas para crear listas ordenadas (`<ol>`) y no ordenadas (`<ul>`).
 
-**Recursos Externos para Seguir Aprendiendo**:
+**Estructura base de HTML**: Los estudiantes aprendieron la estructura básica de un documento HTML, que incluye la declaración `<!DOCTYPE html>`, la etiqueta `<html>`, `<head>` y `<body>`.
 
-- [Mozilla Developer Network (MDN) - HTML](https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/HTML_basics): Documentación completa y actualizada sobre HTML.
-- [W3Schools - HTML Tutorial](https://www.w3schools.com/html/): Tutoriales y ejemplos prácticos para aprender HTML.
-- [HTML Dog - HTML Beginner Tutorial](https://www.htmldog.com/guides/html/beginner/): Tutorial paso a paso para principiantes en HTML.
-- [Codecademy - Learn HTML](https://www.codecademy.com/learn/learn-html): Curso interactivo en línea para aprender HTML.
+Al finalizar esta sección, los estudiantes fueron capaces de crear páginas web simples utilizando HTML, estructurando el contenido y aplicando formato de manera adecuada. Además, quedaron preparados para aprender conceptos más avanzados de desarrollo web.
+
+**Recursos adicionales para seguir aprendiendo:**
+
+- W3Schools HTML Tutorial: https://www.w3schools.com/html/
+- Mozilla Developer Network (MDN) HTML Guide: https://developer.mozilla.org/en-US/docs/Web/HTML
