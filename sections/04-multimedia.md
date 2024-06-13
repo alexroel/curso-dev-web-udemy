@@ -1,9 +1,29 @@
 # Etiquetas multimedia
 
+1. [Introducción](#introducción)
+1. [Imagenes](#imagenes)
+1. [Etiquetas de videos](#etiquetas-de-videos)
+1. [Etiquetas de audio](#etiquetas-de-audio)
+1. [Videos y páginas extenas](#videos-y-páginas-extenas)
+1. [Resumen](#resumen)
+
 
 ---
 ## Introducción
 
+¡Bienvenidos a la sección de Introducción a HTML de nuestro curso de desarrollo web! En esta sección, exploraremos cómo enriquecer tus páginas web con elementos multimedia. Aprenderás a insertar y manejar imágenes, videos y audio, y a integrar contenido multimedia de páginas externas. A través de estos temas, podrás crear páginas web dinámicas y atractivas que ofrecen una experiencia enriquecedora para los usuarios.
+
+**Temas que cubriremos:**
+
+**Imágenes**: Cómo insertar imágenes en tus páginas web usando la etiqueta `<img>` y personalizarlas con atributos como `src`, `alt` y `width`.
+
+**Etiquetas de Videos**: Cómo incorporar videos directamente en tus páginas utilizando la etiqueta `<video>` y controlar su reproducción con atributos como `controls`, `autoplay` y `loop`.
+
+**Etiquetas de Audio**: Cómo añadir archivos de audio a tus páginas web utilizando la etiqueta `<audio>` y gestionar su reproducción con atributos como `controls` y `autoplay`.
+
+**Videos y Páginas Externas**: Cómo integrar contenido multimedia de otras plataformas, como YouTube y Vimeo, en tus páginas web utilizando iframes y códigos de inserción.
+
+Esta sección te proporcionará las habilidades necesarias para agregar y gestionar contenido multimedia, mejorando la interactividad y el atractivo visual de tus proyectos web. ¡Empecemos!
 
 ---
 ## Imagenes 
@@ -279,3 +299,26 @@ Aquí tienes un ejemplo completo que incorpora todos estos elementos:
 
 ---
 ## Resumen
+
+En la sección de Etiquetas Multimedia de nuestro curso de desarrollo web, los estudiantes aprendieron a integrar y manejar diversos tipos de contenido multimedia en sus páginas web. Aquí tienes un resumen de los temas cubiertos y las habilidades adquiridas:
+
+**Imágenes**: Los estudiantes aprendieron a insertar y configurar imágenes en sus páginas web utilizando la etiqueta `<img>`. Aprendieron a utilizar atributos como `src` para especificar la fuente de la imagen y `alt` para proporcionar texto alternativo, mejorando así la accesibilidad y la experiencia del usuario.
+
+**Etiquetas de videos**: Se cubrió cómo incluir videos en una página web utilizando la etiqueta `<video>`. Los estudiantes aprendieron a usar atributos como `controls`, `autoplay`, `loop` y `poster` para personalizar la reproducción del video y mejorar la interacción del usuario.
+
+**Etiquetas de audio**: Los estudiantes descubrieron cómo insertar archivos de audio en sus páginas web utilizando la etiqueta `<audio>`. Aprendieron a utilizar atributos como `controls`, `autoplay` y `loop` para gestionar la reproducción de audio, ofreciendo una experiencia más rica a los visitantes de sus sitios web.
+
+**Videos y páginas externas**: Se enseñó cómo incrustar videos de plataformas externas como YouTube utilizando la etiqueta `<iframe>`. Los estudiantes aprendieron a personalizar el tamaño y la apariencia del contenido incrustado, permitiéndoles integrar fácilmente videos externos en sus propias páginas web.
+
+**Con estos conocimientos, los estudiantes son capaces de:**
+
+- Integrar y personalizar imágenes en sus páginas web, mejorando la presentación visual.
+- Incluir y gestionar videos, ofreciendo contenido multimedia enriquecido a los usuarios.
+- Insertar y controlar la reproducción de archivos de audio para crear experiencias web más dinámicas.
+- Incrustar videos de plataformas externas, ampliando el alcance y la variedad del contenido disponible en sus sitios.
+
+**Recursos Externos para Seguir Aprendiendo**:
+
+- [Mozilla Developer Network (MDN) - Multimedia and embedding](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding): Guía completa sobre el uso de multimedia en HTML.
+- [W3Schools - HTML Media](https://www.w3schools.com/html/html_media.asp): Tutoriales y ejemplos prácticos sobre la integración de multimedia en HTML.
+- [Web.dev - Audio y Video](https://web.dev/learn/html/audio-video?continue=https%3A%2F%2Fweb.dev%2Flearn%2Fhtml&hl=es-419#article-https://web.dev/learn/html/audio-video&hl=es-419): Curso completo que cubre la integración de multimedia en el desarrollo web.
