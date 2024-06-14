@@ -16,11 +16,31 @@
 
 ---
 ## Introducción 
-¡Bienvenidos a la sección de Introducción a CSS de nuestro curso de Desarrollo Web! En este emocionante viaje, nos sumergiremos en el fascinante mundo de la estilización web, comenzando desde los cimientos hasta alcanzar un nivel sólido de comprensión y habilidad. En esta primera parte, exploraremos los fundamentos esenciales, desde los Primeros Estilos que aplicaremos a nuestras páginas hasta la comprensión profunda de los Selectores de Elementos, la piedra angular de la estilización en CSS.
+¡Bienvenidos a la sección de Introducción a CSS de nuestro curso de desarrollo web! En esta sección, aprenderás a estilizar tus páginas web utilizando CSS. Exploraremos los siguientes temas fundamentales:
 
-A lo largo de este trayecto, descubriremos cómo dar vida a nuestros diseños mediante la manipulación de los Estilos de Texto, añadiendo personalidad y claridad a nuestros contenidos. No nos detendremos ahí; exploraremos el Modelo de Caja, una herramienta fundamental para entender cómo se estructuran y visualizan los elementos en la web. Y no olvidemos los Tipos de Elementos, donde aprenderemos a aplicar estilos específicos a diferentes tipos de elementos, brindando coherencia y fluidez a nuestras interfaces.
+**Primeros estilos**: Comenzaremos aplicando estilos básicos para cambiar la apariencia de tus elementos HTML.
 
-Prepárate para adentrarte en un mundo lleno de posibilidades creativas y técnicas sólidas. ¡Estamos emocionados de acompañarte en este viaje de aprendizaje y descubrimiento!
+**Selectores de elementos**: Aprenderás a seleccionar y apuntar a elementos específicos para aplicarles estilos.
+
+**Estilos de texto**: Descubrirás cómo personalizar el texto, incluyendo cambios en fuentes, tamaños y colores.
+
+**Herencia en CSS**: Entenderás cómo los estilos se heredan de un elemento a sus descendientes.
+
+**Colores**: Aprenderás a aplicar colores usando diferentes métodos, como nombres de colores, códigos hexadecimales, RGB y HSL.
+
+**Pseudoclases y pseudoelementos**: Utilizarás pseudoclases y pseudoelementos para aplicar estilos a estados específicos de los elementos y partes de los mismos.
+
+**Selectores combinados**: Explorarás cómo combinar selectores para apuntar a elementos de manera más precisa.
+
+**Cascada y especificidad**: Comprenderás cómo CSS decide qué estilos aplicar cuando hay conflictos entre reglas.
+
+**Unidades de medida**: Conocerás las diferentes unidades de medida en CSS, como píxeles, porcentajes, em y rem.
+
+**Modelo de caja**: Descubrirás el concepto del modelo de caja y cómo afecta el diseño y el espaciado de los elementos.
+
+**Tipos de elementos**: Aprenderás las diferencias entre elementos en bloque e inline y cómo afectan el diseño de la página.
+
+Al finalizar esta sección, tendrás las habilidades necesarias para estilizar y personalizar tus páginas web de manera efectiva, mejorando tanto su apariencia como su funcionalidad. ¡Prepárate para transformar tu HTML con el poder del CSS!
 
 ---
 ## Primeros estilos
@@ -905,20 +925,47 @@ Este ejemplo ayuda a entender cómo `box-sizing` puede afectar el diseño de tus
 ---
 ## Resumen
 
-En esta sección introductoria de nuestro curso de Desarrollo Web, los estudiantes adquirieron una comprensión sólida de los conceptos básicos de CSS. Aprendieron cómo aplicar los primeros estilos a sus páginas web, desde simples cambios de color hasta la manipulación avanzada de diseño. Dominaron el uso de selectores de elementos, lo que les permitió dirigir estilos específicos a partes individuales de sus documentos HTML, agregando una capa adicional de personalización y control.
+En la sección de Introducción a CSS de nuestro curso de desarrollo web, los estudiantes han aprendido los siguientes temas:
 
-Además, exploraron a fondo los estilos de texto, aprendiendo a modificar la tipografía, el espaciado y otras propiedades para mejorar la legibilidad y el atractivo visual de su contenido. Comprendieron el modelo de caja en CSS, lo que les permitió controlar el tamaño, el espacio y el posicionamiento de los elementos en la página de manera precisa y eficiente. Finalmente, se familiarizaron con los diferentes tipos de elementos HTML y cómo aplicar estilos específicos a cada uno, creando interfaces cohesivas y bien estructuradas.
+1. **Primeros estilos**: Aprendieron a aplicar estilos básicos a sus elementos HTML utilizando CSS, como cambiar colores y fuentes.
 
-Como resultado, los estudiantes ahora son capaces de diseñar y estilizar páginas web de manera efectiva, utilizando CSS para dar vida a sus ideas creativas y mejorar la experiencia del usuario. Han adquirido habilidades fundamentales que les permitirán avanzar en su camino hacia convertirse en desarrolladores web completos y competentes.
+2. **Selectores de elementos**: Descubrieron cómo utilizar selectores para apuntar y aplicar estilos a elementos específicos en una página web.
 
-Para seguir profundizando en este emocionante mundo de la estilización web, aquí tienes una lista de recursos externos recomendados:
+3. **Estilos de texto**: Aprendieron a personalizar el texto, incluyendo cambios en fuentes, tamaños, colores y otros aspectos tipográficos.
 
+4. **Herencia en CSS**: Comprendieron cómo los estilos se heredan de un elemento a sus descendientes y cómo esto afecta el diseño de una página.
 
-1. [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics): La documentación oficial de Mozilla Developer Network ofrece una guía completa y detallada sobre CSS.
-2. [W3Schools](https://www.w3schools.com/css/default.asp): Una referencia útil con ejemplos prácticos y explicaciones claras sobre CSS y otros lenguajes web.
-3. [Codecademy](https://www.codecademy.com/learn/learn-css): Ofrece cursos interactivos sobre CSS y otros aspectos del desarrollo web.
-4. [CSS-Tricks](https://css-tricks.com/): Una excelente fuente de tutoriales, artículos y ejemplos prácticos sobre CSS.
-5. [Uso de estilos CSS en una página web](https://learn.microsoft.com/es-es/training/modules/use-css-styles/)
+5. **Colores**: Exploraron diversas formas de aplicar colores, utilizando nombres de colores, códigos hexadecimales, RGB y HSL.
 
+6. **Pseudoclases y pseudoelementos**: Aprendieron a usar pseudoclases para aplicar estilos a estados específicos de los elementos y pseudoelementos para estilizar partes específicas de un elemento.
 
-¡Sigue explorando y practicando, y continúa construyendo sobre tus conocimientos para alcanzar nuevos niveles de maestría en CSS y desarrollo web en general!
+7. **Selectores combinados**: Descubrieron cómo usar combinaciones de selectores para apuntar a elementos específicos de manera más eficiente.
+
+8. **Cascada y especificidad**: Comprendieron cómo CSS decide qué estilos aplicar cuando hay conflictos entre reglas y cómo funciona la especificidad.
+
+9. **Unidades de medida**: Aprendieron sobre las diferentes unidades de medida en CSS, como píxeles, porcentajes, em y rem, y cuándo usarlas.
+
+10. **Modelo de caja**: Comprendieron el concepto del modelo de caja y cómo afecta el diseño y el espaciado de los elementos.
+
+11. **Tipos de elementos**: Aprendieron las diferencias entre elementos en bloque e inline y cómo afectan el diseño de la página.
+
+Con estos conocimientos, los estudiantes son capaces de:
+
+- Aplicar estilos básicos a sus páginas web.
+- Utilizar selectores para apuntar a elementos específicos.
+- Personalizar el texto en sus páginas web.
+- Comprender y aplicar la herencia de estilos en CSS.
+- Aplicar colores de diversas formas.
+- Utilizar pseudoclases y pseudoelementos para estilizar estados específicos y partes de elementos.
+- Usar combinaciones de selectores de manera eficiente.
+- Resolver conflictos de estilo usando la cascada y especificidad.
+- Utilizar diferentes unidades de medida adecuadamente.
+- Implementar y modificar el modelo de caja en sus diseños.
+- Diferenciar y aplicar correctamente estilos a elementos en bloque e inline.
+
+**Recursos Externos para Seguir Aprendiendo**:
+
+- [Mozilla Developer Network (MDN) - CSS](https://developer.mozilla.org/es/docs/Web/CSS)
+- [W3Schools - CSS Tutorial](https://www.w3schools.com/css/)
+- [CSS-Tricks](https://css-tricks.com/)
+- [Aprender CSS](https://web.dev/learn/css?hl=es-419)
