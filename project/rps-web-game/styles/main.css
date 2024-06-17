@@ -5,238 +5,122 @@
    box-sizing: border-box;
 }
 
-/*Variables*/
-:root{
-   --bg-color:#F2F4F4;
+/* Variables */
+:root {
+   --bg-color: #EAECEE;
    --second-bg-color: #17202A;
    --text-color: #F8F9F9;
    --hover-color: #58D68D;
 }
-html, body{
-   height: 100%;
+
+html {
+   font-size: 62.5%;
+   /* 1rem es igual a 10px */
 }
 
-
-body{
+body {
+   width: 100rem; /* 100rem es igual a 1000px */
+   margin: auto;
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
+   min-height: 100vh;
    font-family: Arial, Helvetica, sans-serif;
+   font-size: 1.6rem;
 }
 
-/* Layout */
-header, main, footer {
-   width: 100%;
-   max-width: 1000px;
-   padding: 20px;
-}
-
-/* Header */
+/* Estilos del header */
 header {
-   background: var(--second-bg-color);
-   color: var(--text-color);
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding:15px;
-   border-radius: 8px 8px 0 0;
+   padding: 1rem 2rem;
+   background-color: var(--second-bg-color);
+   color: var(--text-color);
+   border-radius: 1rem 1rem 0 0;
 }
 
-header h1 {
-   font-size: 24px;
-   color: var(--text-color);
+header nav {
+   display: flex;
+   gap: 1rem;
 }
 
 header nav a {
    color: var(--hover-color);
+   border-bottom: .2rem solid transparent;
+   font-size: 1.7rem;
    text-decoration: none;
-   margin: 0 10px;
-   font-size: 16px;
 }
 
 header nav a:hover {
-   color: var(--text-color);
+   border-bottom: .2rem solid var(--hover-color);
 }
 
-/* Main */
-main{
+/* Contenido principal */
+main {
    background-color: var(--bg-color);
    text-align: center;
-   flex: 1;
+   display: flex;
    flex-direction: column;
    justify-content: center;
+   flex-grow: 1;
 }
 
-.images {
-   display: flex;
-   justify-content: center;
+section h2, .cards section p {
+   padding: .5rem 0;
 }
 
-.images img {
-   width: 150px;
-   height: auto;
-}
-
-/* Links and Buttons */
-.btn {
-   display: inline-block;
-   padding: 10px 20px;
-   margin: 10px 0;
-   background: var(--second-bg-color);
-   color: var(--hover-color);
-   text-decoration: none;
-   border-radius: 4px;
-   transition: background 0.3s, transform 0.3s;
-}
-
-.btn:hover {
-   background-color: var(--hover-color);
-   color: var(--second-bg-color);
-   transform: scale(1.2);
-}
-
-.cards{
+main section .images {
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
 }
 
-.cards section{
-   margin: 20px 10px;
-   border: 3px solid var(--second-bg-color);
-   min-width: 400px;
-   padding: 20px;
+main section .images img {
+   width: 20rem;
+}
+
+main section .cards {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.cards section {
+   border: .2rem solid var(--second-bg-color);
+   border-radius: 1rem;
    flex: 1;
-   border-radius: 8px;
-   box-shadow: rgba(0, 0, 0, 0.150);
    text-align: start;
+   padding: 1rem;
+   margin: 1rem;
 }
 
-.cards blockquote{
-   border-left: 5px solid var(--hover-color);
-   margin-bottom: 10px;
-   padding-left: 10px;
+.cards section ul {
+   margin-left: 3rem;
 }
 
-/* Section */
-section h2 {
-   font-size: 20px;
-   margin-bottom: 10px;
+.btn {
+   display: inline-block;
+   background-color: var(--second-bg-color);
+   color: var(--hover-color);
+   padding: 1rem 2rem;
+   margin: 2rem;
+   border-radius: 5px;
+   text-decoration: none;
+   font-size: 2rem;
+   transition: transform .3s;
+}
+
+.btn:hover {
+   outline: 2px solid var(--second-bg-color);
+   background: var(--hover-color);
    color: var(--second-bg-color);
+   transform: scale(1.1);
 }
 
-section ul {
-   list-style-type: disc;
-   margin-left: 20px;
-}
-
-section ul li {
-   margin-bottom: 5px;
-}
-
-/* Footer */
+/* Estilos del footer */
 footer {
-   padding: 10px 20px;
-   background: var(--second-bg-color);
+   background-color: var(--second-bg-color);
    color: var(--text-color);
    text-align: center;
-   border-radius: 0 0 8px 8px;
+   padding: 2rem 0;
+   border-radius: 0 0 1rem;
 }
-
-/* Main */
-form {
-   display: flex;
-   flex-direction: column;
-   text-align: start;
-}
-
-label {
-   margin-bottom: 5px;
-   font-size: 18px;
-}
-
-input[type="text"] {
-   padding: 10px;
-   margin-bottom: 20px;
-   border: 2px solid transparent;
-   border-radius: 5px 5px 0 0;
-   font-size: 16px;
-}
-
-input[type="text"]:focus{
-   border-bottom: 2px solid var(--hover-color);
-   outline: none;
-}
-
-button {
-   padding: 10px 20px;
-   background: #17202A;
-   color: #fff;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-   transition: background 0.3s;
-   font-size: 16px;
-}
-
-button:hover {
-   background: #58D68D;
-   color: #17202A;
-}
-
-/*Página de jugar*/
-.row {
-   display: flex;
-   justify-content: center;
-}
-
-.usuario, .pc{
-   min-width: 300px;
-   border: 2px solid var(--second-bg-color);
-   border-radius: 5px;
-   margin-right: 20px;
-}
-
-.usuario header, .pc header{
-   border-radius: 0;
-   margin-bottom: 10px;
-}
-
-.usuario header h2, .pc header h2{
-   color: var(--text-color);
-}
-
-.usuario{
-   display: flex;
-   flex-direction: column;
-}
-
-.usuario img {
-   width: 30px;
-   margin-left: 10px;
-}
-
-.usuario button{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: transparent;
-   border: 2px solid var(--second-bg-color);
-   margin: 10px;
-   color: var(--second-bg-color);
-}
-.usuario button:hover{
-   background-color: var(--hover-color);
-}
-
-.pc{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
-.pc img{
-   width: 180px;
-}
-
