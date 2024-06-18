@@ -48,7 +48,7 @@ Introducción a Grid
 - uso del punto 
 - Abreviatura de ``grid-template:;`` 
 
-**Unidades de medidas de Grid**
+**Aliniación de elementos**
 - Alinear elementos de la cuadrícula
 	- ``justify-items:;`` Alineación en línea (horizontalmente)
 	- ``align-items:;`` Alineación en bloque (Verticalmente)
