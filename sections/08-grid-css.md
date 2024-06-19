@@ -3,23 +3,14 @@
 1. [Introducción](#introducción)
 2. [¿Qué es Grid en CSS?](#qué-es-grid-en-css)
 3. [Crear filas y columnas](#crear-filas-y-columnas)
-4. [CSS Grid: Unidades de Medida](#css-grid-unidades-de-medida)
-5. [Más sobre filas](#más-sobre-filas)
-6. [Filas Automáticas](#filas-automáticas)
-7. [repeat()](#repeat)
-8. [Grid gap](#grid-gap)
-9. [grid-column-start/end](#grid-column-startend)
-10. [grid-row-start/end](#grid-row-startend)
-11. [span row/column](#span-rowcolumn)
-12. [autoflow](#autoflow)
-13. [span row/column](#span-rowcolumn)
-14. [grid-area y grid-template](#grid-area-y-grid-template)
-15. [Alinear elementos de la cuadrícula](#alinear-elementos-de-la-cuadrícula)
-16. [Uso de minmax()](#uso-de-minmax)
-17. [Autofill y autofit](#autofill-y-autofit)
-18. [Resumen](#resumen)
+4. [Combinar columnas y filas](#combinar-columnas-y-filas)
+5. [Flujo automático](#flujo-automático)
+6. [Area de cuadricula](#area-de-cuadricula)
+7. [Alinear elementos de la cuadrícula](#alinear-elementos-de-la-cuadrícula)
+8. [Uso de minmax()](#uso-de-minmax)
+9. [Resumen](#resumen)
 
-
+---
 ## Introducción
 
 ¡Bienvenidos a la sección de Introducción a CSS Grid de nuestro curso de desarrollo web! En esta sección, aprenderás a utilizar CSS Grid para crear diseños web avanzados y flexibles. Exploraremos los siguientes temas clave:
@@ -56,7 +47,8 @@
 
 Al finalizar esta sección, tendrás las habilidades necesarias para crear y manipular layouts complejos y responsivos utilizando CSS Grid. ¡Prepárate para llevar tus diseños web al siguiente nivel con CSS Grid!
 
-### ¿Qué es Grid en CSS?
+---
+## ¿Qué es Grid en CSS?
 
 CSS Grid Layout, comúnmente conocido como Grid, es un sistema de diseño bidimensional que te permite crear layouts complejos de una manera sencilla y eficiente. A diferencia de Flexbox, que es un sistema unidimensional, Grid permite el control tanto de filas como de columnas, facilitando la organización de los elementos en un formato de cuadrícula.
 
@@ -86,6 +78,7 @@ Para habilitar Grid en un contenedor y definir una cuadrícula básica, puedes u
 }
 ```
 
+---
 ## Crear filas y columnas
 
 **Definir filas y columnas**
@@ -122,7 +115,7 @@ La propiedad abreviada `grid` permite definir tanto las filas como las columnas 
 }
 ```
 
-## CSS Grid: Unidades de Medida
+**CSS Grid: Unidades de Medida**
 
 CSS Grid es una herramienta poderosa para crear layouts en dos dimensiones. Permite definir tanto filas como columnas con varias unidades de medida, incluyendo `px`, `rem`, `auto`, y `fr`.
 
@@ -187,7 +180,7 @@ Ejemplo 2:
 - Entonces, `1fr = 300px` y `2fr = 600px`.
 
 
-## Más sobre filas
+**Más sobre filas**
 
 **Filas y Cuadrículas Vacías**
 
@@ -250,8 +243,7 @@ En este caso, la primera columna de cada fila estará vacía porque el único el
 
 En este ejemplo, la primera fila tendrá una altura de 100px (definida explícitamente) y cualquier fila adicional creada automáticamente tendrá una altura de 50px.
 
-
-## repeat()
+**repeat()**
 
 1. **Legibilidad del Código:** `repeat()` hace que la definición de cuadrícula sea más concisa y fácil de entender, especialmente cuando se repiten valores similares en filas o columnas.
 
@@ -279,7 +271,7 @@ grid-template-rows: repeat(2, 25px 50px);
 - En este ejemplo, la cuadrícula tiene 4 filas en total (2 repeticiones).
 - Cada repetición consiste en una fila de 25px seguida de una fila de 50px.
 
-## Grid `gap`
+**Grid `gap`**
 
 En CSS Grid, `column-gap`, `row-gap` y `gap` son propiedades que se utilizan para establecer espacios entre las columnas, filas o ambas dentro de una cuadrícula. Estas propiedades son especialmente útiles para crear diseños más legibles y visualmente atractivos.
 
@@ -346,8 +338,8 @@ Ejemplo:
 }
 ```
 
-
-## `grid-column-start/end
+----
+## Combinar columnas y filas
 
 **`grid-column-start`**
 
@@ -388,7 +380,7 @@ Ejemplo:
 }
 ```
 
-## `grid-row-start/end`
+**`grid-row-start/end`**
 
 **`grid-row-start`**
 
@@ -429,7 +421,7 @@ Ejemplo:
 }
 ```
 
-## span row/column
+**span row/column**
 
 En CSS Grid, la palabra clave `span` se utiliza junto con las propiedades `grid-row` y `grid-column` para indicar que un elemento debe ocupar múltiples filas o columnas en la cuadrícula. Esto proporciona una forma conveniente de definir la extensión de un elemento en la cuadrícula sin tener que especificar manualmente las líneas de inicio y fin.
 
@@ -463,8 +455,8 @@ En este caso, el elemento se extenderá automáticamente por 2 filas y 3 columna
 
 La principal diferencia entre usar `span` y no usarlo es la conveniencia y la legibilidad del código. Al utilizar `span`, se puede definir la extensión del elemento de manera más concisa y comprensible, especialmente cuando se trata de ocupar múltiples filas o columnas. Además, `span` hace que el código sea más adaptable a cambios en la estructura de la cuadrícula, ya que no se necesita ajustar manualmente las líneas de inicio y fin.
 
-## `autoflow`
-
+---
+## Flujo automático
 La propiedad `grid-auto-flow` en CSS Grid se utiliza para controlar cómo se colocan los elementos en la cuadrícula cuando no hay suficientes columnas o filas explícitamente definidas para acomodar todos los elementos. Esta propiedad tiene varios valores que determinan la dirección en la que los elementos se colocan, así como cómo se comportan al hacerlo. Aquí tienes una explicación detallada de cada valor y un ejemplo de su uso:
 
 **Valores de `grid-auto-flow`**
@@ -523,8 +515,8 @@ Ejemplo:
 
 En este ejemplo, al cambiar `grid-auto-flow` a `column`, los elementos restantes (`item3`, `item4`, `item5`, `item6`) se colocarán en nuevas columnas en lugar de en nuevas filas, evitando así espacios vacíos en la cuadrícula. Esto asegura que la cuadrícula esté completamente llena, ya que los elementos se colocan en columnas adicionales si no hay suficientes elementos para llenar todas las filas de la cuadrícula.
 
-## `grid-area` y `grid-template` 
-
+---
+## Area de cuadricula 
 La propiedad `grid-template-areas` se utiliza para definir áreas nombradas en una cuadrícula CSS Grid. Cada área se representa con un nombre único y se delimita por comillas. Por ejemplo:
 
 ```css
@@ -633,6 +625,7 @@ Ejemplo
 </html>
 ```
 
+---
 ## Alinear elementos de la cuadrícula
 
 **`justify-items`**
@@ -747,7 +740,7 @@ Por ejemplo:
 - `center`: Alinea el elemento en el centro vertical de la celda.
 - `stretch`: Hace que el elemento se estire para ocupar toda la altura de la celda.
 
-### Ejemplo de Uso:
+*Ejemplo de Uso:*
 
 ```css
 .item {
@@ -802,6 +795,7 @@ Ejemplo
 </html>
 ```
 
+---
 ## Uso de `minmax()`
 
 La función `minmax()` en CSS Grid se utiliza para especificar un rango permitido de tamaños para una pista de la cuadrícula. Esto es útil cuando se desea que una pista de la cuadrícula tenga un tamaño mínimo y máximo, lo que permite que la cuadrícula se ajuste de forma más dinámica al contenido.
@@ -856,7 +850,7 @@ Aquí tienes un ejemplo de cómo utilizar `minmax()` en una cuadrícula CSS Grid
 
 En este ejemplo, la cuadrícula se configura para tener columnas de un tamaño mínimo de 100px y un tamaño máximo de 1fr. Las columnas se ajustarán automáticamente para llenar el espacio disponible en la pantalla, lo que las hace responsivas para dispositivos móviles.
 
-## `Autofill` y `autofit`
+**`Autofill` y `autofit`**
 
 **¿Qué es `autofill`?**
 
@@ -917,6 +911,7 @@ Ejemplo
 
 En este ejemplo, la cuadrícula se configura para tener columnas que tienen un tamaño mínimo de 100px y un tamaño máximo de 1fr. Utilizando repeat(auto-fill, ...), la cuadrícula generará automáticamente tantas columnas como quepan en el contenedor, llenando el espacio disponible. Si el contenedor es lo suficientemente ancho, se generarán múltiples columnas de 100px, pero si el contenedor es estrecho, las columnas se expandirán para llenar el espacio disponible. La propiedad grid-gap se utiliza para agregar espacio entre las celdas de la cuadrícula.
 
+---
 ## Resumen
 
 En la sección de Estructura de una Página de nuestro curso de desarrollo web, los estudiantes han aprendido los siguientes temas:
