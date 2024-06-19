@@ -637,7 +637,14 @@ Ejemplo
 
 **`justify-items`**
 
-La propiedad `justify-items` se utiliza para alinear los elementos de la cuadrícula en el eje horizontal (en línea). Puedes alinear los elementos hacia la izquierda (`start`), hacia la derecha (`end`), centrados (`center`), o distribuidos uniformemente a lo largo del contenedor (`stretch`). Por ejemplo:
+La propiedad `justify-items`: se utiliza para alinear los elementos de la cuadrícula en el eje **horizontal (en línea)**. 
+
+* izquierda (`start`)
+* hacia la derecha (`end`)
+* centrados (`center`)
+* distribuidos uniformemente a lo largo del contenedor (`stretch`).
+
+ejemplo:
 
 ```css
 .grid-container {
@@ -648,7 +655,14 @@ La propiedad `justify-items` se utiliza para alinear los elementos de la cuadrí
 
 **`align-items`**
 
-La propiedad `align-items` se utiliza para alinear los elementos de la cuadrícula en el eje vertical (en bloque). Puedes alinear los elementos hacia arriba (`start`), hacia abajo (`end`), centrados (`center`), o distribuidos uniformemente a lo largo del contenedor (`stretch`). Por ejemplo:
+La propiedad `align-items` se utiliza para alinear los elementos de la cuadrícula en el eje **vertical (en bloque)**. 
+
+* hacia *arriba (`start`)
+* hacia abajo (`end`)
+* centrados (`center`)
+* distribuidos uniformemente a lo largo del contenedor (`stretch`). 
+
+Por ejemplo:
 
 ```css
 .grid-container {
@@ -661,7 +675,15 @@ La propiedad `align-items` se utiliza para alinear los elementos de la cuadrícu
 
 **`justify-content`**
 
-La propiedad `justify-content` se utiliza para alinear la cuadrícula a lo largo del eje horizontal (en línea). Puedes alinear la cuadrícula hacia la izquierda (`start`), hacia la derecha (`end`), centrada (`center`), distribuida uniformemente a lo largo del contenedor (`space-between`), o distribuida uniformemente con un espacio alrededor de los elementos (`space-around`). Por ejemplo:
+La propiedad `justify-content` se utiliza para alinear la cuadrícula a lo largo del eje **horizontal (en línea)**. 
+
+* hacia la izquierda (`start`), 
+* hacia la derecha (`end`), 
+* centrada (`center`), 
+* distribuida uniformemente a lo largo del contenedor (`space-between`)
+* distribuida uniformemente con un espacio alrededor de los elementos (`space-around`). 
+
+Por ejemplo:
 
 ```css
 .grid-container {
@@ -671,7 +693,16 @@ La propiedad `justify-content` se utiliza para alinear la cuadrícula a lo largo
 ```
 
 **`align-content`**
-La propiedad `align-content` se utiliza para alinear la cuadrícula a lo largo del eje vertical (en bloque). Puedes alinear la cuadrícula hacia arriba (`start`), hacia abajo (`end`), centrada (`center`), distribuida uniformemente a lo largo del contenedor (`space-between`), o distribuida uniformemente con un espacio alrededor de los elementos (`space-around`). Por ejemplo:
+
+La propiedad `align-content` se utiliza para alinear la cuadrícula a lo largo del eje vertical (en bloque). 
+
+* hacia arriba (`start`)
+* hacia abajo (`end`)
+* centrada (`center`)
+* distribuida uniformemente a lo largo del contenedor (`space-between`)
+* distribuida uniformemente con un espacio alrededor de los elementos (`space-around`). 
+
+Por ejemplo:
 
 ```css
 .grid-container {
@@ -693,11 +724,34 @@ La propiedad `place-content` es una propiedad abreviada que se utiliza para cent
 
 **`justify-self`**
 
-La propiedad `justify-self` se utiliza para alinear un elemento específico dentro de la cuadrícula en el eje horizontal (en línea). Puedes alinear el elemento hacia la izquierda (`start`), hacia la derecha (`end`), centrado (`center`), o estirado para ocupar todo el espacio disponible (`stretch`). Por ejemplo:
+La propiedad `justify-self` se utiliza para alinear un elemento específico dentro de la cuadrícula en el eje **horizontal (en línea).** 
+
+* *hacia la izquierda (`start`)
+* hacia la derecha (`end`)
+* centrado (`center`)
+* estirado para ocupar todo el espacio disponible (`stretch`). 
+
+Por ejemplo:
 
 ```css
 .item {
   justify-self: center; /* Alinea este elemento en el centro horizontalmente */
+}
+```
+
+
+**`align-self`**
+
+- `start`: Alinea el elemento en el borde superior de la celda.
+- `end`: Alinea el elemento en el borde inferior de la celda.
+- `center`: Alinea el elemento en el centro vertical de la celda.
+- `stretch`: Hace que el elemento se estire para ocupar toda la altura de la celda.
+
+### Ejemplo de Uso:
+
+```css
+.item {
+  align-self: center; /* Alinea verticalmente en el centro */
 }
 ```
 
