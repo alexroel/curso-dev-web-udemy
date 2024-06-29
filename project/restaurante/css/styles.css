@@ -1,0 +1,459 @@
+/* Fuente principal */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&display=swap');
+
+/* Feunte para icono o titulos */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+}
+
+:root {
+   --bg-color: rgba(47, 23, 15, 0.9);
+   --second-bg-color: #df902a;
+   --text-color: #e1e1e1;
+   --hover-color: rgba(255, 255, 255, 0.4);
+   --font-sans: "Open Sans", sans-serif;
+   --font-pacifico: "Pacifico", cursive;
+}
+
+html {
+   font-size: 62.5%;
+   font-family: var(--font-sans);
+}
+
+
+body {
+   font-size: 1.6rem;
+}
+
+/* Estilos comunes */
+.container {
+   max-width: 100rem;
+   padding: 1rem;
+   margin: auto;
+}
+
+.btn {
+   display: inline-block;
+   padding: 2rem 3rem;
+   background-color: var(--second-bg-color);
+   border-radius: 1rem;
+   font-weight: 600;
+   color: var(--bg-color);
+   font-size: 1.8rem;
+   transition: .3s ease;
+}
+
+.btn:hover {
+   transform: scale(1.1);
+}
+
+/* Etilos de encabezados */
+#bg-video {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   z-index: -1;
+}
+
+.header {
+   padding: 0;
+   max-width: 100%;
+   text-align: center;
+   position: relative;
+   height: 100vh;
+   overflow: hidden;
+}
+
+.header-logo {
+   margin: 3rem 0;
+}
+
+.header-logo h1 {
+   text-transform: uppercase;
+   color: var(--second-bg-color);
+   font-family: var(--font-pacifico);
+   font-size: 4rem;
+}
+
+.header-logo h2 {
+   color: var(--text-color);
+   font-size: 3rem;
+}
+
+.navbar {
+   display: flex;
+   justify-content: center;
+   gap: 2rem;
+   background-color: var(--bg-color);
+   padding: 3rem 0;
+}
+
+.navbar a {
+   color: var(--text-color);
+   text-transform: uppercase;
+   font-weight: 700;
+}
+
+.navbar a:hover {
+   color: var(--second-bg-color);
+}
+
+/* Estilos de Home */
+.welcome-content {
+   background-color: var(--bg-color);
+   color: var(--text-color);
+   max-width: 45rem;
+   padding: 5rem 2rem;
+   border-radius: 2rem;
+   margin-top: 3rem;
+   position: relative;
+}
+
+.welcome-content span {
+   display: block;
+   text-align: center;
+}
+
+.welcome-content h2 .heading1 {
+   color: var(--second-bg-color);
+   font-size: 2rem;
+   font-weight: 700;
+}
+
+.welcome-content h2 .heading2 {
+   font-weight: 100;
+   font-size: 4.5rem;
+   margin-bottom: 2rem;
+}
+
+.welcome-content p {
+   text-align: center;
+   line-height: 1.75;
+}
+
+.welcome-btn {
+   width: 100%;
+   position: absolute;
+   text-align: center;
+   bottom: -3rem;
+   left: 0;
+}
+
+/* Estilos de productos mas vendidos */
+.best-sellers {
+   background-image: url(../images/bg-img1.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   width: 100%;
+   padding: 3rem 0;
+}
+
+.best-sellers h2 {
+   font-family: var(--font-pacifico);
+   font-size: 4rem;
+   text-align: center;
+   margin: 3rem 0;
+}
+
+.best-sellers-content {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+   align-content: center;
+   gap: 2rem;
+}
+
+.best-seller-item img {
+   width: 70%;
+}
+
+.best-seller-item {
+   background-color: var(--hover-color);
+   padding: 3rem 2rem;
+   border-radius: 1rem;
+   text-align: center;
+}
+
+.best-seller-item h3 {
+   margin-bottom: 2rem;
+   font-size: 2.5rem;
+}
+
+.best-seller-item p {
+   margin: 2rem 0;
+}
+
+.best-seller-item .btn {
+   padding: 1rem 2rem;
+}
+
+/* Estilos de nuevos productos */
+.new-product {
+   padding: 6rem 0;
+   width: 100%;
+   background-image: url(../images/bg-img2.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+
+.new-product-content {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}
+
+.new-product-content img {
+   width: 100%;
+}
+
+.new-product-info {
+   background-color: var(--second-bg-color);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding: 1rem;
+}
+
+.new-product-info h3 {
+   margin-bottom: 2rem;
+   font-size: 4rem;
+   font-family: var(--font-pacifico);
+}
+
+.new-product-info p {
+   margin-bottom: 3rem;
+   font-size: 2rem;
+}
+
+.new-product-info .btn {
+   background-color: var(--bg-color);
+   color: var(--text-color);
+}
+
+/* Estilos de menu carta  */
+.menu {
+   padding: 4rem 0;
+   background-color: var(--second-bg-color);
+}
+
+.menu h2 {
+   text-align: center;
+   margin: 2rem 0;
+   font-family: var(--font-pacifico);
+   font-size: 5rem;
+}
+
+.menu-content {
+   border: .2rem solid var(--bg-color);
+   padding: 1rem;
+   overflow: hidden;
+}
+
+.menu-content2 {
+   border: .2rem solid var(--bg-color);
+   padding: 2rem;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}
+
+.menu-content article {
+   padding: 2rem;
+}
+
+.menu-content article h5 {
+   text-align: center;
+   font-size: 2.2rem;
+   margin-bottom: 4rem;
+   font-weight: 700;
+}
+
+.menu-item {
+   margin-bottom: 3rem;
+   padding-bottom: 2rem;
+   border-bottom: .4rem dotted var(--bg-color);
+   display: grid;
+   grid-template-columns: 3fr 1fr;
+}
+
+.menu-item .name,
+.menu-item .price {
+   font-size: 2rem;
+   font-weight: 600;
+   margin-bottom: 1.5rem;
+}
+
+.menu-item .price {
+   text-align: end;
+}
+
+.menu-item .desc {
+   grid-column: span 2;
+}
+
+/* Estilos de galeria de imágenes */
+.gallery {
+   background-color: var(--bg-color);
+   background-image: url(../images/bg-img2.svg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}
+
+.gallery img {
+   width: 100%;
+   height: auto;
+   opacity: 0.4;
+   transition: .5s ease;
+}
+
+.gallery img:hover {
+   opacity: 1;
+   cursor: pointer;
+   transform: scale(1.1);
+   z-index: 100;
+}
+
+/*  */
+.location {
+   padding: 6rem 0;
+}
+
+.location h2 {
+   text-align: center;
+   font-family: var(--font-pacifico);
+   font-size: 4rem;
+   margin-bottom: 3rem;
+}
+
+.location-content {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}
+
+.location-content .address,
+.location-content .schedules {
+   padding: 2rem;
+}
+
+.location-content .address h3,
+.location-content .schedules h3 {
+   font-size: 2.5rem;
+   margin-bottom: 2rem;
+}
+
+.location-content .address p,
+.location-content .schedules li {
+   font-weight: 500;
+   font-size: 1.8rem;
+}
+
+.map {
+   width: 100%;
+}
+
+.map iframe {
+   width: 100%;
+   max-height: 60rem;
+}
+
+/* Estilos de footer */
+.footer {
+   background-color: var(--bg-color);
+   color: var(--text-color);
+   padding: 4rem 0;
+}
+
+.footer-content {
+   display: grid;
+   grid-template-columns: 2fr repeat(2, 1fr);
+   margin: 2rem 0;
+}
+
+.footer-logo {
+   align-self: center;
+}
+
+.footer-logo h2 {
+   color: var(--second-bg-color);
+   font-family: var(--font-pacifico);
+   font-size: 3rem;
+   text-align: center;
+}
+
+.footer-logo .desc {
+   text-align: center;
+   font-size: 2.5rem;
+   font-weight: 600;
+   color: var(--text-color);
+}
+
+.footer-logo .social-media {
+   margin: 2rem 0;
+   display: flex;
+   gap: 1.5rem;
+   justify-content: center;
+}
+
+.footer-logo .social-media a {
+   color: var(--second-bg-color);
+   display: inline-flex;
+   padding: 1rem;
+   border: .2rem solid var(--second-bg-color);
+   border-radius: 50%;
+   font-size: 2rem;
+   transition: .3s ease;
+}
+
+.footer-logo .social-media a:hover {
+   background-color: var(--second-bg-color);
+   color: var(--bg-color);
+   transform: scale(1.2);
+   box-shadow: 0 0 2rem var(--second-bg-color);
+}
+
+.footer-about h3,
+.footer-other h3 {
+   margin-bottom: 1.5rem;
+   font-size: 2.2rem;
+   padding: .5rem;
+}
+
+.footer-about ul,
+.footer-other ul {
+   padding-left: 2rem;
+   list-style: none;
+}
+
+.footer-about li,
+.footer-other li {
+   margin-bottom: 1rem;
+}
+
+.footer-about a,
+.footer-other a {
+   color: var(--text-color);
+   font-size: 1.8rem;
+   font-weight: 400;
+}
+
+.footer-about a:hover,
+.footer-other a:hover {
+   color: var(--hover-color);
+}
+
+.footer p {
+   text-align: center;
+   color: var(--hover-color);
+}
