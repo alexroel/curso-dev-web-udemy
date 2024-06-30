@@ -3,12 +3,10 @@
 1. [Introducción](#introducción)
 2. [¿Qué es la Web?](#qué-es-la-web)
 3. [¿Cómo Funciona la Web?](#cómo-funciona-la-web)
-4. [Programación](#programación)
-5. [Tus primeras instrucciones](#tus-primeras-instrucciones)
-6. [Instalación de Visual Studio Code](#instalacic3b3n-de-visual-studio-code)
-7. [Crea tu primer sitio web](#crea-tu-primer-sitio-web)
-8. [Las tecnologías principal de la Web](#las-tecnologías-principal-de-la-web)
-9. [Resumen](#resumen)
+4. [Instalación de Visual Studio Code](#instalacic3b3n-de-visual-studio-code)
+5. [Crea tu primer sitio web](#crea-tu-primer-sitio-web)
+6. [Las tecnologías principal de la Web](#las-tecnologías-principal-de-la-web)
+7. [Resumen](#resumen)
 ---
 ## Introducción 
 
@@ -125,82 +123,6 @@ Para ilustrar mejor este proceso, consideremos un ejemplo práctico:
 7. **Interacción del Usuario**: El usuario puede ahora interactuar con la página, realizar búsquedas, hacer clic en enlaces y navegar a otras páginas, repitiendo el ciclo de solicitudes y respuestas.
 
 ---
-## Programación 
-
-**¿Qué es Programación?**
-
-La programación es como dar instrucciones a una computadora para que haga lo que queremos. Imagina que le enseñas a una máquina a hacer tareas específicas siguiendo un conjunto de reglas.
-
-**Lenguajes de Programación:**
-
-Son como idiomas que usamos para hablar con las computadoras. Algunos son más difíciles (como hablar en código secreto) y otros son más fáciles (como hablar en inglés simple). Los lenguajes de bajo nivel son más cercanos a las máquinas, mientras que los de alto nivel son más fáciles para nosotros.
-
-- **Lenguajes de Bajo Nivel:**
-  Son como hablar en un código muy específico que solo las computadoras entienden bien. Es como decirle a la máquina cada paso detallado.
-
-- **Lenguajes de Alto Nivel:**
-  Son más fáciles para nosotros porque son más parecidos al lenguaje humano. Podemos decirle a la computadora qué hacer de una manera más comprensible.
-
-**Compilación e Interpretación:**
-
-Son dos formas de hacer que la computadora entienda y ejecute nuestras instrucciones.
-
-- **Compilación:**
-  Es como escribir una carta y luego traducirla a un idioma que la máquina pueda entender. Después, la máquina puede seguir esas instrucciones sin necesidad de traducción cada vez.
-
-- **Interpretación:**
-  Es como leer en voz alta una historia a la máquina. La computadora no recibe una traducción previa; entiende y sigue las instrucciones mientras las escucha.
-
-**Algoritmos**:
-   - Un algoritmo es una secuencia de pasos o instrucciones que se siguen para resolver un problema o realizar una tarea.
-   - Los algoritmos pueden ser simples, como sumar dos números, o complejos, como ordenar una lista de millones de elementos.
-
-En resumen, programar es enseñar a las computadoras a hacer lo que queremos usando lenguajes que ellas entiendan. Algunos idiomas son más fáciles, y hay diferentes formas de hacer que la computadora siga nuestras instrucciones. Con el tiempo, aprenderemos a hablar el idioma de las máquinas y a contarles lo que queremos que hagan.
-
----
-## Tus primeras instrucciones
-
-En esta primera lección, vamos a aprender cómo dar las primeras instrucciones a la computadora para que realice acciones simples. Usaremos el navegador y el documento `about:blank` como nuestro lienzo en blanco.
-
-**Instrucciones Básicas en JavaScript:**
-
-En programación, usamos un lenguaje llamado JavaScript para darle órdenes a la computadora. Vamos a empezar con algunos ejemplos básicos:
-
-**Práctica:**
-
-1. Abre tu navegador y crea un nuevo documento en blanco utilizando "about:blank".
-2. Abre las herramientas de desarrollo del navegador (puedes hacer clic derecho en la página y seleccionar "Inspeccionar" o "Elemento").
-3. Ve a la pestaña "Consola".
-4. Copia y pega cada uno de los ejemplos de código en la consola y presiona Enter para ejecutarlos.
-
-**1. Alerta:**
-```javascript
-alert("Mensaje de alerta.");
-```
-Cuando ejecutamos este código, aparecerá una ventana emergente en la pantalla con el mensaje "Mensaje de alerta." Esto es útil para mostrar información importante al usuario.
-
-**2. Escribir en el Documento:**
-```javascript
-document.write("Escribiendo en el documento");
-```
-Con este código, escribiremos "Escribiendo en el documento" directamente en la página. Puedes pensar en esto como si estuvieras escribiendo en una hoja de papel.
-
-**3. Registro en la Consola:**
-```javascript
-console.log("Registro en la consola.");
-```
-En este caso, utilizamos `console.log` para imprimir el mensaje "Registro en la consola." en la consola del navegador. Esto es útil para ver mensajes mientras trabajamos en el código.
-
-**4. Error en la Consola:**
-```javascript
-console.error("Error en la consola.");
-```
-Aquí, usamos `console.error` para imprimir un mensaje de error en la consola. Esto nos ayuda a identificar y corregir problemas en nuestro código.
-
-
-¡Genial! Has dado tus primeros pasos en la programación. En las próximas lecciones, exploraremos más sobre JavaScript y cómo usarlo para crear programas más complejos. ¡Sigue practicando y divirtiéndote programando!
-
----
 ## Instalación de Visual Studio Code
 
 1. Descarga VSCode desde el sitio web oficial: [Visual Studio Code](https://code.visualstudio.com/).
@@ -217,7 +139,7 @@ Una vez que hayas instalado VSCode, puedes agregar extensiones para ampliar sus 
    - Busca cada extensión por su nombre en la barra de búsqueda.
    - Instala las siguientes extensiones:
      - **Live Server o Live Preview:** Proporciona un servidor en vivo para la vista previa de tus proyectos web.
-     - **ESLint:** Ayuda a mantener un código JavaScript/TypeScript limpio y consistente.
+     - **Auto Rename Tag:** Modificación de etiquetas de html
 
    Para instalar una extensión, simplemente haz clic en el botón "Instalar".
 
@@ -227,13 +149,51 @@ Una vez que hayas instalado VSCode, puedes agregar extensiones para ampliar sus 
    - Esta extensión agrega íconos coloridos a los archivos y carpetas en el explorador de archivos.
    - Busca "Material Icon Theme" en la barra de búsqueda de extensiones y haz clic en "Instalar".
 
-2. **Atom One Dark Theme (Opcional):**
-   - Cambia la apariencia de VSCode al tema oscuro "Atom One Dark".
-   - Busca "Atom One Dark Theme" en la barra de búsqueda de extensiones y haz clic en "Instalar".
+2. **Symbols (Opcional):**
+   - Esta extensión agrega íconos coloridos a los archivos y carpetas en el explorador de archivos.
+
+3. **Fluent Icons (Opcional):**
+   - Esta extensión agrega íconos en el menu de explorador.
+
+4. **One Dark Theme (Opcional):**
+   - Cambia la apariencia de VSCode al tema oscuro "One Dark".
+   - Busca "One Dark Theme" verificado en la barra de búsqueda de extensiones y haz clic en "Instalar".
 
 **Configuración Adicional (Si es necesario):**
 
 - Algunas extensiones pueden requerir configuración adicional. Verifica la documentación de cada extensión para obtener detalles sobre la configuración.
+
+**Mi configuración persnal**
+```json
+{
+    "window.zoomLevel": 2,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.renderWhitespace": "none",
+    "window.commandCenter": false,
+    "editor.cursorBlinking": "expand",
+    "editor.linkedEditing": true,
+    "editor.glyphMargin": false,
+    "editor.fontSize": 16,
+    "workbench.sash.size": 4,
+    "workbench.settings.applyToAllProfiles": [
+        "editor.renderLineHighlightOnlyWhenFocus"
+    ],
+    "editor.fontLigatures": false,
+    "[html]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
+    "workbench.colorTheme": "One Dark",
+    "symbols.hidesExplorerArrows": false,
+    "workbench.iconTheme": "symbols",
+    "workbench.productIconTheme": "fluent-icons",
+    "editor.stickyScroll.enabled": false,
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "editor.indentSize": "tabSize",
+    "oneDark.italic": false
+}
+```
 
 **¡Listo!**
 

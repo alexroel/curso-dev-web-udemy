@@ -28,6 +28,82 @@ No nos detendremos ahí; también aprenderemos sobre los Comentarios, una herram
 ¡Prepárate para un viaje emocionante lleno de descubrimientos y desafíos! Con determinación y práctica, estarás en camino de convertirte en un hábil desarrollador de JavaScript.
 
 ---
+## Programación 
+
+**¿Qué es Programación?**
+
+La programación es como dar instrucciones a una computadora para que haga lo que queremos. Imagina que le enseñas a una máquina a hacer tareas específicas siguiendo un conjunto de reglas.
+
+**Lenguajes de Programación:**
+
+Son como idiomas que usamos para hablar con las computadoras. Algunos son más difíciles (como hablar en código secreto) y otros son más fáciles (como hablar en inglés simple). Los lenguajes de bajo nivel son más cercanos a las máquinas, mientras que los de alto nivel son más fáciles para nosotros.
+
+- **Lenguajes de Bajo Nivel:**
+  Son como hablar en un código muy específico que solo las computadoras entienden bien. Es como decirle a la máquina cada paso detallado.
+
+- **Lenguajes de Alto Nivel:**
+  Son más fáciles para nosotros porque son más parecidos al lenguaje humano. Podemos decirle a la computadora qué hacer de una manera más comprensible.
+
+**Compilación e Interpretación:**
+
+Son dos formas de hacer que la computadora entienda y ejecute nuestras instrucciones.
+
+- **Compilación:**
+  Es como escribir una carta y luego traducirla a un idioma que la máquina pueda entender. Después, la máquina puede seguir esas instrucciones sin necesidad de traducción cada vez.
+
+- **Interpretación:**
+  Es como leer en voz alta una historia a la máquina. La computadora no recibe una traducción previa; entiende y sigue las instrucciones mientras las escucha.
+
+**Algoritmos**:
+   - Un algoritmo es una secuencia de pasos o instrucciones que se siguen para resolver un problema o realizar una tarea.
+   - Los algoritmos pueden ser simples, como sumar dos números, o complejos, como ordenar una lista de millones de elementos.
+
+En resumen, programar es enseñar a las computadoras a hacer lo que queremos usando lenguajes que ellas entiendan. Algunos idiomas son más fáciles, y hay diferentes formas de hacer que la computadora siga nuestras instrucciones. Con el tiempo, aprenderemos a hablar el idioma de las máquinas y a contarles lo que queremos que hagan.
+
+---
+## Tus primeras instrucciones
+
+En esta primera lección, vamos a aprender cómo dar las primeras instrucciones a la computadora para que realice acciones simples. Usaremos el navegador y el documento `about:blank` como nuestro lienzo en blanco.
+
+**Instrucciones Básicas en JavaScript:**
+
+En programación, usamos un lenguaje llamado JavaScript para darle órdenes a la computadora. Vamos a empezar con algunos ejemplos básicos:
+
+**Práctica:**
+
+1. Abre tu navegador y crea un nuevo documento en blanco utilizando "about:blank".
+2. Abre las herramientas de desarrollo del navegador (puedes hacer clic derecho en la página y seleccionar "Inspeccionar" o "Elemento").
+3. Ve a la pestaña "Consola".
+4. Copia y pega cada uno de los ejemplos de código en la consola y presiona Enter para ejecutarlos.
+
+**1. Alerta:**
+```javascript
+alert("Mensaje de alerta.");
+```
+Cuando ejecutamos este código, aparecerá una ventana emergente en la pantalla con el mensaje "Mensaje de alerta." Esto es útil para mostrar información importante al usuario.
+
+**2. Escribir en el Documento:**
+```javascript
+document.write("Escribiendo en el documento");
+```
+Con este código, escribiremos "Escribiendo en el documento" directamente en la página. Puedes pensar en esto como si estuvieras escribiendo en una hoja de papel.
+
+**3. Registro en la Consola:**
+```javascript
+console.log("Registro en la consola.");
+```
+En este caso, utilizamos `console.log` para imprimir el mensaje "Registro en la consola." en la consola del navegador. Esto es útil para ver mensajes mientras trabajamos en el código.
+
+**4. Error en la Consola:**
+```javascript
+console.error("Error en la consola.");
+```
+Aquí, usamos `console.error` para imprimir un mensaje de error en la consola. Esto nos ayuda a identificar y corregir problemas en nuestro código.
+
+
+¡Genial! Has dado tus primeros pasos en la programación. En las próximas lecciones, exploraremos más sobre JavaScript y cómo usarlo para crear programas más complejos. ¡Sigue practicando y divirtiéndote programando!
+
+---
 ## Consola de desarrollador
 
 La consola del navegador es una herramienta de desarrollo que se encuentra en los navegadores web modernos como Chrome, Firefox, Safari y Edge. Permite a los desarrolladores web depurar y probar código JavaScript directamente en el navegador.

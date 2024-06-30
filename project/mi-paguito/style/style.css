@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+:root{
+	--font-robotot: "Roboto", sans-serif;
+	--color-white: #ffffff;
+	--color-purple-800: #5e186c;
+	--color-purple-700: #742384;
+	--color-purple-600: #8b3d99;
+
+	--color-btn: #10CBB4;
+	--color-btn-hover: #00AD97;
+	--color-hover-second: #e5fffc;
+}
+
+html, body{
+	font-family: var(--font-robotot);
+	font-size: 62.5%;
+}
+
+/*Estilos de comunes*/
+
+/*Estilos de encabesado*/
+
+
+
