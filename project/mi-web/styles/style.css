@@ -58,3 +58,11 @@ button:hover{
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    /* Agregar estilos para pantalla menor o igual a 768px */
+    
+}
+@media (max-width: 768px) {
+    /* Agregar estilos para pantalla menor o igual a 768px */
+    
+}
