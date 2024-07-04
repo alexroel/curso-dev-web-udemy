@@ -1,4 +1,13 @@
-@media (max-width: 900px){
+@media (max-width: 992px){
+
+   .best-sellers-content{
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .gallery{
+      grid-template-columns: repeat(2, 1fr);
+   }
+
    .footer-content{
       grid-template-columns: 1fr 1fr;
    }
@@ -13,7 +22,7 @@
    }
 }
 
-@media (max-width: 450px){
+@media (max-width: 576px){
    .navbar{
       padding: 2rem;
    }

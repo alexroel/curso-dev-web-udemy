@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Mi Paguito</title>
+
+
+	<link rel="stylesheet" href="css/style.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="css/normalize.css">
+
 </head>
+
 <body>
 	<header class="header">
-		
+		<picture class="picture">
+			<source srcset="images/banner-bg-paguito.webp" media="(min-width: 750px)">
+			<img src="images/banner-bg-paguito-500-2.webp" alt="Descripción de la imagen">
+		</picture>
 		<nav class="navbar">
 			<a href="">
-				<img src="images/logo-paguito2.png">
+				<img src="images/logo-paguito.png">
 			</a>
+			<div class="help-input">
+				<i class='bx bx-search'></i>
+				<input type="text" placeholder="¿Necesitas ayuda?">
+			</div>
 			<div class="menu">
 				<ul>
 					<li><a href="">Crea mi cuenta</a></li>
@@ -36,22 +51,248 @@
 				</ul>
 			</div>
 			<div class="btns">
-				
+				<button class="btn-search"><i class='bx bx-search'></i></button>
+				<button class="btn-dowload btn">Descargar Paguito</button>
+				<a href="" class="btn-block">
+					<i class='bx bx-lock'></i>
+					<span>Bloquea tu cuenta</span>
+				</a>
+			</div>
+			<div class="menu-btn">
+				<i class='bx bx-menu'></i>
 			</div>
 		</nav>
 		<div class="header-content">
 			<h1>Tus destinos favoritos a un Paguito de distancia</h1>
 			<p>Entra a tu app, selecciona "Viajar en bus" y conoce más.</p>
 			<div class="btn-header">
-				<a href="">Conoce más aqui</a>
+				<a href="" class="btn">Conoce más aqui</a>
 			</div>
 			<p>*Disponible, por el momento, para Paguito con BCP y Paguito con DNI en celulares Android.</p>
+			<div class="circle-btn">
+				<ul>
+					<li><i class='bx bxs-circle active'></i></li>
+					<li><i class='bx bxs-circle'></i></li>
+					<li><i class='bx bxs-circle'></i></li>
+					<li><i class='bx bxs-circle'></i></li>
+					<li><i class='bx bxs-circle'></i></li>
+					<li><i class='bx bxs-circle'></i></li>
+				</ul>
+			</div>
 		</div>
 	</header>
+
 	<main>
-		<section class="">
-			
+		<!-- Sección de servicio -->
+		<section class="services">
+			<div class="services-one">
+				<h2 class="heading-two">Yo pagueo, tu pagueas, <span>¡todos pagamos!</span></h2>
+				<p class="description">
+					Olvídate de ir al banco o llevar efectivo. Con Yape, puedes enviar y recibir dinero las 24 horas del
+					día, de manera gratuita y en todo el país.
+				</p>
+				<div class="services-one-items">
+					<div class="services-one-item">
+						<img src="images/paguito-es-gratis.png" alt="">
+						<p>¡Es gratis!</p>
+					</div>
+					<div class="services-one-item">
+						<img src="images/paguito-en-todos-lados.png" alt="">
+						<p>¡Está en todos lados!</p>
+					</div>
+					<div class="services-one-item">
+						<img src="images/paguito-al-toque.png" alt="">
+						<p>¡Es al toque!</p>
+					</div>
+				</div>
+			</div>
+			<div class="services-two">
+				<h2 class="heading-two">¿Qué más tiene <span>Paguito para ti</span>?</h2>
+				<p class="description">
+					Yape, mucho más que pagos. Explora nuestros productos y descubre lo que tenemos para ti.
+				</p>
+				<div class="services-two-items">
+					<div class="services-two-item">
+						<img src="images/paguito-creditos.png" alt="">
+						<p>Sacar mi crédito Paguito</p>
+					</div>
+					<div class="services-two-item">
+						<img src="images/paguitos-promos.png" alt="">
+						<p>Paguito promos</p>
+					</div>
+					<div class="services-two-item">
+						<img src="images/paguitos-servicios.png" alt="">
+						<p>Paguea tus servicios</p>
+					</div>
+					<div class="services-two-item">
+						<img src="images/paguito-tienda.png" alt="">
+						<p>Paguito Tienda</p>
+					</div>
+					<div class="services-two-item">
+						<img src="images/paguito-cambios.png" alt="">
+						<p>Cambio dólares</p>
+					</div>
+					<div class="services-two-item">
+						<img src="images/paguitos-recargas-celular.png" alt="">
+						<p>Recarga mi celular</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Sección de novedades -->
+		<section class="news">
+			<div class="news-img">
+				<img loading="lazy" src="images/img-home-remesas.png" alt="" width="500">
+			</div>
+			<div class="news-content">
+				<p class="tag">¡Novedades!</p>
+				<h2>Resibe tus Remesas por Paguito</h2>
+				<p class="description">Resibe dinero del extranjero nunca fue tan fácil</p>
+				<a href="" class="btn">Conoce más aquí</a>
+				<div class="btn-cicle">
+					<button><i class='bx bxs-circle active'></i></button>
+					<button><i class='bx bxs-circle'></i></button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Sección de registrate -->
+		<section class="register">
+			<div class="register-content">
+				<div class="register-content-item">
+					<div>
+						<h2>Tú eliges cómo <span>resgistrarte</span></h2>
+						<p>Descubre los tipos de cuenta Paguito</p>
+					</div>
+					<div class="register-btn">
+						<a href="" class="btn">Conoce ma aquí</a>
+					</div>
+				</div>
+				<div class="register-img">
+					<img src="images/pagueros.png" alt="">
+				</div>
+			</div>
+		</section>
+
+		<!-- Sección de pagueros -->
+		<section class="pagueros">
+			<div class="pagueros-content">
+				<picture>
+					<img src="images/logo-paguito.png" alt="">
+				</picture>
+				<h2 class="heading-two">¡Ya somos más de <span>15 millones de pagueros!</span></h2>
+				<p class="description">Y seguimos creciendo, haciéndole la vida más fácil a mas personas.</p>
+			</div>
+		</section>
+
+		<!-- Sección de preguntas frecuentes -->
+		<section class="questions">
+			<div class="questions-content">
+				<h2 class="heading-two">Preguntas <span>frecuentes</span></h2>
+				<p class="description">Encuentra las respuestas a tus preguntas aquí.</p>
+				<div class="questions-item">
+					<p class="description">¿Qué hago si olvidé o quiero cambiar mi clave para ingresar a Yape?</p>
+					<i class='bx bx-chevron-right'></i>
+				</div>
+				<div class="questions-item">
+					<p class="description">¿Cómo crear una cuenta en Yape?</p>
+					<i class='bx bx-chevron-right'></i>
+				</div>
+				<div class="questions-item">
+					<p class="description">¿Qué hago si mi tarjeta está bloqueada, vencida, no activa o necesito
+						cambiarla?</p>
+					<i class='bx bx-chevron-right'></i>
+				</div>
+				<a href="" class="btn">Ir al Centro de Ayudas</a>
+			</div>
+		</section>
+
+		<!-- Sección de datazos -->
+		<section class="datazo">
+			<div class="datazo-content">
+				<div class="datazo-header">
+					<h2 class="heading-two">Los datazos de <span>Paguito</span></h2>
+					<p class="description">Te damos los consejos que necesitas para sacarle el jugo a tu platita con
+						Paguito.</p>
+				</div>
+				<div class="datazo-items">
+					<div class="datazo-item">
+						<img src="images/talento-humano.webp" alt="">
+						<div class="datazo-tag">
+							Sobre Paguitoo
+						</div>
+						<h3>Educación en torno a gestión de personal</h3>
+						<p><i class='bx bx-time-five'></i> 12 min</p>
+					</div>
+				</div>
+				<div class="btn-cicle">
+					<button><i class='bx bxs-circle active'></i></button>
+					<button><i class='bx bxs-circle'></i></button>
+					<button><i class='bx bxs-circle'></i></button>
+					<button><i class='bx bxs-circle'></i></button>
+					<button><i class='bx bxs-circle'></i></button>
+					<button><i class='bx bxs-circle'></i></button>
+					<button><i class='bx bxs-circle'></i></button>
+					<button><i class='bx bxs-circle'></i></button>
+					<button><i class='bx bxs-circle'></i></button>
+				</div>
+				<div class="datazo-btn">
+					<a href="" class="btn">Ver mas consejos</a>
+				</div>
+			</div>
 		</section>
 	</main>
+
+	<footer class="footer">
+		<a class="go-home" href="index.html">
+			<i class='bx bx-chevron-up'></i>
+		</a>
+		<div class="footer-contact">
+			<div class="about-footer">
+				<div class="footer-logo">
+					<img src="images/logo-paguito-white.png" alt="">
+				</div>
+				<div class="social-media">
+					<h5>Siguenos en:</h5>
+					<div class="social">
+						<a href=""><i class='bx bxl-tiktok'></i></a>
+						<a href="" class="instagram"><i class='bx bxl-instagram-alt'></i></a>
+						<a href=""><i class='bx bxl-facebook' ></i></a>
+						<a href=""><i class='bx bxl-linkedin' ></i></a>
+						<a href=""><i class='bx bxs-right-arrow' ></i></a>
+					</div>
+				</div>
+				
+			</div>
+			<p>Yape © 2023. Todos los derechos reservados</p>
+			<ul class="footer-other">
+
+				<li><a href="">Términos y condiciones</a></li>
+				<li><a href="">Política de Privacidad y Datos personales</a></li>
+				<li><a href="">Política de Cookies</a></li>
+				<li><a href="">Consentimiento para el uso de Cookies</a></li>
+
+			</ul>
+			<div class="footer-btns">
+				<a href="">
+					<i class='bx bxl-whatsapp'></i>
+					Escríbenos por Whatsapp
+				</a>
+				<a href="">
+					<i class='bx bxs-briefcase-alt-2'></i>
+					Trabaja con nosotros
+				</a>
+			</div>
+		</div>
+		<div class="leguaje">
+			<p> BANCO DE CREDITO DEL PERU - RUC: 20100047218 </p>
+			<div class="leguaje-content">
+				<p class="config"><i class='bx bx-cog'></i> Configurar cookies</p>
+				<p class="spanish">Español</p>
+				<p class="quechua">Quechua</p>
+			</div>
+		</div>
+	</footer>
 </body>
+
 </html>
