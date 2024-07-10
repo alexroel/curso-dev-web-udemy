@@ -1,0 +1,276 @@
+/* Estilos de footer */
+.footer {
+    background-color: var(--color-purple-800);
+    position: relative;
+    padding-top: 3.5rem;
+}
+
+.footer__btn-home {
+    display: inline-flex;
+    background-color: var(--color-aquamarine);
+    position: absolute;
+    left: 49.5%;
+    top: -17px;
+    border-radius: 50%;
+    color: var(--color-white);
+}
+
+.footer__home-icon {
+    font-size: 3.5rem;
+}
+
+.footer__btn-home:hover {
+    background-color: var(--color-aquamarine-2);
+}
+
+.footer__contact {
+    display: grid;
+}
+
+@media (min-width: 992px) {
+    .footer__contact {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.footer__buttons {
+    order: 1;
+    display: grid;
+}
+
+@media (min-width: 768px) {
+    .footer__buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer__buttons {
+        order: 3;
+        grid-template-columns: 1fr;
+        place-content: center;
+    }
+}
+
+.fooer__link-button {
+    background-color: var(--color-purple-600);
+    color: var(--color-white);
+    border-radius: .5rem;
+    margin: .5rem;
+}
+
+.fooer__link-button:hover {
+    background-color: var(--color-purple-900);
+}
+
+.footer__about {
+    order: 2;
+}
+
+.footer__logo {
+    display: none;
+}
+
+.footr__social-title {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .footer__about {
+        order: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer__logo {
+        display: block;
+        grid-row: 1/2;
+        display: flex;
+    }
+
+    .footer__logo-img {
+        width: 80%;
+        margin: auto;
+    }
+
+    .footr__social-title {
+        display: block;
+        color: var(--color-white);
+        margin: 1rem 0;
+    }
+
+    .fooer__text-footer {
+        margin: 0;
+    }
+}
+
+.footer__social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+@media (min-width: 992px) {
+    .footer__social-media {
+        justify-content: flex-start;
+    }
+}
+
+.footer__social-link {
+    display: inline-flex;
+    color: var(--color-purple-800);
+    font-size: 2.2rem;
+    background-color: var(--color-white);
+    border-radius: .8rem;
+    padding: .4rem;
+}
+
+.footer__social-link:hover {
+    background-color: var(--color-aquamarine);
+}
+
+.footer__list-links {
+    order: 3;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer__list-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: stretch center;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer__list-links {
+        grid-template-columns: 1fr;
+        place-items: stretch start;
+    }
+}
+
+.footer__link {
+    display: inline-block;
+    color: var(--color-white);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.footer__link:hover {
+    color: var(--color-aquamarine);
+}
+
+@media (min-width: 992px) {
+    .footer__link {
+        font-size: 1.4rem;
+    }
+}
+
+.fooer__text-footer {
+    order: 4;
+    color: var(--color-pick);
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 2.4rem;
+}
+
+/* Estilos de bloque lenguaje
+=================================*/
+.language {
+    text-align: center;
+    color: var(--color-pick);
+    font-size: 1.4rem;
+}
+
+@media (min-width: 992px) {
+    .language {
+        text-align: start;
+        display: flex;
+        justify-content: space-between;
+        border-top: .1rem solid var(--color-pick);
+    }
+}
+
+.language__description {
+    color: #ffffffb2;
+}
+
+.language__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+    padding-bottom: .5rem;
+}
+
+@media (min-width: 992px) {
+    .language__content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.language__config,
+.language__spanish,
+.language__quechua {
+    display: block;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.language__config {
+    grid-column: 2 span;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.language__spanish {
+    text-align: end;
+    border-right: .1rem solid var(--color-pick);
+    color: var(--color-white);
+    padding-right: .5rem;
+}
+
+.language__quechua {
+    text-align: start;
+    color: var(--color-pick);
+    padding-left: .5rem;
+}
+
+@media (min-width: 992px) {
+
+    .language__config,
+    .language__spanish,
+    .language__quechua {
+        margin-bottom: 0;
+        font-size: 1.4rem;
+    }
+
+    .language__config {
+        border-right: .1rem solid var(--color-pick);
+        padding-right: .5rem;
+    }
+
+    .language__description,
+    .language__content{
+        margin: 0;
+        margin-top: 1rem;
+    }
+
+    
+}

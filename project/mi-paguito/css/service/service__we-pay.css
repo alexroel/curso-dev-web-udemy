@@ -1,0 +1,70 @@
+/* Estilos de servicios */
+.we-pay{
+	padding: 3rem 0 4rem 0;
+}
+
+.we-pay__title{
+    margin: 0;
+    margin-bottom: 1.6rem;
+}
+
+.we-pay__description{
+    margin: .8rem 0 3.2rem 0;
+}
+
+
+.we-pay__item{
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin-bottom: 2.4rem;
+}
+
+.we-pay__img{
+	width: 10rem;
+}
+
+.we-pay__name{
+	color: var(--color-purple-600);
+	font-weight: 700;
+    font-size: 1.6rem;
+}
+
+@media (min-width: 768px) {
+    .we-pay__title, 
+    .we-pay__description{
+        text-align: center;
+    }
+
+    .we-pay__items{
+        display: flex;
+        justify-content: space-around;
+        gap: 2rem;
+    }
+
+    .we-pay__item{
+        flex-direction: column;
+    }
+
+    .we-pay__img{
+        width: 14rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .we-pay__img{
+        width: 17.2rem;
+    }
+
+    .we-pay__title{
+        font-size: 3.4rem;
+    }
+
+    .we-pay__description{
+        font-size: 1.6rem;
+    }
+
+    .we-pay__name{
+        font-size: 2rem;
+    }
+}

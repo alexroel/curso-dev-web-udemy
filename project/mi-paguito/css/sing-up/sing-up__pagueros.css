@@ -1,0 +1,49 @@
+/* Estlos de sección de yaperos */
+.pagueros{
+    background-image: url(../../images/sing-up/bg-pagueros-millions-xs.png);
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pagueros__content {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	height: 33.4rem;
+    margin-top: 3rem;
+    max-width: 68.8rem;
+}
+
+.paguero__logo{
+	width: 6rem;
+	display: inline-block;
+	margin-top: .9rem;
+}
+
+.pagueros__picture{
+	background-color: var(--color-white);
+	box-shadow: 0 8px 10px -5px #2c204433,0 6px 30px 5px #2c20440d,0 16px 24px 2px #2c20440d;
+	border: 1px solid #EEECF3;
+	border-radius: 1rem;
+	padding: 0 1rem;
+}
+
+.pagueros__title{
+	margin-top: 2.8rem;
+	font-size: 3.4rem;
+}
+
+@media (min-width: 768px) {
+    .pagueros__title{
+        font-size: 4.8rem;
+    }
+
+    .pagueros__description{
+        font-size: 1.6rem;
+    }
+}

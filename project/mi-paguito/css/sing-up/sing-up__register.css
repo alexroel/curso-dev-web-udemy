@@ -1,0 +1,109 @@
+/* Estilos de seccion de registrate */
+.sing-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+}
+.register {
+	background-image: url(../../images/sing-up/bg-register-horizontal.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding-top: 1rem;
+	border-radius: 2rem;
+	text-align: center;
+	position: relative;
+	display: grid;
+    width: 32.8rem;
+}
+
+@media (min-width: 768px) {
+    .register{
+        background-image: url(../../images/sing-up/bg-register.png);
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        height: 18.8rem;
+        text-align: start;
+    }
+}
+
+@media (min-width: 992px) {
+    .register{
+        height: 31.9rem;
+        align-items: center;
+    }
+}
+
+.register__content{
+	padding: 0 2.5rem;
+}
+
+@media (min-width: 992px) {
+    .register__content{
+        margin-left: 95px;
+    }
+}
+
+.register__title{
+	color: var(--color-white);
+}
+
+.tegister__title-yellow{
+	color: #f4c12a;
+}
+
+.register__description{
+	color: #ffffffcc;
+}
+
+@media (min-width: 992px) {
+    .register__title{
+        font-size: 3.4rem;
+    }
+
+    .register__description{
+        font-size: 1.6rem;
+    }
+
+    .register__link-button{
+        font-size: 1.6rem;
+    }
+
+}
+
+.register__link-button{
+    position: absolute;
+    bottom: 2rem;
+    width: 26rem;
+}
+
+
+@media (min-width: 768px) {
+    .register__link-button{
+        position: static;
+        display: inline-flex;
+        width: auto;
+        padding: 0 2rem;
+    }
+
+    .register__picture{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .register__img{
+        height: 27.2rem;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .register__picture{
+        right: 9.5rem;
+    }
+    .register__img{
+        height: 43.6rem;
+    }
+}

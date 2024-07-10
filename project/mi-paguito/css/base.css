@@ -1,0 +1,206 @@
+/* Variables
+=================================*/
+
+:root {
+    --font-robotot: "Roboto", sans-serif;
+
+    --color-white: #ffffff;
+    --color-back: #000000;
+    --color-bg-second: #f4f4f5;
+    --color-search-text: #99a1ad;
+    --color-text-2: #ffffffb3;
+    --color-time: #7d758d;
+    --color-menu: #4d5b70;
+
+    --color-gray-600: #69607b;
+    --color-gray-900: #2c2044;
+
+    --color-purple-900: #3f0d4a;
+    --color-purple-800: #5e186c;
+    --color-purple-700: #742384;
+    --color-purple-600: #8b3d99;
+    --color-pick: #ce92d6;
+
+    --color-aquamarine: #10CBB4;
+    --color-aquamarine-2: #00AD97;
+
+    --color-yellow-300: #f4c12a;
+}
+
+/* Configuraciones iniciales
+=================================*/
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /*1rem = 10px*/
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--font-robotot);
+    font-size: 1.4rem;
+    /*1em = 10px*/
+}
+
+a {
+    color: var(--color-back);
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 1.6rem;
+    }
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+i {
+    font-size: 2rem;
+}
+
+h1,
+h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+    color: var(--color-white);
+}
+
+h2 {
+    font-weight: 700;
+    color: var(--color-gray-900);
+}
+
+span {
+    color: var(--color-purple-700);
+}
+
+p {
+    font-size: 1.4rem;
+    margin-bottom: 1.6rem;
+    color: var(--color-gray-600);
+}
+
+/* Utilidades
+=================================*/
+[class$="__container"] {
+    width: 95%;
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    [class$="__container"] {
+        width: 95%;
+        max-width: 72rem;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    [class$="__container"] {
+        width: 95%;
+        max-width: 96rem;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    [class$="__container"] {
+        width: 95%;
+        max-width: 114rem;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+}
+
+
+
+[class$="-button"],
+[class$="--second"] {
+    all: unset;
+    padding: 0 1rem;
+    height: 4.4rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: .8rem;
+}
+
+[class$="-button"] {
+    border: 1px solid transparent;
+    background-color: var(--color-aquamarine);
+    color: var(--color-white);
+}
+
+[class$="-button"]:hover {
+    background-color: var(--color-aquamarine-2);
+}
+
+[class$="--second"] {
+    background-color: transparent;
+    border: .2rem solid var(--color-aquamarine-2);
+    color: var(--color-aquamarine-2);
+}
+
+[class$="--second"]:hover {
+    background-color: #d4f9f5;
+    box-shadow: 0 0 6px #52709433, 0 2px 1px -2px #5270941f, 0 2px 1px #52709424;
+}
+
+@media (min-width: 1200px) {
+    [class$="--second"] {
+        border: .2rem solid #ffffff81;
+        color: var(--color-white);
+
+        animation: in-moving-button linear both;
+        animation-timeline: scroll(root block);
+        animation-range: 0 60px;
+    }
+
+    [class$="--second"]:hover {
+        background-color: transparent;
+        border: .2rem solid var(--color-white);
+
+        animation: in-moving-button-hover linear both;
+        animation-timeline: scroll(root block);
+        animation-range: 0 60px;
+    }
+
+    @keyframes in-moving-button {
+        to {
+            border: .2rem solid var(--color-aquamarine-2);
+            color: var(--color-aquamarine-2);
+        }
+    }
+
+    @keyframes in-moving-button-hover {
+        to {
+            border: .2rem solid var(--color-aquamarine-2);
+            color: var(--color-aquamarine-2);
+            background-color: #d4f9f5;
+            box-shadow: 0 0 6px #52709433, 0 2px 1px -2px #5270941f, 0 2px 1px #52709424;
+        }
+    }
+}

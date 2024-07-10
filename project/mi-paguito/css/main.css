@@ -1,0 +1,18 @@
+@import 'normalize.css';
+@import 'base.css';
+@import 'header/header__navbar.css';
+@import 'header/header__carousel.css';
+
+@import 'service/service__we-pay.css';
+@import 'service/service__for-you.css';
+
+@import 'news/news__content.css';
+
+@import 'sing-up/sing-up__register.css';
+@import 'sing-up/sing-up__pagueros.css';
+
+@import 'questions/question.css';
+
+@import 'datazo/datazos.css';
+
+@import 'footer/footer__content.css'
