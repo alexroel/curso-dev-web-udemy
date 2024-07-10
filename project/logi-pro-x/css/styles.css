@@ -1,4 +1,5 @@
-/* Configuración inicial */
+/* Variables de CSS
+=================================*/
 :root{
     --color-first: #1073BA;
     --color-second: #E51CC4;
@@ -11,6 +12,9 @@
     --font-second: 'Lato', sans-serif;
 }
 
+
+/* Configuración iniciales
+=================================*/
 html{
     box-sizing: border-box;
     font-size: 62.5%; /*1rem = 10px*/
@@ -27,7 +31,8 @@ body{
     line-height: 1.5;
 }
 
-/* Estilos globales */
+/* Utilidades
+=================================*/
 .container{
     max-width: 100rem;
     width: 90%;
@@ -62,6 +67,8 @@ img{
     text-align: center;
 }
 
+/* Estilos de gradiante de texto
+=================================*/
 .purple-gradient{
     color: transparent;
     background: linear-gradient(to right, var(--color-first) 0%, var(--color-second) 100%);
@@ -125,6 +132,19 @@ img{
     border: none;
 }
 
+@media (min-width: 768px) {
+    .navbar button{
+        display: none;
+    }
+
+    [popover]{
+        display: flex;
+        position: static;
+        width: unset;
+        background-color: transparent;
+    }
+}
+
 .navbar-btns a{
     color: var(--color-light-grey);
     font-size: 2rem;
@@ -147,19 +167,6 @@ img{
 .navbar-menu a:hover{
     background-color: var(--color-white);
     color: var(--color-black);
-}
-
-@media (min-width: 768px) {
-    .navbar button{
-        display: none;
-    }
-
-    [popover]{
-        display: flex;
-        position: static;
-        width: unset;
-        background-color: transparent;
-    }
 }
 
 .header-img, .header-text{
