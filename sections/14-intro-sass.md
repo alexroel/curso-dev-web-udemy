@@ -41,12 +41,15 @@
 
 ---
 ## Extends y Placeholders
-- Diferencia entre @extend y @mixin
+- Diferencia entre @extend
 - Uso de placeholders (%)
 - Herencia de estilos
 
 ---
-## Operaciones y Funciones
-- Operaciones matemáticas y de color
-- Funciones de SASS predefinidas
-- Creación de funciones personalizadas
+## Importación de archivos
+- Importación de parciales
+- Uso de @use, @forware y @import
+- Modularización del código CSS
+
+---
+## Resumen
