@@ -1,0 +1,44 @@
+@use "../base/mixins" as m;
+
+.experience{
+
+    &__title{
+        text-align: center;
+    }
+
+    &__content{
+        padding: 0 5%;
+
+        @include m.tablet {
+            padding: 0;
+            @include m.grid(2, 10rem);
+            place-items: center start;
+        }   
+    }
+
+    &__picture{
+        display: block;
+        margin: 3rem 0;
+    }
+
+    &__img{
+        border-radius: 2rem;
+    }
+
+    &__text{
+        text-align: center;
+        @include m.tablet {
+            text-align: start;
+        }
+    }
+
+    @include m.tablet {
+        &__name{
+            font-size: 2.4rem;
+        }
+
+        &__description{
+            font-size: 1.6rem;
+        }
+    }
+}

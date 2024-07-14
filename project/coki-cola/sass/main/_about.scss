@@ -1,0 +1,103 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.about{
+
+    &__container{
+        padding: 0;
+
+        @include m.tablet{
+            padding: 1rem;
+        }
+    }
+
+    &__title{
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    &__item{
+        position: relative;
+        padding-bottom: 33rem;
+
+        @include m.mobile {
+            padding-bottom: 20rem;
+        }
+
+        @include m.tablet{
+            @include m.grid(2);
+            padding-bottom: 0;
+            margin: 10rem 0;
+
+            .about__picture{
+                display: block;
+                grid-column: 2/3;
+            }
+
+            .about__picture--two{
+                grid-column: 1/2;
+            }
+
+            .about__img{
+                border-radius: 1.6rem;
+            }
+        }
+
+    }
+
+    &__item--two{
+        padding-bottom: 0;
+        padding-top: 33rem;
+
+        @include m.mobile {
+            padding-top: 20rem;
+        }
+
+        @include m.tablet {
+            padding-top: 0;
+        }
+    }
+
+    &__text{
+        background-color: v.$color-white;
+        border-radius: 1.6rem;
+        box-shadow: 0 14px 18px rgba(0, 0, 0, .06);
+        padding: 4rem 3rem;
+        z-index: 100;
+        position: absolute;
+        bottom: 3rem;
+
+        @include m.tablet {
+            top: -4rem;
+            right: 43%;
+            margin: 0;
+            display: grid;
+        }
+
+        @include m.desktop-sm {
+            bottom: 8rem;
+        }
+    }
+
+    &__text--two{
+        bottom: unset;
+        top: 3rem;
+
+        @include m.tablet {
+            top: -4rem;
+            right: unset;
+            left: 43%;
+        }
+
+        @include m.desktop-sm {
+            bottom: 8rem;
+        }
+
+    }
+
+    &__description{
+        letter-spacing: 1px;
+        margin-bottom: 4rem;
+    }
+
+}

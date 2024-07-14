@@ -1,3 +1,36 @@
-nav{
-    background-color: blue;
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header{
+    background-color: v.$color-white;
+    height: 7rem;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+        margin-right: 2rem;
+    }
+
+    &__img{
+        height: 5rem;
+    }
+
+    &__menu-btn{
+        all: unset;
+        font-size: 3.5rem;
+        color: v.$color-gray-900;
+    }
+
+    @include m.desktop-sm {
+        justify-content: flex-start;
+
+        &__menu-btn{
+            display: none;
+        }
+    }
+
 }

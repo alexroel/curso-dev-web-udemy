@@ -1,0 +1,55 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/* Contenedor
+=================================*/
+[class$="__container"] {
+    width: 100%;
+    max-width: 112rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+/* Botones
+=================================*/
+@mixin button($border: v.$color-black, $bg: v.$color-white, $color: v.$color-black) {
+    border: .2rem solid $border;
+    background-color: $bg;
+    color: $color;
+}
+
+[class$="-button"],
+[class$="--second"] {
+    all: unset;
+    padding: 0 2.4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 4.8rem;
+    max-width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    transition-duration: .5s;
+    @include button();
+}
+
+[class$="-button"]:hover {
+    @include button(v.$color-black, v.$color-gray-300, v.$color-black);
+}
+
+[class$="--second"] {
+    @include button(v.$color-gray-100, v.$color-black, v.$color-gray-100);
+}
+
+[class$="--second"]:hover {
+    @include button(v.$color-gray-900, v.$color-gray-900, v.$color-white);
+}
+
+@include m.tablet {
+    [class$="-button"],
+    [class$="--second"] {
+        width: 32.7rem;
+    }
+}

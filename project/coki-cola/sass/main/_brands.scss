@@ -1,0 +1,56 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.brands {
+    padding-bottom: 5rem;
+    &__title{
+        text-align: center
+    }
+
+    &__content{
+        margin: 4rem 2rem;
+        @include m.grid (2, 3rem);
+        @include m.tablet {
+            @include m.grid (3, 5rem);
+        }
+
+        @include m.desktop-sm {
+            margin: 4rem 15rem;
+        }
+    }
+
+    &__icon-link{
+        display: flex;
+        align-items: center;
+        padding: 2.4rem;
+        background-color: v.$color-white;
+        height: 15rem;
+        border-radius: 1.6rem;
+        transition-duration: .3s;
+
+        @include m.mobile {
+            height: 20rem;
+        }
+
+        @include m.tablet {
+            height: 15rem;
+        }
+
+        @include m.desktop-sm {
+            height: 20rem;
+            padding: 3.2rem;
+        }
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
+    &__btn{
+        @include m.tablet {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+}

@@ -1,0 +1,124 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.menu[popover] {
+    margin-top: 7rem;
+    border: none;
+    padding: 2rem 3rem;
+    height: calc(100vh - 7rem);
+    width: 100%;
+    overflow: auto;
+
+    .menu__details {
+        cursor: pointer;
+    }
+
+    .menu__link{
+        display: inline-block;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .details__summary {
+        @extend .menu__link;
+        list-style: none;
+    }
+
+    @include m.desktop-sm {
+        height: auto;
+        position: static;
+        margin-top: 0;
+        padding: 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .menu-login {
+            display: none;
+        }
+
+        .location {
+            display: none;
+        }
+
+        .menu__link{
+            margin-bottom: 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 1.5rem 0;
+            border-bottom: .3rem solid transparent;
+
+            &:hover {
+                border-bottom: .3rem solid black;
+            }
+        }
+        .details__summary {
+            @extend .menu__link;
+        }
+    }
+
+    .details {
+        &__content {
+            display: grid;
+            padding-left: 2rem;
+            row-gap: 1rem;
+            margin-bottom: 3.2rem;
+        }
+
+        &__link {
+            color: #717171;
+            font-size: 1.6rem;
+        }
+
+        @include m.desktop-sm {
+            &__content {
+                position: absolute;
+                background-color: v.$color-white;
+                padding: 2rem;
+                margin-top: 1rem;
+                z-index: 100;
+            }
+
+            &__link {
+                font-size: 1.4rem !important;
+                color: v.$color-gray-900 !important;
+
+                &:hover {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .menu-login {
+        border-bottom: .1rem solid v.$color-gray-600;
+        padding-bottom: 3.2rem;
+
+        &__links {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+
+        &__link-button {
+            flex-grow: 1;
+        }
+    }
+
+    .location {
+        margin-top: 3.2rem;
+
+        &__title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: v.$color-gray-900;
+        }
+
+        &__btn-button {
+            width: 100%;
+            padding: 0;
+        }
+    }
+}

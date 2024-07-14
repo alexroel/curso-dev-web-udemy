@@ -1,1 +1,5 @@
-@import 'header', 'home';
+@use 'base';
+@use 'utilities';
+@use 'header';
+@use 'carousel';
+@use 'main';

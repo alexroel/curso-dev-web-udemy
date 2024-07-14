@@ -1,16 +1,213 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coki Cola</title>
 
     <!-- Funtes de Texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
+    <!-- Font icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <!-- Estilos css -->
     <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body>
-    
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__navbar navbar">
+                <a href="" class="navbar__logo">
+                    <img src="img/logo-black.webp" alt="Logo de Coki Cola" class="navbar__img">
+                </a>
+                <div class="navbar__menu menu" popover="auto" id="mymenu">
+                    <a href="" class="menu__link">Marcas</a>
+                    <details class="menu__details details">
+                        <summary class="details__summary">Descubrir <i class='bx bx-chevron-right'></i></summary>
+                        <div class="details__content">
+                            <a href="" class="details__link">Coki Studio</a>
+                            <a href="" class="details__link">Marvel</a>
+                            <a href="" class="details__link">Pausa es Power</a>
+                        </div>
+                    </details>
+                    <details class="menu__details details">
+                        <summary class="details__summary">Descubrir <i class='bx bx-chevron-right'></i></summary>
+                        <div class="details__content">
+                            <a href="" class="details__link">Sustentabilidad</a>
+                            <a href="" class="details__link">Social</a>
+                        </div>
+                    </details>
+                    <div class="menu__login menu-login">
+                        <p>¿Quieres vivir una experiencia personalizada y acceder a contenido exclusivo?</p>
+                        <div class="menu-login__links">
+                            <a href="" class="menu-login__link-button menu-login__link-button--second">Iniciar
+                                sesión</a>
+                            <a href="" class="menu-login__link-button">Regístrate</a>
+                        </div>
+                    </div>
+
+                    <div class="navbar__location location">
+                        <p class="location__title">SELECIONR UBICACIÓN</p>
+                        <button class="location__btn-button"><i class='bx bxs-map'></i> Perú</button>
+                    </div>
+                </div>
+                <div class="navbar__login login">
+                    <button class="login__button"><i class='bx bx-user'></i></button>
+                    <div class="login__content">
+                        <p>¿Quieres vivir una experiencia personalizada y acceder a contenido exclusivo?</p>
+                        <div class="login__links">
+                            <a href="" class="login__link-button login__link-button--second">Iniciar sesión</a>
+                            <a href="" class="login__link-button">Regístrate</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="navbar__menu-btn" popovertarget="mymenu">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="carousel">
+        <div class="carousel__container">
+            <div class="carousel__content">
+                <div class="carousel__items">
+                    <div class="carousel__item" id="slide1">
+                        <picture class="carousel__picture">
+                            <source media="(min-width: 768px)" srcset="img/carousel-bg-1.webp">
+                            <img src="img/carousel-bg-1-vertical.webp" alt="Imagen de Coca Cola" class="carousel__img">
+                        </picture>
+                        <div class="carousel__text">
+                            <h2 class="carousel__title">Marvel fans ¡unidos!</h2>
+                            <p class="carousel__description">Escanea el código QR en las latas exclusivas de Coca‑Cola y
+                                Marvel y entra a un mundo único.</p>
+                            <a href="" class="carousel__link-button">Entra ahora</a>
+                        </div>
+                    </div>
+                    <div class="carousel__item" id="slide2">
+                        <picture class="carousel__picture">
+                            <source media="(min-width: 768px)" srcset="img/carousel-bg-2.webp">
+                            <img src="img/carousel-bg-2-vertical.webp" alt="Imagen de Coca Cola" class="carousel__img">
+                        </picture>
+                        <div class="carousel__text carousel__text--right">
+                            <h2 class="carousel__title">Hidratación para todos</h2>
+                            <p class="carousel__description">Lleva tu hidratación a otro nivel con Powerade</p>
+                            <a href="" class="carousel__link-button">Conoce más</a>
+                        </div>
+                    </div>
+                    <div class="carousel__item" id="slide3">
+                        <picture class="carousel__picture">
+                            <source media="(min-width: 768px)" srcset="img/carousel-bg-3.webp">
+                            <img src="img/carousel-bg-3-vertical.webp" alt="Imagen de Coca Cola" class="carousel__img">
+                        </picture>
+                    </div>
+                    <div class="carousel__item" id="slide4">
+                        <picture class="caroucel__picture">
+                            <source media="(min-width: 768px)" srcset="img/carousel-bg-4.webp">
+                            <img src="img/carousel-bg-4-vertical.webp" alt="Imagen de Coca Cola" class="carousel__img">
+                        </picture>
+                    </div>
+                </div>
+                <div class="carousel__btns">
+                    <a href="#slide1" class="carousel__btn-circle">
+                        <i class='bx bxs-circle '></i>
+                    </a>
+                    <a href="#slide2" class="carousel__btn-circle">
+                        <i class='bx bxs-circle '></i>
+                    </a>
+                    <a href="#slide3" class="carousel__btn-circle">
+                        <i class='bx bxs-circle '></i>
+                    </a>
+                    <a href="#slide4" class="carousel__btn-circle">
+                        <i class='bx bxs-circle '></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience">
+        <div class="experience__container">
+            <h2 class="experience__title">Experiencia</h2>
+            <div class="experience__content">
+                <picture class="experience__picture">
+                    <img src="img/coki-studio.webp" alt="Imagen de Coke Studio" class="experience__img">
+                </picture>
+                <div class="experience__text">
+                    <h3 class="experience__name">Coke Studio</h3>
+                    <p class="experience__description">Experimenta la magia de la música.</p>
+                    <a href="" class="experience__link-button">Descúbrelo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about__container">
+            <h2 class="about__title">Sobre Coki-Cola Péru</h2>
+            <div class="about__content">
+                <div class="about__item">
+                    <picture class="about__picture">
+                        <img src="img/about-img-1.webp" alt="Imagen de about 1" class="about__img">
+                    </picture>
+                    <div class="about__text">
+                        <h3 class="about__sub-title">Nuestra planeta es importante</h3>
+                        <p class="about__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+                            odit officia. Veritatis debitis esse blanditiis sit deleniti pariatur laborum magni eaque
+                            odio, rerum veniam nulla modi suscipit aut nemo deserunt.</p>
+                        <a href="" class="about__link-button">Ver Más</a>
+                    </div>
+                </div>
+                <div class="about__item about__item--two">
+                    <div class="about__text about__text--two">
+                        <h3 class="about__sub-title">La gente es importante</h3>
+                        <p class="about__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+                            odit officia. Veritatis debitis esse blanditiis sit deleniti pariatur laborum magni eaque
+                            odio, rerum veniam nulla modi suscipit aut nemo deserunt.</p>
+                        <a href="" class="about__link-button">Ver Más</a>
+                    </div>
+                    <picture class="about__picture about__picture--two">
+                        <img src="img/about-img-2.webp" alt="Imagen de about 1" class="about__img">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands">
+        <div class="brands__container">
+            <h2 class="brands__title">Explora nuestras marcas</h2>
+            <div class="brands__content">
+                <a href="" class="brands__icon-link">
+                    <picture class="brands__picture">
+                        <img src="img/coca-cola-red.webp" alt="Logo de coca cola rojo" class="brands__logo">
+                    </picture>
+                </a>
+
+                <a href="" class="brands__icon-link">
+                    <picture class="brands__picture">
+                        <img src="img/fanta-logo.webp" alt="Logo de fanta" class="brands__logo">
+                    </picture>
+                </a>
+
+                <a href="" class="brands__icon-link">
+                    <picture class="brands__picture">
+                        <img src="img/sprite-logo.webp" alt="Logo de sprite" class="brands__logo">
+                    </picture>
+                </a>
+
+            </div>
+            <div class="brands__btn">
+                <a href="" class="brands__link-button">Ver más</a>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>

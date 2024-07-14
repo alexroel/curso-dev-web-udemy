@@ -1,0 +1,42 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.login {
+    display: none;
+}
+
+@include m.desktop-sm {
+    .login {
+        display: inline-block;
+        position: relative;
+
+        &__button{
+            all: unset;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+
+        &__content{
+            display: none;
+            position: absolute;
+            left: -35rem;
+            background-color: v.$color-white;
+            padding: 2rem;
+            width: 38rem;
+            z-index: 100;
+        }
+
+        &:hover &__content{
+            display: block;
+        }
+
+        &__links{
+            display: flex;
+            gap: 2rem;
+        }
+
+        &__link-button{
+            flex-grow: 1;
+        }
+    }
+}
