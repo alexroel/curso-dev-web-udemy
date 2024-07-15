@@ -3,13 +3,16 @@
 
 .brands {
     padding-bottom: 5rem;
-    &__title{
-        text-align: center
+
+    &__title {
+        text-align: center;
+        margin-top: 0;
     }
 
-    &__content{
+    &__content {
         margin: 4rem 2rem;
         @include m.grid (2, 3rem);
+
         @include m.tablet {
             @include m.grid (3, 5rem);
         }
@@ -19,7 +22,7 @@
         }
     }
 
-    &__icon-link{
+    &__icon-link {
         display: flex;
         align-items: center;
         padding: 2.4rem;
@@ -27,6 +30,7 @@
         height: 15rem;
         border-radius: 1.6rem;
         transition-duration: .3s;
+        
 
         @include m.mobile {
             height: 20rem;
@@ -41,12 +45,12 @@
             padding: 3.2rem;
         }
 
-        &:hover{
+        &:hover {
             transform: scale(1.1);
         }
     }
 
-    &__btn{
+    &__btn {
         @include m.tablet {
             display: flex;
             justify-content: center;
