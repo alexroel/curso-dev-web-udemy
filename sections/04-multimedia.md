@@ -1,11 +1,11 @@
 # Etiquetas multimedia
 
 1. [Introducción](#introducción)
-1. [Imagenes](#imagenes)
-1. [Etiquetas de videos](#etiquetas-de-videos)
-1. [Etiquetas de audio](#etiquetas-de-audio)
-1. [Videos y páginas extenas](#videos-y-páginas-extenas)
-1. [Resumen](#resumen)
+2. [Imagenes](#imagenes)
+3. [Etiquetas de videos](#etiquetas-de-videos)
+4. [Etiquetas de audio](#etiquetas-de-audio)
+5. [Videos y páginas extenas](#videos-y-páginas-extenas)
+6. [Resumen](#resumen)
 
 
 ---

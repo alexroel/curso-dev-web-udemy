@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes de Google</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        figure {
+            background-color: white;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            width: calc(33% - 40px);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        figcaption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Galería de Imágenes de Google</h1>
+    </header>
+    <div class="container">
+        <figure>
+            <picture>
+                <source srcset="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=600" media="(min-width: 800px)">
+                <source srcset="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=400" media="(min-width: 500px)">
+                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=300" alt="Computadora en escritorio">
+            </picture>
+            <figcaption>Computadora en escritorio</figcaption>
+        </figure>
+        <figure>
+            <picture>
+                <source srcset="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=600" media="(min-width: 800px)">
+                <source srcset="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400" media="(min-width: 500px)">
+                <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=300" alt="Paisaje montañoso">
+            </picture>
+            <figcaption>Paisaje montañoso</figcaption>
+        </figure>
+        <figure>
+            <picture>
+                <source srcset="https://images.unsplash.com/photo-1518779578993-ec3579fee39b?w=600" media="(min-width: 800px)">
+                <source srcset="https://images.unsplash.com/photo-1518779578993-ec3579fee39b?w=400" media="(min-width: 500px)">
+                <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39b?w=300" alt="Gato curioso">
+            </picture>
+            <figcaption>Gato curioso</figcaption>
+        </figure>
+    </div>
+</body>
+</html>
