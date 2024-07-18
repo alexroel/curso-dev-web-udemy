@@ -6,6 +6,7 @@ body{
     /* Estilos de texto */
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
+
     /* Estilos de modelo de caja */
     max-width: 600px;
     background-color: #EBF5FB;
@@ -15,21 +16,51 @@ body{
 }
 
 
+h1{
+    /* Estilos de texto */
+    font-size: 60px;
+    text-align:  center;
+    font-style: italic;
+    text-shadow: 3px 3px 1px #566573;
+    color: #1C2833;
+    /* Estilos de modelo de caja */
+    margin: 0;
+    
+}
+
+p, li {
+    /* Estilos de texto */
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline;
+    margin-right: 10px;
+}
+
 /* Selector de pseudoclase */
 
 a:hover{
     color: #068FD3;
 }
 
-h1{
-    /* Estilos de texto */
-    font-size: 60px;
-    text-align:  center;
-    text-shadow: 3px 3px 1px #566573;
-    color: #1C2833;
-    /* Estilos de modelo de caja */
-    margin: 0;
-    font-style: italic;
+li:first-child{
+    color: #068FD3;
+}
+
+li:last-child{
+    color: green;
+}
+
+li:nth-child(3){
+    color: red;
 }
 
 
@@ -51,27 +82,6 @@ h1 span:nth-last-child(2){
     color: #108b10;
 }
 
-
-p, li {
-    /* Estilos de texto */
-    font-size: 16px;
-    line-height: 2;
-    letter-spacing: 1px;
-}
-
-/* seudoclase */
-li:first-child{
-    color: #068FD3;
-}
-
-li:last-child{
-    color: green;
-}
-
-li:nth-child(3){
-    color: red;
-}
-
 /* Seudo elemento */
 p::before{
     content: ">>";
@@ -83,7 +93,7 @@ p::before{
     background-color: #80bbf2;
 }
 
-/* Centrando imagen */
+/* Centrando imagen  tipos de lementos*/
 img{
     display: block;
     margin: 0 auto;
@@ -91,11 +101,20 @@ img{
 }
 
 /* Estilizando el boton */
-button{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    display: inline-block;
+
+form{
+    padding: 20px 0;
+}
+
+form fieldset{
+    margin: 10px 0;
     padding: 10px;
+}
+
+button{
+    font-size: 16px;
+    display: inline-block;
+    padding: 5px 20px;
     background-color: #1C2833;
     color: #EBF5FB;
     border-radius: 5px;
@@ -106,11 +125,10 @@ button:hover{
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-    
-}
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-    
+/* Estilos de multimedia
+=================================*/
+iframe{
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
 }
