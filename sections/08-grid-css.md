@@ -73,8 +73,8 @@ Con Grid, los elementos dentro de la cuadrícula pueden tener tamaños fijos (po
 Para habilitar Grid en un contenedor y definir una cuadrícula básica, puedes usar las siguientes propiedades CSS:
 
 ```css
-.container {
-  display: grid;
+.contenedor{
+    display: grid;
 }
 ```
 
@@ -83,15 +83,15 @@ Para habilitar Grid en un contenedor y definir una cuadrícula básica, puedes u
 
 **Definir filas y columnas**
 
-Para empezar, debes definir un contenedor con `display: grid`. Luego, puedes usar `grid-template-columns` y `grid-template-rows` para definir las filas y columnas.
+Para comenzar, debes definir un contenedor con `display: grid`. Luego, puedes usar `grid-template-columns` y `grid-template-rows` para definir las filas y columnas.
 
 **Ejemplo**
 
 ```css
-.container {
+.contenedor-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* 3 columnas: 1 fracción, 2 fracciones, 1 fracción */
-  grid-template-rows: 100px 200px;   /* 2 filas: 100px y 200px */
+  grid-template-columns: 300px 300px 300px 200px; /* 3 columnas: 1 fracción, 2 fracciones, 1 fracción */
+  grid-template-rows: 100px 200px; /* 2 filas: 100px y 200px */
 }
 ```
 
@@ -100,18 +100,18 @@ Para empezar, debes definir un contenedor con `display: grid`. Luego, puedes usa
 La propiedad abreviada `grid` permite definir tanto las filas como las columnas en una sola declaración. La sintaxis general es:
 
 ```css
-.container {
+.contenedor-grid {
   display: grid;
-  grid: <grid-template-rows> / <grid-template-columns>;
+  grid-template: <grid-template-rows> / <grid-template-columns>;
 }
 ```
 
 **Ejemplo**
 
 ```css
-.container {
+.contenedor-grid {
   display: grid;
-  grid: 100px 200px / 1fr 2fr 1fr; /* Define filas y columnas en una sola línea */
+  grid-template: 100px 200px / 1fr 2fr 1fr; /* Define filas y columnas en una sola línea */
 }
 ```
 
@@ -128,7 +128,7 @@ CSS Grid es una herramienta poderosa para crear layouts en dos dimensiones. Perm
 **Ejemplo:**
 
 ```css
-.container {
+.contenedor-grid {
   display: grid;
   grid-template-columns: 200px 3rem auto;
   grid-template-rows: 100px 50px auto;
@@ -151,7 +151,7 @@ La unidad `fr` (fracción) es específica de CSS Grid y representa una fracción
 Ejemplo:
 
 ```css
-.container {
+.contenedor-grid {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 100px 200px;
@@ -179,7 +179,6 @@ Ejemplo 2:
 - Cada `fr` equivale a `900px / 3 = 300px`.
 - Entonces, `1fr = 300px` y `2fr = 600px`.
 
-
 **Más sobre filas**
 
 **Filas y Cuadrículas Vacías**
@@ -189,7 +188,7 @@ En CSS Grid, las filas son una de las dos dimensiones principales, junto con las
 **Filas Explícitas**
 
 ```css
-.container {
+.contenedor-grid {
   display: grid;
   grid-template-rows: 100px 200px; /* Define dos filas explícitas */
 }
@@ -202,7 +201,7 @@ Una cuadrícula vacía se refiere a una situación en la que una o más celdas d
 **Ejemplo:**
 
 ```css
-.container {
+.contenedor {
   display: grid;
   grid-template-rows: 100px 200px;
   grid-template-columns: 1fr 1fr;
@@ -213,21 +212,21 @@ Una cuadrícula vacía se refiere a una situación en la que una o más celdas d
 ```
 
 ```html
-<div class="container">
+<div class="contenedor">
   <div class="item1">1</div>
 </div>
 ```
 
 En este caso, la primera columna de cada fila estará vacía porque el único elemento está posicionado en la segunda columna.
 
-**Filas Automáticas**
+**Filas y Columnas Automáticas**
 
-`grid-auto-rows` es útil cuando tienes elementos que pueden generar nuevas filas más allá de las filas explícitamente definidas. Esta propiedad asegura que las filas creadas automáticamente tengan un tamaño específico.
+`grid-auto-rows` y `grid-auto-columns` son útiles cuando tienes elementos que pueden generar nuevas filas o columnas más allá de las filas y columnas explícitamente definidas. Estas propiedades aseguran que las filas y columnas creadas automáticamente tengan un tamaño específico.
 
-**Ejemplo:**
+**Ejemplo: Filas Automáticas**
 
 ```css
-.container {
+.contenedor {
   display: grid;
   grid-template-rows: 100px; /* Define solo una fila explícita */
   grid-auto-rows: 50px;      /* Define el tamaño de las filas automáticas */
@@ -235,13 +234,32 @@ En este caso, la primera columna de cada fila estará vacía porque el único el
 ```
 
 ```html
-<div class="container">
+<div class="contenedor">
   <div class="item1">1</div>
   <div class="item2">2</div>
 </div>
 ```
 
 En este ejemplo, la primera fila tendrá una altura de 100px (definida explícitamente) y cualquier fila adicional creada automáticamente tendrá una altura de 50px.
+
+**Ejemplo: Columnas Automáticas**
+
+```css
+.contenedor {
+  display: grid;
+  grid-template-columns: 200px; /* Define solo una columna explícita */
+  grid-auto-columns: 100px;     /* Define el tamaño de las columnas automáticas */
+}
+```
+
+```html
+<div class="contenedor">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+</div>
+```
+
+En este ejemplo, la primera columna tendrá un ancho de 200px (definida explícitamente) y cualquier columna adicional creada automáticamente tendrá un ancho de 100px.
 
 **repeat()**
 
@@ -278,12 +296,14 @@ En CSS Grid, `column-gap`, `row-gap` y `gap` son propiedades que se utilizan par
 **`column-gap` y `row-gap`**
 
 - `column-gap`: Establece el espacio entre las columnas de la cuadrícula.
-- `row-gap`: Establece el espacio entre las filas de la cuadrícula.
+- `row-gap`:
+
+ Establece el espacio entre las filas de la cuadrícula.
 
 Ejemplo:
 
 ```css
-.grid-container {
+.contenedor-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 100px;
@@ -300,14 +320,14 @@ Ejemplo:
 **Ejemplo:**
 
 ```css
-.grid-container {
+.contenedor-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 100px;
   gap: 20px; /* Espacio horizontal y vertical */
 }
 
-.grid-container {
+.contenedor-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 100px;
@@ -323,20 +343,40 @@ Ejemplo:
 **Ejemplo:**
 
 ```css
-.grid-container {
+.contenedor-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 100px 200px;
   gap: 20px; /* Distribuye 20px entre columnas y filas */
 }
 
-.grid-container {
+.contenedor-grid {
   display: grid;
   grid-template-columns: 100px 200px;
   grid-template-rows: 1fr 2fr;
   gap: 20px; /* Distribuye 20px absolutos entre columnas y filas */
 }
 ```
+
+El shorthand `gap: row / column;` en CSS Grid es una forma más específica de definir el espacio entre filas y columnas en una cuadrícula. Esta sintaxis permite establecer diferentes valores para el espacio entre filas y columnas en una sola declaración.
+
+Veamos cómo funciona:
+
+- **`gap: row / column;`**:
+  - `row`: Especifica el espacio entre las filas de la cuadrícula.
+  - `column`: Especifica el espacio entre las columnas de la cuadrícula.
+
+Por ejemplo:
+
+```css
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Define 3 columnas de tamaño igual */
+  gap: 20px 10px; /* Establece 20px de espacio entre filas y 10px de espacio entre columnas */
+}
+```
+
+En este caso, `gap: 20px 10px;` significa que hay 20 píxeles de espacio entre las filas y 10 píxeles de espacio entre las columnas de la cuadrícula definida por `grid-template-columns`. Esta sintaxis proporciona más control sobre los espacios verticales y horizontales en la cuadrícula de CSS Grid.
 
 ----
 ## Combinar columnas y filas
@@ -346,7 +386,7 @@ Ejemplo:
 - `grid-column-start` especifica en qué línea de la cuadrícula debe comenzar una columna.
 - Puede tomar valores numéricos para indicar la línea de inicio, o nombres de líneas definidos en la cuadrícula.
 
-Ejemplo:
+**Ejemplo:**
 
 ```css
 .item {
@@ -372,7 +412,7 @@ Ejemplo:
 - Para simplificar la escritura de las propiedades `grid-column-start` y `grid-column-end`, se puede utilizar la propiedad abreviada `grid-column`.
 - La abreviatura toma dos valores: el primero especifica el inicio y el segundo especifica el final de la columna o fila.
 
-Ejemplo:
+**Ejemplo:**
 
 ```css
 .item {
@@ -387,7 +427,7 @@ Ejemplo:
 - La propiedad `grid-row-start` define en qué línea de la cuadrícula comienza una fila.
 - Puede tomar valores numéricos para indicar la línea de inicio, o nombres de líneas definidos en la cuadrícula.
 
-Ejemplo:
+**Ejemplo:**
 
 ```css
 .item {
@@ -400,7 +440,7 @@ Ejemplo:
 - La propiedad `grid-row-end` define en qué línea de la cuadrícula termina una fila.
 - Al igual que `grid-row-start`, puede tomar valores numéricos o nombres de líneas.
 
-Ejemplo:
+**Ejemplo:**
 
 ```css
 .item {
@@ -413,7 +453,7 @@ Ejemplo:
 - La propiedad abreviada `grid-row` se utiliza para definir tanto el inicio como el final de una fila en una sola declaración.
 - Se especifica primero la línea de inicio y luego la línea de fin, separadas por una barra oblicua (`/`).
 
-Ejemplo:
+**Ejemplo:**
 
 ```css
 .item {
@@ -421,11 +461,11 @@ Ejemplo:
 }
 ```
 
-**span row/column**
+**`span row/column`**
 
 En CSS Grid, la palabra clave `span` se utiliza junto con las propiedades `grid-row` y `grid-column` para indicar que un elemento debe ocupar múltiples filas o columnas en la cuadrícula. Esto proporciona una forma conveniente de definir la extensión de un elemento en la cuadrícula sin tener que especificar manualmente las líneas de inicio y fin.
 
-**sin `span`**
+**Sin `span`**
 
 Cuando se utilizan `grid-row` y `grid-column` sin `span`, se deben especificar explícitamente las líneas de inicio y fin en la cuadrícula para el elemento. Por ejemplo:
 
@@ -438,7 +478,7 @@ Cuando se utilizan `grid-row` y `grid-column` sin `span`, se deben especificar e
 
 En este caso, el elemento se extenderá desde la fila 2 hasta la fila 4 y desde la columna 1 hasta la columna 3 en la cuadrícula.
 
-**con `span`**
+**Con `span`**
 
 Al utilizar `span` con `grid-row` y `grid-column`, se puede indicar de manera más concisa cuántas filas o columnas debe ocupar el elemento, sin necesidad de especificar las líneas de inicio y fin. Por ejemplo:
 
@@ -457,6 +497,7 @@ La principal diferencia entre usar `span` y no usarlo es la conveniencia y la le
 
 ---
 ## Flujo automático
+
 La propiedad `grid-auto-flow` en CSS Grid se utiliza para controlar cómo se colocan los elementos en la cuadrícula cuando no hay suficientes columnas o filas explícitamente definidas para acomodar todos los elementos. Esta propiedad tiene varios valores que determinan la dirección en la que los elementos se colocan, así como cómo se comportan al hacerlo. Aquí tienes una explicación detallada de cada valor y un ejemplo de su uso:
 
 **Valores de `grid-auto-flow`**
@@ -469,15 +510,15 @@ La propiedad `grid-auto-flow` en CSS Grid se utiliza para controlar cómo se col
 
 4. **`column dense`**: Similar a `column`, pero los elementos se ajustan a los huecos de la cuadrícula, lo que puede provocar que se salten a una columna anterior si hay un hueco disponible.
 
-Ejemplo:
+**Ejemplo:**
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSS Grid Example with grid-auto-flow</title>
+<title>Ejemplo de CSS Grid con grid-auto-flow</title>
 <style>
   .grid-container {
     display: grid;
@@ -517,270 +558,249 @@ En este ejemplo, al cambiar `grid-auto-flow` a `column`, los elementos restantes
 
 ---
 ## Area de cuadricula 
-La propiedad `grid-template-areas` se utiliza para definir áreas nombradas en una cuadrícula CSS Grid. Cada área se representa con un nombre único y se delimita por comillas. Por ejemplo:
 
-```css
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    "header header header"
-    "sidebar content content"
-    "footer footer footer";
-}
-```
+1. **`grid-template-áreas:;`**
+   - **Explicación:** Esta línea de código define un área de cuadrícula en CSS Grid. No se proporciona ningún valor para `grid-template-áreas`, lo que significa que no se definen áreas específicas para la cuadrícula en este momento.
+   
+   **Ejemplo:**
+   ```css
+   .grid-container {
+     display: grid;
+     grid-template-areas: none;
+   }
+   ```
 
-En este ejemplo, se definen tres áreas: "header", "sidebar", "content" y "footer".
+   El término "none" en el contexto de `grid-template-areas: none;` se refiere a la falta de definición de áreas específicas para la cuadrícula en CSS Grid. Cuando se establece `grid-template-areas` como `none`, significa que no se están asignando nombres a áreas de la cuadrícula mediante esta propiedad en particular. Esto puede deberse a que no se requiere un diseño basado en áreas específicas o porque se está utilizando otro método para definir la estructura de la cuadrícula, como `grid-template-rows` y `grid-template-columns`.
 
-La propiedad `grid-area` se utiliza para asignar un elemento a un área nombrada en la cuadrícula. Puede especificar el nombre del área directamente o usar la sintaxis `row-start / column-start / row-end / column-end` para especificar las líneas de la cuadrícula donde comienza y termina el elemento. Por ejemplo:
+2. **Uso de punto (`.`)**
+   - **Explicación:** En CSS Grid, el punto (`.`) se utiliza dentro de la propiedad `grid-template-areas` para indicar un espacio vacío en la cuadrícula. Esto significa que no hay ningún elemento asignado a esa área específica.
+   
+   **Ejemplo:**
+   ```css
+   .grid-container {
+     display: grid;
+     grid-template-areas:
+       "cabecera cabecera cabecera"
+       "barra-lateral . contenido"
+       "pie pie pie";
+   }
+   ```
 
-```css
-.item {
-  grid-area: header; /* El elemento se coloca en el área "header" */
-}
-```
+3. **`grid-area: nav;`**
+   - **Explicación:** Esta línea asigna el nombre `nav` a un área de la cuadrícula utilizando la propiedad `grid-area`. Esto permite colocar elementos dentro de esta área específica utilizando su nombre en la definición de la cuadrícula (`grid-template-areas`).
+   
+   **Ejemplo:**
+   ```css
+   .nav {
+     grid-area: nav;
+   }
+   ```
 
-**Uso del Punto (`.`)**
+4. **`grid-area: 1 / 1 / 4 / 5;`**
+   - **Explicación:** Utiliza `grid-area` para especificar las líneas de inicio y fin tanto para filas como para columnas de un elemento en la cuadrícula.
+     - Comienza en la fila 1 y columna 1.
+     - Termina en la fila 4 y columna 5.
+   
+   **Ejemplo:**
+   ```css
+   .item {
+     grid-area: 1 / 1 / 4 / 5;
+   }
+   ```
 
-En `grid-template-areas`, el punto (`.`) se utiliza para indicar un espacio vacío en la cuadrícula. Esto significa que no hay ningún elemento asignado a esa área. Por ejemplo:
+5. **`grid-template:
+      "cabecera cabecera cabecera"
+      "barra-lateral contenido contenido"
+      "pie pie pie"
+      / 1fr 2fr 1fr; /* Plantilla de columnas */`**
+   - **Explicación:** Define la plantilla de la cuadrícula con áreas y columnas específicas.
+     - Define tres filas con nombres de áreas (cabecera, barra-lateral, contenido, pie).
+     - Distribuye las columnas con tamaños flexibles (`1fr`, `2fr`, `1fr`).
+   
+   **Ejemplo:**
+   ```css
+   .grid-container {
+     display: grid;
+     grid-template:
+       "cabecera cabecera cabecera"
+       "barra-lateral contenido contenido"
+       "pie pie pie"
+       / 1fr 2fr 1fr;
+   }
+   ```
 
-```css
-.grid-container {
-  grid-template-areas:
-    "header header header"
-    "sidebar . content"
-    "footer footer footer";
-}
-```
+6. **`grid-template:
+      "cabecera cabecera cabecera" 15fr /* Tamaño de filas */
+      "barra-lateral contenido contenido" 80fr /* Tamaño de filas */
+      "pie pie pie" 10fr /* Tamaño de filas */
+      / 1fr 2fr 1fr; /* Plantilla de columnas */`**
+   - **Explicación:** Define la plantilla de la cuadrícula con tamaños explícitos para las filas y columnas.
+     - Filas: `15fr`, `80fr`, `10fr` para `cabecera`, `barra-lateral`, `pie` respectivamente.
+     - Columnas: `1fr`, `2fr`, `1fr`.
+   
+   **Ejemplo:**
+   ```css
+   .grid-container {
+     display: grid;
+     grid-template:
+       "cabecera cabecera cabecera" 15fr
+       "barra-lateral contenido contenido" 80fr
+       "pie pie pie" 10fr
+       / 1fr 2fr 1fr;
+   }
+   ```
 
-En este ejemplo, el área en la fila 2 y columna 2 está vacía, lo que significa que el elemento en esa área se extenderá sobre esa área vacía.
+**Ejemplo**
 
-**Abreviatura de `grid-template`**
-
-La propiedad `grid-template` se puede utilizar como una abreviatura conveniente para definir simultáneamente las plantillas de filas, columnas y áreas de la cuadrícula. Además de las áreas, puedes definir las filas y columnas en una sola declaración. Por ejemplo:
-
-```css
-.grid-container {
-  display: grid;
-  grid-template:
-    "header header header" 50px
-    "sidebar content content" 300px
-    "footer footer footer" 50px
-    / 1fr 2fr 1fr; /* Plantilla de columnas */
-}
-```
-
-En este ejemplo, se definen las áreas y la plantilla de columnas en una sola declaración, lo que simplifica la estructura del código y facilita la comprensión de la disposición de la cuadrícula. Las filas también se definen con una altura de 20px cada una.
-
-Ejemplo
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSS Grid Example with grid-template</title>
-<style>
-  .grid-container {
-    height: 500px;
-    display: grid;
-    grid-template:
-      "header header header" 15fr
-      "sidebar content content" 80fr
-      "footer footer footer" 10fr
-      / 1fr 2fr 1fr; /* Plantilla de columnas */
-    grid-gap: 10px;
-    border: 1px solid #333;
-    padding: 10px;
-  }
-  .header {
-    grid-area: header;
-    background-color: lightblue;
-    text-align: center;
-  }
-  .sidebar {
-    grid-area: sidebar;
-    background-color: lightgreen;
-    text-align: center;
-  }
-  .content {
-    grid-area: content;
-    background-color: lightcoral;
-    text-align: center;
-  }
-  .footer {
-    grid-area: footer;
-    background-color: lightgoldenrodyellow;
-    text-align: center;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de CSS Grid con temario detallado</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template:
+        "cabecera cabecera cabecera" 15fr
+        "barra-lateral contenido contenido" 80fr
+        "pie pie pie" 10fr
+        / 1fr 2fr 1fr;
+      gap: 10px;
+      border: 1px solid #333;
+      padding: 10px;
+    }
+    
+    .cabecera, .barra-lateral, .contenido, .pie {
+      text-align: center;
+      padding: 10px;
+    }
+    
+    .cabecera {
+      grid-area: cabecera;
+      background-color: lightblue;
+    }
+    
+    .barra-lateral {
+      grid-area: barra-lateral;
+      background-color: lightgreen;
+    }
+    
+    .contenido {
+      grid-area: contenido;
+      background-color: lightcoral;
+    }
+    
+    .pie {
+      grid-area: pie;
+      background-color: lightgoldenrodyellow;
+    }
+  </style>
 </head>
 <body>
   <div class="grid-container">
-    <div class="header">Header</div>
-    <div class="sidebar">Sidebar</div>
-    <div class="content">Content</div>
-    <div class="footer">Footer</div>
+    <div class="cabecera">Cabecera</div>
+    <div class="barra-lateral">Barra Lateral</div>
+    <div class="contenido">Contenido</div>
+    <div class="pie">Pie de Página</div>
   </div>
 </body>
 </html>
 ```
 
+Este temario y ejemplo proporcionan una comprensión detallada de cómo utilizar y personalizar CSS Grid, utilizando ejemplos prácticos con nombres de clases en español para una mejor comprensión y aplicabilidad en proyectos web.
+
 ---
 ## Alinear elementos de la cuadrícula
 
-**`justify-items`**
+**Mover todo el Grid**
 
-La propiedad `justify-items`: se utiliza para alinear los elementos de la cuadrícula en el eje **horizontal (en línea)**. 
+**`align-content`**: 
 
-* izquierda (`start`)
-* hacia la derecha (`end`)
-* centrados (`center`)
-* distribuidos uniformemente a lo largo del contenedor (`stretch`).
+Se utiliza para alinear la cuadrícula a lo largo del eje **vertical (en bloque)**.
 
-ejemplo:
+**`justify-content`**:
 
+Se utiliza para alinear la cuadrícula a lo largo del eje **horizontal (en línea)**.
+
+Valores:
+- `start`: Alinea el contenido al inicio del contenedor.
+- `end`: Alinea el contenido al final del contenedor.
+- `center`: Centra el contenido dentro del contenedor.
+- `stretch`: Estira el contenido para llenar el contenedor.
+- `space-between`: Distribuye el contenido con espacio igual entre los elementos.
+- `space-around`: Distribuye el contenido con espacio igual alrededor de los elementos.
+- `space-evenly`: Distribuye el contenido con espacio igual entre y alrededor de los elementos.
+
+**`place-content`**:
+
+Es una abreviatura que combina las propiedades `align-content` y `justify-content` en CSS Grid.
+
+Sintaxis:
 ```css
-.grid-container {
-  display: grid;
-  justify-items: center; /* Alinea los elementos en el centro horizontalmente */
-}
+place-content: <align-content> <justify-content>;
 ```
 
-**`align-items`**
+**Mover todos los elementos de la celda**
+**`align-items`**:
 
-La propiedad `align-items` se utiliza para alinear los elementos de la cuadrícula en el eje **vertical (en bloque)**. 
+Se utiliza para alinear los elementos de la cuadrícula en el eje **vertical (en bloque)**.
 
-* hacia *arriba (`start`)
-* hacia abajo (`end`)
-* centrados (`center`)
-* distribuidos uniformemente a lo largo del contenedor (`stretch`). 
+**`justify-items`**:
 
-Por ejemplo:
+Se utiliza para alinear los elementos de la cuadrícula en el eje **horizontal (en línea)**.
 
+Valores:
+- `start`: Alinea los elementos al inicio del contenedor.
+- `end`: Alinea los elementos al final del contenedor.
+- `center`: Centra los elementos dentro del contenedor.
+- `stretch`: Estira los elementos para llenar el contenedor.
+
+**`place-items`**:
+
+Es una forma abreviada de combinar las propiedades `align-items` y `justify-items` en CSS Grid.
+
+Sintaxis:
 ```css
-.grid-container {
-  display: grid;
-  align-items: center; /* Alinea los elementos en el centro verticalmente */
-}
-```
-
-**Alinear toda la cuadrícula**
-
-**`justify-content`**
-
-La propiedad `justify-content` se utiliza para alinear la cuadrícula a lo largo del eje **horizontal (en línea)**. 
-
-* hacia la izquierda (`start`), 
-* hacia la derecha (`end`), 
-* centrada (`center`), 
-* distribuida uniformemente a lo largo del contenedor (`space-between`)
-* distribuida uniformemente con un espacio alrededor de los elementos (`space-around`). 
-
-Por ejemplo:
-
-```css
-.grid-container {
-  display: grid;
-  justify-content: center; /* Alinea la cuadrícula en el centro horizontalmente */
-}
-```
-
-**`align-content`**
-
-La propiedad `align-content` se utiliza para alinear la cuadrícula a lo largo del eje vertical (en bloque). 
-
-* hacia arriba (`start`)
-* hacia abajo (`end`)
-* centrada (`center`)
-* distribuida uniformemente a lo largo del contenedor (`space-between`)
-* distribuida uniformemente con un espacio alrededor de los elementos (`space-around`). 
-
-Por ejemplo:
-
-```css
-.grid-container {
-  display: grid;
-  align-content: center; /* Alinea la cuadrícula en el centro verticalmente */
-}
-```
-
-**`place-content`**
-
-La propiedad `place-content` es una propiedad abreviada que se utiliza para centrar los elementos tanto horizontalmente como verticalmente dentro de la cuadrícula. Puedes especificar tanto la alineación horizontal como la vertical en una sola declaración. Por ejemplo:
-
-```css
-.grid-container {
-  display: grid;
-  place-content: center; /* Centra los elementos tanto horizontal como verticalmente */
-}
-```
-
-**`justify-self`**
-
-La propiedad `justify-self` se utiliza para alinear un elemento específico dentro de la cuadrícula en el eje **horizontal (en línea).** 
-
-* *hacia la izquierda (`start`)
-* hacia la derecha (`end`)
-* centrado (`center`)
-* estirado para ocupar todo el espacio disponible (`stretch`). 
-
-Por ejemplo:
-
-```css
-.item {
-  justify-self: center; /* Alinea este elemento en el centro horizontalmente */
-}
+place-items: <align-items> <justify-items>;
 ```
 
 
-**`align-self`**
+**Mover un elemento en particular de la celda**
 
-- `start`: Alinea el elemento en el borde superior de la celda.
-- `end`: Alinea el elemento en el borde inferior de la celda.
-- `center`: Alinea el elemento en el centro vertical de la celda.
-- `stretch`: Hace que el elemento se estire para ocupar toda la altura de la celda.
+**`align-self`**:
+Se utiliza para alinear un elemento específico dentro de la cuadrícula en el eje **vertical (en bloque)**.
 
-*Ejemplo de Uso:*
+**`justify-self`**:
+Se utiliza para alinear un elemento específico dentro de la cuadrícula en el eje **horizontal (en línea)**.
 
+Valores:
+- `start`: Alinea el elemento al inicio del contenedor.
+- `end`: Alinea el elemento al final del contenedor.
+- `center`: Centra el elemento dentro del contenedor.
+- `stretch`: Estira el elemento para llenar el contenedor.
+
+**`place-self`**:
+Es una abreviatura que combina las propiedades `align-self` y `justify-self` en CSS Grid.
+
+Sintaxis:
 ```css
-.item {
-  align-self: center; /* Alinea verticalmente en el centro */
-}
+place-self: <align-self> <justify-self>;
 ```
 
-Estas propiedades te permiten controlar la alineación de los elementos dentro de una cuadrícula CSS Grid, ya sea individualmente o en conjunto para toda la cuadrícula.
+Ejemplo:
 
-Ejemplo
+**HTML**
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSS Grid Alignment Example</title>
-<style>
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px;
-    grid-gap: 10px;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    height: 300px; /* Altura para fines de visualización */
-    border: 1px solid #333;
-    padding: 10px;
-  }
-  .item {
-    background-color: lightblue;
-    border: 1px solid #999;
-    padding: 20px;
-    text-align: center;
-    justify-self: center;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de CSS Grid</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="grid-container">
@@ -795,8 +815,93 @@ Ejemplo
 </html>
 ```
 
+**CSS (styles.css)**
+
+```css
+/* Estilos base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
+  border: 2px solid #333;
+  padding: 10px;
+}
+
+.item {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+/* Ejemplo: Mover todo el Grid */
+.grid-container.move-all {
+  align-content: center; /* Alinea verticalmente al centro */
+  justify-content: space-around; /* Alinea horizontalmente con espacio alrededor */
+}
+
+/* Ejemplo: Mover todos los elementos de la celda */
+.grid-container.move-items {
+  align-items: center; /* Alinea verticalmente al centro */
+  justify-items: start; /* Alinea horizontalmente al inicio */
+}
+
+/* Ejemplo: Mover un elemento en particular de la celda */
+.item.move-specific {
+  align-self: end; /* Alinea este elemento verticalmente al final */
+  justify-self: center; /* Alinea este elemento horizontalmente al centro */
+}
+```
+
+**Explicación y Uso**
+
+**Mover todo el Grid**
+
+```css
+.grid-container.move-all {
+  align-content: center; /* Alinea verticalmente al centro */
+  justify-content: space-around; /* Alinea horizontalmente con espacio alrededor */
+}
+```
+
+Este bloque de CSS aplica `align-content` y `justify-content` al contenedor `.grid-container`, centrando verticalmente el contenido y distribuyendo horizontalmente los elementos con espacio alrededor.
+
+**Mover todos los elementos de la celda**
+
+```css
+.grid-container.move-items {
+  align-items: center; /* Alinea verticalmente al centro */
+  justify-items: start; /* Alinea horizontalmente al inicio */
+}
+```
+
+Aquí, `align-items` y `justify-items` se aplican a todos los elementos `.item` dentro de `.grid-container`, alineando verticalmente al centro y horizontalmente al inicio de cada celda respectivamente.
+
+**Mover un elemento en particular de la celda**
+
+```css
+.item.move-specific {
+  align-self: end; /* Alinea este elemento verticalmente al final */
+  justify-self: center; /* Alinea este elemento horizontalmente al centro */
+}
+```
+
+En este caso, la clase `.move-specific` se aplica a un elemento específico dentro de la cuadrícula, ajustando su alineación vertical al final y horizontalmente al centro de su celda.
+
+Estos ejemplos te permiten mostrar visualmente cómo cada propiedad afecta la disposición y alineación de elementos dentro de una cuadrícula CSS Grid, facilitando la comprensión y experimentación con estos conceptos.
+
 ---
 ## Uso de `minmax()`
+
+**La función `minmax()`**
 
 La función `minmax()` en CSS Grid se utiliza para especificar un rango permitido de tamaños para una pista de la cuadrícula. Esto es útil cuando se desea que una pista de la cuadrícula tenga un tamaño mínimo y máximo, lo que permite que la cuadrícula se ajuste de forma más dinámica al contenido.
 
@@ -804,17 +909,17 @@ La sintaxis de `minmax()` es la siguiente: `minmax(min, max)`, donde `min` es el
 
 Cuando se utiliza `minmax()` en una cuadrícula CSS Grid responsiva para dispositivos móviles, es común utilizarlo en combinación con otras propiedades de diseño responsivo, como `auto-fill` y `auto-fit`, para que las columnas se ajusten automáticamente al tamaño de la pantalla del dispositivo.
 
-Aquí tienes un ejemplo de cómo utilizar `minmax()` en una cuadrícula CSS Grid responsiva para celulares:
+**Ejemplo**
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive CSS Grid Example with minmax()</title>
+<title>Ejemplo de CSS Grid Responsivo con minmax()</title>
 <style>
-  .grid-container {
+  .contenedor-cuadricula {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     grid-gap: 10px;
@@ -829,7 +934,7 @@ Aquí tienes un ejemplo de cómo utilizar `minmax()` en una cuadrícula CSS Grid
 </style>
 </head>
 <body>
-  <div class="grid-container">
+  <div class="contenedor-cuadricula">
     <div class="item">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
@@ -845,12 +950,81 @@ Aquí tienes un ejemplo de cómo utilizar `minmax()` en una cuadrícula CSS Grid
   </div>
 </body>
 </html>
-
 ```
 
-En este ejemplo, la cuadrícula se configura para tener columnas de un tamaño mínimo de 100px y un tamaño máximo de 1fr. Las columnas se ajustarán automáticamente para llenar el espacio disponible en la pantalla, lo que las hace responsivas para dispositivos móviles.
+**`min-content` y `max-content` en CSS**
 
-**`Autofill` y `autofit`**
+En CSS, `min-content` y `max-content` son dos valores importantes que se utilizan para especificar el tamaño de un elemento basado en el contenido que contiene. Estos valores son particularmente útiles en contextos de diseño responsivo y flexible, donde deseas que los elementos se ajusten dinámicamente según su contenido.
+
+**`min-content`**
+
+El valor `min-content` indica que el tamaño del elemento debe ser el mínimo necesario para contener todo su contenido sin que haya desbordamiento (overflow). Es decir, el tamaño del elemento será el tamaño mínimo necesario para acomodar todo su contenido en una línea, sin forzar el contenido a desbordar o truncar.
+
+Por ejemplo, si tienes un contenedor de texto que se ajusta según la longitud de la línea más larga de texto dentro de él, `min-content` asegura que el contenedor se ajustará exactamente a esa longitud sin agregar espacio adicional.
+
+**`max-content`**
+
+Por otro lado, `max-content` indica que el tamaño del elemento debe ser el máximo posible que permita mostrar todo su contenido en una sola línea, sin que haya desbordamiento. Esto significa que el elemento se expandirá tanto como sea necesario para acomodar su contenido sin desbordarlo.
+
+Por ejemplo, si tienes un elemento que contiene una lista de ítems en una línea horizontal, `max-content` asegura que el contenedor se expandirá para mostrar todos los ítems en una sola fila, ajustándose al contenido máximo posible sin forzar un desbordamiento.
+
+**Ejemplo**
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplo de CSS Grid con min-content y max-content</title>
+<style>
+  .contenedor-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, max-content));
+    grid-gap: 10px;
+    padding: 10px;
+    border: 1px solid #333;
+  }
+  .item {
+    background-color: lightblue;
+    border: 1px solid #999;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="contenedor-cuadricula">
+    <div class="item">Contenido corto</div>
+    <div class="item">Este es un contenido mucho más largo que necesita más espacio</div>
+    <div class="item">Contenido medio</div>
+    <div class="item">Este es un contenido aún más largo que necesita incluso más espacio que el anterior</div>
+    <div class="item">Texto</div>
+    <div class="item">Un poco más de contenido</div>
+  </div>
+</body>
+</html>
+```
+
+**Explicación**
+
+En este ejemplo, estamos utilizando una cuadrícula de CSS con 3 columnas, donde cada columna se define con `minmax(min-content, max-content)`. Esto significa que cada columna tendrá un tamaño mínimo suficiente para acomodar el contenido sin desbordar (`min-content`) y un tamaño máximo que permita mostrar todo el contenido en una sola línea (`max-content`).
+
+- **`min-content`**: El tamaño mínimo de la columna será el necesario para acomodar el contenido más pequeño posible sin desbordar.
+- **`max-content`**: El tamaño máximo de la columna será el necesario para acomodar el contenido más grande posible en una sola línea sin desbordar.
+
+
+En este ejemplo, `width: min-content;` o `width: max-content;` se aplicaría al contenedor `.contenedor`. Dependiendo del valor que elijas (`min-content` o `max-content`), el contenedor ajustará su ancho para adaptarse al contenido dentro de él de la manera descrita anteriormente.
+
+**Uso en Diseño Responsivo y Flexible**
+
+- **Responsividad:** Utilizar `min-content` y `max-content` es útil cuando deseas que los elementos se ajusten dinámicamente según el contenido, especialmente en diseños responsivos donde el tamaño de los elementos puede variar según la cantidad y el tipo de contenido que contienen.
+
+- **Flexibilidad:** Estos valores son especialmente poderosos en combinación con CSS Grid y Flexbox, donde puedes especificar tamaños de columna o fila que se ajusten automáticamente al contenido utilizando `min-content` o `max-content`.
+
+En resumen, `min-content` y `max-content` proporcionan un control preciso sobre cómo se debe ajustar el tamaño de un elemento según su contenido, lo que facilita la creación de diseños web flexibles y adaptables.
+
+**`autofill` y `autofit` en CSS Grid**
 
 **¿Qué es `autofill`?**
 
@@ -860,21 +1034,21 @@ En este ejemplo, la cuadrícula se configura para tener columnas de un tamaño m
 
 - `autofit` es otra palabra clave en CSS Grid que también se utiliza con la función `repeat()`. Similar a `autofill`, `autofit` genera automáticamente tantas columnas o filas como sea posible, pero a diferencia de `autofill`, si el contenido no es suficiente para llenar todas las pistas generadas, las pistas adicionales se reducirán a su tamaño mínimo.
 
-**Diferencias de `autofill` y `autofit`**
+**Diferencias entre `autofill` y `autofit`**
 
 - La principal diferencia entre `autofill` y `autofit` radica en cómo manejan el espacio disponible cuando hay más pistas generadas de las que se necesitan para colocar el contenido. `autofill` mantiene todas las pistas generadas incluso si no se llenan completamente, mientras que `autofit` reduce las pistas adicionales a su tamaño mínimo si no se necesita más espacio.
 
-Ejemplo
+**Ejemplo**
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Autofill y Autofit en CSS Grid</title>
 <style>
-  .grid-container {
+  .contenedor-cuadricula {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     grid-gap: 10px;
@@ -890,7 +1064,7 @@ Ejemplo
 </style>
 </head>
 <body>
-  <div class="grid-container">
+  <div class="contenedor-cuadricula">
     <div class="item">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
@@ -906,10 +1080,9 @@ Ejemplo
   </div>
 </body>
 </html>
-
 ```
 
-En este ejemplo, la cuadrícula se configura para tener columnas que tienen un tamaño mínimo de 100px y un tamaño máximo de 1fr. Utilizando repeat(auto-fill, ...), la cuadrícula generará automáticamente tantas columnas como quepan en el contenedor, llenando el espacio disponible. Si el contenedor es lo suficientemente ancho, se generarán múltiples columnas de 100px, pero si el contenedor es estrecho, las columnas se expandirán para llenar el espacio disponible. La propiedad grid-gap se utiliza para agregar espacio entre las celdas de la cuadrícula.
+En este ejemplo, la cuadrícula se configura para tener columnas que tienen un tamaño mínimo de 100px y un tamaño máximo de 1fr. Utilizando `repeat(auto-fill, ...)`, la cuadrícula generará automáticamente tantas columnas como quepan en el contenedor, llenando el espacio disponible. Si el contenedor es lo suficientemente ancho, se generarán múltiples columnas de 100px, pero si el contenedor es estrecho, las columnas se expandirán para llenar el espacio disponible. La propiedad `grid-gap` se utiliza para agregar espacio entre las celdas de la cuadrícula.
 
 ---
 ## Resumen

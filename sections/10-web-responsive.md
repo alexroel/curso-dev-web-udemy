@@ -4,12 +4,13 @@
 3. [¿Qué es Mobile First y Desktop First?](#qué-es-mobile-first-y-desktop-first)
 4. [Herramientas para Probar tu Diseño Responsivo](#herramientas-para-probar-tu-diseño-responsivo)
 5. [Creando Media Queries](#creando-media-queries)
-6. [Snippet para Media Queries](#snippet-para-media-queries)
-7. [Tamaños Estándar para Media Queries](#tamaños-estándar-para-media-queries)
-8. [Obtimizar tu sitio web](#obtimizar-tu-sitio-web)
-9. [Snippet para AVIF y WebP](#snippet-para-avif-y-webp)
-10. [Obtimizar tu sitio web en aplicaciones moviles ](#obtimizar-tu-sitio-web-en-aplicaciones-moviles)
-11. [Resumen](#resumen)
+6. [Operadores de Comparación en Media Queries](#operadores-de-comparación-en-media-queries)
+7. [Snippet para Media Queries](#snippet-para-media-queries)
+8. [Tamaños Estándar para Media Queries](#tamaños-estándar-para-media-queries)
+9. [Obtimizar tu sitio web](#obtimizar-tu-sitio-web)
+10. [Snippet para AVIF y WebP](#snippet-para-avif-y-webp)
+11. [Obtimizar tu sitio web en aplicaciones moviles ](#obtimizar-tu-sitio-web-en-aplicaciones-moviles)
+12. [Resumen](#resumen)
 
 
 
@@ -259,6 +260,103 @@ La palabra clave `or` se representa con una coma (`,`) y permite combinar varias
 ```
 
 En este caso, el fondo del `body` se volverá verde si el ancho de la pantalla es menor a 600 píxeles o mayor a 1200 píxeles.
+
+## Operadores de Comparación en Media Queries
+
+La especificación de Media Queries Level 4 introduce nuevos operadores de comparación que permiten evaluar directamente si un valor es menor, mayor, igual, menor o igual, o mayor o igual a otro valor. Esto hace que las consultas de medios sean más simples y directas, eliminando la necesidad de combinar condiciones con el operador `and`. Aquí te explico a detalle cada uno de estos operadores y cómo se utilizan:
+
+
+1. **< (menor que)**:
+   - Evalúa si un valor es menor que otro valor.
+   - Ejemplo: `@media (width < 600px) { ... }`
+     ```css
+     @media (width < 600px) {
+       body {
+         background-color: lightblue;
+       }
+     }
+     ```
+     En este ejemplo, el fondo del cuerpo será de color azul claro si el ancho de la ventana gráfica es menor que 600 píxeles.
+
+2. **> (mayor que)**:
+   - Evalúa si un valor es mayor que otro valor.
+   - Ejemplo: `@media (width > 600px) { ... }`
+     ```css
+     @media (width > 600px) {
+       body {
+         background-color: lightgreen;
+       }
+     }
+     ```
+     Aquí, el fondo del cuerpo será de color verde claro si el ancho de la ventana gráfica es mayor que 600 píxeles.
+
+3. **= (igual a)**:
+   - Evalúa si un valor es igual a otro valor.
+   - Ejemplo: `@media (width = 600px) { ... }`
+     ```css
+     @media (width = 600px) {
+       body {
+         background-color: yellow;
+       }
+     }
+     ```
+     En este caso, el fondo del cuerpo será de color amarillo si el ancho de la ventana gráfica es exactamente 600 píxeles.
+
+4. **<= (menor o igual que)**:
+   - Evalúa si un valor es menor o igual que otro valor.
+   - Ejemplo: `@media (width <= 600px) { ... }`
+     ```css
+     @media (width <= 600px) {
+       body {
+         background-color: lightcoral;
+       }
+     }
+     ```
+     Aquí, el fondo del cuerpo será de color coral claro si el ancho de la ventana gráfica es menor o igual a 600 píxeles.
+
+5. **>= (mayor o igual que)**:
+   - Evalúa si un valor es mayor o igual que otro valor.
+   - Ejemplo: `@media (width >= 600px) { ... }`
+     ```css
+     @media (width >= 600px) {
+       body {
+         background-color: lightgoldenrodyellow;
+       }
+     }
+     ```
+     En este ejemplo, el fondo del cuerpo será de color amarillo dorado claro si el ancho de la ventana gráfica es mayor o igual a 600 píxeles.
+
+**Comparación con la Sintaxis Tradicional**
+
+En las versiones anteriores de Media Queries, tendrías que combinar varias condiciones utilizando el operador `and` para lograr el mismo resultado. Por ejemplo:
+
+```css
+/* Versión anterior sin operadores de comparación */
+@media (min-width: 600px) and (max-width: 1200px) {
+  body {
+    background-color: pink;
+  }
+}
+```
+
+Con los nuevos operadores de comparación en Media Queries Level 4, esto se simplifica:
+
+```css
+/* Usando operadores de comparación */
+@media (600px <= width <= 1200px) {
+  body {
+    background-color: pink;
+  }
+}
+```
+
+**Beneficios de los Nuevos Operadores**
+
+- **Claridad**: Hacen que las consultas de medios sean más legibles y fáciles de entender.
+- **Concisión**: Reducen la necesidad de escribir múltiples condiciones con `and`.
+- **Precisión**: Permiten expresar condiciones exactas de manera más directa.
+
+Estos nuevos operadores de comparación hacen que trabajar con Media Queries sea más intuitivo y eficiente, especialmente cuando se trata de condiciones complejas.
 
 
 ## Snippet para Media Queries
