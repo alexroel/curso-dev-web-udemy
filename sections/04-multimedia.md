@@ -48,16 +48,6 @@ El atributo `loading` permite diferir la carga de las imágenes que están fuera
 <img src="ruta-de-la-imagen.jpg" alt="Descripción de la imagen" loading="lazy">
 ```
 
-**Propiedad `width: 100%` y `aspect-ratio`**
-
-Para hacer que las imágenes sean responsivas y mantengan su proporción, puedes usar la propiedad `width: 100%` junto con `aspect-ratio`. La propiedad `aspect-ratio` asegura que la imagen mantenga su proporción independientemente del tamaño de la pantalla.
-
-```html
-<img src="ruta-de-la-imagen.jpg" alt="Descripción de la imagen" style="width: 100%; aspect-ratio: 638 / 317;">
-```
-
-En este ejemplo, la imagen se ajustará al ancho de su contenedor y mantendrá una relación de aspecto de 638:317.
-
 **Etiqueta `<figure>` y `<figcaption>`**
 
 La etiqueta `<figure>` se utiliza para agrupar contenido relacionado, como una imagen y su descripción. La etiqueta `<figcaption>` se usa para agregar una leyenda a la imagen.
@@ -74,27 +64,32 @@ La etiqueta `<figure>` se utiliza para agrupar contenido relacionado, como una i
 Aquí tienes un ejemplo completo que incorpora todos estos elementos:
 
 ```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo de Imágenes en HTML</title>
-  <style>
-    img {
-      width: 100%;
-      aspect-ratio: 638 / 317;
-    }
-  </style>
-</head>
-<body>
-  <h1>Ejemplo de uso de imágenes en HTML</h1>
-  <figure>
-    <img src="ruta-de-la-imagen.jpg" alt="Descripción de la imagen" loading="lazy">
-    <figcaption>Esta es una leyenda descriptiva de la imagen.</figcaption>
-  </figure>
-</body>
-</html>
+    <section>
+        <h2>Creadores de Google</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ipsa adipisci dolor pariatur quos, doloribus nisi porro dolorem ipsam quaerat, ea sequi unde maxime tenetur! Porro quia quaerat cupiditate illo!</p>
+        <figure>
+            <img src="https://serenitymarkets.com/wp-content/uploads/2023/09/larry-page.jpg" alt="Foto de Larry Page" width="300">
+            <figcaption>Larry Page fundador de Google</figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://statics.forbesargentina.com/2022/08/62f41f2e82fb2.jpg" alt="Foto de Larry Page" width="300">
+            <figcaption>Sergey Brin fundador de Google</figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Galeria de Google</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi perspiciatis rem, voluptas sunt sit sapiente quam tempore eius similique perferendis architecto illo provident consectetur magni reiciendis ut. Ratione, voluptas deleniti.</p>
+        <figure>
+            <picture>
+                <source srcset="images/laptop-home.avif" type="image/avif">
+                <source srcset="images/laptop-home.webp" type="image/webp">
+                <img src="images/laptop-home.png" alt="Usando Google" width="100%" loading="lazy">
+            </picture>
+            <figcaption>Usando Google en una MacBook.</figcaption>
+        </figure>
+    </section>
 ```
 
 **Consideraciones Adicionales**
@@ -146,24 +141,14 @@ En este ejemplo, el video se ajustará al ancho de su contenedor y mantendrá un
 Aquí tienes un ejemplo completo que incorpora todos estos elementos:
 
 ```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo de Videos en HTML</title>
-  <style>
-    video {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-    }
-  </style>
-</head>
-<body>
-  <h1>Ejemplo de uso de videos en HTML</h1>
-  <video src="ruta-del-video.mp4" controls loop poster="imagen-poster.jpg" autoplay muted></video>
-</body>
-</html>
+    <section>
+        <h2>Presentación de Google</h2>
+        <video controls width="100%">
+            <source src="video/presentacion-google.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum nihil corrupti blanditiis sunt mollitia! Quae, sapiente ratione assumenda nemo fugit maiores atque, velit necessitatibus quo, rerum quas aspernatur ea soluta.</p>
+    </section>
 ```
 
 **Consideraciones Adicionales**
@@ -208,37 +193,15 @@ La etiqueta `<audio>` se utiliza para incrustar archivos de audio en una página
 Para asegurar la compatibilidad con todos los navegadores, es una buena práctica proporcionar el audio en diferentes formatos (por ejemplo, MP3, Ogg, WAV).
 
 ```html
-<audio controls>
-  <source src="ruta-del-audio.mp3" type="audio/mpeg">
-  <source src="ruta-del-audio.ogg" type="audio/ogg">
-  Tu navegador no soporta la reproducción de audio.
-</audio>
+    <section>
+        <h2>Podcast sobre Google</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam vel adipisci incidunt esse, iste ad nostrum illo ab qui voluptate optio repudiandae in quam rerum omnis sapiente ducimus excepturi dicta.</p>
+        <audio controls>
+            <source src="audio/lofi.mp3" type="audio/mpeg">
+            Tu navegador no soporta la etiqueta de audio.
+        </audio>
+    </section>
 ```
-
-**Ejemplo Completo**
-
-Aquí tienes un ejemplo completo que incorpora todos estos elementos:
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo de Audio en HTML</title>
-</head>
-<body>
-  <h1>Ejemplo de uso de audio en HTML</h1>
-  <audio controls loop autoplay muted>
-    <source src="ruta-del-audio.mp3" type="audio/mpeg">
-    <source src="ruta-del-audio.ogg" type="audio/ogg">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-</body>
-</html>
-```
-
-
 ---
 ## Videos y páginas extenas
 Incorporar videos de plataformas externas como YouTube puede enriquecer la experiencia del usuario en tu página web. Aquí te ofrecemos una guía sobre cómo utilizar la etiqueta `<iframe>` para insertar videos de YouTube, y cómo hacer que sean responsivos utilizando `width: 100%` y `aspect-ratio`.
@@ -270,32 +233,28 @@ En este ejemplo, el video se ajustará al ancho de su contenedor y mantendrá un
 Aquí tienes un ejemplo completo que incorpora todos estos elementos:
 
 ```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo de Videos de YouTube en HTML</title>
-  <style>
-    .video-container {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-    }
-  </style>
-</head>
-<body>
-  <h1>Ejemplo de uso de videos de YouTube en HTML</h1>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-  </div>
-</body>
-</html>
+    <section>
+        <h2>Google, Facebook, Amazon - El poder ilimitado de los consorcios digitales | DW Documental</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia aliquid adipisci numquam repudiandae eum corporis excepturi distinctio labore ullam consequatur ut porro molestias, qui repellat est voluptatibus odio optio quisquam.</p>
+        
+        
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A3cGMNxRNJ0?si=YLajhm8oZAQ577ee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </section>
 ```
 
 **Consideraciones Adicionales**
 
 - **Privacidad Mejorada**: Puedes utilizar `https://www.youtube-nocookie.com/embed/VIDEO_ID` en el atributo `src` para mejorar la privacidad del usuario.
 - **Carga Diferida**: Para mejorar el rendimiento, puedes cargar el video solo cuando el usuario interactúe con él. Esto se puede hacer utilizando técnicas de JavaScript para cargar el iframe dinámicamente.
+
+```html
+    <section>
+        <h2>Ubicación de Google</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dicta officiis modi quam laborum dolorum, distinctio expedita veniam voluptatum, voluptatibus repellendus eum optio? Error impedit dolores totam sequi exercitationem beatae.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.3030502909178!2d-77.03812456575541!3d-12.097620507335074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c92f3847675b%3A0x49f9d9498e2b2cfa!2sGoogle%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1721265841219!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+```
 
 ---
 ## Resumen

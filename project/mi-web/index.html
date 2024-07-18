@@ -2,43 +2,121 @@
 <html lang="es">
 
 <head>
-   <title>Mi Web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Web - Blog y eventos sobre tegnolgias</title>
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Descubre las últimas noticias, eventos y conferencias sobre tecnologías en nuestro blog. Mantente informado sobre tendencias y avances en la industria tecnológica.">
+    <meta name="author" content="Alex Roel">
 
-   <!-- <link rel="stylesheet" href="styles/style.css"> -->
+    <!-- Metados para Open Graph -->
+    <meta property="og:title" content="Mi Web - Noticias y Eventos Tecnológicos">
+    <meta property="og:description"
+        content="Explora las últimas noticias y eventos sobre tecnología en nuestro sitio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mi-web.com">
+    <meta property="og:image" content="https://images.pexels.com/photos/7350906/pexels-photo-7350906.jpeg">
+    <meta property="og:site_name" content="Mi Web">
+
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-   <h1>Google es genial.</h1>
-   <p>
-      <strong>Google</strong> es el principal motor de búsqueda en línea, <u>lanzado en 1998</u>,
-      que conecta a los usuarios con información relevante en la web.
-   </p>
+    <header>
+        <h1> 
+            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span> 
+            es genial.
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#acerca-de">Acerca de</a></li>
+                <li><a href="evento.html">Evento</a></li>
+                <li><a href="multimedia.html">Multimedias</a></li>
+            </ul>
+        </nav>
+    </header>
 
-   <img src="images/logo-google.png" onclick="cambiarImg()" alt="Logo de Google" width="300">
-   <p>
-      Sumérgete en la eficacia del motor de búsqueda más utilizado en todo el mundo.
-      Experimenta la rapidez y precisión al encontrar información relevante con tan solo unos clics.
-      Puedes usar el siguiente enlace para poder acceder a la página de Google:
-      <a href="https://www.google.com/" target="_blank" title="Página de google">Ir a Google</a>.
-   </p>
+    <main>
+        <article>
+            <h2>¿Qué es <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>?</h2>
+            <p>
+                <strong>Google</strong> es el principal motor de búsqueda en línea, <u>lanzado en 1998</u>,
+                que conecta a los usuarios con información relevante en la web.
+            </p>
 
-   <h2>Mas alla del buscador</h2>
-   <p>
-      Google no se limita solo a su icónico motor de búsqueda. Este gigante tecnológico ofrece un extenso ecosistema de
-      plataformas y servicios que abarcan diversas necesidades en línea. Algunas de las notables incluyen:
-   </p>
+            <img src="images/logo-google.png" alt="Logo de Google" width="300">
 
-   <ul>
-      <li>Gmail</li>
-      <li>Google Drive</li>
-      <li>Google Maps</li>
-      <li>YouTube</li>
-      <li>Android</li>
-   </ul>
+            <p>
+                Sumérgete en la eficacia del motor de búsqueda más utilizado en todo el mundo.
+                Experimenta la rapidez y precisión al encontrar información relevante con tan solo unos clics.
+                Puedes usar el siguiente enlace para poder acceder a la página de Google:
+                <a href="https://www.google.com/" target="_blank" title="Página de google">Ir a Google</a>.
+            </p>
+        </article>
 
-   <!-- <button onclick="enviarNombreUsuario()">Nuevo nombre de usuario</button> -->
+        <section>
+            <h2>Mas alla del buscador</h2>
+            <p>
+                Google no se limita solo a su icónico motor de búsqueda. Este gigante tecnológico ofrece un extenso
+                ecosistema de
+                plataformas y servicios que abarcan diversas necesidades en línea. Algunas de las notables incluyen:
+            </p>
 
-   <!-- <script src="scripts/main.js"></script> -->
+            <ul>
+                <li>Gmail</li>
+                <li>Google Drive</li>
+                <li>Google Maps</li>
+                <li>YouTube</li>
+                <li>Android</li>
+            </ul>
+        </section>
+    </main>
+
+    <hr>
+    <section>
+        <h2 class="logo">Acerca de <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h2>
+        <p>Google es una de las empresas más influyentes del mundo, fundada en 1998 por Larry Page y Sergey Brin.</p>
+
+        <blockquote cite="https://www.google.com/about/">
+            "Nuestra misión es organizar la información del mundo y hacerla universalmente accesible y útil."
+        </blockquote>
+
+        <p>
+            Según <cite>The New York Times</cite>, Google ha revolucionado la manera en que accedemos a la información.
+        </p>
+
+        <p>
+            El éxito de Google no se puede negar; <q>ha cambiado la forma en que vivimos y trabajamos</q>, afirma
+            <cite>Wired Magazine</cite>.
+        </p>
+
+        <p>
+            Google ofrece una variedad de servicios y productos, desde su motor de búsqueda hasta <abbr
+                title="Inteligencia Artificial">IA</abbr> avanzada y plataformas de publicidad digital.
+        </p>
+
+        <p>
+            La empresa tiene su sede en:
+        <address>
+            Google LLC<br>
+            1600 Amphitheatre Parkway<br>
+            Mountain View, CA 94043<br>
+            Estados Unidos
+        </address>
+        </p>
+        <p>
+            La última actualización sobre su misión fue realizada el <time datetime="2023-03-01">1 de marzo de
+                2023</time>.
+        </p>
+    </section>
+
+    <footer>
+        <p>Mi Web 2024.</p>
+    </footer>
+
 </body>
 
 </html>

@@ -83,11 +83,7 @@ La sintaxis de las etiquetas HTML sigue una estructura específica que facilita 
 <nombre_de_etiqueta>contenido</nombre_de_etiqueta>
 ```
 
-Algunas etiquetas son auto-cerradas y no requieren una etiqueta de cierre separada, como la etiqueta `<img>` para insertar imágenes.
-
-```html
-<img src="imagen.jpg" alt="Descripción de la imagen">
-```
+Algunas etiquetas son auto-cerradas y no requieren una etiqueta de cierre separada, como la etiqueta `<hr>` para insertar una linea hoizontal.
 
 **Partes de un Elemento**
 
@@ -96,86 +92,17 @@ Cada elemento HTML se compone de varias partes clave:
 1. **Etiqueta de Apertura**: Consiste en el nombre de la etiqueta encerrado entre corchetes angulares (`<>`). Puede incluir atributos que proporcionan información adicional sobre el elemento.
    ```html
    <p>Este es un párrafo.</p>
-   <img src="imagen.jpg" alt="Descripción de la imagen">
    ```
 
 2. **Contenido**: Es el texto o los elementos anidados dentro de la etiqueta. En el caso de etiquetas auto-cerradas, no hay contenido entre la apertura y el cierre.
    ```html
-   <a href="https://www.ejemplo.com">Este es un enlace</a>
+   <p>Este es un párrafo.</p>
    ```
 
 3. **Etiqueta de Cierre**: Similar a la etiqueta de apertura, pero incluye una barra inclinada (`/`) antes del nombre de la etiqueta.
    ```html
    </p>
-   </a>
    ```
-
-4. **Atributos**: Son propiedades adicionales dentro de la etiqueta de apertura que proporcionan más información sobre el elemento. Los atributos se componen de un nombre y un valor, separados por un signo igual (`=`) y el valor se encierra entre comillas.
-   ```html
-   <a href="https://www.ejemplo.com" target="_blank">Enlace</a>
-   <img src="imagen.jpg" alt="Descripción de la imagen">
-   ```
-
-**Ejemplo**
-
-A continuación, se muestra un ejemplo completo de un elemento HTML con todas sus partes:
-
-```html
-<a href="https://www.ejemplo.com" target="_blank">Visitar Ejemplo</a>
-```
-
-- **Etiqueta de Apertura**: `<a href="https://www.ejemplo.com" target="_blank">`
-  - **Nombre de la Etiqueta**: `a`
-  - **Atributos**: `href="https://www.ejemplo.com"` y `target="_blank"`
-
-- **Contenido**: `Visitar Ejemplo`
-
-- **Etiqueta de Cierre**: `</a>`
-
-**Crear Elementos con Etiquetas**
-
-Las etiquetas de HTML se utilizan para crear diversos elementos que componen la estructura y el contenido de una página web. Aquí algunos ejemplos comunes de etiquetas utilizadas para crear elementos:
-
-- **Encabezados (`<h1>` a `<h6>`)**: Definen títulos y subtítulos.
-  ```html
-  <h1>Título Principal</h1>
-  <h2>Subtítulo</h2>
-  ```
-
-- **Párrafos (`<p>`)**: Definen bloques de texto.
-  ```html
-  <p>Este es un párrafo de ejemplo.</p>
-  ```
-
-- **Enlaces (`<a>`)**: Crean hipervínculos a otras páginas o recursos.
-  ```html
-  <a href="https://www.ejemplo.com">Visitar Ejemplo</a>
-  ```
-
-- **Listas (`<ul>`, `<ol>`, `<li>`)**: Organizan el contenido en listas desordenadas u ordenadas.
-  ```html
-  <ul>
-    <li>Elemento de lista desordenada</li>
-    <li>Otro elemento de lista</li>
-  </ul>
-  <ol>
-    <li>Elemento de lista ordenada</li>
-    <li>Otro elemento de lista ordenada</li>
-  </ol>
-  ```
-
-- **Imágenes (`<img>`)**: Insertan imágenes en la página.
-  ```html
-  <img src="imagen.jpg" alt="Descripción de la imagen">
-  ```
-
-- **Divisiones (`<div>`)**: Agrupan y organizan secciones de contenido.
-  ```html
-  <div>
-    <p>Contenido dentro de un div.</p>
-  </div>
-  ```
-
 ---
 ## Encabesados y párrafos
 
@@ -202,17 +129,17 @@ En HTML, los encabezados (h1 a h6) y los párrafos son elementos fundamentales p
 <p>Este es un párrafo de ejemplo.</p>
 ```
 
-**Elementos anidados como <strong>:**
+**Preformateados:**
+a etiqueta <pre> en HTML se utiliza para representar texto preformateado. El texto dentro de una etiqueta <pre> se muestra en una fuente monoespaciada (de ancho fijo), y los espacios en blanco y saltos de línea se preservan exactamente como se escriben en el código fuente. Esto la diferencia de las etiquetas de párrafo como <p>, que normalmente colapsan los espacios en blanco y los saltos de línea.
 
-- El elemento `<strong>` se utiliza para resaltar texto importante.
-- Puede mejorar la legibilidad y la comprensión del contenido por parte de los lectores y los motores de búsqueda.
 
 ```html
-<p>Este es un párrafo con texto <strong>resaltado</strong>.</p>
+<pre>
+  Esto es texto preformateado.
+  Los espacios y saltos de línea
+  se preservan.
+</pre>
 ```
-
-- Utilizar correctamente los encabezados y los párrafos ayuda a los motores de búsqueda a entender la estructura y el contenido de la página.
-- Los encabezados y los párrafos también pueden contener palabras clave relevantes, lo que puede mejorar el posicionamiento en los resultados de búsqueda.
 
 ---
 ## Imáges y elemenos unicos
@@ -261,43 +188,6 @@ En HTML, existen elementos que permiten añadir funcionalidades específicas o m
 <hr>
 <div>Otro contenido</div>
 ```
-
-**`<input>` (entrada de datos):**
-
-- La etiqueta `<input>` se utiliza para crear controles de entrada de datos en un formulario.
-- Tiene varios tipos, como texto, contraseña, checkbox, radio, entre otros, especificados por el atributo `type`.
-- Es un elemento vacío y no tiene etiqueta de cierre.
-
-```html
-<input type="text" name="nombre" placeholder="Nombre completo">
-<input type="password" name="contraseña" placeholder="Contraseña">
-<input type="checkbox" name="suscribirse" value="1"> Suscribirse al boletín
-```
-
-**`<meta>` (metadatos):**
-
-- La etiqueta `<meta>` se utiliza para especificar metadatos sobre un documento HTML, como el juego de caracteres, descripción, autor, entre otros.
-- Es un elemento vacío y se coloca dentro de la etiqueta `<head>` del documento.
-
-```html
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Descripción de la página">
-    <meta name="author" content="Nombre del autor">
-</head>
-```
-
-##### `<link>` (enlace):
-- La etiqueta `<link>` se utiliza para enlazar recursos externos a la página, como hojas de estilo CSS, fuentes, entre otros.
-- No tiene etiqueta de cierre y se coloca dentro de la etiqueta `<head>` del documento.
-
-```html
-<head>
-    <link rel="stylesheet" href="estilos.css">
-</head>
-```
-
-Estos elementos son fundamentales en HTML para añadir funcionalidades específicas o mejorar la presentación de una página web. Es importante utilizarlos correctamente para lograr el resultado deseado en la estructura y el diseño de la página.
 
 ---
 ## ¿Qué es un atributo?
@@ -415,28 +305,6 @@ En HTML, las etiquetas `<b>`, `<i>`, y `<u>` solían utilizarse para aplicar for
 ```html
 <p>Por favor, <em>no</em> toques ese botón.</p>
 ```
-
-**Etiqueta obsoleta `<center>`**
-
-La etiqueta `<center>` se utilizaba para centrar contenido en una página web, pero ha sido declarada obsoleta en HTML5. En su lugar, se recomienda usar CSS para centrar elementos.
-
-```html
-<div style="text-align:center;">
-    <p>Este párrafo está centrado.</p>
-</div>
-```
-
-**Estilos por defecto en un documento HTML en el navegador**
-
-Los navegadores aplican estilos por defecto a elementos HTML para asegurar una presentación coherente y legible. Algunos de estos estilos por defecto incluyen:
-
-- Margen exterior e interior en elementos como `<body>`, `<p>`, `<h1>`-`<h6>`, etc.
-- Espaciado entre elementos como párrafos y encabezados.
-- Tipo de letra y tamaño de texto por defecto.
-- Color de texto y fondo.
-- Estilos de listas (`<ul>`, `<ol>`, `<li>`).
-
-Estos estilos pueden variar ligeramente entre navegadores, pero en general, los navegadores intentan proporcionar una apariencia coherente y legible para el contenido HTML sin estilos adicionales. Utilizar CSS permite personalizar estos estilos por defecto para adaptarlos al diseño deseado.
 
 Ejemplo final:
 ```html

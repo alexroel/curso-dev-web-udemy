@@ -1,13 +1,13 @@
 # Estructura de una página
 
 1. [Introducción](#introducción)
-2. [Semántica de HTML](#semántica-de-html)
-3. [Contenedor de elementos](#contenedor-de-elementos)
-4. [Etiquetas de citas](#etiquetas-de-citas)
-5. [Formularios](#formularios)
-6. [Tipos de `input`](#tipos-de-input)
-7. [Validación de formulario](#validación-de-formulario)
-8. [`Select` y `Datalist` en HTML](#select-y-datalist-en-html)
+2. [Semántica y Contenedor de elementos](#semántica-y-contenedor-de-elementos)
+3. [Etiquetas de citas](#etiquetas-de-citas)
+4. [Formularios](#formularios)
+5. [Tipos de `input`](#tipos-de-input)
+6. [Validación de formulario](#validación-de-formulario)
+7. [Etiquetas de selección y lista de datos](#etiquetas-de-selección-y-lista-de-datos)
+8. [Etiquetas de detalles](#etiquetas-de-detalles)
 9. [Metadatos](#metadatos)
 10. [Resumen](#resumen)
 
@@ -17,7 +17,7 @@
 ¡Bienvenidos a la sección de Estructura de una Página de nuestro curso de desarrollo web! En esta sección, aprenderemos a construir páginas web bien organizadas y accesibles. Exploraremos la **semántica de HTML**, utilizando etiquetas específicas para dar significado y estructura a nuestro contenido. Veremos cómo usar **contenedores de elementos** para agrupar contenido de manera lógica y eficaz. Aprenderemos a dar formato a las citas con las **etiquetas de citas**, y a crear **formularios** funcionales y accesibles para la interacción con los usuarios. Además, entenderemos la importancia de los **metadatos** para la configuración y el comportamiento de nuestras páginas web, y cómo añadir un **favicon** para mejorar la identidad visual de nuestro sitio web. ¡Comencemos a estructurar nuestras páginas web de manera profesional!
 
 ---
-## Semántica de HTML
+## Semántica y Contenedor de elementos
 
 La semántica en HTML se refiere a la utilización de etiquetas que transmiten el significado del contenido que envuelven. Este enfoque no solo ayuda a los navegadores y motores de búsqueda a interpretar mejor la estructura y el propósito del contenido, sino que también facilita la accesibilidad para usuarios con discapacidades. A continuación, exploraremos la importancia de la semántica, compararemos ejemplos de código semántico y no semántico, y explicaremos el uso del atributo `role` en etiquetas no semánticas.
 
@@ -55,12 +55,13 @@ La semántica en HTML se refiere a la utilización de etiquetas que transmiten e
 
 ```html
 <header>
-    <h1>Mi Sitio Web</h1>
+    <h1>Google es genial.</h1>
     <nav>
         <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#about">Acerca de</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#acerca-de">Acerca de</a></li>
+            <li><a href="multimedia.html">Multimedias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
 </header>
@@ -83,22 +84,9 @@ El atributo `role` se utiliza para proporcionar información adicional sobre el 
 2. **Componentes de UI personalizados**: Cuando se crean componentes de interfaz de usuario personalizados con `div` o `span`, el atributo `role` puede describir su función.
 3. **Marcos y Librerías**: En algunos casos, los marcos y librerías de JavaScript pueden utilizar `div` y `span` por flexibilidad, y el atributo `role` ayuda a mantener la semántica.
 
-**Ejemplo de Componente Personalizado:**
-
-```html
-<div class="modal" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
-    <h2 id="dialog-title">Título del Diálogo</h2>
-    <p id="dialog-description">Descripción del contenido del diálogo.</p>
-    <button>Close</button>
-</div>
-```
-
-Aquí, `role="dialog"` informa a las tecnologías asistivas que este `<div>` representa un cuadro de diálogo, mejorando así la accesibilidad del componente personalizado.
-
 El uso de etiquetas semánticas en HTML es una práctica esencial que mejora la accesibilidad, SEO y mantenibilidad del código. Cuando no es posible utilizar etiquetas semánticas, el atributo `role` proporciona una manera de mantener la claridad y accesibilidad del contenido. Implementar semántica en tus páginas web no solo crea una mejor experiencia para los usuarios, sino que también facilita el trabajo de los desarrolladores y optimiza la interacción con los motores de búsqueda.
 
----
-## Contenedor de elementos
+**Contenedor de elementos**
 
 Los contenedores en HTML son etiquetas que permiten agrupar otros elementos para organizar el contenido de una página web de manera estructurada y lógica. Estos contenedores son fundamentales para el diseño web, la accesibilidad y la mantenibilidad del código. A continuación, se detallan los contenedores más comunes en HTML, cómo se usan y en qué momentos se deben utilizar.
 
@@ -135,12 +123,13 @@ La etiqueta `<header>` se utiliza para definir el encabezado de un documento o u
 **Ejemplo**:
 ```html
 <header>
-    <h1>Mi Sitio Web</h1>
+    <h1>Google es genial.</h1>
     <nav>
         <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#about">Acerca de</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#acerca-de">Acerca de</a></li>
+            <li><a href="multimedia.html">Multimedias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
 </header>
@@ -154,13 +143,14 @@ La etiqueta `<nav>` se utiliza para definir un conjunto de enlaces de navegació
 
 **Ejemplo**:
 ```html
-<nav>
-    <ul>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#contact">Contacto</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#acerca-de">Acerca de</a></li>
+            <li><a href="multimedia.html">Multimedias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
 ```
 
 **Cuándo Usar**: Úsalo para crear menús de navegación principales o secundarios en tu sitio.
@@ -256,8 +246,11 @@ La etiqueta `<blockquote>` se utiliza para definir una sección que es una cita 
 
 **Ejemplo**:
 ```html
-<blockquote cite="https://www.ejemplo.com/cita">
-    <p>Esta es una cita larga que abarca múltiples líneas o párrafos. Proporciona una forma estructurada de representar el texto citado de otra fuente.</p>
+<h2>Acerca de Google</h2>
+<p>Google es una de las empresas más influyentes del mundo, fundada en 1998 por Larry Page y Sergey Brin.</p>
+
+<blockquote cite="https://www.google.com/about/">
+"Nuestra misión es organizar la información del mundo y hacerla universalmente accesible y útil."
 </blockquote>
 ```
 
@@ -269,7 +262,9 @@ La etiqueta `<q>` se utiliza para definir una breve cita en línea. Los navegado
 
 **Ejemplo**:
 ```html
-<p>En el artículo, se menciona que <q cite="https://www.ejemplo.com/cita">el desarrollo web está en constante evolución</q>.</p>
+<p>
+    El éxito de Google no se puede negar; <q>ha cambiado la forma en que vivimos y trabajamos</q>, afirma <cite>Wired Magazine</cite>.
+</p>
 ```
 
 **Cuándo Usar**: Úsalo para citas breves dentro de párrafos o texto en línea.
@@ -280,7 +275,9 @@ La etiqueta `<cite>` se utiliza para definir el título de una obra, como un lib
 
 **Ejemplo**:
 ```html
-<p>El libro <cite>Orgullo y Prejuicio</cite> es una obra clásica de la literatura.</p>
+<p>
+    Según <cite>The New York Times</cite>, Google ha revolucionado la manera en que accedemos a la información.
+</p>
 ```
 
 **`<abbr>`**
@@ -289,7 +286,9 @@ La etiqueta `<abbr>` se utiliza para definir una abreviatura o acrónimo, propor
 
 **Ejemplo**:
 ```html
-<p>La <abbr title="Organización de las Naciones Unidas">ONU</abbr> fue fundada en 1945.</p>
+<p>
+    Google ofrece una variedad de servicios y productos, desde su motor de búsqueda hasta <abbr title="Inteligencia Artificial">IA</abbr> avanzada y plataformas de publicidad digital.
+</p>
 ```
 
 **Cuándo Usar**: Úsalo para acrónimos y abreviaturas, mejorando la accesibilidad al proporcionar el significado completo.
@@ -300,13 +299,16 @@ La etiqueta `<address>` se utiliza para definir la información de contacto de u
 
 **Ejemplo**:
 ```html
-<address>
-    Escrito por <a href="mailto:webmaster@ejemplo.com">Webmaster</a>.<br>
-    Visítanos en:<br>
-    Ejemplo Inc.<br>
-    Calle Falsa 123<br>
-    Springfield, EE.UU.
-</address>
+        <p>
+            La empresa tiene su sede en:
+            <address>
+            Google LLC<br>
+            1600 Amphitheatre Parkway<br>
+            Mountain View, CA 94043<br>
+            Estados Unidos
+            </address>
+        </p>
+
 ```
 
 **Cuándo Usar**: Utiliza `<address>` para información de contacto como direcciones físicas, direcciones de correo electrónico, enlaces de redes sociales, etc.
@@ -317,7 +319,9 @@ La etiqueta `<time>` se utiliza para definir fechas u horas específicas, propor
 
 **Ejemplo**:
 ```html
-<p>La conferencia se llevará a cabo el <time datetime="2024-07-20">20 de julio de 2024</time>.</p>
+<p>
+    La última actualización sobre su misión fue realizada el <time datetime="2023-03-01">1 de marzo de 2023</time>.
+</p>
 ```
 
 **Cuándo Usar**: Utiliza `<time>` para representar fechas y horas, mejorando la semántica y la accesibilidad de los datos temporales.
@@ -519,27 +523,28 @@ HTML5 ofrece varios atributos de validación que se pueden aplicar directamente 
 **Ejemplo:**
 
 ```html
-<form>
-   <div>
-      <label for="email">Edad:</label>
-      <input type="number" id="email" name="email" required max="30" min="18">
-   </div>
-   <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-   </div>
-   <div>
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" minlength="8">
-   </div>
+<form action="/index.html" method="post">
+    <fieldset>
+        <legend>Regístrate</legend>
+        <label>Edad:
+            <input type="number" name="edad" required min="18">
+        </label>
+        <label>
+            Nombre:
+            <input type="text" name="nombre" required minlength="2">
+        </label>
 
-   <input type="submit" value="Enviar">
+        <label>
+            Correo:
+            <input type="email" name="correo" required>
+        </label>
 
-</form>
+        <button type="submit">Enviar</button>
+</fieldset>
 ```
 
 ---
-## `Select` y `Datalist` en HTML
+## Etiquetas de selección y lista de datos
 
 En HTML, las etiquetas `<select>` y `<datalist>` se utilizan para crear listas desplegables y listas de sugerencias autocompletables, respectivamente. A continuación, se explica en detalle cómo usarlas y sus elementos asociados.
 
@@ -567,14 +572,15 @@ La etiqueta `<select>` crea un menú desplegable. Dentro de esta etiqueta, se ut
 **Ejemplo avanzado de `<select>`**
 
 ```html
-<label for="car-select">Elige un coche:</label>
-<select name="cars" id="car-select">
-    <option value="">--Selecciona una opción--</option>
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-</select>
+<fieldset>
+    <legend>Evento</legend>
+    <label for="evento">Selecciona el Evento:</label>
+    <select id="evento" name="evento" required>
+        <option value="conferencia_tec">Conferencia Tecnológica</option>
+        <option value="webinar_seo">Webinar sobre SEO</option>
+        <option value="taller_cloud">Taller sobre Cloud Computing</option>
+    </select>
+</fieldset>
 ```
 
 En este ejemplo, la primera opción no tiene valor (`value`), actuando como un marcador de posición.
@@ -604,47 +610,86 @@ La etiqueta `<datalist>` se utiliza para proporcionar opciones sugeridas a un ca
 **Ejemplo avanzado de `<datalist>`**
 
 ```html
-<label for="city-input">Ciudad favorita:</label>
-<input list="cities" name="city" id="city-input">
-<datalist id="cities">
-    <option value="Nueva York">
-    <option value="Los Ángeles">
-    <option value="Chicago">
-    <option value="Houston">
-    <option value="Miami">
-</datalist>
+<fieldset>
+    <legend>Ciudades de evento</legend>
+    <label for="ciudad">Ciudad:</label>
+    <input list="ciudades" id="ciudad" name="ciudad" required>
+    <datalist id="ciudades">
+        <option value="Madrid">
+        <option value="Barcelona">
+        <option value="Valencia">
+        <option value="Sevilla">
+        <option value="Bilbao">
+    </datalist>
+</fieldset>
 ```
 
 En este ejemplo, el usuario verá sugerencias de ciudades a medida que escriba en el campo de entrada.
 
-**¿Qué es `<summary>`?**
+---
+## Etiquetas de detalles
 
-La etiqueta `<summary>` se utiliza dentro de un `<details>` para crear un encabezado que puede ser expandido o contraído por el usuario. Esto es útil para mostrar u ocultar información adicional según sea necesario.
+La etiqueta `<details>` de HTML es una herramienta útil para crear elementos de contenido plegables que los usuarios pueden expandir o contraer para ver más información. Se usa comúnmente para descripciones detalladas, FAQs y secciones informativas que no necesitan estar siempre visibles. En esta guía, exploraremos cómo utilizar la etiqueta `<details>` con ejemplos prácticos y mencionaremos algunos atributos útiles.
 
-**Estructura básica de `<summary>`**
+**Estructura Básica de `<details>`**
 
-```html
-<details>
-    <summary>Más información sobre navegadores</summary>
-    <p>Los navegadores web más populares incluyen Chrome, Firefox, Safari, Edge y Opera.</p>
-</details>
-```
-
-En este ejemplo, el texto dentro de `<summary>` actúa como un encabezado que el usuario puede hacer clic para mostrar u ocultar el contenido adicional dentro de `<details>`.
-
-**Atributos importantes**
-
-- **`open` (en `<details>`)**: Atributo booleano que indica si el `<details>` está expandido o no por defecto.
-
+La estructura básica de la etiqueta `<details>` incluye una etiqueta `<summary>` que actúa como un título o encabezado, y el contenido que se mostrará o se ocultará se coloca dentro del elemento `<details>`. Aquí tienes un ejemplo simple:
 
 ```html
 <details>
-    <summary>Información detallada sobre ciudades</summary>
-    <p>Nueva York es conocida por su icónico horizonte y Central Park. Los Ángeles es famosa por Hollywood y sus playas. Chicago es famosa por su arquitectura y museos. Houston es conocida por su centro espacial y Miami por sus playas y vida nocturna.</p>
+    <summary>Título Desplegable</summary>
+    <p>Contenido detallado que se puede expandir o contraer.</p>
 </details>
 ```
 
-En este ejemplo, el contenido detallado sobre las ciudades solo se muestra cuando el usuario hace clic en el texto del resumen.
+*Ejemplo Completo*
+
+A continuación, te mostramos un ejemplo más elaborado, utilizando una sección de eventos. Este ejemplo contiene varios elementos `<details>` para diferentes eventos:
+
+```html
+<section>
+    <h2>Más Información sobre los Eventos</h2>
+
+    <details>
+        <summary>Conferencia Tecnológica</summary>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quod, suscipit commodi ipsa saepe
+            ipsam nihil consequatur, at itaque dolor neque, quasi enim qui fugit tempore officiis sit animi
+            molestias.</p>
+    </details>
+
+    <details>
+        <summary>Webinar sobre SEO</summary>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur distinctio impedit quia et iusto
+            consequatur quos obcaecati. Recusandae et sunt dolores aut, ratione voluptatum aperiam libero veniam
+            sed harum eveniet?</p>
+    </details>
+
+    <details>
+        <summary>Taller sobre Cloud Computing</summary>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ex enim dignissimos illo? Harum
+            libero, odit dicta impedit reiciendis doloremque ipsam nulla iure maiores vel at omnis fuga tempora
+            illo.</p>
+    </details>
+</section>
+```
+
+**Atributos Útiles**
+
+El atributo `open` se puede usar para que el contenido esté expandido de forma predeterminada cuando se carga la página. Si se incluye este atributo, el contenido dentro del `<details>` se mostrará inmediatamente.
+
+**Ejemplo:**
+
+```html
+<details open>
+    <summary>Evento Abierto por Defecto</summary>
+    <p>Este contenido está visible cuando la página se carga.</p>
+</details>
+```
+
+*Conclusión*
+
+La etiqueta `<details>` es una excelente herramienta para crear contenido plegable en tu página web, permitiendo a los usuarios acceder a información adicional sin sobrecargar la vista inicial. Este ejemplo te muestra cómo estructurar y usar atributos útiles de `<details>` para mejorar la experiencia del usuario. Experimenta con diferentes contenidos y funcionalidades para ver cómo puedes integrarlo en tus proyectos web.
+
 
 ---
 ## Metadatos
@@ -673,11 +718,6 @@ Ejemplo:
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
-<<<<<<< HEAD:sections/05-structure-page.md
----
-## Favicon
-=======
->>>>>>> ad510818f354a9c87cd11f8435fd6bd38325442b:sections/03-structure-page.md
 
 **Metadato `robots`**
 
@@ -692,20 +732,12 @@ El metadato `robots` se utiliza para controlar cómo los motores de búsqueda in
 - `noindex`: Evita que la página sea indexada.
 - `nofollow`: Evita que los enlaces en la página sean seguidos.
 
-**Metadato `theme-color`**
-
-El metadato `theme-color` permite definir el color de la barra de herramientas del navegador en dispositivos móviles, creando una experiencia más inmersiva y personalizada.
-
-```html
-<meta name="theme-color" content="#ff6600">
-```
-
 **Metadato `description`**
 
 El metadato `description` proporciona un resumen breve de la página web. Es fundamental para el SEO, ya que los motores de búsqueda lo utilizan a menudo como la descripción que aparece en los resultados de búsqueda.
 
 ```html
-<meta name="description" content="Esta es una guía completa sobre cómo utilizar metadatos en HTML para mejorar el SEO y la apariencia de tu sitio web.">
+<meta name="description" content="Descubre las últimas noticias, eventos y conferencias sobre tecnologías en nuestro blog. Mantente informado sobre tendencias y avances en la industria tecnológica.">
 ```
 
 **Metadato `author`**
@@ -721,10 +753,13 @@ El metadato `author` especifica el autor del contenido de la página.
 Open Graph es un protocolo que permite a cualquier página web convertirse en un objeto rico en un gráfico social. Facebook y otras redes sociales utilizan estos datos para crear tarjetas enriquecidas cuando se comparte una página.
 
 ```html
-<meta property="og:title" content="Guía Completa sobre Metadatos en HTML">
-<meta property="og:description" content="Aprende a utilizar metadatos para mejorar el SEO y la apariencia de tu sitio web.">
-<meta property="og:image" content="https://ejemplo.com/imagen.jpg">
-<meta property="og:url" content="https://ejemplo.com/articulo">
+    <meta property="og:title" content="Mi Web - Noticias y Eventos Tecnológicos">
+    <meta property="og:description"
+        content="Explora las últimas noticias y eventos sobre tecnología en nuestro sitio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mi-web.com">
+    <meta property="og:image" content="images/imagen-03.png" alt="">
+    <meta property="og:site_name" content="Mi Web">
 ```
 
 Para más detalles sobre Open Graph, puedes visitar [Open Graph Protocol](https://ogp.me/).
@@ -744,6 +779,9 @@ El enlace `canonical` ayuda a evitar contenido duplicado especificando la URL pr
 ```html
 <link rel="canonical" href="https://ejemplo.com/articulo">
 ```
+
+---
+## Favicon
 
 **Importancia del Favicon**
 

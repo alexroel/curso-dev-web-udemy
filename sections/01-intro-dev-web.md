@@ -4,7 +4,7 @@
 2. [¿Qué es la Web?](#qué-es-la-web)
 3. [¿Cómo Funciona la Web?](#cómo-funciona-la-web)
 4. [Instalación de Visual Studio Code](#instalacic3b3n-de-visual-studio-code)
-5. [Crea tu primer sitio web](#crea-tu-primer-sitio-web)
+5. [Crea tu primer página web](#crea-tu-primer-página-web)
 6. [Las tecnologías principal de la Web](#las-tecnologías-principal-de-la-web)
 7. [Resumen](#resumen)
 ---
@@ -139,7 +139,9 @@ Una vez que hayas instalado VSCode, puedes agregar extensiones para ampliar sus 
    - Busca cada extensión por su nombre en la barra de búsqueda.
    - Instala las siguientes extensiones:
      - **Live Server o Live Preview:** Proporciona un servidor en vivo para la vista previa de tus proyectos web.
-     - **Auto Rename Tag:** Modificación de etiquetas de html
+     - **Auto Rename Tag:** Modificación de etiquetas de HTML.
+     - **Auto Close Tag:** Auto completado y ayuda en la estructuración de HTML.
+     - **Path Intellisense:**
 
    Para instalar una extensión, simplemente haz clic en el botón "Instalar".
 
@@ -184,15 +186,15 @@ Una vez que hayas instalado VSCode, puedes agregar extensiones para ampliar sus 
         "editor.tabSize": 4,
         "editor.insertSpaces": true
     },
-    "workbench.colorTheme": "One Dark",
     "symbols.hidesExplorerArrows": false,
-    "workbench.iconTheme": "symbols",
     "workbench.productIconTheme": "fluent-icons",
     "editor.stickyScroll.enabled": false,
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "editor.indentSize": "tabSize",
-    "oneDark.italic": false
-}
+    "oneDark.italic": false,
+    "editor.wordWrap": "on",
+    "workbench.iconTheme": "symbols",
+    "workbench.colorTheme": "One Dark",
 ```
 
 **¡Listo!**
@@ -200,7 +202,7 @@ Una vez que hayas instalado VSCode, puedes agregar extensiones para ampliar sus 
 Con estas extensiones instaladas, podrás disfrutar de una experiencia de desarrollo más fluida en VSCode. Recuerda explorar las configuraciones y ajustes adicionales según tus preferencias. ¡Happy coding!
 
 ---
-## Crea tu primer sitio web
+## Crea tu primer página web
 ¡Vamos a crear tu primer sitio web! Sigue estos pasos:
 
 **Paso 1: Crear el Espacio de Trabajo y Proyecto**

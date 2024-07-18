@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Web - Blog y eventos sobre tegnolgias</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1>Google es genial.</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#acerca-de">Acerca de</a></li>
+                <li><a href="evento.html">Evento</a></li>
+                <li><a href="multimedia.html">Multimedias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Regístrate a Nuestro Próximo Evento</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit doloremque natus porro pariatur, corporis
+            reiciendis! Quo voluptates rem dignissimos illum odit maxime, repellendus placeat excepturi, reprehenderit
+            deserunt sapiente odio amet!
+        </p>
+        <form action="/index.html" method="post">
+            <fieldset>
+                <legend>Regístrate</legend>
+                <label>Edad:
+                    <input type="number" name="edad" required min="18">
+                </label>
+                <label>
+                    Nombre:
+                    <input type="text" name="nombre" required minlength="2">
+                </label>
+
+                <label>
+                    Correo:
+                    <input type="email" name="correo" required>
+                </label>
+
+                <button type="submit">Enviar</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Genero</legend>
+                <label>Hombre:
+                    <input type="radio" name="genero" id="hombre">
+                </label>
+
+                <label>Mujer:
+                    <input type="radio" name="genero" id="mujer">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Evento</legend>
+                <label for="evento">Selecciona el Evento:</label>
+                <select id="evento" name="evento" required>
+                    <option value="conferencia_tec">Conferencia Tecnológica</option>
+                    <option value="webinar_seo">Webinar sobre SEO</option>
+                    <option value="taller_cloud">Taller sobre Cloud Computing</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ciudades de evento</legend>
+                <label for="ciudad">Ciudad:</label>
+                <input list="ciudades" id="ciudad" name="ciudad" required>
+                <datalist id="ciudades">
+                    <option value="Madrid">
+                    <option value="Barcelona">
+                    <option value="Valencia">
+                    <option value="Sevilla">
+                    <option value="Bilbao">
+                </datalist>
+            </fieldset>
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>
+            Más Información sobre los Eventos
+        </h2>
+
+        <details>
+            <summary>Conferencia Tecnológica</summary>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quod, suscipit commodi ipsa saepe
+                ipsam nihil consequatur, at itaque dolor neque, quasi enim qui fugit tempore officiis sit animi
+                molestias.</p>
+        </details>
+
+        <details>
+            <summary>Webinar sobre SEO</summary>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur distinctio impedit quia et iusto
+                consequatur quos obcaecati. Recusandae et sunt dolores aut, ratione voluptatum aperiam libero veniam
+                sed harum eveniet?</p>
+        </details>
+
+        <details>
+            <summary>Taller sobre Cloud Computing</summary>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ex enim dignissimos illo? Harum
+                libero, odit dicta impedit reiciendis doloremque ipsam nulla iure maiores vel at omnis fuga tempora
+                illo.</p>
+        </details>
+
+    </section>
+</body>
+
+</html>

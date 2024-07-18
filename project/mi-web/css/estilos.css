@@ -1,0 +1,116 @@
+html{
+    background-color: #068FD3;
+}
+
+body{
+    /* Estilos de texto */
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Estilos de modelo de caja */
+    max-width: 600px;
+    background-color: #EBF5FB;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #273746;
+}
+
+
+/* Selector de pseudoclase */
+
+a:hover{
+    color: #068FD3;
+}
+
+h1{
+    /* Estilos de texto */
+    font-size: 60px;
+    text-align:  center;
+    text-shadow: 3px 3px 1px #566573;
+    color: #1C2833;
+    /* Estilos de modelo de caja */
+    margin: 0;
+    font-style: italic;
+}
+
+
+h1 span:first-child,
+h1 span:nth-child(4){
+    color: #145fc1;
+}
+
+h1 span:nth-child(2),
+h1 span:last-child{
+    color: #e03838;
+}
+
+h1 span:nth-child(3){
+    color: #dbb51b;
+}
+
+h1 span:nth-last-child(2){
+    color: #108b10;
+}
+
+
+p, li {
+    /* Estilos de texto */
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+/* seudoclase */
+li:first-child{
+    color: #068FD3;
+}
+
+li:last-child{
+    color: green;
+}
+
+li:nth-child(3){
+    color: red;
+}
+
+/* Seudo elemento */
+p::before{
+    content: ">>";
+    color: #068FD3;
+    font-size: 20px;
+}
+
+*::selection{
+    background-color: #80bbf2;
+}
+
+/* Centrando imagen */
+img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Estilizando el boton */
+button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #1C2833;
+    color: #EBF5FB;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #273746;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Agregar estilos para pantalla menor o igual a 768px */
+    
+}
+@media (max-width: 768px) {
+    /* Agregar estilos para pantalla menor o igual a 768px */
+    
+}
