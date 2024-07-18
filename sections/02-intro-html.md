@@ -130,7 +130,7 @@ En HTML, los encabezados (h1 a h6) y los párrafos son elementos fundamentales p
 ```
 
 **Preformateados:**
-a etiqueta <pre> en HTML se utiliza para representar texto preformateado. El texto dentro de una etiqueta <pre> se muestra en una fuente monoespaciada (de ancho fijo), y los espacios en blanco y saltos de línea se preservan exactamente como se escriben en el código fuente. Esto la diferencia de las etiquetas de párrafo como <p>, que normalmente colapsan los espacios en blanco y los saltos de línea.
+a etiqueta `<pre>` en HTML se utiliza para representar texto preformateado. El texto dentro de una etiqueta `<pre>` se muestra en una fuente monoespaciada (de ancho fijo), y los espacios en blanco y saltos de línea se preservan exactamente como se escriben en el código fuente. Esto la diferencia de las etiquetas de párrafo como `<p>`, que normalmente colapsan los espacios en blanco y los saltos de línea.
 
 
 ```html
