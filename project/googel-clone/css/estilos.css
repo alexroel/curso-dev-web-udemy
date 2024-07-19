@@ -1,137 +1,141 @@
 :root {
-    --google-blue: #4285f4;
-    --google-green: #34a853;
-    --google-yellow: #fbbc04;
-    --google-red: #ea4335;
-    --google-background: #ffffff;
-    /* Fondo blanco */
-    --google-text: #202124;
-    /* Color de texto típico de Google */
-    --google-link: #1a73e8;
-    /* Color de enlace */
+    --color-azul: #1a73e8;
+    --color-negro: #202124;
+    --color-blanco: #ffffff;
+    --color-claro: #ededed;
+    --color-gris: #b4b4b4;
+
+    --font-principal: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    font-family: var(--font-principal);
+    width: 100vw;
     height: 100vh;
-    width: 100%;
-    overflow: auto;
+    position: relative;
 }
 
-header{
-    height: 60px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 6px;
+header {
+    overflow: hidden;
 }
 
-nav{
+nav {
     margin-right: 30px;
+    float: right;
+    padding: 10px 0;
 }
 
-header nav ul{
-    list-style: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-header .nav-link{
+nav a {
     text-decoration: none;
-    color: #1f1f1f;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
     font-size: 13px;
 }
 
-header .nav-link:hover{
+nav .nav-link {
+    color: var(--color-negro);
+}
+
+nav .nav-link:hover {
     text-decoration: underline;
 }
 
-header .nav-apps{
-    display: inline-flex;
+nav .nav-apps {
     padding: 5px;
     border-radius: 50%;
 }
 
-header .nav-apps:hover{
-    background-color: #ededed;
+nav .nav-apps:hover {
+    background-color: var(--color-claro);
 }
 
-header .nav-login{
-    text-decoration: none;
-    background-color: #1a73e8;
-    color: #ffffff;
-    display: inline-flex;
+nav .nav-apps img {
+    display: inline-block;
+    /* Para alinear correctamente la imagen */
+    vertical-align: middle;
+    /* Alinea verticalmente la imagen */
+}
+
+nav .nav-login {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
     padding: 10px 15px;
     font-size: 14px;
     border-radius: 100px;
 }
-header .nav-login:hover{
-    box-shadow: 0 0 3px #1a73e8;
+
+nav .nav-login:hover {
+    box-shadow: 0 0 3px var(--color-azul);
 }
 
-main .logo,
-main .buscador-bar,
-main .botones{
-    display: flex;
-    justify-content: center;
+main {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    text-align: center;
 }
 
-main .buscador-bar label{
-    display: flex;
-    gap: 10px;
-    border: 1px solid #9e9e9e;
+main .buscador-bar label {
+    display: block;
+    border: 1px solid var(--color-gris);
     padding: 10px 15px;
     border-radius: 100px;
     width: 584px;
+    overflow: hidden;
 }
 
-main .buscador-bar label img{
-    display: flex;
+
+main .buscador-bar label:hover {
+    box-shadow: 0 0 3px var(--color-gris);
 }
 
-main .buscador-bar label:hover{
-    box-shadow: 0 0 3px #9e9e9e;
+label img{
+    vertical-align: middle;
 }
 
-label input{
+label .icon-buscar, label input{
+    float: left;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+label a{
+    float: right;
+}
+
+label input {
     font-size: 16px;
-    flex-grow: 1;
     border: none;
+    width: 80%;
 }
 
-label input:focus{
+label input:focus {
     outline: none;
 }
 
 /* Botones  */
-.botones{
+.botones {
     margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
-.botones button{
+.botones button {
     all: unset;
     padding: 10px 20px;
     font-size: 14px;
-    background-color: #f1f1f1;
+    background-color: var(--color-claro);
     cursor: pointer;
     border-radius: 5px;
 }
 
-.botones button:hover{
-    outline: 1px solid #b4b4b4;
+.botones button:hover {
+    outline: 1px solid var(--color-gris);
 }
 
-.botones p{
-    flex-basis: 100%;
+.botones p {
     text-align: center;
     font-size: 14px;
 }
@@ -139,38 +143,49 @@ label input:focus{
 /* Estilos de Footer
 =================================*/
 
-footer{
-    background-color: #f2f2f2;
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: var(--color-claro);
     padding: 15px 0;
 }
 
-footer .pais{
+footer .pais {
     padding-left: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #b4b4b4;
+    border-bottom: 1px solid var(--color-gris);
 }
 
-.footer-links{
-    display: flex;
-    justify-content: space-between;
+.footer-links {
     padding: 0 20px;
+    overflow: hidden;
 }
 
-.footer-links ul{
+.footer-links ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    gap: 20px;
 }
 
-.footer-links ul a{
+.footer-links .lista1 {
+    float: left;
+}
+
+.footer-links .lista2 {
+    float: right;
+}
+
+.footer-links ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-links ul a {
     text-decoration: none;
-    color: #202124;
+    color: var(--color-negro);
     font-size: 14px;
 }
 
-.footer-links ul a:hover{
+.footer-links ul a:hover {
     text-decoration: underline;
 }
-
-
