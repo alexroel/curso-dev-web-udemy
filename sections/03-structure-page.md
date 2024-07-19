@@ -1,15 +1,18 @@
 # Estructura de una página
 
 1. [Introducción](#introducción)
-2. [Semántica y Contenedor de elementos](#semántica-y-contenedor-de-elementos)
-3. [Etiquetas de citas](#etiquetas-de-citas)
-4. [Formularios](#formularios)
-5. [Tipos de `input`](#tipos-de-input)
-6. [Validación de formulario](#validación-de-formulario)
-7. [Etiquetas de selección y lista de datos](#etiquetas-de-selección-y-lista-de-datos)
-8. [Etiquetas de detalles](#etiquetas-de-detalles)
-9. [Metadatos](#metadatos)
-10. [Resumen](#resumen)
+2. [La semántica de HTML](#la-semántica-de-html)
+3. [Contenedor de elementos](#contenedor-de-elementos)
+4. [Etiquetas de citas](#etiquetas-de-citas)
+5. [Formularios](#formularios)
+6. [Tipos de `input`](#tipos-de-input)
+7. [Validación de formulario](#validación-de-formulario)
+8. [Etiquetas de selección y lista de datos](#etiquetas-de-selección-y-lista-de-datos)
+9. [Etiquetas de detalles](#etiquetas-de-detalles)
+10. [Metadatos](#metadatos)
+11. [Metadato para Open Graph](#metadato-para-open-graph)
+12. [Favicon](#favicon)
+13. [Resumen](#resumen)
 
 ---
 ## Introducción
@@ -17,7 +20,7 @@
 ¡Bienvenidos a la sección de Estructura de una Página de nuestro curso de desarrollo web! En esta sección, aprenderemos a construir páginas web bien organizadas y accesibles. Exploraremos la **semántica de HTML**, utilizando etiquetas específicas para dar significado y estructura a nuestro contenido. Veremos cómo usar **contenedores de elementos** para agrupar contenido de manera lógica y eficaz. Aprenderemos a dar formato a las citas con las **etiquetas de citas**, y a crear **formularios** funcionales y accesibles para la interacción con los usuarios. Además, entenderemos la importancia de los **metadatos** para la configuración y el comportamiento de nuestras páginas web, y cómo añadir un **favicon** para mejorar la identidad visual de nuestro sitio web. ¡Comencemos a estructurar nuestras páginas web de manera profesional!
 
 ---
-## Semántica y Contenedor de elementos
+## La semántica de HTML
 
 La semántica en HTML se refiere a la utilización de etiquetas que transmiten el significado del contenido que envuelven. Este enfoque no solo ayuda a los navegadores y motores de búsqueda a interpretar mejor la estructura y el propósito del contenido, sino que también facilita la accesibilidad para usuarios con discapacidades. A continuación, exploraremos la importancia de la semántica, compararemos ejemplos de código semántico y no semántico, y explicaremos el uso del atributo `role` en etiquetas no semánticas.
 
@@ -86,7 +89,8 @@ El atributo `role` se utiliza para proporcionar información adicional sobre el 
 
 El uso de etiquetas semánticas en HTML es una práctica esencial que mejora la accesibilidad, SEO y mantenibilidad del código. Cuando no es posible utilizar etiquetas semánticas, el atributo `role` proporciona una manera de mantener la claridad y accesibilidad del contenido. Implementar semántica en tus páginas web no solo crea una mejor experiencia para los usuarios, sino que también facilita el trabajo de los desarrolladores y optimiza la interacción con los motores de búsqueda.
 
-**Contenedor de elementos**
+---
+## Contenedor de elementos
 
 Los contenedores en HTML son etiquetas que permiten agrupar otros elementos para organizar el contenido de una página web de manera estructurada y lógica. Estos contenedores son fundamentales para el diseño web, la accesibilidad y la mantenibilidad del código. A continuación, se detallan los contenedores más comunes en HTML, cómo se usan y en qué momentos se deben utilizar.
 
@@ -748,7 +752,8 @@ El metadato `author` especifica el autor del contenido de la página.
 <meta name="author" content="Juan Pérez">
 ```
 
-**Metadato para Open Graph**
+---
+## Metadato para Open Graph
 
 Open Graph es un protocolo que permite a cualquier página web convertirse en un objeto rico en un gráfico social. Facebook y otras redes sociales utilizan estos datos para crear tarjetas enriquecidas cuando se comparte una página.
 
