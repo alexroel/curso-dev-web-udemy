@@ -1,570 +1,253 @@
 # Posicionamiento y Flexbox
 
 1. [Introducción]
-2. [Desbordamiento]
-3. [Posicionamiento]
-4. [Orden de apilamiento(z-index)](#orden-de-apilamientoz-index)
-5. [Flexbox]
-6. [Control de espacio de los elementos](#control-de-espacio-de-los-elementos)
-7. [Posicionamiento de elementos con Flexbox](#posicionamiento-de-elementos-con-flexbox)
-8. [Resumen]
+2. [Introducción de flexbox](#introducción-de-flexbox)
+3. [Dirección de los elementos flexibles](#dirección-de-los-elementos-flexibles)
+4. [Flujo de Escritura](#flujo-de-escritura)
+5. [Envolvimiento de los Elementos Flexibles](#envolvimiento-de-los-elementos-flexibles)
+6. [Flujo Combinado](#flujo-combinado)
+7. [Alineamientos en el contenedor](#alineamientos-en-el-contenedor)
+8. [Alineamientos en los elementos](#alineamientos-en-los-elementos)
+9. [Control de Espacio de los Elementos](#control-de-espacio-de-los-elementos)
+10. [Resumen](#resumen)
 
 ---
 ## Introducción
+## Introducción de flexbox
 
+**Definición y Propósito**
 
----
-## Desbordamiento
-El manejo del desbordamiento en CSS es crucial para el diseño y la usabilidad de un sitio web. En esta guía, cubriremos los conceptos de `overflow` y `text-overflow`, dos propiedades de CSS que controlan cómo se comporta el contenido cuando se sale del área asignada.
+**Flexbox** (o **Flexible Box Layout**) es un modelo de diseño de CSS que permite la creación de layouts más eficientes y flexibles. Su principal objetivo es distribuir espacio a lo largo de un contenedor y alinear los elementos dentro de este de una manera que responda a los diferentes tamaños de pantalla y dispositivos.
 
-**1. Propiedad `overflow`**
+**Propósito:**
+- **Disposición adaptable:** Flexbox facilita la creación de layouts que se adapten a diferentes tamaños de pantalla sin necesidad de utilizar floats o posiciones absolutas.
+- **Alineación y distribución:** Proporciona herramientas para alinear y distribuir el espacio entre los elementos de un contenedor de manera uniforme.
+- **Orden y direccionalidad:** Permite cambiar el orden visual de los elementos y la dirección en la que se distribuyen, ya sea horizontal o verticalmente.
 
-La propiedad `overflow` de CSS se utiliza para controlar lo que sucede cuando el contenido de un elemento es demasiado grande para caber en el área asignada.
+**Ventajas del uso de Flexbox**
 
-*Sintaxis*
+1. **Simplicidad en la alineación:** Flexbox ofrece una manera fácil de alinear elementos horizontal y verticalmente, eliminando la necesidad de hackeos complejos con margenes y posiciones.
+2. **Espacio adaptable:** Los elementos pueden crecer y encogerse para llenar el espacio disponible en el contenedor, mejorando la capacidad de respuesta.
+3. **Cambio de orden:** Flexbox permite cambiar el orden de los elementos dentro del contenedor sin modificar el HTML.
+4. **Diseños complejos simplificados:** Facilita la creación de layouts complejos como centrar elementos en ambas direcciones o distribuir espacio de manera equitativa entre elementos.
+5. **Menos dependencia de floats:** Evita problemas comunes con los floats y el clearfix, reduciendo la complejidad del CSS.
+
+**Propiedades Básicas de Flexbox**
+
+**display: flex**
+
+La propiedad `display: flex` se utiliza para convertir un elemento contenedor en un contenedor flexible. Esto significa que los elementos hijos de este contenedor se comportarán de acuerdo a las reglas de Flexbox.
 
 ```css
-element {
-  overflow: visible | hidden | scroll | auto;
+.contenedor {
+  display: flex;
 }
 ```
 
-**Valores**
+**Convertir un contenedor en flex**
 
-- **visible**: El contenido desbordado es visible fuera del elemento. Este es el valor por defecto.
-- **hidden**: El contenido desbordado es cortado, y no se muestra.
-- **scroll**: Se añaden barras de desplazamiento (scrollbars) al elemento, permitiendo al usuario desplazarse para ver el contenido desbordado.
-- **auto**: Se añaden barras de desplazamiento solo si el contenido está desbordado.
+Para convertir un contenedor en un contenedor flex, simplemente aplicamos la propiedad `display: flex` al contenedor. Una vez hecho esto, todos los elementos hijos dentro del contenedor se convierten en elementos flexibles que pueden ser manipulados utilizando las propiedades de Flexbox.
 
-*Ejemplo*
+**Ejemplo práctico:**
+
+Supongamos que tenemos el siguiente HTML:
 
 ```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de overflow</title>
-    <style>
-        .overflow-visible {
-            width: 200px;
-            height: 100px;
-            border: 1px solid black;
-            overflow: visible;
-        }
-        .overflow-hidden {
-            width: 200px;
-            height: 100px;
-            border: 1px solid black;
-            overflow: hidden;
-        }
-        .overflow-scroll {
-            width: 200px;
-            height: 100px;
-            border: 1px solid black;
-            overflow: scroll;
-        }
-        .overflow-auto {
-            width: 200px;
-            height: 100px;
-            border: 1px solid black;
-            overflow: auto;
-        }
-    </style>
-</head>
-<body>
-    <div class="overflow-visible">Este es un texto muy largo que no cabe en la caja definida y se muestra fuera de los límites.</div>
-    <div class="overflow-hidden">Este es un texto muy largo que no cabe en la caja definida y se muestra fuera de los límites.</div>
-    <div class="overflow-scroll">Este es un texto muy largo que no cabe en la caja definida y se muestra fuera de los límites.</div>
-    <div class="overflow-auto">Este es un texto muy largo que no cabe en la caja definida y se muestra fuera de los límites.</div>
-</body>
-</html>
+<div class="contenedor">
+  <div class="elemento">Item 1</div>
+  <div class="elemento">Item 2</div>
+  <div class="elemento">Item 3</div>
+</div>
 ```
 
-**2. Propiedad `text-overflow`**
-
-La propiedad `text-overflow` de CSS se utiliza para especificar cómo debe mostrarse el contenido de texto que se desborda en un contenedor.
-
-**Sintaxis**
+Para convertir este contenedor en un contenedor flex y alinear los elementos hijos, aplicamos el CSS siguiente:
 
 ```css
-element {
-  text-overflow: clip | ellipsis | string;
+.contenedor {
+  display: flex;
+}
+
+.elemento {
+  background-color: lightblue;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
 }
 ```
 
-**Valores**
+En este ejemplo:
 
-- **clip**: El contenido de texto desbordado es recortado.
-- **ellipsis**: El contenido de texto desbordado se muestra con puntos suspensivos (`...`).
-- **string**: Permite definir una cadena personalizada que se mostrará cuando el texto se desborde.
+- El contenedor `.contenedor` se ha convertido en un contenedor flex.
+- Los elementos `.elemento` se distribuyen dentro del contenedor y ocupan el espacio disponible de manera flexible.
+- La propiedad `flex: 1` hace que cada elemento crezca y ocupe el mismo espacio disponible.
 
-**Uso Común**
-
-Para que `text-overflow` funcione, el contenedor debe tener:
-
-- `white-space: nowrap;`
-- `overflow: hidden;`
-- `display: block` o `display: inline-block`
-
-*Ejemplo*
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de text-overflow</title>
-    <style>
-        .text-clip {
-            width: 200px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: clip;
-            border: 1px solid black;
-        }
-        .text-ellipsis {
-            width: 200px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            border: 1px solid black;
-        }
-    </style>
-</head>
-<body>
-    <div class="text-clip">Este es un texto muy largo que no cabe en la caja definida.</div>
-    <div class="text-ellipsis">Este es un texto muy largo que no cabe en la caja definida.</div>
-</body>
-</html>
-```
-
-**3. Combinación de `overflow` y `text-overflow`**
-
-En muchos casos, es necesario combinar ambas propiedades para lograr un control completo sobre el contenido desbordado. Aquí hay un ejemplo de cómo hacerlo:
-
-*Ejemplo*
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combinación de overflow y text-overflow</title>
-    <style>
-        .overflow-combined {
-            width: 200px;
-            height: 50px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            border: 1px solid black;
-        }
-    </style>
-</head>
-<body>
-    <div class="overflow-combined">Este es un texto muy largo que no cabe en la caja definida y se muestra con puntos suspensivos.</div>
-</body>
-</html>
-```
-
-**4. Casos Prácticos y Buenas Prácticas**
-
-- **Listas de Productos**: Usar `overflow: hidden` y `text-overflow: ellipsis` en las descripciones de productos para mantener un diseño limpio y profesional.
-- **Menús de Navegación**: Utilizar `overflow: auto` para permitir que los usuarios puedan desplazarse por menús que pueden contener muchos elementos.
-- **Tarjetas de Información**: Emplear `text-overflow: ellipsis` en títulos y descripciones para evitar que textos largos distorsionen el diseño de la tarjeta.
-
-**Conclusión**
-
-El manejo adecuado del desbordamiento es esencial para asegurar que los diseños web sean tanto funcionales como estéticamente agradables. Las propiedades `overflow` y `text-overflow` de CSS ofrecen herramientas potentes para controlar cómo se presenta el contenido desbordado, permitiendo a los desarrolladores crear interfaces de usuario más limpias y fáciles de usar.
+Este es un ejemplo básico de cómo se puede utilizar Flexbox para crear un diseño flexible y adaptable. Hay muchas más propiedades y técnicas disponibles en Flexbox para controlar la alineación, el orden, el tamaño y la dirección de los elementos, lo que hace que sea una herramienta muy poderosa para el diseño web.
 
 ---
-## Posicionamiento
-El posicionamiento en CSS es fundamental para el diseño de layouts complejos y responsivos. Aquí exploraremos las diferentes propiedades de posición en CSS, con ejemplos prácticos para entender cómo funcionan.
+## Dirección de los elementos flexibles
 
-**1. Posición por Defecto (Estática)**
+La propiedad `flex-direction` define la dirección en la que los elementos hijos de un contenedor flexible (`contenedor`) se organizan. Dependiendo del valor que se le asigne, los elementos se pueden disponer en una fila o columna, y esa disposición puede ser directa o inversa.
 
-Por defecto, todos los elementos en CSS tienen una posición `static`. Esto significa que se posicionan de acuerdo con el flujo normal del documento.
+**Valores de `flex-direction`**
+
+1. **`row`**: Los elementos flexibles se disponen en una fila, de izquierda a derecha (en un documento con escritura de izquierda a derecha).
+
+2. **`row-reverse`**: Los elementos flexibles se disponen en una fila, pero en orden inverso, de derecha a izquierda (en un documento con escritura de izquierda a derecha).
+
+3. **`column`**: Los elementos flexibles se disponen en una columna, de arriba hacia abajo.
+
+4. **`column-reverse`**: Los elementos flexibles se disponen en una columna, pero en orden inverso, de abajo hacia arriba.
+
+Ejemplos
+
+Supongamos que tenemos el siguiente HTML:
 
 ```html
-<section>
-  <div class="container">
-    caja1
+<div class="contenedor">
+  <div class="elemento">1</div>
+  <div class="elemento">2</div>
+  <div class="elemento">3</div>
+</div>
+```
+
+**1. `flex-direction: row`**
+
+```css
+.contenedor {
+  display: flex;
+  flex-direction: row;
+}
+```
+
+**Resultado**: Los elementos se organizan en una fila, de izquierda a derecha.
+```
+1 2 3
+```
+
+**2. `flex-direction: row-reverse`**
+
+```css
+.contenedor {
+  display: flex;
+  flex-direction: row-reverse;
+}
+```
+
+**Resultado**: Los elementos se organizan en una fila, pero en orden inverso, de derecha a izquierda.
+```
+3 2 1
+```
+
+**3. `flex-direction: column`**
+
+```css
+.contenedor {
+  display: flex;
+  flex-direction: column;
+}
+```
+
+**Resultado**: Los elementos se organizan en una columna, de arriba hacia abajo.
+```
+1
+2
+3
+```
+
+**4. `flex-direction: column-reverse`**
+
+```css
+.contenedor {
+  display: flex;
+  flex-direction: column-reverse;
+}
+```
+
+**Resultado**: Los elementos se organizan en una columna, pero en orden inverso, de abajo hacia arriba.
+```
+3
+2
+1
+```
+
+**Ejemplo Completo**
+
+Aquí tienes un ejemplo completo con un poco de estilo adicional para ver mejor los cambios:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .contenedor {
+      display: flex;
+      flex-direction: row;
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      margin-bottom: 20px;
+    }
+    .elemento {
+      background-color: lightblue;
+      padding: 10px;
+      border: 1px solid navy;
+    }
+  </style>
+  <title>Flex Direction</title>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="elemento">1</div>
+    <div class="elemento">2</div>
+    <div class="elemento">3</div>
   </div>
-</section>
+  </div>
+</body>
+</html>
 ```
 
-```css
-section{
-  border: 3px solid;
-  width: 200px;
-  height: 200px;
-  box-sizing: border-box;
-}
+Este código HTML y CSS demostrará los diferentes efectos de la propiedad `flex-direction` sobre los elementos flexibles. Puedes copiar y pegar este código en un archivo HTML y abrirlo en tu navegador para ver los resultados.
 
-.container{
-  background: aqua;
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  position: static; /* Valor por defecto */
-}
-```
-
-**2. Posición Absoluta y Relativa**
-
-La posición `absolute` permite colocar un elemento en una posición específica dentro de su contenedor más cercano con posición relativa (`relative`), absoluta (`absolute`), o fija (`fixed`).
-
-*Ejemplo: Posición Absoluta*
-
-```css
-section{
-  border: 3px solid;
-  width: 200px;
-  height: 200px;
-  box-sizing: border-box;
-}
-
-.container{
-  background: aqua;
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-```
-
-*Ejemplo: Posición Relativa y Absoluta*
-
-```css
-section{
-  border: 3px solid;
-  width: 200px;
-  height: 200px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.container{
-  background: aqua;
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-}
-```
-
-**3. Uso de `inset`**
-
-La propiedad `inset` es una forma abreviada de definir `top`, `right`, `bottom` y `left` simultáneamente.
-
-*Ejemplo*
-
-```css
-section{
-  border: 3px solid;
-  width: 200px;
-  height: 200px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.container{
-  background: aqua;
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  position: absolute;
-  inset: 0;
-  margin: auto;
-}
-```
-
-**4. Posición Fija**
-
-La posición `fixed` permite que un elemento se fije en la ventana gráfica (viewport) y permanezca en la misma posición incluso cuando se desplaza la página.
-
-*Ejemplo*
-
-```css
-section{
-  border: 3px solid;
-  width: 200px;
-  height: 700px;
-  box-sizing: border-box;
-}
-
-.container{
-  background: aqua;
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-}
-```
-
-**5. Posición Sticky**
-
-La posición `sticky` permite que un elemento se comporte como `relative` hasta que su contenedor padre cruce un umbral específico, momento en el cual se comporta como `fixed`.
-
-*Ejemplo*
-
-```css
-section{
-  border: 3px solid;
-  width: 200px;
-  height: 700px;
-  box-sizing: border-box;
-}
-
-.container{
-  background: aqua;
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  position: sticky;
-  top: 10px;
-}
-```
-
-**Conclusión**
-
-Comprender y utilizar las diferentes propiedades de posicionamiento en CSS es esencial para crear diseños de página web que sean tanto visualmente atractivos como funcionales. Ya sea que necesites que un elemento se mueva con la página, permanezca fijo en la ventana gráfica, o se comporte de manera diferente en relación con su contenedor, CSS ofrece las herramientas necesarias para manejar todas estas situaciones.
+Espero que esta explicación te haya sido útil. Si tienes más preguntas o necesitas más detalles, no dudes en preguntar.
 
 ---
-## Orden de apilamiento(z-index)
-La propiedad `z-index` en CSS controla el orden de apilamiento de elementos en la página web, es decir, qué elementos se sitúan delante o detrás de otros. Esta propiedad es especialmente útil cuando trabajas con elementos superpuestos y necesitas controlar su visibilidad relativa.
+## Flujo de Escritura
 
-**1. Conceptos Básicos de `z-index`**
+El flujo de escritura (writing flow) en CSS se refiere a la dirección en la que el contenido de un documento se dispone en la pantalla. Esto es especialmente importante para soportar diferentes lenguajes y sistemas de escritura. La propiedad `writing-mode` de CSS nos permite controlar esta dirección.
 
-El `z-index` solo funciona en elementos posicionados (`position: relative`, `position: absolute`, `position: fixed`, `position: sticky`). Los elementos con `position: static` (por defecto) no se ven afectados por `z-index`.
+**`writing-mode`**
 
-*Sintaxis*
+La propiedad `writing-mode` define la dirección en la que se escribe el contenido de un contenedor. Es crucial para ajustar el diseño de textos en lenguajes que no usan el flujo de izquierda a derecha y de arriba a abajo (como el inglés). 
 
-```css
-element {
-  z-index: valor;
-}
-```
+**Definición y Valores**
 
-*Valores*
+Los valores de `writing-mode` son:
 
-- **Auto**: El elemento toma el valor de `z-index` de su contenedor apilado padre.
-- **Número positivo o negativo**: Determina el orden de apilamiento relativo de los elementos. Un valor mayor significa que el elemento se apila delante de los elementos con valores menores.
+1. **`horizontal-tb`**: 
+   - **Definición**: Es el valor por defecto. El texto se dispone horizontalmente de izquierda a derecha y de arriba a abajo.
+   - **Ejemplo**: Este es el modo que se usa para la mayoría de los lenguajes que utilizan el alfabeto latino.
 
-**2. Ejemplo Práctico**
+2. **`vertical-rl`**: 
+   - **Definición**: El texto se dispone verticalmente de arriba a abajo y de derecha a izquierda.
+   - **Ejemplo**: Es común en algunos lenguajes asiáticos como el japonés y el chino tradicional.
 
-Supongamos que tenemos tres cajas que queremos superponer en un orden específico:
+3. **`vertical-lr`**: 
+   - **Definición**: El texto se dispone verticalmente de arriba a abajo y de izquierda a derecha.
+   - **Ejemplo**: Es menos común, pero puede ser útil en ciertos contextos donde el diseño requiere esta disposición.
 
-*HTML*
+4. **`sideways-rl`**:
+   - **Definición**: El texto se dispone de manera horizontal, pero se gira 90 grados en sentido contrario a las agujas del reloj.
+   - **Ejemplo**: Esto es útil para títulos de columnas o ciertas presentaciones artísticas de texto.
 
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de z-index</title>
-    <style>
-        .box {
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            color: white;
-            font-size: 20px;
-        }
-        .box1 {
-            background-color: red;
-            top: 20px;
-            left: 20px;
-            z-index: 1;
-        }
-        .box2 {
-            background-color: green;
-            top: 40px;
-            left: 40px;
-            z-index: 2;
-        }
-        .box3 {
-            background-color: blue;
-            top: 60px;
-            left: 60px;
-            z-index: 3;
-        }
-    </style>
-</head>
-<body>
-    <div class="box box1">1</div>
-    <div class="box box2">2</div>
-    <div class="box box3">3</div>
-</body>
-</html>
-```
+5. **`sideways-lr`**:
+   - **Definición**: El texto se dispone de manera horizontal, pero se gira 90 grados en sentido de las agujas del reloj.
+   - **Ejemplo**: Similar a `sideways-rl`, pero con la rotación en la dirección opuesta.
 
-En este ejemplo, la caja roja (`box1`) tiene un `z-index` de 1, la caja verde (`box2`) tiene un `z-index` de 2, y la caja azul (`box3`) tiene un `z-index` de 3. Como resultado, la caja azul se apila encima de las otras dos, seguida por la verde y luego la roja.
+**Ejemplo**
 
-**3. Contextos de Apilamiento**
-
-Un nuevo contexto de apilamiento se crea en los siguientes casos:
-
-- Un elemento con una posición distinta de `static` y con un `z-index` distinto de `auto`.
-- Un elemento con `opacity` menor a 1.
-- Un elemento con transformaciones aplicadas (`transform`).
-- Elementos con ciertas propiedades CSS como `filter`, `flex`, `grid`, `clip-path`, etc.
-
-*Ejemplo de Contexto de Apilamiento*
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de Contexto de Apilamiento</title>
-    <style>
-        .parent {
-            position: relative;
-            z-index: 10;
-            width: 200px;
-            height: 200px;
-            background-color: lightgray;
-        }
-        .child1 {
-            position: absolute;
-            z-index: 1;
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            top: 20px;
-            left: 20px;
-        }
-        .child2 {
-            position: absolute;
-            z-index: 2;
-            width: 100px;
-            height: 100px;
-            background-color: green;
-            top: 40px;
-            left: 40px;
-        }
-    </style>
-</head>
-<body>
-    <div class="parent">
-        <div class="child1"></div>
-        <div class="child2"></div>
-    </div>
-</body>
-</html>
-```
-
-En este ejemplo, el `div` con la clase `parent` tiene un `z-index` de 10, creando un nuevo contexto de apilamiento. Dentro de este contexto, `child2` (verde) se apilará por encima de `child1` (rojo) debido a sus `z-index` respectivos.
-
-**4. Buenas Prácticas**
-
-- **Evitar el uso excesivo de `z-index`**: Utilizar `z-index` solo cuando sea necesario para evitar complicaciones en la gestión del orden de apilamiento.
-- **Comprender los contextos de apilamiento**: Familiarizarse con cómo se crean y gestionan los contextos de apilamiento para evitar comportamientos inesperados.
-- **Documentar los valores de `z-index`**: Mantener un registro claro de los valores de `z-index` utilizados en el proyecto para facilitar el mantenimiento y la depuración.
-
-*Conclusión*
-
-La propiedad `z-index` es una herramienta poderosa en CSS para controlar el orden de apilamiento de los elementos. Entender su funcionamiento y los contextos de apilamiento es crucial para diseñar interfaces limpias y funcionales. Con la práctica y la aplicación cuidadosa, `z-index` puede mejorar significativamente la presentación y la interacción del usuario en una página web.
-
----
-## Flexbox
-Flexbox es un sistema de diseño en CSS que permite una disposición flexible y eficiente de los elementos en una página web. Flexbox es ideal para diseñar layouts unidimensionales y es ampliamente utilizado debido a su capacidad de distribuir espacio entre los elementos y alinear estos de manera predecible cuando el tamaño del contenedor es desconocido o dinámico.
-
-**1. `display: flex`**
-
-La propiedad `display: flex` convierte a un contenedor en un contenedor flex, lo que significa que todos sus hijos directos se convierten en elementos flexibles.
-
-*Ejemplo*
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de display: flex</title>
-    <style>
-        .flex-container {
-            display: flex;
-            border: 1px solid black;
-        }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item">Item 1</div>
-        <div class="flex-item">Item 2</div>
-        <div class="flex-item">Item 3</div>
-    </div>
-</body>
-</html>
-```
-
-**2. `flex-direction`**
-
-La propiedad `flex-direction` define la dirección en la que los elementos flexibles se colocan dentro del contenedor. Los valores posibles son `row`, `row-reverse`, `column`, y `column-reverse`.
-
-*Ejemplo*
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de flex-direction</title>
-    <style>
-        .flex-container {
-            display: flex;
-            flex-direction: column; /* Cambia esto para ver diferentes resultados */
-            border: 1px solid black;
-        }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item">Item 1</div>
-        <div class="flex-item">Item 2</div>
-        <div class="flex-item">Item 3</div>
-    </div>
-</body>
-</html>
-```
-
-**3. `writing-mode`**
-
-La propiedad `writing-mode` especifica la dirección en la que se escribe el contenido, lo que afecta el layout del texto y de los bloques en la página.
-
-*Ejemplo*
+Aquí tienes un ejemplo práctico que demuestra cómo usar `writing-mode`:
 
 ```html
 <!DOCTYPE html>
@@ -574,372 +257,221 @@ La propiedad `writing-mode` especifica la dirección en la que se escribe el con
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de writing-mode</title>
     <style>
-        .flex-container {
-            display: flex;
-            writing-mode: vertical-rl; /* Cambia esto para ver diferentes resultados */
+        .horizontal-tb {
+            writing-mode: horizontal-tb;
             border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
         }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
+        
+        .vertical-rl {
+            writing-mode: vertical-rl;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        .vertical-lr {
+            writing-mode: vertical-lr;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        .sideways-rl {
+            writing-mode: sideways-rl;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        .sideways-lr {
+            writing-mode: sideways-lr;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="flex-container">
-        <div class="flex-item">Item 1</div>
-        <div class="flex-item">Item 2</div>
-        <div class="flex-item">Item 3</div>
+    <div class="horizontal-tb">
+        Este es un texto con writing-mode: horizontal-tb. (Predeterminado)
+    </div>
+    <div class="vertical-rl">
+        Este es un texto con writing-mode: vertical-rl. (De arriba a abajo y de derecha a izquierda)
+    </div>
+    <div class="vertical-lr">
+        Este es un texto con writing-mode: vertical-lr. (De arriba a abajo y de izquierda a derecha)
+    </div>
+    <div class="sideways-rl">
+        Este es un texto con writing-mode: sideways-rl. (Girado 90 grados en sentido contrario a las agujas del reloj)
+    </div>
+    <div class="sideways-lr">
+        Este es un texto con writing-mode: sideways-lr. (Girado 90 grados en el sentido de las agujas del reloj)
     </div>
 </body>
 </html>
 ```
 
-**4. `flex-wrap`**
+En este ejemplo, cada `div` utiliza un valor diferente de `writing-mode`, demostrando cómo cambia la dirección en la que se dispone el texto. Puedes copiar este código en un archivo HTML y abrirlo en un navegador para ver el efecto de cada valor de `writing-mode`.
 
-La propiedad `flex-wrap` especifica si los elementos flexibles deben colocarse en una sola línea o si pueden dividirse en múltiples líneas. Los valores posibles son `nowrap`, `wrap`, y `wrap-reverse`.
-
-*Ejemplo*
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de flex-wrap</title>
-    <style>
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap; /* Cambia esto para ver diferentes resultados */
-            border: 1px solid black;
-        }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item">Item 1</div>
-        <div class="flex-item">Item 2</div>
-        <div class="flex-item">Item 3</div>
-        <div class="flex-item">Item 4</div>
-        <div class="flex-item">Item 5</div>
-    </div>
-</body>
-</html>
-```
-
-**5. `flex-flow`**
-
-La propiedad `flex-flow` es una forma abreviada de definir tanto `flex-direction` como `flex-wrap`.
-
-*Ejemplo*
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de flex-flow</title>
-    <style>
-        .flex-container {
-            display: flex;
-            flex-flow: row wrap; /* Cambia esto para ver diferentes resultados */
-            border: 1px solid black;
-        }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item">Item 1</div>
-        <div class="flex-item">Item 2</div>
-        <div class="flex-item">Item 3</div>
-        <div class="flex-item">Item 4</div>
-        <div class="flex-item">Item 5</div>
-    </div>
-</body>
-</html>
-```
-
-*Conclusión*
-
-Flexbox es una herramienta poderosa y versátil para crear layouts modernos y responsivos en CSS. Con propiedades como `flex-direction`, `flex-wrap`, `flex-flow`, y `writing-mode`, puedes controlar fácilmente la disposición y el flujo de los elementos en tu página. Experimentar con estas propiedades te permitirá aprovechar todo el potencial de Flexbox en tus proyectos web.
+Espero que esta explicación te sea útil para comprender mejor el flujo de escritura y la propiedad `writing-mode` en CSS. Si tienes alguna otra pregunta o necesitas más ejemplos, no dudes en decírmelo.
 
 ---
-## Control de espacio de los elementos
-Flexbox proporciona propiedades específicas para controlar cómo los elementos flexibles crecen, se encogen y ocupan espacio dentro de un contenedor flex. Estas propiedades son `flex-grow`, `flex-shrink` y `flex-basis`. También existe una propiedad abreviada llamada `flex` que combina estas tres.
+## Envolvimiento de los Elementos Flexibles
 
-**1. `flex-grow`**
+Cuando trabajamos con flexbox, podemos controlar cómo se comportan los elementos flexibles cuando el contenedor no tiene suficiente espacio para acomodarlos en una sola línea. Esta propiedad es gestionada por la propiedad `flex-wrap`.
 
-La propiedad `flex-grow` define la capacidad de un elemento flexible para crecer si hay espacio adicional disponible. Un valor mayor indica que el elemento crecerá más en comparación con otros elementos.
+**Propiedad `flex-wrap`**
 
-*Ejemplo*
+La propiedad `flex-wrap` define si los elementos flexibles deben mantenerse en una sola línea o pueden romperse en varias líneas. Esto es particularmente útil para layouts responsivos y adaptativos.
+
+**Valores:**
+
+1. **nowrap**: Los elementos flexibles se mantendrán en una sola línea. Si no hay suficiente espacio, los elementos se encogerán para ajustarse al contenedor.
+2. **wrap**: Los elementos flexibles se dividirán en varias líneas si es necesario. Los elementos adicionales se envolverán a la siguiente línea.
+3. **wrap-reverse**: Similar a `wrap`, pero los elementos adicionales se envolverán en la dirección opuesta (de abajo hacia arriba en lugar de de arriba hacia abajo).
+
+Ejemplo:
+
+Vamos a ver un ejemplo práctico donde aplicamos `flex-wrap` en un contenedor con varios elementos.
 
 ```html
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de flex-grow</title>
+    <title>Flex Wrap Example</title>
     <style>
-        .flex-container {
+        .contenedor {
             display: flex;
-            border: 1px solid black;
+            flex-wrap: wrap; /* Cambia a nowrap o wrap-reverse para ver la diferencia */
+            background-color: lightgrey;
+            padding: 10px;
         }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
+
+        .elemento {
+            background-color: cornflowerblue;
             color: white;
+            width: 150px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
             font-size: 20px;
-        }
-        .flex-item1 {
-            flex-grow: 1;
-        }
-        .flex-item2 {
-            flex-grow: 2;
-        }
-        .flex-item3 {
-            flex-grow: 3;
         }
     </style>
 </head>
 <body>
-    <div class="flex-container">
-        <div class="flex-item flex-item1">Item 1</div>
-        <div class="flex-item flex-item2">Item 2</div>
-        <div class="flex-item flex-item3">Item 3</div>
+    <div class="contenedor">
+        <div class="elemento">1</div>
+        <div class="elemento">2</div>
+        <div class="elemento">3</div>
+        <div class="elemento">4</div>
+        <div class="elemento">5</div>
+        <div class="elemento">6</div>
     </div>
 </body>
 </html>
 ```
 
-En este ejemplo, el primer elemento (`flex-item1`) crecerá una vez, el segundo (`flex-item2`) crecerá dos veces y el tercero (`flex-item3`) crecerá tres veces en comparación con los otros elementos si hay espacio disponible.
+- **`.contenedor`**: Este es el contenedor flexible al que aplicamos `display: flex` y `flex-wrap: wrap`.
+  - `display: flex`: Hace que los elementos hijos se comporten como elementos flexibles.
+  - `flex-wrap: wrap`: Permite que los elementos se envuelvan a la siguiente línea si no hay suficiente espacio en la línea actual.
 
-**2. `flex-shrink`**
+- **`.elemento`**: Estos son los elementos flexibles dentro del contenedor. Cada uno tiene un ancho fijo (`width: 150px`) y un margen (`margin: 10px`), lo que puede hacer que no quepan todos en una sola línea dependiendo del ancho del contenedor.
 
-La propiedad `flex-shrink` define la capacidad de un elemento flexible para encogerse si es necesario. Un valor mayor indica que el elemento se encogerá más en comparación con otros elementos.
+En este ejemplo, si el contenedor tiene suficiente ancho, todos los elementos se mantendrán en una sola línea. Si el ancho del contenedor es menor y no puede acomodar todos los elementos en una sola línea, los elementos se envolverán a la siguiente línea debido a la propiedad `flex-wrap: wrap`.
 
-*Ejemplo*
+Puedes cambiar `flex-wrap: wrap` por `flex-wrap: nowrap` o `flex-wrap: wrap-reverse` para ver cómo cambia el comportamiento:
 
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de flex-shrink</title>
-    <style>
-        .flex-container {
-            display: flex;
-            width: 300px; /* Espacio restringido */
-            border: 1px solid black;
-        }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-        }
-        .flex-item1 {
-            flex-shrink: 1;
-        }
-        .flex-item2 {
-            flex-shrink: 2;
-        }
-        .flex-item3 {
-            flex-shrink: 3;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item flex-item1">Item 1</div>
-        <div class="flex-item flex-item2">Item 2</div>
-        <div class="flex-item flex-item3">Item 3</div>
-    </div>
-</body>
-</html>
-```
-
-En este ejemplo, el primer elemento (`flex-item1`) se encogerá una vez, el segundo (`flex-item2`) se encogerá dos veces y el tercero (`flex-item3`) se encogerá tres veces en comparación con los otros elementos si el espacio es restringido.
-
-**3. `flex-basis`**
-
-La propiedad `flex-basis` define la base del tamaño de un elemento antes de que el espacio restante se distribuya. Especifica el tamaño inicial del elemento antes de que se aplique el crecimiento o encogimiento.
-
-*Ejemplo*
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de flex-basis</title>
-    <style>
-        .flex-container {
-            display: flex;
-            border: 1px solid black;
-        }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-        }
-        .flex-item1 {
-            flex-basis: 100px;
-        }
-        .flex-item2 {
-            flex-basis: 150px;
-        }
-        .flex-item3 {
-            flex-basis: 200px;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item flex-item1">Item 1</div>
-        <div class="flex-item flex-item2">Item 2</div>
-        <div class="flex-item flex-item3">Item 3</div>
-    </div>
-</body>
-</html>
-```
-
-En este ejemplo, el primer elemento (`flex-item1`) tendrá una base de 100px, el segundo (`flex-item2`) tendrá una base de 150px y el tercero (`flex-item3`) tendrá una base de 200px.
-
-**4. `flex` (Abreviación)**
-
-La propiedad `flex` es una forma abreviada de definir `flex-grow`, `flex-shrink` y `flex-basis` en una sola declaración. La sintaxis es `flex: <flex-grow> <flex-shrink> <flex-basis>;`.
-
-*Ejemplo*
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de flex</title>
-    <style>
-        .flex-container {
-            display: flex;
-            border: 1px solid black;
-        }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-        }
-        .flex-item1 {
-            flex: 1 1 100px; /* grow, shrink, basis */
-        }
-        .flex-item2 {
-            flex: 2 2 150px;
-        }
-        .flex-item3 {
-            flex: 3 3 200px;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item flex-item1">Item 1</div>
-        <div class="flex-item flex-item2">Item 2</div>
-        <div class="flex-item flex-item3">Item 3</div>
-    </div>
-</body>
-</html>
-```
-
-En este ejemplo, el primer elemento (`flex-item1`) tiene `flex: 1 1 100px`, lo que significa que crecerá y se encogerá una vez con una base de 100px. El segundo elemento (`flex-item2`) tiene `flex: 2 2 150px`, y el tercero (`flex-item3`) tiene `flex: 3 3 200px`.
-
-*Conclusión*
-
-El control del espacio de los elementos en Flexbox mediante `flex-grow`, `flex-shrink`, y `flex-basis` permite una gran flexibilidad y control en el diseño de layouts. La propiedad abreviada `flex` simplifica la definición de estas propiedades, haciendo que el código sea más limpio y fácil de mantener. Experimenta con estas propiedades para optimizar y adaptar tus diseños a diferentes escenarios y requisitos.
+- **`flex-wrap: nowrap`**: Todos los elementos se mantendrán en una sola línea, y se reducirán en tamaño si es necesario para caber.
+- **`flex-wrap: wrap-reverse`**: Los elementos se envolverán a la siguiente línea, pero comenzarán desde abajo en lugar de desde arriba.
 
 ---
-## Posicionamiento de elementos con Flexbox
-Flexbox es una poderosa herramienta en CSS para posicionar y distribuir elementos dentro de un contenedor. Aquí exploraremos propiedades clave como `order`, `justify-content`, `gap`, `align-content`, `align-items`, y `align-self`, que te permiten controlar la disposición de los elementos de manera precisa.
+## Flujo Combinado
 
-**1. `order`**
+El flujo combinado en CSS Flexbox se refiere a la combinación de las propiedades `flex-direction` y `flex-wrap` mediante la propiedad abreviada `flex-flow`. Estas propiedades controlan la dirección y el comportamiento de los elementos flexibles (flex items) dentro de un contenedor flexible (flex container).
 
-La propiedad `order` permite cambiar el orden en que los elementos flexibles aparecen dentro del contenedor flex. El valor por defecto es `0`, y los elementos se ordenan en función de este valor de menor a mayor.
+**`flex-flow`**
 
-*Ejemplo*
+La propiedad `flex-flow` es una propiedad abreviada que permite establecer simultáneamente `flex-direction` y `flex-wrap`. Esto hace que sea más sencillo y compacto definir ambos aspectos del comportamiento del contenedor flexible en una sola línea.
 
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de order</title>
-    <style>
-        .flex-container {
-            display: flex;
-            border: 1px solid black;
-        }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-        }
-        .flex-item1 {
-            order: 3;
-        }
-        .flex-item2 {
-            order: 1;
-        }
-        .flex-item3 {
-            order: 2;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item flex-item1">Item 1</div>
-        <div class="flex-item flex-item2">Item 2</div>
-        <div class="flex-item flex-item3">Item 3</div>
-    </div>
-</body>
-</html>
+**Sintaxis:**
+```css
+flex-flow: <flex-direction> <flex-wrap>;
 ```
 
-En este ejemplo, `flex-item2` aparece primero, seguido de `flex-item3`, y luego `flex-item1` debido a los valores de `order` especificados.
+**Valores de `flex-direction`:**
 
-**2. `justify-content`**
+- `row`: Los elementos se colocan en una fila horizontal de izquierda a derecha.
+- `row-reverse`: Los elementos se colocan en una fila horizontal de derecha a izquierda.
+- `column`: Los elementos se colocan en una columna vertical de arriba hacia abajo.
+- `column-reverse`: Los elementos se colocan en una columna vertical de abajo hacia arriba.
 
-La propiedad `justify-content` alinea los elementos flexibles a lo largo del eje principal del contenedor. Los valores comunes incluyen `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, y `space-evenly`.
+**Valores de `flex-wrap`:**
 
-*Ejemplo*
+- `nowrap`: Los elementos se colocan en una sola línea, sin permitir que se envuelvan (comportamiento por defecto).
+- `wrap`: Los elementos se envuelven en múltiples líneas si es necesario.
+- `wrap-reverse`: Los elementos se envuelven en múltiples líneas, pero en orden inverso.
+
+**Ejemplo**
+
+Vamos a ver un ejemplo práctico que ilustra cómo usar la propiedad `flex-flow` para combinar `flex-direction` y `flex-wrap`.
+
+**HTML:**
+```html
+<div class="contenedor">
+  <div class="elemento">1</div>
+  <div class="elemento">2</div>
+  <div class="elemento">3</div>
+  <div class="elemento">4</div>
+  <div class="elemento">5</div>
+  <div class="elemento">6</div>
+</div>
+```
+
+**CSS:**
+```css
+.contenedor {
+  display: flex;
+  flex-flow: row wrap; /* Los elementos se colocarán en una fila y se envolverán en múltiples líneas si es necesario */
+  gap: 10px; /* Espacio entre los elementos */
+}
+
+.elemento {
+  background-color: lightblue;
+  padding: 20px;
+  border: 1px solid #ccc;
+  flex: 1 1 100px; /* Los elementos serán flexibles y se ajustarán al espacio disponible */
+}
+```
+
+En este ejemplo, la clase `contenedor` se define como un contenedor flexible con `display: flex`. Luego, se usa `flex-flow: row wrap` para especificar que los elementos hijos (`elemento`) deben colocarse en una fila y, si es necesario, se envolverán en múltiples líneas.
+
+**Resultado:**
+
+- Si el ancho del contenedor es suficientemente amplio, todos los elementos se colocarán en una sola fila.
+- Si el contenedor no es lo suficientemente ancho, los elementos se envolverán en la siguiente línea, ajustándose al espacio disponible.
+
+Este es un ejemplo básico, pero `flex-flow` se puede utilizar en combinación con otras propiedades de Flexbox como `justify-content`, `align-items`, y `align-content` para crear diseños más complejos y adaptables.
+
+---
+## Alineamientos en el contenedor
+
+**1. `justify-content`**
+
+La propiedad `justify-content` en Flexbox controla la alineación de los elementos flexibles a lo largo del eje principal del contenedor. Esta propiedad no afecta a los elementos en una sola línea, pero sí controla cómo se distribuyen los elementos a lo largo del eje principal si hay espacio adicional o si los elementos son más pequeños que el contenedor.
+
+**Valores de `justify-content`:**
+- `flex-start`: Los elementos se alinean al principio del contenedor.
+- `flex-end`: Los elementos se alinean al final del contenedor.
+- `center`: Los elementos se alinean en el centro del contenedor.
+- `space-between`: Los elementos se distribuyen de manera uniforme en el contenedor; el primer elemento está al principio y el último al final.
+- `space-around`: Los elementos se distribuyen de manera uniforme con espacio adicional alrededor de cada elemento.
+- `space-evenly`: Los elementos se distribuyen de manera uniforme con espacio adicional antes del primer elemento y después del último elemento.
+
+**Ejemplo**
 
 ```html
 <!DOCTYPE html>
@@ -949,76 +481,49 @@ La propiedad `justify-content` alinea los elementos flexibles a lo largo del eje
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de justify-content</title>
     <style>
-        .flex-container {
+        .contenedor {
             display: flex;
             justify-content: space-between; /* Cambia esto para ver diferentes resultados */
-            border: 1px solid black;
+            height: 200px;
+            background-color: #f0f0f0;
         }
-        .flex-item {
+        .elemento {
+            width: 100px;
+            height: 100px;
             background-color: lightcoral;
             margin: 10px;
-            padding: 20px;
+            line-height: 100px;
+            text-align: center;
             color: white;
             font-size: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="flex-container">
-        <div class="flex-item">Item 1</div>
-        <div class="flex-item">Item 2</div>
-        <div class="flex-item">Item 3</div>
+    <div class="contenedor">
+        <div class="elemento">1</div>
+        <div class="elemento">2</div>
+        <div class="elemento">3</div>
     </div>
 </body>
 </html>
 ```
 
-En este ejemplo, los elementos están distribuidos con `space-between`, dejando un espacio igual entre cada elemento.
+En este ejemplo, `justify-content: space-between;` distribuye los elementos `elemento` de manera uniforme en el contenedor `contenedor`, con espacio entre cada elemento y alineando el primero al principio y el último al final del contenedor.
 
-**3. `gap`**
+**2. `align-content`**
 
-La propiedad `gap` define el espacio entre los elementos flexibles dentro del contenedor.
+La propiedad `align-content` controla la alineación de las líneas de elementos flexibles dentro del contenedor cuando hay espacio adicional en el eje cruzado (cuando los elementos se distribuyen en varias líneas).
 
-*Ejemplo*
+**Valores de `align-content`:**
+- `flex-start`: Las líneas de elementos se alinean al inicio del contenedor.
+- `flex-end`: Las líneas de elementos se alinean al final del contenedor.
+- `center`: Las líneas de elementos se alinean en el centro del contenedor.
+- `space-between`: Las líneas de elementos se distribuyen de manera uniforme en el contenedor; la primera línea está al inicio y la última al final.
+- `space-around`: Las líneas de elementos se distribuyen de manera uniforme con espacio adicional alrededor de cada línea.
+- `stretch`: Las líneas de elementos se estiran para llenar el contenedor.
 
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de gap</title>
-    <style>
-        .flex-container {
-            display: flex;
-            gap: 20px; /* Espacio entre los elementos */
-            border: 1px solid black;
-        }
-        .flex-item {
-            background-color: lightcoral;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item">Item 1</div>
-        <div class="flex-item">Item 2</div>
-        <div class="flex-item">Item 3</div>
-    </div>
-</body>
-</html>
-```
-
-En este ejemplo, hay un espacio de `20px` entre cada elemento flexible.
-
-**4. `align-content`**
-
-La propiedad `align-content` alinea las líneas de elementos flexibles en el contenedor cuando hay espacio adicional en el eje cruzado. Los valores comunes incluyen `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, y `stretch`.
-
-#### Ejemplo
+**Ejemplo:**
 
 ```html
 <!DOCTYPE html>
@@ -1028,42 +533,52 @@ La propiedad `align-content` alinea las líneas de elementos flexibles en el con
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de align-content</title>
     <style>
-        .flex-container {
+        .contenedor {
             display: flex;
             flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
             align-content: space-between; /* Cambia esto para ver diferentes resultados */
-            border: 1px solid black;
-            height: 200px;
+            height: 300px;
+            background-color: #f0f0f0;
         }
-        .flex-item {
+        .elemento {
+            width: 100px;
+            height: 100px;
             background-color: lightcoral;
             margin: 10px;
-            padding: 20px;
+            line-height: 100px;
+            text-align: center;
             color: white;
             font-size: 20px;
-            flex: 1 1 100px; /* Crecimiento flexible */
         }
     </style>
 </head>
 <body>
-    <div class="flex-container">
-        <div class="flex-item">Item 1</div>
-        <div class="flex-item">Item 2</div>
-        <div class="flex-item">Item 3</div>
-        <div class="flex-item">Item 4</div>
-        <div class="flex-item">Item 5</div>
+    <div class="contenedor">
+        <div class="elemento">1</div>
+        <div class="elemento">2</div>
+        <div class="elemento">3</div>
+        <div class="elemento">4</div>
+        <div class="elemento">5</div>
+        <div class="elemento">6</div>
     </div>
 </body>
 </html>
 ```
 
-En este ejemplo, los elementos están distribuidos con `space-between` en el eje cruzado.
+En este ejemplo, `align-content: space-between;` distribuye las líneas de elementos de manera uniforme en el contenedor `contenedor`, con espacio entre cada línea y alineando la primera línea al inicio y la última al final del contenedor.
 
-**5. `align-items`**
+**3. `align-items`**
 
-La propiedad `align-items` alinea los elementos flexibles a lo largo del eje cruzado del contenedor. Los valores comunes incluyen `flex-start`, `flex-end`, `center`, `baseline`, y `stretch`.
+La propiedad `align-items` controla la alineación de los elementos flexibles a lo largo del eje cruzado del contenedor.
 
-*Ejemplo*
+**Valores de `align-items`:**
+- `flex-start`: Los elementos se alinean al inicio del contenedor a lo largo del eje cruzado.
+- `flex-end`: Los elementos se alinean al final del contenedor a lo largo del eje cruzado.
+- `center`: Los elementos se alinean en el centro del contenedor a lo largo del eje cruzado.
+- `baseline`: Los elementos se alinean según la línea base (línea de texto) del primer elemento.
+- `stretch`: Los elementos se estiran para llenar el contenedor a lo largo del eje cruzado.
+
+**Ejemplo:**
 
 ```html
 <!DOCTYPE html>
@@ -1073,38 +588,114 @@ La propiedad `align-items` alinea los elementos flexibles a lo largo del eje cru
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de align-items</title>
     <style>
-        .flex-container {
+        .contenedor {
             display: flex;
             align-items: center; /* Cambia esto para ver diferentes resultados */
-            border: 1px solid black;
-            height: 200px;
+            height: 300px;
+            background-color: #f0f0f0;
         }
-        .flex-item {
+        .elemento {
+            width: 100px;
+            height: 100px;
             background-color: lightcoral;
             margin: 10px;
-            padding: 20px;
+            line-height: 100px;
+            text-align: center;
             color: white;
             font-size: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="flex-container">
-        <div class="flex-item">Item 1</div>
-        <div class="flex-item">Item 2</div>
-        <div class="flex-item">Item 3</div>
+    <div class="contenedor">
+        <div class="elemento">1</div>
+        <div class="elemento">2</div>
+        <div class="elemento">3</div>
     </div>
 </body>
 </html>
 ```
 
-En este ejemplo, los elementos están alineados en el centro del eje cruzado del contenedor.
+En este ejemplo, `align-items: center;` alinea los elementos `elemento` en el centro del contenedor `contenedor` a lo largo del eje cruzado.
 
-**6. `align-self`**
+**Uso de `gap` en Flexbox**
 
-La propiedad `align-self` permite anular la alineación establecida por `align-items` para elementos individuales. Los valores comunes incluyen `auto`, `flex-start`, `flex-end`, `center`, `baseline`, y `stretch`.
+"gap" en Flexbox se refiere al espacio entre los elementos hijos dentro de un contenedor flexible. Este espacio se puede gestionar utilizando la propiedad `gap` o sus equivalentes más antiguos (`gap`, `row-gap`, y `column-gap`) en el contexto de Flexbox y CSS Grid, proporcionando un método consistente para crear márgenes entre elementos en un diseño flexible.
 
-*Ejemplo*
+La propiedad `gap` se introdujo como parte de CSS Grid y, posteriormente, se extendió para su uso en Flexbox para gestionar el espacio entre elementos. Es una abreviatura conveniente que combina `row-gap` y `column-gap` en un solo valor.
+
+**Sintaxis:**
+
+```css
+.container {
+    display: flex;
+    gap: <row-gap> <column-gap>;
+}
+```
+
+- `<row-gap>`: Especifica el espacio entre filas de elementos.
+- `<column-gap>`: Especifica el espacio entre columnas de elementos.
+
+Ejemplo:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de gap en Flexbox</title>
+    <style>
+        .contenedor {
+            display: flex;
+            column-gap: 20px; /* Espacio entre elementos */
+        }
+        .elemento {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            margin: 10px;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="elemento">1</div>
+        <div class="elemento">2</div>
+        <div class="elemento">3</div>
+    </div>
+</body>
+</html>
+```
+
+En este ejemplo:
+- `gap: 20px;` establece un espacio de 20 píxeles entre cada elemento en el contenedor `contenedor`.
+- `justify-content: space-between;` distribuye el espacio sobrante entre los elementos, lo que se combina con `gap` para crear un diseño equilibrado con espacios uniformes entre los elementos.
+
+**Compatibilidad y Consideraciones**
+
+- **Compatibilidad:** La propiedad `gap` en Flexbox tiene un buen soporte en navegadores modernos. Para navegadores más antiguos, es recomendable usar las propiedades separadas `row-gap` y `column-gap` como alternativa.
+  
+- **Especificidad:** `gap` en Flexbox es más simple y compacto que el manejo de márgenes o padding para lograr el mismo efecto, reduciendo la complejidad del código CSS y mejorando la legibilidad.
+## Alineamientos en los elementos
+
+**`align-self`**
+
+La propiedad `align-self` en Flexbox permite alinear individualmente cada elemento flexible dentro del contenedor flex a lo largo del eje cruzado, anulando la alineación establecida por `align-items` en el contenedor.
+
+**Valores de `align-self`:**
+- `auto`: El elemento usa la alineación definida por `align-items` en el contenedor.
+- `flex-start`: Alinea el elemento al principio del eje cruzado.
+- `flex-end`: Alinea el elemento al final del eje cruzado.
+- `center`: Alinea el elemento en el centro del eje cruzado.
+- `baseline`: Alinea el elemento en la línea base del texto.
+- `stretch`: Estira el elemento para llenar el contenedor en el eje cruzado.
+
+**Ejemplo de `align-self`:**
 
 ```html
 <!DOCTYPE html>
@@ -1114,48 +705,313 @@ La propiedad `align-self` permite anular la alineación establecida por `align-i
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de align-self</title>
     <style>
-        .flex-container {
+        .contenedor {
             display: flex;
-            border: 1px solid black;
-            height: 200px;
+            height: 300px;
+            align-items: flex-start; /* Alineación por defecto */
         }
-        .flex-item {
-            background-color: lightcoral;
-            margin: 10px;
+        .elemento {
+            width: 100px;
             padding: 20px;
+            margin: 10px;
+            background-color: lightcoral;
             color: white;
-            font-size: 20px;
+            font-size: 18px;
         }
-        .flex-item1 {
-            align-self: flex-start;
+        .elemento1 {
+            align-self: start; /* Alinea este elemento al inicio */
         }
-        .flex-item2 {
-            align-self: center;
+        .elemento2 {
+            align-self: center; /* Alinea este elemento al centro */
         }
-        .flex-item3 {
-            align-self: flex-end;
+        .elemento3 {
+            align-self: end; /* Alinea este elemento al final */
         }
     </style>
 </head>
 <body>
-    <div class="flex-container">
-        <div class="flex-item flex-item1">Item 1</div>
-        <div class="flex-item flex-item2">Item 2</div>
-        <div class="flex-item flex-item3">Item 3</div>
+    <div class="contenedor">
+        <div class="elemento elemento1">Item 1</div>
+        <div class="elemento elemento2">Item 2</div>
+        <div class="elemento elemento3">Item 3</div>
     </div>
 </body>
 </html>
 ```
 
-En este ejemplo, cada elemento está alineado individualmente según el valor de `align-self`.
+En este ejemplo:
+- `align-items: flex-start;` alinea todos los elementos al principio del eje cruzado por defecto.
+- `.elemento1`, `.elemento2`, y `.elemento3` tienen diferentes valores de `align-self`, lo que les permite alinearse individualmente según su valor especificado (`flex-start`, `center`, `flex-end`).
 
-*Recurso Adicional: Flexbox Froggy*
+**2. `order`**
 
-Para aprender y practicar Flexbox de manera interactiva, te recomiendo usar [Flexbox Froggy](https://flexboxfroggy.com/#es). Flexbox Froggy es un juego educativo que te ayuda a entender y aplicar las propiedades de Flexbox de una manera divertida y efectiva.
+La propiedad `order` en Flexbox define el orden en que los elementos flexibles aparecen dentro del contenedor, modificando el orden visual sin cambiar el orden del código HTML.
 
-*Conclusión*
+**Valores de `order`:**
+- Un número entero que especifica el orden relativo del elemento. El valor predeterminado es `0`.
+- Los elementos se ordenan de menor a mayor valor de `order`. Los elementos con un valor menor de `order` aparecen antes en el orden visual.
 
-Flexbox es una herramienta esencial para diseñar layouts modernos y responsivos. Propiedades como `order`, `justify-content`, `gap`, `align-content`, `align-items`, y
+**Ejemplo:**
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de order</title>
+    <style>
+        .contenedor {
+            display: flex;
+        }
+        .elemento {
+            width: 100px;
+            padding: 20px;
+            margin: 10px;
+            background-color: lightcoral;
+            color: white;
+            font-size: 18px;
+        }
+        .elemento1 {
+            order: 2; /* Aparece tercero */
+        }
+        .elemento2 {
+            order: 1; /* Aparece primero */
+        }
+        .elemento3 {
+            order: 3; /* Aparece segundo */
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="elemento elemento1">Item 1</div>
+        <div class="elemento elemento2">Item 2</div>
+        <div class="elemento elemento3">Item 3</div>
+    </div>
+</body>
+</html>
+```
+
+En este ejemplo:
+- Los elementos `.elemento2` tienen `order: 1`, `.elemento3` tiene `order: 3`, y `.elemento1` tiene `order: 2`. Esto hace que los elementos se muestren en el orden: `elemento2`, `elemento3`, `elemento1`.
+
+---
+## Control de Espacio de los Elementos
+
+**`flex-grow`**
+
+**Definición:** La propiedad `flex-grow` define la capacidad de un elemento flex para crecer en relación a los otros elementos flex en el mismo contenedor. Si hay espacio extra disponible en el contenedor flex, los elementos con un valor de `flex-grow` mayor ocuparán más de ese espacio adicional.
+
+**Sintaxis:**
+```css
+.elemento {
+  flex-grow: 1; /* El valor puede ser cualquier número no negativo */
+}
+```
+
+**Ejemplo Práctico:**
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de flex-grow</title>
+  <style>
+    .contenedor {
+      display: flex;
+      width: 100%;
+      height: 100px;
+      background-color: lightgray;
+    }
+    .elemento {
+      background-color: cornflowerblue;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .grow1 {
+      flex-grow: 1;
+    }
+    .grow2 {
+      flex-grow: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="elemento grow1">Grow 1</div>
+    <div class="elemento grow2">Grow 2</div>
+  </div>
+</body>
+</html>
+```
+
+En este ejemplo, el segundo elemento (`grow2`) crecerá el doble del espacio disponible en comparación con el primer elemento (`grow1`).
+
+**`flex-shrink`**
+
+**Definición:** La propiedad `flex-shrink` define la capacidad de un elemento flex para encogerse si es necesario para evitar que el contenedor flex desborde. Si el tamaño total de los elementos flex es mayor que el tamaño del contenedor, los elementos con un valor de `flex-shrink` mayor se encogerán más.
+
+**Sintaxis:**
+```css
+.elemento {
+  flex-shrink: 1; /* El valor puede ser cualquier número no negativo */
+}
+```
+
+**Ejemplo Práctico:**
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de flex-shrink</title>
+  <style>
+    .contenedor {
+      display: flex;
+      width: 300px;
+      height: 100px;
+      background-color: lightgray;
+    }
+    .elemento {
+      background-color: cornflowerblue;
+      color: white;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    .shrink1 {
+      flex-shrink: 1;
+    }
+    .shrink2 {
+      flex-shrink: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="elemento shrink1">Shrink 1</div>
+    <div class="elemento shrink2">Shrink 2</div>
+  </div>
+</body>
+</html>
+```
+
+En este ejemplo, cuando el contenedor no tiene suficiente espacio para ambos elementos, el segundo elemento (`shrink2`) se encogerá el doble del primer elemento (`shrink1`).
+
+**`flex-basis`**
+
+**Definición:** La propiedad `flex-basis` define la base del tamaño de un elemento flex antes de que se aplique el espacio disponible según `flex-grow` y `flex-shrink`. Es similar a `width` pero en el contexto de Flexbox.
+
+**Sintaxis:**
+```css
+.elemento {
+  flex-basis: 200px; /* El valor puede ser cualquier longitud, porcentaje, o auto */
+}
+```
+
+**Ejemplo Práctico:**
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de flex-basis</title>
+  <style>
+    .contenedor {
+      display: flex;
+      width: 600px;
+      height: 100px;
+      background-color: lightgray;
+    }
+    .elemento {
+      background-color: cornflowerblue;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .basis100 {
+      flex-basis: 100px;
+    }
+    .basis200 {
+      flex-basis: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="elemento basis100">Basis 100px</div>
+    <div class="elemento basis200">Basis 200px</div>
+  </div>
+</body>
+</html>
+```
+
+En este ejemplo, el primer elemento (`basis100`) tendrá una base de 100 píxeles, y el segundo (`basis200`) tendrá una base de 200 píxeles antes de aplicar `flex-grow` o `flex-shrink`.
+
+**`flex`**
+
+**Definición:** La propiedad `flex` es una abreviación para `flex-grow`, `flex-shrink` y `flex-basis`. Permite configurar los tres valores en una sola línea.
+
+**Sintaxis:**
+```css
+.elemento {
+  flex: 1 1 200px; /* flex-grow flex-shrink flex-basis */
+}
+```
+
+**Ejemplo Práctico:**
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de flex</title>
+  <style>
+    .contenedor {
+      display: flex;
+      width: 600px;
+      height: 100px;
+      background-color: lightgray;
+    }
+    .elemento {
+      background-color: cornflowerblue;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .flex1 {
+      flex: 1 1 100px; /* flex-grow: 1, flex-shrink: 1, flex-basis: 100px */
+    }
+    .flex2 {
+      flex: 2 1 200px; /* flex-grow: 2, flex-shrink: 1, flex-basis: 200px */
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="elemento flex1">Flex 1 1 100px</div>
+    <div class="elemento flex2">Flex 2 1 200px</div>
+  </div>
+</body>
+</html>
+```
+
+En este ejemplo, el primer elemento (`flex1`) tendrá un `flex-grow` de 1, `flex-shrink` de 1, y `flex-basis` de 100 píxeles. El segundo (`flex2`) tendrá un `flex-grow` de 2, `flex-shrink` de 1, y `flex-basis` de 200 píxeles. El segundo elemento crecerá dos veces más rápido que el primero si hay espacio adicional disponible.
+
+
+
+Aquí tienes una explicación detallada sobre `justify-content`, `align-content` y `align-items` en Flexbox, junto con ejemplos prácticos:
+
 
 ---
 ## Resumen
