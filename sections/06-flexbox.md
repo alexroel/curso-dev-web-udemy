@@ -1,15 +1,14 @@
-# Posicionamiento y Flexbox
+# CSS Flexbox 
 
 1. [Introducción]
 2. [Introducción de flexbox](#introducción-de-flexbox)
 3. [Dirección de los elementos flexibles](#dirección-de-los-elementos-flexibles)
-4. [Flujo de Escritura](#flujo-de-escritura)
-5. [Envolvimiento de los Elementos Flexibles](#envolvimiento-de-los-elementos-flexibles)
-6. [Flujo Combinado](#flujo-combinado)
-7. [Alineamientos en el contenedor](#alineamientos-en-el-contenedor)
-8. [Alineamientos en los elementos](#alineamientos-en-los-elementos)
-9. [Control de Espacio de los Elementos](#control-de-espacio-de-los-elementos)
-10. [Resumen](#resumen)
+4. [Envolvimiento de los Elementos Flexibles](#envolvimiento-de-los-elementos-flexibles)
+5. [Flujo Combinado](#flujo-combinado)
+6. [Alineamientos en el contenedor](#alineamientos-en-el-contenedor)
+7. [Alineamientos en los elementos](#alineamientos-en-los-elementos)
+8. [Control de Espacio de los Elementos](#control-de-espacio-de-los-elementos)
+9. [Resumen](#resumen)
 
 ---
 ## Introducción
@@ -211,111 +210,6 @@ Aquí tienes un ejemplo completo con un poco de estilo adicional para ver mejor 
 Este código HTML y CSS demostrará los diferentes efectos de la propiedad `flex-direction` sobre los elementos flexibles. Puedes copiar y pegar este código en un archivo HTML y abrirlo en tu navegador para ver los resultados.
 
 Espero que esta explicación te haya sido útil. Si tienes más preguntas o necesitas más detalles, no dudes en preguntar.
-
----
-## Flujo de Escritura
-
-El flujo de escritura (writing flow) en CSS se refiere a la dirección en la que el contenido de un documento se dispone en la pantalla. Esto es especialmente importante para soportar diferentes lenguajes y sistemas de escritura. La propiedad `writing-mode` de CSS nos permite controlar esta dirección.
-
-**`writing-mode`**
-
-La propiedad `writing-mode` define la dirección en la que se escribe el contenido de un contenedor. Es crucial para ajustar el diseño de textos en lenguajes que no usan el flujo de izquierda a derecha y de arriba a abajo (como el inglés). 
-
-**Definición y Valores**
-
-Los valores de `writing-mode` son:
-
-1. **`horizontal-tb`**: 
-   - **Definición**: Es el valor por defecto. El texto se dispone horizontalmente de izquierda a derecha y de arriba a abajo.
-   - **Ejemplo**: Este es el modo que se usa para la mayoría de los lenguajes que utilizan el alfabeto latino.
-
-2. **`vertical-rl`**: 
-   - **Definición**: El texto se dispone verticalmente de arriba a abajo y de derecha a izquierda.
-   - **Ejemplo**: Es común en algunos lenguajes asiáticos como el japonés y el chino tradicional.
-
-3. **`vertical-lr`**: 
-   - **Definición**: El texto se dispone verticalmente de arriba a abajo y de izquierda a derecha.
-   - **Ejemplo**: Es menos común, pero puede ser útil en ciertos contextos donde el diseño requiere esta disposición.
-
-4. **`sideways-rl`**:
-   - **Definición**: El texto se dispone de manera horizontal, pero se gira 90 grados en sentido contrario a las agujas del reloj.
-   - **Ejemplo**: Esto es útil para títulos de columnas o ciertas presentaciones artísticas de texto.
-
-5. **`sideways-lr`**:
-   - **Definición**: El texto se dispone de manera horizontal, pero se gira 90 grados en sentido de las agujas del reloj.
-   - **Ejemplo**: Similar a `sideways-rl`, pero con la rotación en la dirección opuesta.
-
-**Ejemplo**
-
-Aquí tienes un ejemplo práctico que demuestra cómo usar `writing-mode`:
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de writing-mode</title>
-    <style>
-        .horizontal-tb {
-            writing-mode: horizontal-tb;
-            border: 1px solid black;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-        
-        .vertical-rl {
-            writing-mode: vertical-rl;
-            border: 1px solid black;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-        
-        .vertical-lr {
-            writing-mode: vertical-lr;
-            border: 1px solid black;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-        
-        .sideways-rl {
-            writing-mode: sideways-rl;
-            border: 1px solid black;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-        
-        .sideways-lr {
-            writing-mode: sideways-lr;
-            border: 1px solid black;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="horizontal-tb">
-        Este es un texto con writing-mode: horizontal-tb. (Predeterminado)
-    </div>
-    <div class="vertical-rl">
-        Este es un texto con writing-mode: vertical-rl. (De arriba a abajo y de derecha a izquierda)
-    </div>
-    <div class="vertical-lr">
-        Este es un texto con writing-mode: vertical-lr. (De arriba a abajo y de izquierda a derecha)
-    </div>
-    <div class="sideways-rl">
-        Este es un texto con writing-mode: sideways-rl. (Girado 90 grados en sentido contrario a las agujas del reloj)
-    </div>
-    <div class="sideways-lr">
-        Este es un texto con writing-mode: sideways-lr. (Girado 90 grados en el sentido de las agujas del reloj)
-    </div>
-</body>
-</html>
-```
-
-En este ejemplo, cada `div` utiliza un valor diferente de `writing-mode`, demostrando cómo cambia la dirección en la que se dispone el texto. Puedes copiar este código en un archivo HTML y abrirlo en un navegador para ver el efecto de cada valor de `writing-mode`.
-
-Espero que esta explicación te sea útil para comprender mejor el flujo de escritura y la propiedad `writing-mode` en CSS. Si tienes alguna otra pregunta o necesitas más ejemplos, no dudes en decírmelo.
 
 ---
 ## Envolvimiento de los Elementos Flexibles

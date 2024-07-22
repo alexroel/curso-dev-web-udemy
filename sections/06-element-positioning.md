@@ -1,12 +1,13 @@
 # Posicionamiento de elementos
 
 1. [Introducción](#introducción)
-2. [Variables en CSS](#variables-en-css)
-3. [Flotación en CSS](#flotación-en-css)
+2. [Variables](#variables-en-css)
+3. [Flotación](#flotación-en-css)
 4. [Desbordamiento](#desbordamiento)
-5. [Posicionamiento](#posicionamiento)
-6. [Orden de apilamiento(z-index)](#orden-de-apilamientoz-index)
-7. [Resumen](#resumen)
+5. [Flujo de Escritura](#flujo-de-escritura)
+6. [Posicionamiento](#posicionamiento)
+7. [Orden de apilamiento(z-index)](#orden-de-apilamientoz-index)
+8. [Resumen](#resumen)
 
 ---
 ## Introducción
@@ -403,6 +404,111 @@ En muchos casos, es necesario combinar ambas propiedades para lograr un control 
 **Conclusión**
 
 El manejo adecuado del desbordamiento es esencial para asegurar que los diseños web sean tanto funcionales como estéticamente agradables. Las propiedades `overflow` y `text-overflow` de CSS ofrecen herramientas potentes para controlar cómo se presenta el contenido desbordado, permitiendo a los desarrolladores crear interfaces de usuario más limpias y fáciles de usar.
+
+---
+## Flujo de Escritura
+
+El flujo de escritura (writing flow) en CSS se refiere a la dirección en la que el contenido de un documento se dispone en la pantalla. Esto es especialmente importante para soportar diferentes lenguajes y sistemas de escritura. La propiedad `writing-mode` de CSS nos permite controlar esta dirección.
+
+**`writing-mode`**
+
+La propiedad `writing-mode` define la dirección en la que se escribe el contenido de un contenedor. Es crucial para ajustar el diseño de textos en lenguajes que no usan el flujo de izquierda a derecha y de arriba a abajo (como el inglés). 
+
+**Definición y Valores**
+
+Los valores de `writing-mode` son:
+
+1. **`horizontal-tb`**: 
+   - **Definición**: Es el valor por defecto. El texto se dispone horizontalmente de izquierda a derecha y de arriba a abajo.
+   - **Ejemplo**: Este es el modo que se usa para la mayoría de los lenguajes que utilizan el alfabeto latino.
+
+2. **`vertical-rl`**: 
+   - **Definición**: El texto se dispone verticalmente de arriba a abajo y de derecha a izquierda.
+   - **Ejemplo**: Es común en algunos lenguajes asiáticos como el japonés y el chino tradicional.
+
+3. **`vertical-lr`**: 
+   - **Definición**: El texto se dispone verticalmente de arriba a abajo y de izquierda a derecha.
+   - **Ejemplo**: Es menos común, pero puede ser útil en ciertos contextos donde el diseño requiere esta disposición.
+
+4. **`sideways-rl`**:
+   - **Definición**: El texto se dispone de manera horizontal, pero se gira 90 grados en sentido contrario a las agujas del reloj.
+   - **Ejemplo**: Esto es útil para títulos de columnas o ciertas presentaciones artísticas de texto.
+
+5. **`sideways-lr`**:
+   - **Definición**: El texto se dispone de manera horizontal, pero se gira 90 grados en sentido de las agujas del reloj.
+   - **Ejemplo**: Similar a `sideways-rl`, pero con la rotación en la dirección opuesta.
+
+**Ejemplo**
+
+Aquí tienes un ejemplo práctico que demuestra cómo usar `writing-mode`:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de writing-mode</title>
+    <style>
+        .horizontal-tb {
+            writing-mode: horizontal-tb;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        .vertical-rl {
+            writing-mode: vertical-rl;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        .vertical-lr {
+            writing-mode: vertical-lr;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        .sideways-rl {
+            writing-mode: sideways-rl;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        .sideways-lr {
+            writing-mode: sideways-lr;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="horizontal-tb">
+        Este es un texto con writing-mode: horizontal-tb. (Predeterminado)
+    </div>
+    <div class="vertical-rl">
+        Este es un texto con writing-mode: vertical-rl. (De arriba a abajo y de derecha a izquierda)
+    </div>
+    <div class="vertical-lr">
+        Este es un texto con writing-mode: vertical-lr. (De arriba a abajo y de izquierda a derecha)
+    </div>
+    <div class="sideways-rl">
+        Este es un texto con writing-mode: sideways-rl. (Girado 90 grados en sentido contrario a las agujas del reloj)
+    </div>
+    <div class="sideways-lr">
+        Este es un texto con writing-mode: sideways-lr. (Girado 90 grados en el sentido de las agujas del reloj)
+    </div>
+</body>
+</html>
+```
+
+En este ejemplo, cada `div` utiliza un valor diferente de `writing-mode`, demostrando cómo cambia la dirección en la que se dispone el texto. Puedes copiar este código en un archivo HTML y abrirlo en un navegador para ver el efecto de cada valor de `writing-mode`.
+
+Espero que esta explicación te sea útil para comprender mejor el flujo de escritura y la propiedad `writing-mode` en CSS. Si tienes alguna otra pregunta o necesitas más ejemplos, no dudes en decírmelo.
 
 ---
 ## Posicionamiento
