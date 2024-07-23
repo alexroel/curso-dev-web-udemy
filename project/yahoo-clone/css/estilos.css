@@ -1,0 +1,174 @@
+:root{
+    --color-negro: #232a31;
+    --color-azul: #1A0dab;
+    --color-gris: #525252;
+    --color-gris-5b: #5252525b;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+header{
+    height: 60px;
+    width: 100%;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav{
+    display: flex;
+    column-gap: 20px;
+}
+
+header nav a{
+    display: inline-block;
+}
+
+/* Contenido principal
+=================================*/
+main{
+    text-align: center;
+    width: 600px;
+    align-self: center;
+}
+
+main .header h2{
+    font-weight: normal;
+    font-size: 40px;
+    color: var(--color-negro);
+    margin-bottom: 15px;
+}
+
+main .header p{
+    color: var(--color-negro);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+main .header a{
+    color: var(--color-azul);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+main .buscador label{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    column-gap: 15px;
+
+    padding: 10px 15px;
+    border: 1px solid var(--color-gris-5b);
+    box-shadow: 0 1px 1px var(--color-gris-5b);
+    border-radius: 100px;
+}
+
+main .buscador label:hover{
+    box-shadow: 0 1px 3px var(--color-gris-5b);
+}
+
+main .buscador label input{
+    flex: 1;
+    border: none;
+    font-size: 18px;
+    color: var(--color-gris);
+    border-right: 1px solid var(--color-gris-5b);
+}
+
+main .buscador label input:focus{
+    outline: none;
+}
+
+/* Tendencias
+=================================*/
+
+main .tendencias{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    text-align: start;
+}
+
+main .tendencias-contenido{
+    padding: 16px;
+    border: 1px solid var(--color-gris-5b);
+    border-radius: 8px;
+}
+
+main .tendencias-contenido h3{
+    font-weight: normal;
+    color: var(--color-negro);
+}
+
+main .tendencias-contenido ol{
+    padding-left: 25px;
+    margin-top: 20px;
+    height: 200px;
+    width: 442px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+main .tendencias-contenido a{
+    display: inline-block;
+    width: 180px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    color: var(--color-azul);
+}
+
+main .tendencias-contenido a:hover{
+    text-decoration: underline;
+}
+
+/* Footer
+=================================*/
+footer{
+    border-top: 1px solid var(--color-gris-5b);
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul{
+    list-style: none;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .ajustes{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer a{
+    color: var(--color-gris);
+    font-size: 14px;
+}
+
+footer a:hover{
+    color: var(--color-azul);
+}
+
