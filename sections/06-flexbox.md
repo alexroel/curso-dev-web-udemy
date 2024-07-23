@@ -1,20 +1,16 @@
 # CSS Flexbox 
 
 1. [Introducción]
-2. [Introducción de flexbox](#introducción-de-flexbox)
-3. [Dirección de los elementos flexibles](#dirección-de-los-elementos-flexibles)
-4. [Envolvimiento de los Elementos Flexibles](#envolvimiento-de-los-elementos-flexibles)
-5. [Flujo Combinado](#flujo-combinado)
-6. [Alineamientos en el contenedor](#alineamientos-en-el-contenedor)
-7. [Alineamientos en los elementos](#alineamientos-en-los-elementos)
-8. [Control de Espacio de los Elementos](#control-de-espacio-de-los-elementos)
-9. [Resumen](#resumen)
+2. [Definición y Propósito](#definición-y-propósito)
+3. [Flujo Combinado](#flujo-combinado)
+4. [Alineamientos en el contenedor](#alineamientos-en-el-contenedor)
+5. [Alineamientos en los elementos](#alineamientos-en-los-elementos)
+6. [Control de Espacio de los Elementos](#control-de-espacio-de-los-elementos)
+7. [Resumen](#resumen)
 
 ---
 ## Introducción
-## Introducción de flexbox
-
-**Definición y Propósito**
+## Definición y Propósito
 
 **Flexbox** (o **Flexible Box Layout**) es un modelo de diseño de CSS que permite la creación de layouts más eficientes y flexibles. Su principal objetivo es distribuir espacio a lo largo de un contenedor y alinear los elementos dentro de este de una manera que responda a los diferentes tamaños de pantalla y dispositivos.
 
@@ -82,8 +78,7 @@ En este ejemplo:
 
 Este es un ejemplo básico de cómo se puede utilizar Flexbox para crear un diseño flexible y adaptable. Hay muchas más propiedades y técnicas disponibles en Flexbox para controlar la alineación, el orden, el tamaño y la dirección de los elementos, lo que hace que sea una herramienta muy poderosa para el diseño web.
 
----
-## Dirección de los elementos flexibles
+**Dirección de los elementos flexibles**
 
 La propiedad `flex-direction` define la dirección en la que los elementos hijos de un contenedor flexible (`contenedor`) se organizan. Dependiendo del valor que se le asigne, los elementos se pueden disponer en una fila o columna, y esa disposición puede ser directa o inversa.
 
@@ -211,8 +206,7 @@ Este código HTML y CSS demostrará los diferentes efectos de la propiedad `flex
 
 Espero que esta explicación te haya sido útil. Si tienes más preguntas o necesitas más detalles, no dudes en preguntar.
 
----
-## Envolvimiento de los Elementos Flexibles
+**Envolvimiento de los Elementos Flexibles**
 
 Cuando trabajamos con flexbox, podemos controlar cómo se comportan los elementos flexibles cuando el contenedor no tiene suficiente espacio para acomodarlos en una sola línea. Esta propiedad es gestionada por la propiedad `flex-wrap`.
 
