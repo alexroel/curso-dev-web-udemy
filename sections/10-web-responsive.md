@@ -8,54 +8,12 @@
 7. [Snippet para Media Queries](#snippet-para-media-queries)
 8. [Tamaños Estándar para Media Queries](#tamaños-estándar-para-media-queries)
 9. [Obtimizar tu sitio web](#obtimizar-tu-sitio-web)
-10. [Snippet para AVIF y WebP](#snippet-para-avif-y-webp)
-11. [Obtimizar tu sitio web en aplicaciones moviles ](#obtimizar-tu-sitio-web-en-aplicaciones-moviles)
-12. [Resumen](#resumen)
+10. [Resumen](#resumen)
 
 
 
 
 ## Introducción
-
-### Introducción a HTML
-
-En esta sección de nuestro curso de desarrollo web, exploraremos los fundamentos de HTML (HyperText Markup Language) y su importancia en la creación de páginas web. HTML es el lenguaje estándar para estructurar y presentar contenido en la web, proporcionando la base sobre la cual se construyen todos los sitios y aplicaciones web. A medida que avancemos en este curso, aprenderás a utilizar HTML para crear y estructurar tus propios sitios web de manera efectiva.
-
-**¿Qué es Responsive Web Design?**
-
-El Responsive Web Design (RWD) es una técnica de diseño web que garantiza que los sitios web se vean y funcionen bien en una amplia variedad de dispositivos y tamaños de pantalla. A través de RWD, los desarrolladores pueden crear páginas web que se adapten automáticamente al entorno del usuario, proporcionando una experiencia de usuario óptima sin importar si se accede desde un teléfono móvil, una tableta o una computadora de escritorio.
-
-**¿Qué es Mobile First y Desktop First?**
-
-"Mobile First" y "Desktop First" son enfoques diferentes para el diseño web responsivo. "Mobile First" implica diseñar primero para dispositivos móviles y luego escalar hacia arriba para pantallas más grandes. Este enfoque asegura que el contenido y la funcionalidad esenciales estén optimizados para usuarios móviles. Por otro lado, "Desktop First" comienza con el diseño para pantallas grandes y luego se ajusta hacia abajo para dispositivos más pequeños. Ambos enfoques tienen sus propias ventajas y desafíos, y elegir entre ellos dependerá de las necesidades específicas de tu proyecto.
-
-**Herramientas para Probar tu Diseño Responsivo**
-
-Existen diversas herramientas que puedes utilizar para probar la responsividad de tu diseño web. Las herramientas de desarrollo del navegador, como las de Google Chrome y Firefox, permiten simular diferentes dispositivos y tamaños de pantalla, facilitando la detección y solución de problemas. Además, plataformas como BrowserStack y Responsinator ofrecen pruebas en una variedad de dispositivos reales y emulados, asegurando que tu sitio web funcione correctamente en todas las condiciones posibles.
-
-**Creando Media Queries**
-
-Las Media Queries son una característica clave del CSS que permite aplicar estilos específicos en función de las características del dispositivo, como el ancho de la pantalla. Aprenderemos a crear Media Queries para diseñar páginas web que se adapten a diferentes resoluciones y orientaciones, asegurando que tu contenido se presente de manera óptima en cualquier dispositivo.
-
-**Snippet para Media Queries**
-
-Proporcionaremos ejemplos de snippets de código para Media Queries, que podrás utilizar y adaptar a tus propios proyectos. Estos snippets te ayudarán a implementar rápidamente estilos responsivos, mejorando la eficiencia y consistencia de tu diseño web.
-
-**Tamaños Estándar para Media Queries**
-
-Exploraremos los tamaños de pantalla más comunes y cómo utilizarlos en tus Media Queries. Conocer estos estándares te permitirá diseñar de manera más efectiva para los dispositivos más utilizados por los usuarios, optimizando la experiencia de usuario en todos los contextos.
-
-**Optimizar tu Sitio Web**
-
-La optimización de tu sitio web es crucial para garantizar una carga rápida y un rendimiento eficiente. Aprenderemos técnicas y mejores prácticas para optimizar imágenes, scripts y otros recursos, reduciendo el tiempo de carga y mejorando la experiencia del usuario.
-
-**Snippet para AVIF y WebP**
-
-AVIF y WebP son formatos de imagen modernos que ofrecen mejor compresión y calidad en comparación con los formatos tradicionales como JPEG y PNG. Proporcionaremos snippets de código para implementar estos formatos en tu sitio web, mejorando la velocidad de carga y la calidad visual.
-
-**Optimizar tu Sitio Web en Aplicaciones Móviles**
-
-Finalmente, exploraremos técnicas específicas para optimizar tu sitio web en aplicaciones móviles. Desde la implementación de Progressive Web Apps (PWA) hasta la optimización de la interfaz de usuario y la experiencia del usuario, aprenderás a crear aplicaciones móviles que sean rápidas, responsivas y atractivas.
 
 ## ¿Qué es Responsive Web Design?
 
@@ -539,7 +497,7 @@ La etiqueta `<picture>` junto con `<source>` permite especificar múltiples fuen
 - `<source type="image/webp" srcset="imagen.webp">`: Proporciona una imagen en formato WebP como alternativa para navegadores que no soportan AVIF.
 - `<img src="imagen.jpg" alt="Descripción de la imagen">`: Especifica una imagen en formato JPG como último recurso para navegadores que no soportan ni AVIF ni WebP.
 
-## Snippet para AVIF y WebP
+**Snippet para las imágenes**
 
 En el desarrollo web moderno, la optimización de imágenes es esencial para mejorar el rendimiento y la experiencia del usuario. Los formatos AVIF y WebP ofrecen una excelente calidad de imagen con tamaños de archivo más pequeños, ideales para reducir el tiempo de carga de páginas web. Este artículo explora cómo crear un snippet personalizado para HTML que permita la inclusión de imágenes en formatos AVIF, WebP y JPG, optimizando así la entrega de contenido visual adaptativo.
 
@@ -632,167 +590,6 @@ El siguiente código HTML utiliza la etiqueta `<picture>` para proporcionar vari
    <img loading="lazy" decoding="async" src="img/.jpg" alt="" width="500" height="300">
 </picture>
 ```
-
-**Explicación Detallada:**
-
-#### 1. `<picture>`:
-La etiqueta `<picture>` es un contenedor que permite especificar múltiples fuentes de imagen para diferentes condiciones. Esto ayuda a cargar la mejor versión de la imagen según el navegador y el dispositivo del usuario.
-
-#### 2. `<source>`:
-Cada etiqueta `<source>` dentro del `<picture>` define una fuente de imagen alternativa. Las fuentes se especifican en orden de prioridad, de modo que la primera fuente compatible será la que el navegador utilice.
-
-##### Primer `<source>`:
-```html
-<source
-   sizes="(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px"
-   srcset="img/.avif 640w, img/.avif 1280w, img/.avif 1920w"
-   type="image/avif">
-```
-- **`sizes`**: Define las condiciones de visualización y el tamaño de la imagen que debe usarse. En este caso, si el ancho máximo de la ventana es de 640px, se usará una imagen de 640px; si el ancho máximo es de 1280px, se usará una imagen de 1280px; de lo contrario, se usará una imagen de 1920px.
-- **`srcset`**: Proporciona una lista de URLs de la imagen en diferentes resoluciones, seguidas por el ancho correspondiente. Aquí se indican tres versiones de la imagen en formato AVIF: 640px, 1280px, y 1920px.
-- **`type="image/avif"`**: Especifica que este `<source>` es para imágenes en formato AVIF.
-
-##### Segundo `<source>`:
-```html
-<source
-   sizes="(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px"
-   srcset="img/.webp 640w, img/.webp 1280w, img/.webp 1920w"
-   type="image/webp">
-```
-- **`sizes`**: Igual que el primer `<source>`, define las condiciones de visualización y el tamaño de la imagen.
-- **`srcset`**: Proporciona URLs de la imagen en formato WebP en diferentes resoluciones.
-- **`type="image/webp"`**: Especifica que este `<source>` es para imágenes en formato WebP.
-
-##### Tercer `<source>`:
-```html
-<source
-   sizes="(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px"
-   srcset="img/.jpg 640w, img/.jpg 1280w, img/.jpg 1920w"
-   type="image/jpeg">
-```
-- **`sizes`**: Igual que los `<source>` anteriores, define las condiciones de visualización y el tamaño de la imagen.
-- **`srcset`**: Proporciona URLs de la imagen en formato JPEG en diferentes resoluciones.
-- **`type="image/jpeg"`**: Especifica que este `<source>` es para imágenes en formato JPEG.
-
-#### 3. `<img>`:
-```html
-<img loading="lazy" decoding="async" src="img/.jpg" alt="" width="500" height="300">
-```
-- **`loading="lazy"`**: Indica que la imagen debe cargarse de forma diferida (lazy loading), es decir, solo cuando está a punto de entrar en el viewport. Esto mejora el rendimiento de la página.
-- **`decoding="async"`**: Permite que la imagen se decodifique de forma asíncrona, lo que puede mejorar el rendimiento de la página.
-- **`src="img/.jpg"`**: Especifica la URL de la imagen en formato JPEG. Esta es la imagen predeterminada que se cargará si el navegador no soporta los formatos AVIF o WebP especificados en las fuentes anteriores.
-- **`alt=""`**: Proporciona un texto alternativo para la imagen. Aunque está vacío en este caso, generalmente se usa para mejorar la accesibilidad.
-- **`width="500" height="300"`**: Especifica el ancho y la altura de la imagen, lo que ayuda a reservar el espacio adecuado en el diseño de la página mientras la imagen se carga.
-
-Este snippet está diseñado para insertar un elemento `<picture>` en HTML que contiene múltiples fuentes de imagen en diferentes formatos (AVIF, WebP y JPEG) y resoluciones, optimizando la carga y el rendimiento de las imágenes en la web. Vamos a desglosar cada línea del código:
-
-```json
-"images2": {
-  "prefix": "pic",
-  "body": [
-    "<picture>",
-    "\t<source",
-    "\t\tsizes=\"(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px\"",
-    "\t\tsrcset=\"img/$1.avif 640w, img/$2.avif 1280w, img/$3.avif 1920w\"",
-    "\t\ttype=\"image/avif\">",
-    "\t<source",
-    "\t\tsizes=\"(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px\"",
-    "\t\tsrcset=\"img/$4.webp 640w, img/$5.webp 1280w, img/$6.webp 1920w\"",
-    "\t\ttype=\"image/webp\">",
-    "\t<source",
-    "\t\tsizes=\"(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px\"",
-    "\t\tsrcset=\"img/$7.jpg 640w, img/$8.jpg 1280w, img/$9.jpg 1920w\"",
-    "\t\ttype=\"image/jpeg\">",
-    "\t<img loading=\"lazy\" decoding=\"async\" src=\"img/$10.jpg\" alt=\"$11\" width=\"500\" height=\"300\">",
-    "</picture>"
-  ],
-  "description": "Snippet para insertar imágenes en formatos AVIF, WebP y JPG con diferentes resoluciones y lazy loading"
-}
-```
-
-**Explicación**
-
-1. **"images2": {**
-   - Define el nombre del snippet, en este caso "images2", que se usará para identificar el snippet en Visual Studio Code.
-
-2. **"prefix": "pic",**
-   - Establece el prefijo que se usará para activar el snippet. Al escribir "pic" y presionar `Tab`, el snippet se expandirá.
-
-3. **"body": [**
-   - Comienza la definición del cuerpo del snippet. Cada elemento del array representa una línea del código que se generará.
-
-4. **"<picture>",**
-   - Inicia el elemento `<picture>`, que permite definir múltiples fuentes de imagen para diferentes formatos y resoluciones.
-
-5. **"\t<source",**
-   - Inicia la definición de una fuente `<source>` para la imagen en formato AVIF. La tabulación `\t` se usa para mantener el código indentado y organizado.
-
-6. **"\t\tsizes=\"(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px\"",**
-   - Define los tamaños que ocupará la imagen en diferentes tamaños de pantalla usando unidades relativas:
-     - `(max-width: 640px) 640px`: Usa 640px si la pantalla tiene un ancho máximo de 640px.
-     - `(max-width: 1280px) 1280px`: Usa 1280px si la pantalla tiene un ancho máximo de 1280px.
-     - `1920px`: Usa 1920px para pantallas más anchas.
-
-7. **"\t\tsrcset=\"img/$1.avif 640w, img/$2.avif 1280w, img/$3.avif 1920w\"",**
-   - Define las rutas y resoluciones de las imágenes en formato AVIF:
-     - `img/$1.avif 640w`: Imagen en AVIF de 640px de ancho.
-     - `img/$2.avif 1280w`: Imagen en AVIF de 1280px de ancho.
-     - `img/$3.avif 1920w`: Imagen en AVIF de 1920px de ancho.
-
-8. **"\t\ttype=\"image/avif\">",**
-   - Especifica que la fuente es un archivo AVIF.
-
-9. **"\t<source",**
-   - Inicia la definición de una fuente `<source>` para la imagen en formato WebP.
-
-10. **"\t\tsizes=\"(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px\"",**
-    - Define los tamaños que ocupará la imagen en diferentes tamaños de pantalla para el formato WebP.
-
-11. **"\t\tsrcset=\"img/$4.webp 640w, img/$5.webp 1280w, img/$6.webp 1920w\"",**
-    - Define las rutas y resoluciones de las imágenes en formato WebP:
-      - `img/$4.webp 640w`: Imagen en WebP de 640px de ancho.
-      - `img/$5.webp 1280w`: Imagen en WebP de 1280px de ancho.
-      - `img/$6.webp 1920w`: Imagen en WebP de 1920px de ancho.
-
-12. **"\t\ttype=\"image/webp\">",**
-    - Especifica que la fuente es un archivo WebP.
-
-13. **"\t<source",**
-    - Inicia la definición de una fuente `<source>` para la imagen en formato JPEG.
-
-14. **"\t\tsizes=\"(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px\"",**
-    - Define los tamaños que ocupará la imagen en diferentes tamaños de pantalla para el formato JPEG.
-
-15. **"\t\tsrcset=\"img/$7.jpg 640w, img/$8.jpg 1280w, img/$9.jpg 1920w\"",**
-    - Define las rutas y resoluciones de las imágenes en formato JPEG:
-      - `img/$7.jpg 640w`: Imagen en JPEG de 640px de ancho.
-      - `img/$8.jpg 1280w`: Imagen en JPEG de 1280px de ancho.
-      - `img/$9.jpg 1920w`: Imagen en JPEG de 1920px de ancho.
-
-16. **"\t\ttype=\"image/jpeg\">",**
-    - Especifica que la fuente es un archivo JPEG.
-
-17. **"\t<img loading=\"lazy\" decoding=\"async\" src=\"img/$10.jpg\" alt=\"$11\" width=\"500\" height=\"300\">",**
-    - Define la etiqueta `<img>` con las siguientes propiedades:
-      - `loading=\"lazy\"`: Indica que la imagen debe cargarse de manera perezosa (lazy loading), es decir, solo cuando esté a punto de entrar en el viewport.
-      - `decoding=\"async\"`: Permite que la imagen se decodifique de manera asíncrona para mejorar el rendimiento.
-      - `src=\"img/$10.jpg\"`: Especifica la ruta de la imagen por defecto en formato JPEG.
-      - `alt=\"$11\"`: Proporciona texto alternativo para la imagen, que es importante para la accesibilidad.
-      - `width=\"500\" height=\"300\"`: Especifica el tamaño de la imagen para evitar el salto de contenido durante la carga.
-
-18. **"</picture>"**
-    - Cierra el elemento `<picture>`.
-
-19. **"description": "Snippet para insertar imágenes en formatos AVIF, WebP y JPG con diferentes resoluciones y lazy loading"**
-    - Proporciona una descripción del snippet para que los usuarios sepan qué hace y cómo se utiliza.
-
-**Beneficios del Snippet**
-
-- **Eficiencia**: Permite la rápida inserción de una estructura `<picture>` completa con soporte para múltiples formatos y resoluciones.
-- **Compatibilidad**: Asegura que las imágenes se rendericen correctamente en navegadores modernos y antiguos, proporcionando alternativas de alta calidad.
-- **Optimización del Rendimiento**: Implementa lazy loading y carga asíncrona de imágenes, mejorando el tiempo de carga de la página y la experiencia del usuario.
-
-Utiliza este snippet en tu editor de código para incorporar fácilmente imágenes responsive y optimizadas en tus proyectos web.
 
 ## Resumen
 

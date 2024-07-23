@@ -1,11 +1,11 @@
 # Fundamentos de BEM
 
 1. [Introducción](#introducción)
-1. [Introducción a BEM ](#introducción-a-bem)
-1. [Nomenclatura BEM](#nomenclatura-bem)
-1. [Conceptos de BEM](#conceptos-de-bem)
-1. [Estructura de un Proyecto BEM](#estructura-de-un-proyecto-bem)
-1. [Resumen](#resumen)
+2. [Introducción a BEM ](#introducción-a-bem)
+3. [Nomenclatura BEM](#nomenclatura-bem)
+4. [Conceptos de BEM](#conceptos-de-bem)
+5. [Estructura de un Proyecto BEM](#estructura-de-un-proyecto-bem)
+6. [Resumen](#resumen)
 
 
 ## Introducción
