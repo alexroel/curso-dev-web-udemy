@@ -28,6 +28,79 @@ body {
     color: #ffffff;
 }
 
+
+
+/* Layot de contedor principal
+=================================*/
+main{
+    padding: 1rem;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+    "proyectos clientes experiencia testimonios testimonios trabajo"
+    "informacion informacion informacion testimonios testimonios trabajo"
+    "informacion informacion informacion redes correo correo"
+    "mis-clientes mis-clientes mis-clientes redes correo correo";
+    
+    gap: 2rem;
+}
+
+.proyectos,
+.clientes,
+.experiencia,
+.informacion,
+.mis-clientes,
+.testimonios,
+.trabajo,
+.redes,
+.correo{
+    background-color: var(--color-principal);
+    color: var(--color-gris);
+    border-radius: 1.5rem;
+}
+
+.proyectos{
+    grid-area: proyectos;
+}
+
+.clientes{
+    grid-area: clientes;
+}
+
+.experiencia{
+    grid-area: experiencia;
+}
+
+.informacion{
+    grid-area: informacion;
+}
+
+.mis-clientes{
+    grid-area: mis-clientes;
+}
+
+.testimonios{
+    grid-area: testimonios;
+}
+
+.trabajo{
+    grid-area: trabajo;
+}
+
+.redes{
+    grid-area: redes;
+}
+
+.correo{
+    grid-area: correo;
+}
+
+
+/* Utilidades
+=================================*/
 img {
     display: block;
 }
@@ -40,655 +113,305 @@ h3 {
     margin: 0.5rem 0;
 }
 
-.disenio-icon {
+.numero{
+    justify-self: center;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+i{
+    font-size: 3rem;
+    color: var(--color-morado);
+}
+
+.icon-gris{
+    color: var(--color-gris);
+}
+
+.icon-gris-bg{
+    background-color: var(--color-border-fondo);
+    border-radius: .3rem;
+    padding: .2rem;
+}
+
+.icon-gris-bg i{
+    color: var(--color-gris);
+}
+
+p{
+    margin: 0;
+}
+
+.text-bold,
+.text-normal{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-gris);
+    font-family: var(--tipografia);
+    margin: 0;
+}
+
+.text-normal{
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+span{
+    font-size: 3rem;
+    color: var(--color-morado);
+}
+
+.nombre{
     display: grid;
     grid-template-columns: repeat(2, max-content);
     column-gap: 1rem;
     place-content: center;
     border-radius: 1rem;
-    /*border: solid 0.1rem var(--colo-border);*/
     background-color: var(--color-secundario);
-    padding: 0.7rem;
+    padding: 1rem 1.5rem;
     align-items: center;
-    color: var(--color-morado);
-    margin: 0rem 0.1rem;
-
-    i {
-        font-size: 4rem;
-    }
-
-    p {
-        font-family: sans-serif;
-        color: var(--color-gris);
-        font-size: 1.7rem;
-        font-weight: 700;
-        margin: 0;
-    }
 }
 
-.border-fondo {
-    padding: .1rem 0.1rem;
-    border-radius: 0.5rem;
-    background-color: var(--color-border-fondo);
-}
-
-.titulo {
-    border-bottom: solid 0.2rem var(--color-border-fondo);
-    text-align: center;
-
-    .text-min {
-        margin-top: 1rem;
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        justify-content: center;
-        align-items: center;
-        i {
-            color: var(--color-morado);
-            font-size: 2.5rem;
-        }
-    }
-    p {
-        margin: 0;
-        font-size: 1.7rem;
-    }
-}
-
-/*==============================================================*/
-
-.contenedor-principal {
-    padding: 2rem;
-    width: 100vw;
-    height: 100vh;
+.header{
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /*16.6*/
-    /*grid-template-rows:  repeat(5, 1fr); /*13.4*/
-    grid-template-areas:
-        "hora minuto segundo testimonio testimonio trabajo"
-        "info info info testimonio testimonio trabajo"
-        "info info info baners email email"
-        "redes redes redes baners email email"
-        "redes redes redes baners email email";
-    gap: 2rem; /*1*/
-    /*place-content: center;*/
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 0;
 }
 
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-
-    .contenedor-principal {
-        display: grid;
-        grid-template-areas: unset;
-        grid-template-columns: 1fr;
-    }
+.header p{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    gap: .5rem;
 }
 
-/*==================================================================================================================LOGROS=============================================================================================================================*/
-
-.item {
-    background-color: var(--color-principal);
-    color: var(--color-gris);
-    border-radius: 1.5rem;
+.header p i{
+    font-size: 2rem;
 }
 
-.logros {
+.header h3{
+    font-size: 2rem;
+}
+
+
+/* Estilos de proyectos, clientes, experiencia
+==================================================*/
+.proyectos,
+.clientes,
+.experiencia{
     display: grid;
     align-content: center;
-    padding: 0 2.5rem;
-    padding-bottom: 1rem;
-
-    .disenio-icon{
-        border: solid 0.1rem var(--color-border-fondo);
-    }
-    .numero {
-        justify-self: center;
-        font-size: 6.5rem;
-        font-weight: 600;
-        p {
-            margin: 0;
-        }
-
-        span {
-            font-size: 5rem;
-            color: var(--color-morado);
-            font-weight: 800;
-        }
-    }
-
-    .contenido-logros {
-        i {
-            font-size: 3rem;
-        }
-        p {
-            font-family: var(--tipografia);
-            color: var(--color-gris);
-            font-weight: 600;
-            font-size: 1.8rem;
-            margin: 0;
-        }
-    }
+    padding: 0 2.5rem 1rem 2.5rem;
 }
 
-.proyectos {
-    grid-area: hora;
+.proyectos .nombre,
+.clientes .nombre,
+.experiencia .nombre{
+    border: .1rem solid var(--color-border-fondo);
 }
 
-.clientes {
-    grid-area: minuto;
-}
-
-.experiencia {
-    grid-area: segundo;
-}
-
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-
-    .tiempo {
-        width: max-content;
-        padding: 0;
-        .num {
-            p {
-                font-size: 4rem;
-            }
-            span {
-                font-size: 3rem;
-            }
-        }
-    }
-
-    .hora,
-    .minuto,
-    .segundo {
-        grid-area: unset;
-    }
-}
-
-/*================================================================================================================================================================================================INFORMACIÓN===============================================================================================================================*/
-
-.informacion {
-    grid-area: info;
+/* 
+=================================*/
+.informacion{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 3rem;
-
-    .info-personal {
-        grid-area: 1 / 1 / 2 / 3;
-        display: grid;
-        grid-template-columns: 14rem 2fr;
-        align-items: center;
-    }
-
-    .info-perfil {
-        p {
-            position: relative;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 3.4rem;
-        }
-    }
-
-    .img-perfil {
-        justify-self: center;
-        img {
-            border-radius: 1rem;
-            width: 10rem;
-            height: 10rem;
-        }
-    }
-
-    .disponible-trabajar {
-        width: max-content;
-        border-radius: 1rem;
-        padding: 0.6rem 0.9rem;
-        border: solid 0.1rem var(--color-border-fondo);
-        font-size: 1.7em;
-        font-weight: 600;
-        background-color: var(--color-fondo-secundario);
-    }
-
-    p {
-        font-size: 1.9rem;
-        margin: 0.5rem 0rem;
-    }
+    grid-template-columns: 2fr 1fr;
+    padding: 1rem;
 }
-.perfil-profesional {
-    grid-column: span 3;
+
+.informacion .perfil{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(max-content, 20rem));
-    gap: 1rem;
-    height: max-content;
+    grid-template-columns: 1fr 2fr;
+}
+
+.informacion .img-perfil{
+    /* justify-self: center;
+    align-self: center; */
+    place-self: center;
+}
+
+.informacion .img-perfil img{
+    border-radius: 1rem;
+}
+
+.informacion .disponibilidad{
+    display: grid;
+    place-content: center start;
+}
+
+.informacion .disponibilidad .text-bold{
+    border: .1rem solid var(--color-gris);
     background-color: var(--color-fondo-secundario);
     border-radius: 1rem;
-    padding: 1rem 0 3rem 1rem;
-    margin: 0rem 2rem;
-
-    .disenio-icon {
-        column-gap: 0.3rem;
-        padding: 0 rem;
-        i {
-            font-size: 2rem;
-        }
-        p {
-            font-weight: 400;
-        }
-    }
+    padding: .5rem 1rem;
 }
 
-.resumen {
-    place-self: start end;
-    margin: 1rem;
-    color: var(--color-gris);
-    background-color: var(--color-fondo-secundario);
-    .border{
-        padding: .6rem;
-    }
-
-    i {
-        font-size: 3rem;
-    }
+.informacion .disponibilidad .text-normal span{
+    font-size: 2rem;
 }
 
-.contacto {
-    grid-area: 3 / 1 / 4 / 4;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max-content, 40rem));
-    column-gap: 1rem;
-    justify-content: center;
-    height: max-content;
-    margin-bottom: 2rem;
-
-    .contacto-icon {
-        padding: 2rem 15rem;
-        background-color: var(--color-fondo-secundario);
-    }
-}
-
-.circulo {
+.informacion .disponibilidad .circulo{
+    font-size: 0;
     display: inline-block;
     width: 1rem;
     height: 1rem;
+    background-color: green;
     border-radius: 50%;
-    background-color: #6dd33d;
     margin-right: 1rem;
-
-    &::after {
-        content: "";
-        position: absolute;
-        width: 1rem;
-        height: 1rem;
-        top: 1.2rem;
-        left: 0.9rem;
-        bottom: 0;
-        right: 0;
-        background-color: #58913ead;
-        border-radius: 50%;
-        z-index: 1;
-
-        animation-name: pulse;
-        animation-duration: 2s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-    }
 }
 
-.text-animacion {
-    position: relative;
+.informacion .resumen{
+    place-self: start end;
+    background-color: var(--color-fondo-secundario);
 
-    &::before {
-        content: "Youtuber";
-        color: #ff7f50;
-        animation: words 20s infinite;
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        width: calc(100% + 8px);
-        height: 100%;
-        background-color: var(--color-principal);
-        border-left: 2px solid #ff7f50;
-        right: -8px;
-        animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
-    }
 }
 
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-    .info {
-        grid-area: unset;
-        display: unset;
-        .info-extra {
-            grid-template-columns: repeat(
-                auto-fill,
-                minmax(max-content, 11.5rem)
-            );
-        }
-    }
-
-    .contacto {
-        margin-top: 2rem;
-        .contacto-icon {
-            margin-bottom: 2rem;
-        }
-    }
-}
-/*================================================================================================================REDES===============================================================================================================================*/
-
-.referencias {
-    grid-area: redes;
-    background-color: var(--color-principal);
+.informacion .perfil-pro{
+    grid-column: 2 span;
+    background-color: var(--color-fondo-secundario);
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(auto-fill, minmax(max-content, 20rem)); */
+    place-content: start;
     padding: 1rem;
-    grid-template-areas:
-        "inf inf inf inf inf inf inf inf"
-        "youtube youtube twitter twitter facebook facebook discord discord"
-        ". spotify spotify linkedin linkedin instagram instagram .";
-
-    .info-referencias {
-        grid-area: inf;
-        h3 {
-            font-size: 2.5rem;
-        }
-
-        p {
-            font-size: 2rem;
-        }
-    }
-
-    .referencias-icon{
-        border: solid 0.1rem var(--color-border-fondo);
-        height: max-content;
-        i {
-            color: var(--color-gris);
-        }
-    }
-
-    .disenio-icon {
-        margin: 0;
-    }
-
-    .titulo {
-        border-bottom: unset;
-    }
-
-    .referencias1 {
-        grid-area: youtube;
-    }
-
-    .referencias2 {
-        grid-area: twitter;
-    }
-
-    .referencias3 {
-        grid-area: facebook;
-    }
-
-    .referencias4 {
-        grid-area: discord;
-    }
-
-    .referencias5 {
-        grid-area: spotify;
-    }
-
-    .referencias6 {
-        grid-area: linkedin;
-    }
-
-    .referencias7 {
-        grid-area: instagram;
-    }
+    gap: 1rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
 }
 
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-    .redes {
-        grid-area: unset;
-    }
+.informacion .perfil-pro i{
+    font-size:1.5rem;
 }
 
-/*===============================================================================================================================================TESTIMONIALES========================================================================================================================================================*/
-
-.testimonio {
-    grid-area: testimonio;
-
-    .testimoniales {
-        background-color: var(--color-fondo-secundario);
-        padding: 1rem;
-        border-radius: 1rem;
-        margin: 1rem 6rem;
-
-        .comentario {
-            p {
-                padding-top: 1rem;
-                font-size: 1.8rem;
-                margin: 0;
-                font-weight: 400;
-            }
-        }
-    }
-    .infomacion {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        border-bottom: solid 0.2rem var(--color-border-fondo);
-        padding-bottom: 0.8rem;
-        .info-personal {
-            display: grid;
-            grid-template-columns: 3.5rem auto;
-            column-gap: .7rem;
-        }
-
-        .datos-personales {
-            h3 {
-                font-size: 1.7rem;
-                margin: 0;
-            }
-            p {
-                margin: 0;
-                margin-bottom: 0.2rem;
-                font-size: 1.5rem;
-            }
-        }
-
-        .fecha {
-            justify-self: end;
-            align-self: center;
-            p {
-                margin: 0;
-                font-size: 1.5rem;
-                font-weight: 500;
-            }
-        }
-    }
-
-    .img-testimonial {
-        img {
-            width: 3.8rem;
-            border-radius: 1rem;
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-    .testimonio {
-        grid-area: unset;
-    }
-}
-
-/*=======================================================================================================================================TRABAJOS=================================================================================================================================================================*/
-
-.proceso-trabajo {
-    grid-area: trabajo;
-
-    .disenio-icon {
-        margin: 1rem 3rem;
-        place-content: start;
-        background-color: var(--color-fondo-secundario);
-        i {
-            color: var(--color-gris);
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-    .trabajo {
-        grid-area: unset;
-    }
-}
-
-/*====================================================================================================BANERS=================================================================================================================*/
-
-.redes {
-    grid-area: baners;
-
-    .items-redes {
-        margin: 4rem 3rem;
-    }
-
-    .disenio-icon {
-        margin-bottom: 1rem;
-        justify-content: start;
-        background-color: var(--color-fondo-secundario);
-        i {
-            color: var(--color-gris);
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-    .baners {
-        grid-area: unset;
-    }
-}
-/*=============================================================================================================================================================EMAIL=================================================================================================================================================*/
-
-.contacto-colaboracion {
-    grid-area: email;
+.informacion .contacto{
+    grid-column: 2 span;
     display: grid;
-
-    .titulo {
-        border-bottom: unset;
-        .text-min {
-            display: unset;
-        }
-    }
-
-    .titulo-contacto {
-        align-self: center;
-
-        .border-fondo{
-            padding: 2rem;
-            border-radius: 50%;
-        }
-
-        i {
-            font-size: 4rem;
-        }
-        h3 {
-            font-size: 2.5rem;
-            color: var(--color-blanco);
-        }
-    }
-
-    .items-contacto {
-        justify-self: center;
-        .disenio-icon {
-            margin-bottom: 1rem;
-            padding: 1rem 9rem;
-            background-color: var(--color-fondo-secundario);
-        }
-    }
+    grid-template-columns: repeat(2, 1fr);
+    place-content: center;
+    gap: 2rem;
 }
 
-@media (max-width: 768px) {
-    /* Agregar estilos para pantalla menor o igual a 768px */
-    .email {
-        grid-area: unset;
-    }
+.informacion .contacto .nombre{
+    background-color: var(--color-fondo-secundario);
 }
 
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ANIMACION//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-@keyframes cursor {
-    to {
-        border-left: 2px solid #ff7f5000;
-    }
+.informacion .contacto i{
+    font-size: 4rem;
 }
 
-@keyframes words {
-    0%,
-    20% {
-        content: "Youtuber";
-    }
-    21%,
-    40% {
-        content: "Bloguero";
-    }
-    41%,
-    60% {
-        content: "Desarrollador";
-    }
-    61%,
-    80% {
-        content: "Diseñador";
-    }
-    81%,
-    100% {
-        content: "Jugador";
-    }
+/* Estilos de mis Clientes
+=================================*/
+.mis-clientes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem;
+    gap: 1rem;
 }
 
-@keyframes typing {
-    10%,
-    15%,
-    30%,
-    35%,
-    50%,
-    55%,
-    70%,
-    75%,
-    90%,
-    95% {
-        width: 0;
-    }
-    5%,
-    20%,
-    25%,
-    40%,
-    45%,
-    60%,
-    65%,
-    80%,
-    85% {
-        width: calc(100% + 8px);
-    }
+.mis-clientes .header{
+    grid-column: 4 span;
 }
 
-@keyframes pulse {
-    0% {
-        opacity: 0;
-    }
+.mis-clientes .nombre{
+    background-color: var(--color-fondo-secundario);
+}
 
-    10% {
-        scale: 1.4;
-        opacity: 0.2;
-    }
+/* Estilos de testimonios
+=================================*/
+.testimonios{
+    display: grid;
+    row-gap: 1rem;
+    padding: 1rem;
+}
 
-    50% {
-        scale: 2;
-        opacity: 0.8;
-    }
+.testimoniales{
+    display: grid;
+    grid-template-columns: 1fr 3fr 4fr;
+    align-items: center;
+    width: 90%;
+    background-color: var(--color-fondo-secundario);
+    padding: 1rem;
+    border-radius: 1rem;
+    row-gap: 1rem;
+}
 
-    100% {
-        scale: 1.4;
-        opacity: 0;
-    }
+.testimonios .testimoniales:nth-child(3){
+    justify-self: flex-end;
+}
+
+.testimoniales img{
+    display: inline-flex;
+    border-radius: 1rem;
+    place-self: center;
+}
+
+.testimoniales p{
+    grid-column: 3 span;
+    border-top: .1rem solid var(--color-border-fondo);
+    padding-top: 1rem;
+}
+
+.testimoniales h3{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-blanco);
+}
+
+.testimoniales cite{
+    font-style: normal;
+    font-size: 1.4rem;
+}
+
+.testimoniales time{
+    justify-self: flex-end;
+    font-size: 1.6rem;
+}
+
+
+/* Estislo de trabajo
+=================================*/
+.trabajo{
+    padding: 2rem;
+    display: grid;
+    row-gap: 2rem;
+    align-content: flex-start;
+}
+
+.trabajo .nombre{
+    background-color: var(--color-fondo-secundario);
+    justify-content: start;
+}
+
+/* Estilos de redes
+=================================*/
+.redes{
+    padding: 2rem;
+    display: grid;
+    row-gap: 2rem;
+    align-content: flex-start;
+}
+
+.redes .nombre{
+    background-color: var(--color-fondo-secundario);
+    justify-content: start;
+}
+
+/* Correo
+=================================*/
+
+.correo{
+    padding: 1rem;
+    display: grid;
+    align-content: center;
+    row-gap: 1rem;
+}
+
+.correo-content{
+    display: grid;
+    gap: 2rem;
+}
+
+.correo-content .nombre{
+    background-color: var(--color-fondo-secundario);
 }

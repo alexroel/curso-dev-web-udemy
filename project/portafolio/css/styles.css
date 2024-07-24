@@ -175,7 +175,7 @@ a.active {
    display: flex;
    justify-content: flex-end;
    align-items: center;
-   background-image: url(../images/home-img.webp);
+   background-image: url(../images/home-img.png);
    background-repeat: no-repeat;
    background-size: cover; /*La propiedad background-size especifica el tamaño de la imagen de fondo.*/
    /* background-attachment: fixed; */
