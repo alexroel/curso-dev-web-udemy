@@ -1,76 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Imágenes de Google</title>
+    <title>Demo de Bootstrap</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+        html{
+            font-size: 62.5%;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
+
+        *{
+            box-sizing: border-box;
         }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
+
+        body{
+            font-size: 1.6rem;
         }
-        figure {
-            background-color: white;
-            border: 1px solid #ddd;
-            margin: 10px;
-            padding: 10px;
-            width: calc(33% - 40px);
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        section .row{
+            height: 250px;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        figcaption {
-            text-align: center;
-            margin-top: 10px;
-            font-style: italic;
-        }
+        
     </style>
+
 </head>
+
 <body>
-    <header>
-        <h1>Galería de Imágenes de Google</h1>
+    <header class="container bg-body-secondary rounded-3 p-4 mt-3">
+        <nav class="d-flex justify-content-between align-items-center">
+            <a href="" class="text-decoration-none text-dark">
+                <h2>Bootstrap</h2>
+            </a>
+
+            <div class="menu">
+                <a href="" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Inicio</a>
+                <a href="" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acerca de</a>
+                <a href="" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contato</a>
+            </div>
+        </nav>
     </header>
-    <div class="container">
-        <figure>
-            <picture>
-                <source srcset="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=600" media="(min-width: 800px)">
-                <source srcset="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=400" media="(min-width: 500px)">
-                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=300" alt="Computadora en escritorio">
-            </picture>
-            <figcaption>Computadora en escritorio</figcaption>
-        </figure>
-        <figure>
-            <picture>
-                <source srcset="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=600" media="(min-width: 800px)">
-                <source srcset="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400" media="(min-width: 500px)">
-                <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=300" alt="Paisaje montañoso">
-            </picture>
-            <figcaption>Paisaje montañoso</figcaption>
-        </figure>
-        <figure>
-            <picture>
-                <source srcset="https://images.unsplash.com/photo-1518779578993-ec3579fee39b?w=600" media="(min-width: 800px)">
-                <source srcset="https://images.unsplash.com/photo-1518779578993-ec3579fee39b?w=400" media="(min-width: 500px)">
-                <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39b?w=300" alt="Gato curioso">
-            </picture>
-            <figcaption>Gato curioso</figcaption>
-        </figure>
-    </div>
+
+    <section class="container my-4 p-5 bg-body-secondary rounded-3">
+        <h1 class="display-1 fw-bold">Hola Mundo</h1>
+        <p class="my-5 fs-2">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum dolores hic incidunt quos vel,
+            laudantium cupiditate unde alias!
+        </p>
+        <button class="btn btn-primary btn-lg">Empieza Ahora</button>
+    </section>
+
+    <section class="container p-4 text-center bg-body-secondary rounded-3 ">
+        <div class="row gap-3 mb-3 align-items-start">
+            <div class="col bg-white rounded-3 p-2">1- Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+            <div class="col bg-white rounded-3 align-self-center">2- Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="col bg-white rounded-3 align-self-end">3- Lorem ipsum dolor sit amet consectetur, adipisicing elit. </div>
+        </div>
+        <div class="row gap-3 justify-content-between">
+            <div class="col-3 bg-white rounded-3">5- Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+            <div class="col-3 bg-white rounded-3">6- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima vitae accusantium error.</div>
+        </div>
+    </section>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
