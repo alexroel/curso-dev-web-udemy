@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero - Responsivo</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <picture>
+            <!-- Imagen para pantallas pequeñas en diferentes formatos -->
+            <source 
+                media="(max-width: 900px)" 
+                srcset="img/Prototype-600.avif 1x, img/Prototype-600.webp 1x, img/Prototype-600.png 1x" 
+                sizes="100vw">
+    
+            <!-- Imagen para pantallas grandes en diferentes formatos -->
+            <source 
+                srcset="img/Prototype.avif 1x, img/Prototype.webp 1x, img/Prototype.png 1x" 
+                sizes="100vw">
+    
+            <!-- Fallback: Si ninguno de los formatos anteriores es compatible -->
+            <img 
+                loading="lazy" 
+                src="img/Prototype.png" 
+                alt="Imagen de fondo">
+        </picture>
+
+        <nav class="navbar">
+            <a href="">Inicio</a>
+            <a href="">Blogs</a>
+            <a href="">Contacto</a>
+        </nav>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Manera fácil de obtener 
+                    <span>Control Total</span> de su 
+                    <span>Tarea</span>
+                </h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolor dignissimos repellat architecto perferendis, omnis impedit nam quae, tempora quas voluptatem vero vel enim laborum itaque rerum et accusamus ab?
+                </p>
+
+                <hr>
+
+                <div class="buttons">
+                    <a href="" class="btn-primary">Empezar</a>
+                    <a href="" class="btn-secondary">Aprende más</a>
+                </div>
+            </div>
+        </section>
+    </header>
+</body>
+</html>

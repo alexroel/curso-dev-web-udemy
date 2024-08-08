@@ -10,11 +10,10 @@
 9. [Obtimizar tu sitio web](#obtimizar-tu-sitio-web)
 10. [Resumen](#resumen)
 
-
-
-
+---
 ## Introducción
 
+---
 ## ¿Qué es Responsive Web Design?
 
 El Responsive Web Design (Diseño Web Responsivo) es una técnica de diseño y desarrollo web que asegura que los sitios web se vean bien y funcionen correctamente en una variedad de dispositivos y tamaños de pantalla. Esto se logra mediante el uso de CSS y HTML de manera inteligente para adaptar el diseño y la disposición del contenido según las características del dispositivo utilizado por el usuario.
@@ -41,6 +40,7 @@ Implementar un diseño web responsivo ofrece una serie de beneficios significati
 
 4. **Adaptabilidad Futura:** Los diseños responsivos están preparados para adaptarse a nuevos dispositivos y tamaños de pantalla que puedan surgir en el futuro, lo que garantiza la longevidad y la accesibilidad del sitio.
 
+---
 ## ¿Qué es Mobile First y Desktop First?
 
 **Mobile First**
