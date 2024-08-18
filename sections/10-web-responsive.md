@@ -1,7 +1,6 @@
 # Responsive Web Design
 1. [Introducción](#introducción)
 2. [¿Qué es Responsive Web Design?](#qué-es-responsive-web-design)
-3. [¿Qué es Mobile First y Desktop First?](#qué-es-mobile-first-y-desktop-first)
 4. [Herramientas para Probar tu Diseño Responsivo](#herramientas-para-probar-tu-diseño-responsivo)
 5. [Creando Media Queries](#creando-media-queries)
 6. [Operadores de Comparación en Media Queries](#operadores-de-comparación-en-media-queries)
@@ -40,8 +39,7 @@ Implementar un diseño web responsivo ofrece una serie de beneficios significati
 
 4. **Adaptabilidad Futura:** Los diseños responsivos están preparados para adaptarse a nuevos dispositivos y tamaños de pantalla que puedan surgir en el futuro, lo que garantiza la longevidad y la accesibilidad del sitio.
 
----
-## ¿Qué es Mobile First y Desktop First?
+**¿Qué es Mobile First y Desktop First?**
 
 **Mobile First**
 
